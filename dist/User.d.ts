@@ -1,11 +1,13 @@
 export interface User {
-    id: string;
+    id: number;
     name: string;
     email: string;
+    phoneNumber: string;
 }
 export declare class UserEntity implements User {
-    id: string;
+    id: number;
     name: string;
     email: string;
-    constructor(id: string, name: string, email: string);
+    phoneNumber: string;
+    constructor(id: number, name: string, email: string, phoneNumber: string);
 }
