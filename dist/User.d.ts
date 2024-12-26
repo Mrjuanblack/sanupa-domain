@@ -16,6 +16,10 @@ export interface NewUserRequest {
     phoneNumber: string;
     password: string;
 }
+export interface LoginRequest {
+    phoneNumber: string;
+    password: string;
+}
 export declare class UserEntity implements User {
     id: number;
     name: string;
