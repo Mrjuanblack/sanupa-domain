@@ -14,6 +14,12 @@ export interface UserCookie {
     phoneNumber: string
 }
 
+export interface NewUserRequest {
+    name: string
+    phoneNumber: string
+    password: string
+}
+
 export class UserEntity implements User {
     constructor(public id: number, public name: string, public email: string|null, public phoneNumber: string, public password: string) {}
 }
