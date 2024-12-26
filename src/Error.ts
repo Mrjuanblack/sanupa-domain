@@ -1,4 +1,4 @@
-export enum RepositoryUser {
+export enum RepositoryUserError {
     GetAll      = "U_001",
     Get         = "U_002",
     Update      = "U_003",
