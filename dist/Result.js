@@ -25,6 +25,6 @@ function asyncChain(fn) {
         if (!result.ok) {
             throw result.error; // Automatically throw the error
         }
-        return result; // Otherwise, return the result if no error
+        return result.value; // Otherwise, return the result if no error
     });
 }

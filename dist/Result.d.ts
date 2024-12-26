@@ -8,4 +8,4 @@ export type Result<T, E> = {
 export type AsyncResult<T, E> = Promise<Result<T, E>>;
 export declare function ok<T, E>(value: T): Result<T, E>;
 export declare function err<T, E>(error: E): Result<T, E>;
-export declare function asyncChain<T, E>(fn: () => AsyncResult<T, E>): AsyncResult<T, E>;
+export declare function asyncChain<T, E>(fn: () => AsyncResult<T, E>): Promise<T>;

@@ -12,11 +12,11 @@ export function err<T, E>(error: E): Result<T, E> {
 // Helper to streamline async chaining without needing to manually check results
 export async function asyncChain<T, E>(
     fn: () => AsyncResult<T, E>
-): AsyncResult<T, E> {
+): Promise<T> {
     const result = await fn()
     if (!result.ok) {
         throw result.error // Automatically throw the error
     }
 
-    return result // Otherwise, return the result if no error
+    return result.value // Otherwise, return the result if no error
 }
