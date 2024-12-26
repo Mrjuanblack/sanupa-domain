@@ -5,13 +5,13 @@ export interface User {
     phoneNumber: string;
     password: string;
 }
-export interface UserCookie {
+export interface UserMetadata {
     id: number;
     name: string;
     email: string | null;
     phoneNumber: string;
 }
-export declare function isUserCookie(o: any): o is UserCookie;
+export declare function isUserCookie(o: any): o is UserMetadata;
 export interface NewUserRequest {
     name: string;
     phoneNumber: string;

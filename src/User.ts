@@ -7,14 +7,14 @@ export interface User {
 }
 
 // Excludes password
-export interface UserCookie {
+export interface UserMetadata {
     id: number
     name: string
     email: string | null
     phoneNumber: string
 }
 
-export function isUserCookie(o: any): o is UserCookie {
+export function isUserCookie(o: any): o is UserMetadata {
     return (
         typeof o === 'object' &&
         o !== null &&
