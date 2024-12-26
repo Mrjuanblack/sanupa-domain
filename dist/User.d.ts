@@ -11,6 +11,7 @@ export interface UserCookie {
     email: string | null;
     phoneNumber: string;
 }
+export declare function isUserCookie(o: any): o is UserCookie;
 export interface NewUserRequest {
     name: string;
     phoneNumber: string;

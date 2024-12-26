@@ -14,6 +14,21 @@ export interface UserCookie {
     phoneNumber: string
 }
 
+export function isUserCookie(o: any): o is UserCookie {
+    return (
+        typeof o === 'object' &&
+        o !== null &&
+        'id' in o &&
+        typeof o.id === 'number' &&
+        'name' in o &&
+        typeof o.name === 'string' &&
+        'email' in o &&
+        typeof o.email === 'string' &&
+        'phoneNumber' in o &&
+        typeof o.phoneNumber === 'string'
+    );
+}
+
 export interface NewUserRequest {
     name: string
     phoneNumber: string
