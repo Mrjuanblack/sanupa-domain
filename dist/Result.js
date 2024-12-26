@@ -22,6 +22,9 @@ function err(error) {
 function asyncChain(fn) {
     return __awaiter(this, void 0, void 0, function* () {
         const result = yield fn();
-        return result.ok ? result : err(result.error);
+        if (!result.ok) {
+            throw result.error; // Automatically throw the error
+        }
+        return result; // Otherwise, return the result if no error
     });
 }

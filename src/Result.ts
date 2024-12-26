@@ -14,5 +14,9 @@ export async function asyncChain<T, E>(
     fn: () => AsyncResult<T, E>
 ): AsyncResult<T, E> {
     const result = await fn()
-    return result.ok ? result : err(result.error)
+    if (!result.ok) {
+        throw result.error // Automatically throw the error
+    }
+
+    return result // Otherwise, return the result if no error
 }
