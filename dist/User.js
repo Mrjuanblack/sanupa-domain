@@ -1,7 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserEntity = void 0;
+exports.UserEntity = exports.UserRole = void 0;
 exports.isUserCookie = isUserCookie;
+var UserRole;
+(function (UserRole) {
+    UserRole[UserRole["User"] = 1] = "User";
+    UserRole[UserRole["Admin"] = 2] = "Admin";
+})(UserRole || (exports.UserRole = UserRole = {}));
 function isUserCookie(o) {
     return (typeof o === 'object' &&
         o !== null &&

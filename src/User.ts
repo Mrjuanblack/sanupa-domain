@@ -1,3 +1,7 @@
+export enum UserRole {
+    User = 1,
+    Admin = 2,
+}
 export interface User {
     id: number
     name: string
@@ -12,6 +16,7 @@ export interface UserMetadata {
     name: string
     email: string | null
     phoneNumber: string
+    role: UserRole
 }
 
 export function isUserCookie(o: any): o is UserMetadata {
