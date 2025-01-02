@@ -8,6 +8,7 @@ export interface User {
     email: string | null
     phoneNumber: string
     password: string
+    role: UserRole
 }
 
 // Excludes password
@@ -46,5 +47,5 @@ export interface LoginRequest {
 }
 
 export class UserEntity implements User {
-    constructor(public id: number, public name: string, public email: string|null, public phoneNumber: string, public password: string) {}
+    constructor(public id: number, public name: string, public email: string|null, public phoneNumber: string, public password: string, public role: UserRole) {}
 }

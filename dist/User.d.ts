@@ -8,6 +8,7 @@ export interface User {
     email: string | null;
     phoneNumber: string;
     password: string;
+    role: UserRole;
 }
 export interface UserMetadata {
     id: number;
@@ -32,5 +33,6 @@ export declare class UserEntity implements User {
     email: string | null;
     phoneNumber: string;
     password: string;
-    constructor(id: number, name: string, email: string | null, phoneNumber: string, password: string);
+    role: UserRole;
+    constructor(id: number, name: string, email: string | null, phoneNumber: string, password: string, role: UserRole);
 }

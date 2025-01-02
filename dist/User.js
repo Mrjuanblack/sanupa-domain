@@ -20,12 +20,13 @@ function isUserCookie(o) {
         typeof o.phoneNumber === 'string');
 }
 class UserEntity {
-    constructor(id, name, email, phoneNumber, password) {
+    constructor(id, name, email, phoneNumber, password, role) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.password = password;
+        this.role = role;
     }
 }
 exports.UserEntity = UserEntity;
