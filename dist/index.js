@@ -19,3 +19,4 @@ __exportStar(require("./Category"), exports);
 __exportStar(require("./Subcategory"), exports);
 __exportStar(require("./RequestResult"), exports);
 __exportStar(require("./Utils"), exports);
+__exportStar(require("./Product"), exports);
