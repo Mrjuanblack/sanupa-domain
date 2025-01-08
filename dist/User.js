@@ -15,7 +15,7 @@ function isUserCookie(o) {
         'name' in o &&
         typeof o.name === 'string' &&
         'email' in o &&
-        typeof o.email === 'string' &&
+        typeof o.email === 'string' || o.email === null &&
         'phoneNumber' in o &&
         typeof o.phoneNumber === 'string');
 }
