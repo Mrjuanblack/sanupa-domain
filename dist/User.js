@@ -6,6 +6,7 @@ var UserRole;
 (function (UserRole) {
     UserRole[UserRole["User"] = 1] = "User";
     UserRole[UserRole["Admin"] = 2] = "Admin";
+    UserRole[UserRole["Partner"] = 3] = "Partner";
 })(UserRole || (exports.UserRole = UserRole = {}));
 function isUserCookie(o) {
     return (typeof o === 'object' &&

@@ -1,6 +1,7 @@
 export declare enum UserRole {
     User = 1,
-    Admin = 2
+    Admin = 2,
+    Partner = 3
 }
 export interface User {
     id: number;
