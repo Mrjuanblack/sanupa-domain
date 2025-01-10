@@ -3,6 +3,21 @@ export enum UserRole {
     Admin = 2,
     Partner = 3,
 }
+
+type UserRoleEnumToStringMap = {
+    [key in UserRole]: string;
+};
+
+const userRoleEnumToString: UserRoleEnumToStringMap = {
+    [UserRole.User]: 'Usuario',
+    [UserRole.Admin]: 'Administrador',
+    [UserRole.Partner]: 'Socio',
+}
+
+export function getUserRoleString(role: UserRole) {
+    return userRoleEnumToString[role];
+}
+
 export interface User {
     id: number
     name: string
@@ -11,6 +26,7 @@ export interface User {
     password: string
     role: UserRole
 }
+
 
 // Excludes password
 export interface UserMetadata {
@@ -48,5 +64,5 @@ export interface LoginRequest {
 }
 
 export class UserEntity implements User {
-    constructor(public id: number, public name: string, public email: string|null, public phoneNumber: string, public password: string, public role: UserRole) {}
+    constructor(public id: number, public name: string, public email: string | null, public phoneNumber: string, public password: string, public role: UserRole) { }
 }

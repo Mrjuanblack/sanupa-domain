@@ -3,6 +3,7 @@ export declare enum UserRole {
     Admin = 2,
     Partner = 3
 }
+export declare function getUserRoleString(role: UserRole): string;
 export interface User {
     id: number;
     name: string;
