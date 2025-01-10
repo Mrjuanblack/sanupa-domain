@@ -1,6 +1,8 @@
+import { CategoryEntity } from "./Category"
+
 export interface Subcategory {
     id: number
-    categoryId: number
+    category: CategoryEntity
     name: string
     imgPath: string | null
     usesCode: boolean
@@ -44,7 +46,7 @@ export interface NewSubcategoryRequest {
 export class SubcategoryEntity implements Subcategory {
     constructor(
         public id: number,
-        public categoryId: number,
+        public category: CategoryEntity,
         public name: string,
         public imgPath: string | null,
         public usesCode: boolean,

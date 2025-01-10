@@ -2,9 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SubcategoryEntity = void 0;
 class SubcategoryEntity {
-    constructor(id, categoryId, name, imgPath, usesCode, active, productType, zone, offerType, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage) {
+    constructor(id, category, name, imgPath, usesCode, active, productType, zone, offerType, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage) {
         this.id = id;
-        this.categoryId = categoryId;
+        this.category = category;
         this.name = name;
         this.imgPath = imgPath;
         this.usesCode = usesCode;

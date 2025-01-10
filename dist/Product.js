@@ -1,9 +1,57 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProductEntity = void 0;
-class ProductEntity {
-    constructor(id) {
+exports.ProductWithoutCodeEntity = exports.ProductWithCodeEntity = exports.Estratum = exports.Condition = exports.OfferType = void 0;
+var OfferType;
+(function (OfferType) {
+    OfferType[OfferType["Sale"] = 1] = "Sale";
+    OfferType[OfferType["Lease"] = 2] = "Lease";
+    OfferType[OfferType["Rental"] = 3] = "Rental";
+})(OfferType || (exports.OfferType = OfferType = {}));
+var Condition;
+(function (Condition) {
+    Condition[Condition["New"] = 1] = "New";
+    Condition[Condition["Used"] = 2] = "Used";
+})(Condition || (exports.Condition = Condition = {}));
+var Estratum;
+(function (Estratum) {
+    Estratum[Estratum["Zero"] = 1] = "Zero";
+    Estratum[Estratum["One"] = 2] = "One";
+    Estratum[Estratum["Two"] = 3] = "Two";
+    Estratum[Estratum["Three"] = 4] = "Three";
+    Estratum[Estratum["Four"] = 5] = "Four";
+    Estratum[Estratum["Five"] = 6] = "Five";
+    Estratum[Estratum["Six"] = 7] = "Six";
+})(Estratum || (exports.Estratum = Estratum = {}));
+class ProductWithCodeEntity {
+    constructor(id, subcategory, gtin, description, gpc, imgPath, quantity, measurement, market) {
         this.id = id;
+        this.subcategory = subcategory;
+        this.gtin = gtin;
+        this.description = description;
+        this.gpc = gpc;
+        this.imgPath = imgPath;
+        this.quantity = quantity;
+        this.measurement = measurement;
+        this.market = market;
     }
 }
-exports.ProductEntity = ProductEntity;
+exports.ProductWithCodeEntity = ProductWithCodeEntity;
+class ProductWithoutCodeEntity {
+    constructor(id, subcategory, imgPath, productType, zone, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage) {
+        this.id = id;
+        this.subcategory = subcategory;
+        this.imgPath = imgPath;
+        this.productType = productType;
+        this.zone = zone;
+        this.area = area;
+        this.condition = condition;
+        this.stratum = stratum;
+        this.antiquity = antiquity;
+        this.bathrooms = bathrooms;
+        this.rooms = rooms;
+        this.parkingLots = parkingLots;
+        this.cylinderCapacity = cylinderCapacity;
+        this.mileage = mileage;
+    }
+}
+exports.ProductWithoutCodeEntity = ProductWithoutCodeEntity;

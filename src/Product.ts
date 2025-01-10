@@ -1,7 +1,113 @@
-export interface Product {
-    id: number
+import { ZoneEntity } from "./Location"
+import { ProductTypeEntity } from "./ProductType"
+import { SubcategoryEntity } from "./Subcategory"
+
+export enum OfferType {
+    Sale = 1,
+    Lease = 2,
+    Rental = 3
+}
+export enum Condition {
+    New = 1,
+    Used = 2
+}
+export enum Estratum {
+    Zero = 1,
+    One = 2,
+    Two = 3,
+    Three = 4,
+    Four = 5,
+    Five = 6,
+    Six = 7
 }
 
-export class ProductEntity implements Product {
-    constructor(public id: number) { }
+interface BaseProduct {
+    id: number
+    subcategory: SubcategoryEntity
+    imgPath: string
+}
+export interface ProductWithCode extends BaseProduct {
+    //GS1 data
+    gtin: string
+    description: string
+    gpc: string
+    quantity: string
+    measurement: string
+    market: string
+}
+export interface NewProductWithCodeRequest {
+    subcategory: SubcategoryEntity
+    imgPath: string
+
+    gtin: string
+    description: string
+    gpc: string
+    quantity: string
+    measurement: string
+    market: string
+}
+
+export interface ProductWithoutCode extends BaseProduct {
+    productType: ProductTypeEntity | null
+    zone: ZoneEntity | null
+    area: number | null
+    condition: Condition | null
+    stratum: Estratum | null
+    antiquity: number | null
+    bathrooms: number | null
+    rooms: number | null
+    parkingLots: number | null
+    cylinderCapacity: number | null
+    mileage: number | null
+}
+
+export interface NewProductWithoutCodeRequest {
+    subcategory: SubcategoryEntity
+    imgPath: string
+    
+    productType: ProductTypeEntity | null
+    zone: ZoneEntity | null
+    area: number | null
+    condition: Condition | null
+    stratum: Estratum | null
+    antiquity: number | null
+    bathrooms: number | null
+    rooms: number | null
+    parkingLots: number | null
+    cylinderCapacity: number | null
+    mileage: number | null
+}
+
+export class ProductWithCodeEntity implements ProductWithCode {
+    constructor(
+        public id: number,
+        public subcategory: SubcategoryEntity,
+        public gtin: string,
+        public description: string,
+        public gpc: string,
+        public imgPath: string,
+        public quantity: string,
+        public measurement: string,
+        public market: string
+    ) { }
+}
+
+export class ProductWithoutCodeEntity implements ProductWithoutCode {
+
+    constructor(
+        public id: number,
+        public subcategory: SubcategoryEntity,
+        public imgPath: string,
+        public productType: ProductTypeEntity | null,
+        public zone: ZoneEntity | null,
+        public area: number | null,
+        public condition: Condition | null,
+        public stratum: Estratum | null,
+        public antiquity: number | null,
+        public bathrooms: number | null,
+        public rooms: number | null,
+        public parkingLots: number | null,
+        public cylinderCapacity: number | null,
+        public mileage: number | null,
+    ) { }
 }
