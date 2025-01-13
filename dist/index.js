@@ -20,3 +20,5 @@ __exportStar(require("./Subcategory"), exports);
 __exportStar(require("./RequestResult"), exports);
 __exportStar(require("./Utils"), exports);
 __exportStar(require("./Product"), exports);
+__exportStar(require("./ProductType"), exports);
+__exportStar(require("./Location"), exports);
