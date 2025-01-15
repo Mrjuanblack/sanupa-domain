@@ -1,4 +1,5 @@
 import { ZoneEntity } from "./Location"
+import { MeasurementTypeEntity, MeasurementWithDataEntity } from "./MeasurementType"
 import { ProductTypeEntity } from "./ProductType"
 import { SubcategoryEntity } from "./Subcategory"
 
@@ -30,10 +31,14 @@ export interface ProductWithCode extends BaseProduct {
     //GS1 data
     gtin: string
     description: string
+    brand: string
     gpc: string
     quantity: string
     measurement: string
     market: string
+
+    //Measurement data that will be used if the measurement and quantity data is updated
+    measurementAlt: MeasurementWithDataEntity | null
 }
 export interface NewProductWithCodeRequest {
     subcategory: SubcategoryEntity
@@ -41,6 +46,7 @@ export interface NewProductWithCodeRequest {
 
     gtin: string
     description: string
+    brand: string
     gpc: string
     quantity: string
     measurement: string
@@ -48,6 +54,10 @@ export interface NewProductWithCodeRequest {
 }
 
 export interface ProductWithoutCode extends BaseProduct {
+    description: string | null
+    brand: string | null
+    measurement: MeasurementTypeEntity | null
+    quantity: number | null
     productType: ProductTypeEntity | null
     zone: ZoneEntity | null
     area: number | null
@@ -84,11 +94,13 @@ export class ProductWithCodeEntity implements ProductWithCode {
         public subcategory: SubcategoryEntity,
         public gtin: string,
         public description: string,
+        public brand: string,
         public gpc: string,
         public imgPath: string,
         public quantity: string,
         public measurement: string,
-        public market: string
+        public market: string,
+        public measurementAlt: MeasurementWithDataEntity | null
     ) { }
 }
 
@@ -98,6 +110,10 @@ export class ProductWithoutCodeEntity implements ProductWithoutCode {
         public id: number,
         public subcategory: SubcategoryEntity,
         public imgPath: string,
+        public description: string | null,
+        public brand: string | null,
+        public measurement: MeasurementTypeEntity | null,
+        public quantity: number | null,
         public productType: ProductTypeEntity | null,
         public zone: ZoneEntity | null,
         public area: number | null,

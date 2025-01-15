@@ -23,24 +23,30 @@ var Estratum;
     Estratum[Estratum["Six"] = 7] = "Six";
 })(Estratum || (exports.Estratum = Estratum = {}));
 class ProductWithCodeEntity {
-    constructor(id, subcategory, gtin, description, gpc, imgPath, quantity, measurement, market) {
+    constructor(id, subcategory, gtin, description, brand, gpc, imgPath, quantity, measurement, market, measurementAlt) {
         this.id = id;
         this.subcategory = subcategory;
         this.gtin = gtin;
         this.description = description;
+        this.brand = brand;
         this.gpc = gpc;
         this.imgPath = imgPath;
         this.quantity = quantity;
         this.measurement = measurement;
         this.market = market;
+        this.measurementAlt = measurementAlt;
     }
 }
 exports.ProductWithCodeEntity = ProductWithCodeEntity;
 class ProductWithoutCodeEntity {
-    constructor(id, subcategory, imgPath, productType, zone, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage) {
+    constructor(id, subcategory, imgPath, description, brand, measurement, quantity, productType, zone, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage) {
         this.id = id;
         this.subcategory = subcategory;
         this.imgPath = imgPath;
+        this.description = description;
+        this.brand = brand;
+        this.measurement = measurement;
+        this.quantity = quantity;
         this.productType = productType;
         this.zone = zone;
         this.area = area;

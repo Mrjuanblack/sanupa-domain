@@ -1,4 +1,5 @@
 import { ZoneEntity } from "./Location";
+import { MeasurementTypeEntity, MeasurementWithDataEntity } from "./MeasurementType";
 import { ProductTypeEntity } from "./ProductType";
 import { SubcategoryEntity } from "./Subcategory";
 export declare enum OfferType {
@@ -27,22 +28,29 @@ interface BaseProduct {
 export interface ProductWithCode extends BaseProduct {
     gtin: string;
     description: string;
+    brand: string;
     gpc: string;
     quantity: string;
     measurement: string;
     market: string;
+    measurementAlt: MeasurementWithDataEntity | null;
 }
 export interface NewProductWithCodeRequest {
     subcategory: SubcategoryEntity;
     imgPath: string;
     gtin: string;
     description: string;
+    brand: string;
     gpc: string;
     quantity: string;
     measurement: string;
     market: string;
 }
 export interface ProductWithoutCode extends BaseProduct {
+    description: string | null;
+    brand: string | null;
+    measurement: MeasurementTypeEntity | null;
+    quantity: number | null;
     productType: ProductTypeEntity | null;
     zone: ZoneEntity | null;
     area: number | null;
@@ -75,17 +83,23 @@ export declare class ProductWithCodeEntity implements ProductWithCode {
     subcategory: SubcategoryEntity;
     gtin: string;
     description: string;
+    brand: string;
     gpc: string;
     imgPath: string;
     quantity: string;
     measurement: string;
     market: string;
-    constructor(id: number, subcategory: SubcategoryEntity, gtin: string, description: string, gpc: string, imgPath: string, quantity: string, measurement: string, market: string);
+    measurementAlt: MeasurementWithDataEntity | null;
+    constructor(id: number, subcategory: SubcategoryEntity, gtin: string, description: string, brand: string, gpc: string, imgPath: string, quantity: string, measurement: string, market: string, measurementAlt: MeasurementWithDataEntity | null);
 }
 export declare class ProductWithoutCodeEntity implements ProductWithoutCode {
     id: number;
     subcategory: SubcategoryEntity;
     imgPath: string;
+    description: string | null;
+    brand: string | null;
+    measurement: MeasurementTypeEntity | null;
+    quantity: number | null;
     productType: ProductTypeEntity | null;
     zone: ZoneEntity | null;
     area: number | null;
@@ -97,6 +111,6 @@ export declare class ProductWithoutCodeEntity implements ProductWithoutCode {
     parkingLots: number | null;
     cylinderCapacity: number | null;
     mileage: number | null;
-    constructor(id: number, subcategory: SubcategoryEntity, imgPath: string, productType: ProductTypeEntity | null, zone: ZoneEntity | null, area: number | null, condition: Condition | null, stratum: Estratum | null, antiquity: number | null, bathrooms: number | null, rooms: number | null, parkingLots: number | null, cylinderCapacity: number | null, mileage: number | null);
+    constructor(id: number, subcategory: SubcategoryEntity, imgPath: string, description: string | null, brand: string | null, measurement: MeasurementTypeEntity | null, quantity: number | null, productType: ProductTypeEntity | null, zone: ZoneEntity | null, area: number | null, condition: Condition | null, stratum: Estratum | null, antiquity: number | null, bathrooms: number | null, rooms: number | null, parkingLots: number | null, cylinderCapacity: number | null, mileage: number | null);
 }
 export {};
