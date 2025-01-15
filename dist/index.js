@@ -22,3 +22,4 @@ __exportStar(require("./Utils"), exports);
 __exportStar(require("./Product"), exports);
 __exportStar(require("./ProductType"), exports);
 __exportStar(require("./Location"), exports);
+__exportStar(require("./MeasurementType"), exports);
