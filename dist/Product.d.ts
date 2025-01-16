@@ -36,7 +36,7 @@ export interface ProductWithCode extends BaseProduct {
     measurementAlt: MeasurementWithDataEntity | null;
 }
 export interface NewProductWithCodeRequest {
-    subcategory: SubcategoryEntity;
+    subcategoryId: number;
     imgPath: string;
     gtin: string;
     description: string;
@@ -63,7 +63,7 @@ export interface ProductWithoutCode extends BaseProduct {
     mileage: number | null;
 }
 export interface NewProductWithoutCodeRequest {
-    subcategory: SubcategoryEntity;
+    subcategoryId: number;
     imgPath: string;
     description: string | null;
     brand: string | null;

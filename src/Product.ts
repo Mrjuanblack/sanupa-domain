@@ -41,7 +41,7 @@ export interface ProductWithCode extends BaseProduct {
     measurementAlt: MeasurementWithDataEntity | null
 }
 export interface NewProductWithCodeRequest {
-    subcategory: SubcategoryEntity
+    subcategoryId: number
     imgPath: string
 
     gtin: string
@@ -71,7 +71,7 @@ export interface ProductWithoutCode extends BaseProduct {
 }
 
 export interface NewProductWithoutCodeRequest {
-    subcategory: SubcategoryEntity
+    subcategoryId: number
     imgPath: string
     
     description: string | null
