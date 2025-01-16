@@ -46,18 +46,6 @@ export interface NewProductWithCodeRequest {
     measurement: string;
     market: string;
 }
-export declare class NewProductWithCodeRequestEntity implements NewProductWithCodeRequest {
-    subcategoryId: number;
-    imgPath: string;
-    gtin: string;
-    description: string;
-    brand: string;
-    gpc: string;
-    quantity: string;
-    measurement: string;
-    market: string;
-    constructor(subcategoryId: number, imgPath: string, gtin: string, description: string, brand: string, gpc: string, quantity: string, measurement: string, market: string);
-}
 export interface ProductWithoutCode extends BaseProduct {
     description: string | null;
     brand: string | null;
@@ -90,24 +78,6 @@ export interface NewProductWithoutCodeRequest {
     parkingLots: number | null;
     cylinderCapacity: number | null;
     mileage: number | null;
-}
-export declare class NewProductWithoutCodeRequestEntity implements NewProductWithoutCodeRequest {
-    subcategoryId: number;
-    description: string | null;
-    brand: string | null;
-    measurement: MeasurementWithDataEntity | null;
-    productType: ProductTypeEntity | null;
-    zone: ZoneEntity | null;
-    area: number | null;
-    condition: Condition | null;
-    stratum: Estratum | null;
-    antiquity: number | null;
-    bathrooms: number | null;
-    rooms: number | null;
-    parkingLots: number | null;
-    cylinderCapacity: number | null;
-    mileage: number | null;
-    constructor(subcategoryId: number, description: string | null, brand: string | null, measurement: MeasurementWithDataEntity | null, productType: ProductTypeEntity | null, zone: ZoneEntity | null, area: number | null, condition: Condition | null, stratum: Estratum | null, antiquity: number | null, bathrooms: number | null, rooms: number | null, parkingLots: number | null, cylinderCapacity: number | null, mileage: number | null);
 }
 export declare class ProductWithCodeEntity implements ProductWithCode {
     id: number;
