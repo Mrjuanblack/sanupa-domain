@@ -37,9 +37,8 @@ class NewProductWithCodeRequestEntity {
 }
 exports.NewProductWithCodeRequestEntity = NewProductWithCodeRequestEntity;
 class NewProductWithoutCodeRequestEntity {
-    constructor(subcategoryId, imgPath, description, brand, measurement, productType, zone, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage) {
+    constructor(subcategoryId, description, brand, measurement, productType, zone, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage) {
         this.subcategoryId = subcategoryId;
-        this.imgPath = imgPath;
         this.description = description;
         this.brand = brand;
         this.measurement = measurement;

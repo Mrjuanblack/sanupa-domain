@@ -106,7 +106,6 @@ export interface ProductWithoutCode extends BaseProduct {
 
 export interface NewProductWithoutCodeRequest {
     subcategoryId: number
-    imgPath: string
 
     description: string | null
     brand: string | null
@@ -126,7 +125,6 @@ export interface NewProductWithoutCodeRequest {
 
 export class NewProductWithoutCodeRequestEntity implements NewProductWithoutCodeRequest {
     subcategoryId: number
-    imgPath: string
     description: string | null
     brand: string | null
     measurement: MeasurementWithDataEntity | null
@@ -144,7 +142,6 @@ export class NewProductWithoutCodeRequestEntity implements NewProductWithoutCode
 
     constructor(
         subcategoryId: number,
-        imgPath: string,
         description: string | null,
         brand: string | null,
         measurement: MeasurementWithDataEntity | null,
@@ -161,7 +158,6 @@ export class NewProductWithoutCodeRequestEntity implements NewProductWithoutCode
         mileage: number | null
     ) {
         this.subcategoryId = subcategoryId
-        this.imgPath = imgPath
         this.description = description
         this.brand = brand
         this.measurement = measurement
