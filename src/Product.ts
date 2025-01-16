@@ -56,8 +56,7 @@ export interface NewProductWithCodeRequest {
 export interface ProductWithoutCode extends BaseProduct {
     description: string | null
     brand: string | null
-    measurement: MeasurementTypeEntity | null
-    quantity: number | null
+    measurement: MeasurementWithDataEntity | null
     productType: ProductTypeEntity | null
     zone: ZoneEntity | null
     area: number | null
@@ -75,6 +74,9 @@ export interface NewProductWithoutCodeRequest {
     subcategory: SubcategoryEntity
     imgPath: string
     
+    description: string | null
+    brand: string | null
+    measurement: MeasurementWithDataEntity | null
     productType: ProductTypeEntity | null
     zone: ZoneEntity | null
     area: number | null
@@ -112,7 +114,7 @@ export class ProductWithoutCodeEntity implements ProductWithoutCode {
         public imgPath: string,
         public description: string | null,
         public brand: string | null,
-        public measurement: MeasurementTypeEntity | null,
+        public measurement: MeasurementWithDataEntity | null,
         public quantity: number | null,
         public productType: ProductTypeEntity | null,
         public zone: ZoneEntity | null,

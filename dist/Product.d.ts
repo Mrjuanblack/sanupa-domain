@@ -1,5 +1,5 @@
 import { ZoneEntity } from "./Location";
-import { MeasurementTypeEntity, MeasurementWithDataEntity } from "./MeasurementType";
+import { MeasurementWithDataEntity } from "./MeasurementType";
 import { ProductTypeEntity } from "./ProductType";
 import { SubcategoryEntity } from "./Subcategory";
 export declare enum OfferType {
@@ -49,8 +49,7 @@ export interface NewProductWithCodeRequest {
 export interface ProductWithoutCode extends BaseProduct {
     description: string | null;
     brand: string | null;
-    measurement: MeasurementTypeEntity | null;
-    quantity: number | null;
+    measurement: MeasurementWithDataEntity | null;
     productType: ProductTypeEntity | null;
     zone: ZoneEntity | null;
     area: number | null;
@@ -66,6 +65,9 @@ export interface ProductWithoutCode extends BaseProduct {
 export interface NewProductWithoutCodeRequest {
     subcategory: SubcategoryEntity;
     imgPath: string;
+    description: string | null;
+    brand: string | null;
+    measurement: MeasurementWithDataEntity | null;
     productType: ProductTypeEntity | null;
     zone: ZoneEntity | null;
     area: number | null;
@@ -98,7 +100,7 @@ export declare class ProductWithoutCodeEntity implements ProductWithoutCode {
     imgPath: string;
     description: string | null;
     brand: string | null;
-    measurement: MeasurementTypeEntity | null;
+    measurement: MeasurementWithDataEntity | null;
     quantity: number | null;
     productType: ProductTypeEntity | null;
     zone: ZoneEntity | null;
@@ -111,6 +113,6 @@ export declare class ProductWithoutCodeEntity implements ProductWithoutCode {
     parkingLots: number | null;
     cylinderCapacity: number | null;
     mileage: number | null;
-    constructor(id: number, subcategory: SubcategoryEntity, imgPath: string, description: string | null, brand: string | null, measurement: MeasurementTypeEntity | null, quantity: number | null, productType: ProductTypeEntity | null, zone: ZoneEntity | null, area: number | null, condition: Condition | null, stratum: Estratum | null, antiquity: number | null, bathrooms: number | null, rooms: number | null, parkingLots: number | null, cylinderCapacity: number | null, mileage: number | null);
+    constructor(id: number, subcategory: SubcategoryEntity, imgPath: string, description: string | null, brand: string | null, measurement: MeasurementWithDataEntity | null, quantity: number | null, productType: ProductTypeEntity | null, zone: ZoneEntity | null, area: number | null, condition: Condition | null, stratum: Estratum | null, antiquity: number | null, bathrooms: number | null, rooms: number | null, parkingLots: number | null, cylinderCapacity: number | null, mileage: number | null);
 }
 export {};
