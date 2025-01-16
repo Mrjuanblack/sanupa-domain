@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProductWithoutCodeEntity = exports.ProductWithCodeEntity = exports.Estratum = exports.Condition = exports.OfferType = void 0;
+exports.ProductWithoutCodeEntity = exports.ProductWithCodeEntity = exports.NewProductWithoutCodeRequestEntity = exports.NewProductWithCodeRequestEntity = exports.Estratum = exports.Condition = exports.OfferType = void 0;
 var OfferType;
 (function (OfferType) {
     OfferType[OfferType["Sale"] = 1] = "Sale";
@@ -22,6 +22,41 @@ var Estratum;
     Estratum[Estratum["Five"] = 6] = "Five";
     Estratum[Estratum["Six"] = 7] = "Six";
 })(Estratum || (exports.Estratum = Estratum = {}));
+class NewProductWithCodeRequestEntity {
+    constructor(subcategoryId, imgPath, gtin, description, brand, gpc, quantity, measurement, market) {
+        this.subcategoryId = subcategoryId;
+        this.imgPath = imgPath;
+        this.gtin = gtin;
+        this.description = description;
+        this.brand = brand;
+        this.gpc = gpc;
+        this.quantity = quantity;
+        this.measurement = measurement;
+        this.market = market;
+    }
+}
+exports.NewProductWithCodeRequestEntity = NewProductWithCodeRequestEntity;
+class NewProductWithoutCodeRequestEntity {
+    constructor(subcategoryId, imgPath, description, brand, measurement, productType, zone, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage) {
+        this.subcategoryId = subcategoryId;
+        this.imgPath = imgPath;
+        this.description = description;
+        this.brand = brand;
+        this.measurement = measurement;
+        this.productType = productType;
+        this.zone = zone;
+        this.area = area;
+        this.condition = condition;
+        this.stratum = stratum;
+        this.antiquity = antiquity;
+        this.bathrooms = bathrooms;
+        this.rooms = rooms;
+        this.parkingLots = parkingLots;
+        this.cylinderCapacity = cylinderCapacity;
+        this.mileage = mileage;
+    }
+}
+exports.NewProductWithoutCodeRequestEntity = NewProductWithoutCodeRequestEntity;
 class ProductWithCodeEntity {
     constructor(id, subcategory, gtin, description, brand, gpc, imgPath, quantity, measurement, market, measurementAlt) {
         this.id = id;

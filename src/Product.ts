@@ -53,6 +53,40 @@ export interface NewProductWithCodeRequest {
     market: string
 }
 
+export class NewProductWithCodeRequestEntity implements NewProductWithCodeRequest {
+    subcategoryId: number
+    imgPath: string
+    gtin: string
+    description: string
+    brand: string
+    gpc: string
+    quantity: string
+    measurement: string
+    market: string
+
+    constructor(
+        subcategoryId: number,
+        imgPath: string,
+        gtin: string,
+        description: string,
+        brand: string,
+        gpc: string,
+        quantity: string,
+        measurement: string,
+        market: string
+    ) {
+        this.subcategoryId = subcategoryId
+        this.imgPath = imgPath
+        this.gtin = gtin
+        this.description = description
+        this.brand = brand
+        this.gpc = gpc
+        this.quantity = quantity
+        this.measurement = measurement
+        this.market = market
+    }
+}
+
 export interface ProductWithoutCode extends BaseProduct {
     description: string | null
     brand: string | null
@@ -73,7 +107,7 @@ export interface ProductWithoutCode extends BaseProduct {
 export interface NewProductWithoutCodeRequest {
     subcategoryId: number
     imgPath: string
-    
+
     description: string | null
     brand: string | null
     measurement: MeasurementWithDataEntity | null
@@ -88,6 +122,61 @@ export interface NewProductWithoutCodeRequest {
     parkingLots: number | null
     cylinderCapacity: number | null
     mileage: number | null
+}
+
+export class NewProductWithoutCodeRequestEntity implements NewProductWithoutCodeRequest {
+    subcategoryId: number
+    imgPath: string
+    description: string | null
+    brand: string | null
+    measurement: MeasurementWithDataEntity | null
+    productType: ProductTypeEntity | null
+    zone: ZoneEntity | null
+    area: number | null
+    condition: Condition | null
+    stratum: Estratum | null
+    antiquity: number | null
+    bathrooms: number | null
+    rooms: number | null
+    parkingLots: number | null
+    cylinderCapacity: number | null
+    mileage: number | null
+
+    constructor(
+        subcategoryId: number,
+        imgPath: string,
+        description: string | null,
+        brand: string | null,
+        measurement: MeasurementWithDataEntity | null,
+        productType: ProductTypeEntity | null,
+        zone: ZoneEntity | null,
+        area: number | null,
+        condition: Condition | null,
+        stratum: Estratum | null,
+        antiquity: number | null,
+        bathrooms: number | null,
+        rooms: number | null,
+        parkingLots: number | null,
+        cylinderCapacity: number | null,
+        mileage: number | null
+    ) {
+        this.subcategoryId = subcategoryId
+        this.imgPath = imgPath
+        this.description = description
+        this.brand = brand
+        this.measurement = measurement
+        this.productType = productType
+        this.zone = zone
+        this.area = area
+        this.condition = condition
+        this.stratum = stratum
+        this.antiquity = antiquity
+        this.bathrooms = bathrooms
+        this.rooms = rooms
+        this.parkingLots = parkingLots
+        this.cylinderCapacity = cylinderCapacity
+        this.mileage = mileage
+    }
 }
 
 export class ProductWithCodeEntity implements ProductWithCode {
