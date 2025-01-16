@@ -115,7 +115,6 @@ export class ProductWithoutCodeEntity implements ProductWithoutCode {
         public description: string | null,
         public brand: string | null,
         public measurement: MeasurementWithDataEntity | null,
-        public quantity: number | null,
         public productType: ProductTypeEntity | null,
         public zone: ZoneEntity | null,
         public area: number | null,

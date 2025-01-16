@@ -39,14 +39,13 @@ class ProductWithCodeEntity {
 }
 exports.ProductWithCodeEntity = ProductWithCodeEntity;
 class ProductWithoutCodeEntity {
-    constructor(id, subcategory, imgPath, description, brand, measurement, quantity, productType, zone, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage) {
+    constructor(id, subcategory, imgPath, description, brand, measurement, productType, zone, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage) {
         this.id = id;
         this.subcategory = subcategory;
         this.imgPath = imgPath;
         this.description = description;
         this.brand = brand;
         this.measurement = measurement;
-        this.quantity = quantity;
         this.productType = productType;
         this.zone = zone;
         this.area = area;
