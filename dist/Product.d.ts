@@ -74,8 +74,8 @@ export interface NewProductWithoutCodeRequest {
     description: string | null;
     brand: string | null;
     measurement: MeasurementWithDataEntity | null;
-    productType: ProductTypeEntity | null;
-    zone: ZoneEntity | null;
+    productTypeId: number | null;
+    zoneId: number | null;
     offerType: OfferType | null;
     area: number | null;
     condition: Condition | null;
