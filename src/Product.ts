@@ -8,10 +8,13 @@ export enum OfferType {
     Lease = 2,
     Rental = 3
 }
+
+export const OfferTypeList = Object.values(OfferType).filter(value => typeof value === 'number');
 export enum Condition {
     New = 1,
     Used = 2
 }
+export const ConditionList = Object.values(Condition).filter(value => typeof value === 'number');
 export enum Estratum {
     Zero = 1,
     One = 2,
@@ -21,6 +24,7 @@ export enum Estratum {
     Five = 6,
     Six = 7
 }
+export const EstratumList = Object.values(Estratum).filter(value => typeof value === 'number');
 
 interface BaseProduct {
     id: number
@@ -61,6 +65,7 @@ export interface ProductWithoutCode extends BaseProduct {
     measurement: MeasurementWithDataEntity | null
     productType: ProductTypeEntity | null
     zone: ZoneEntity | null
+    offerType: OfferType | null
     area: number | null
     condition: Condition | null
     stratum: Estratum | null
@@ -81,6 +86,7 @@ export interface NewProductWithoutCodeRequest {
     measurement: MeasurementWithDataEntity | null
     productType: ProductTypeEntity | null
     zone: ZoneEntity | null
+    offerType: OfferType | null
     area: number | null
     condition: Condition | null
     stratum: Estratum | null
@@ -121,6 +127,7 @@ export class ProductWithoutCodeEntity implements ProductWithoutCode {
         public measurement: MeasurementWithDataEntity | null,
         public productType: ProductTypeEntity | null,
         public zone: ZoneEntity | null,
+        public offerType: OfferType | null,
         public area: number | null,
         public condition: Condition | null,
         public stratum: Estratum | null,

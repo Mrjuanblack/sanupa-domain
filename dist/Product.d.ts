@@ -7,10 +7,12 @@ export declare enum OfferType {
     Lease = 2,
     Rental = 3
 }
+export declare const OfferTypeList: OfferType[];
 export declare enum Condition {
     New = 1,
     Used = 2
 }
+export declare const ConditionList: Condition[];
 export declare enum Estratum {
     Zero = 1,
     One = 2,
@@ -20,6 +22,7 @@ export declare enum Estratum {
     Five = 6,
     Six = 7
 }
+export declare const EstratumList: Estratum[];
 interface BaseProduct {
     id: number;
     name: string;
@@ -54,6 +57,7 @@ export interface ProductWithoutCode extends BaseProduct {
     measurement: MeasurementWithDataEntity | null;
     productType: ProductTypeEntity | null;
     zone: ZoneEntity | null;
+    offerType: OfferType | null;
     area: number | null;
     condition: Condition | null;
     stratum: Estratum | null;
@@ -72,6 +76,7 @@ export interface NewProductWithoutCodeRequest {
     measurement: MeasurementWithDataEntity | null;
     productType: ProductTypeEntity | null;
     zone: ZoneEntity | null;
+    offerType: OfferType | null;
     area: number | null;
     condition: Condition | null;
     stratum: Estratum | null;
@@ -107,6 +112,7 @@ export declare class ProductWithoutCodeEntity implements ProductWithoutCode {
     measurement: MeasurementWithDataEntity | null;
     productType: ProductTypeEntity | null;
     zone: ZoneEntity | null;
+    offerType: OfferType | null;
     area: number | null;
     condition: Condition | null;
     stratum: Estratum | null;
@@ -116,6 +122,6 @@ export declare class ProductWithoutCodeEntity implements ProductWithoutCode {
     parkingLots: number | null;
     cylinderCapacity: number | null;
     mileage: number | null;
-    constructor(id: number, name: string, subcategory: SubcategoryEntity, imgPath: string, description: string | null, brand: string | null, measurement: MeasurementWithDataEntity | null, productType: ProductTypeEntity | null, zone: ZoneEntity | null, area: number | null, condition: Condition | null, stratum: Estratum | null, antiquity: number | null, bathrooms: number | null, rooms: number | null, parkingLots: number | null, cylinderCapacity: number | null, mileage: number | null);
+    constructor(id: number, name: string, subcategory: SubcategoryEntity, imgPath: string, description: string | null, brand: string | null, measurement: MeasurementWithDataEntity | null, productType: ProductTypeEntity | null, zone: ZoneEntity | null, offerType: OfferType | null, area: number | null, condition: Condition | null, stratum: Estratum | null, antiquity: number | null, bathrooms: number | null, rooms: number | null, parkingLots: number | null, cylinderCapacity: number | null, mileage: number | null);
 }
 export {};

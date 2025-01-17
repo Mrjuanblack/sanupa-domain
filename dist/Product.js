@@ -1,17 +1,19 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProductWithoutCodeEntity = exports.ProductWithCodeEntity = exports.Estratum = exports.Condition = exports.OfferType = void 0;
+exports.ProductWithoutCodeEntity = exports.ProductWithCodeEntity = exports.EstratumList = exports.Estratum = exports.ConditionList = exports.Condition = exports.OfferTypeList = exports.OfferType = void 0;
 var OfferType;
 (function (OfferType) {
     OfferType[OfferType["Sale"] = 1] = "Sale";
     OfferType[OfferType["Lease"] = 2] = "Lease";
     OfferType[OfferType["Rental"] = 3] = "Rental";
 })(OfferType || (exports.OfferType = OfferType = {}));
+exports.OfferTypeList = Object.values(OfferType).filter(value => typeof value === 'number');
 var Condition;
 (function (Condition) {
     Condition[Condition["New"] = 1] = "New";
     Condition[Condition["Used"] = 2] = "Used";
 })(Condition || (exports.Condition = Condition = {}));
+exports.ConditionList = Object.values(Condition).filter(value => typeof value === 'number');
 var Estratum;
 (function (Estratum) {
     Estratum[Estratum["Zero"] = 1] = "Zero";
@@ -22,6 +24,7 @@ var Estratum;
     Estratum[Estratum["Five"] = 6] = "Five";
     Estratum[Estratum["Six"] = 7] = "Six";
 })(Estratum || (exports.Estratum = Estratum = {}));
+exports.EstratumList = Object.values(Estratum).filter(value => typeof value === 'number');
 class ProductWithCodeEntity {
     constructor(id, name, subcategory, gtin, description, brand, gpc, imgPath, quantity, measurement, market, measurementAlt) {
         this.id = id;
@@ -40,7 +43,7 @@ class ProductWithCodeEntity {
 }
 exports.ProductWithCodeEntity = ProductWithCodeEntity;
 class ProductWithoutCodeEntity {
-    constructor(id, name, subcategory, imgPath, description, brand, measurement, productType, zone, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage) {
+    constructor(id, name, subcategory, imgPath, description, brand, measurement, productType, zone, offerType, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage) {
         this.id = id;
         this.name = name;
         this.subcategory = subcategory;
@@ -50,6 +53,7 @@ class ProductWithoutCodeEntity {
         this.measurement = measurement;
         this.productType = productType;
         this.zone = zone;
+        this.offerType = offerType;
         this.area = area;
         this.condition = condition;
         this.stratum = stratum;
