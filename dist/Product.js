@@ -23,8 +23,9 @@ var Estratum;
     Estratum[Estratum["Six"] = 7] = "Six";
 })(Estratum || (exports.Estratum = Estratum = {}));
 class ProductWithCodeEntity {
-    constructor(id, subcategory, gtin, description, brand, gpc, imgPath, quantity, measurement, market, measurementAlt) {
+    constructor(id, name, subcategory, gtin, description, brand, gpc, imgPath, quantity, measurement, market, measurementAlt) {
         this.id = id;
+        this.name = name;
         this.subcategory = subcategory;
         this.gtin = gtin;
         this.description = description;
@@ -39,8 +40,9 @@ class ProductWithCodeEntity {
 }
 exports.ProductWithCodeEntity = ProductWithCodeEntity;
 class ProductWithoutCodeEntity {
-    constructor(id, subcategory, imgPath, description, brand, measurement, productType, zone, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage) {
+    constructor(id, name, subcategory, imgPath, description, brand, measurement, productType, zone, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage) {
         this.id = id;
+        this.name = name;
         this.subcategory = subcategory;
         this.imgPath = imgPath;
         this.description = description;

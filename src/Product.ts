@@ -24,6 +24,7 @@ export enum Estratum {
 
 interface BaseProduct {
     id: number
+    name: string
     subcategory: SubcategoryEntity
     imgPath: string
 }
@@ -41,6 +42,7 @@ export interface ProductWithCode extends BaseProduct {
     measurementAlt: MeasurementWithDataEntity | null
 }
 export interface NewProductWithCodeRequest {
+    name: string
     subcategoryId: number
     imgPath: string
 
@@ -71,6 +73,7 @@ export interface ProductWithoutCode extends BaseProduct {
 }
 
 export interface NewProductWithoutCodeRequest {
+    name: string
     subcategoryId: number
 
     description: string | null
@@ -92,6 +95,7 @@ export interface NewProductWithoutCodeRequest {
 export class ProductWithCodeEntity implements ProductWithCode {
     constructor(
         public id: number,
+        public name: string,
         public subcategory: SubcategoryEntity,
         public gtin: string,
         public description: string,
@@ -109,6 +113,7 @@ export class ProductWithoutCodeEntity implements ProductWithoutCode {
 
     constructor(
         public id: number,
+        public name: string,
         public subcategory: SubcategoryEntity,
         public imgPath: string,
         public description: string | null,
