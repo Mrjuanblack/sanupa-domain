@@ -21,13 +21,3 @@ export class MeasurementTypeEntity implements MeasurementType {
         this.name = name;
     }
 }
-
-export class MeasurementWithDataEntity implements MeasurementWithData {
-    measurementType: MeasurementTypeEntity
-    quantity: number
-
-    constructor(measurementType: MeasurementTypeEntity, quantity: number) {
-        this.measurementType = measurementType
-        this.quantity = quantity
-    }
-}

@@ -1,5 +1,5 @@
 import { ZoneEntity } from "./Location"
-import { MeasurementTypeEntity, MeasurementWithDataEntity } from "./MeasurementType"
+import { MeasurementType, MeasurementTypeEntity } from "./MeasurementType"
 import { ProductTypeEntity } from "./ProductType"
 import { SubcategoryEntity } from "./Subcategory"
 
@@ -43,7 +43,8 @@ export interface ProductWithCode extends BaseProduct {
     market: string
 
     //Measurement data that will be used if the measurement and quantity data is updated
-    measurementAlt: MeasurementWithDataEntity | null
+    measurementType: MeasurementType | null
+    measurementQuantity: number | null
 }
 export interface NewProductWithCodeRequest {
     name: string
@@ -62,7 +63,8 @@ export interface NewProductWithCodeRequest {
 export interface ProductWithoutCode extends BaseProduct {
     description: string | null
     brand: string | null
-    measurement: MeasurementWithDataEntity | null
+    measurementType: MeasurementType | null
+    measurementQuantity: number | null
     productType: ProductTypeEntity | null
     zone: ZoneEntity | null
     offerType: OfferType | null
@@ -83,7 +85,8 @@ export interface NewProductWithoutCodeRequest {
 
     description: string | null
     brand: string | null
-    measurement: MeasurementWithDataEntity | null
+    measurementTypeId: number | null
+    measurementQuantity: number | null
     productTypeId: number | null
     zoneId: number | null
     offerType: OfferType | null
@@ -111,7 +114,8 @@ export class ProductWithCodeEntity implements ProductWithCode {
         public quantity: string,
         public measurement: string,
         public market: string,
-        public measurementAlt: MeasurementWithDataEntity | null
+        public measurementType: MeasurementTypeEntity | null,
+        public measurementQuantity: number | null
     ) { }
 }
 
@@ -124,7 +128,8 @@ export class ProductWithoutCodeEntity implements ProductWithoutCode {
         public imgPath: string,
         public description: string | null,
         public brand: string | null,
-        public measurement: MeasurementWithDataEntity | null,
+        public measurementType: MeasurementTypeEntity | null,
+        public measurementQuantity: number | null,
         public productType: ProductTypeEntity | null,
         public zone: ZoneEntity | null,
         public offerType: OfferType | null,

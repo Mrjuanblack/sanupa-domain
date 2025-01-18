@@ -1,5 +1,5 @@
 import { ZoneEntity } from "./Location";
-import { MeasurementWithDataEntity } from "./MeasurementType";
+import { MeasurementType, MeasurementTypeEntity } from "./MeasurementType";
 import { ProductTypeEntity } from "./ProductType";
 import { SubcategoryEntity } from "./Subcategory";
 export declare enum OfferType {
@@ -37,7 +37,8 @@ export interface ProductWithCode extends BaseProduct {
     quantity: string;
     measurement: string;
     market: string;
-    measurementAlt: MeasurementWithDataEntity | null;
+    measurementType: MeasurementType | null;
+    measurementQuantity: number | null;
 }
 export interface NewProductWithCodeRequest {
     name: string;
@@ -54,7 +55,8 @@ export interface NewProductWithCodeRequest {
 export interface ProductWithoutCode extends BaseProduct {
     description: string | null;
     brand: string | null;
-    measurement: MeasurementWithDataEntity | null;
+    measurementType: MeasurementType | null;
+    measurementQuantity: number | null;
     productType: ProductTypeEntity | null;
     zone: ZoneEntity | null;
     offerType: OfferType | null;
@@ -73,7 +75,8 @@ export interface NewProductWithoutCodeRequest {
     subcategoryId: number;
     description: string | null;
     brand: string | null;
-    measurement: MeasurementWithDataEntity | null;
+    measurementTypeId: number | null;
+    measurementQuantity: number | null;
     productTypeId: number | null;
     zoneId: number | null;
     offerType: OfferType | null;
@@ -99,8 +102,9 @@ export declare class ProductWithCodeEntity implements ProductWithCode {
     quantity: string;
     measurement: string;
     market: string;
-    measurementAlt: MeasurementWithDataEntity | null;
-    constructor(id: number, name: string, subcategory: SubcategoryEntity, gtin: string, description: string, brand: string, gpc: string, imgPath: string, quantity: string, measurement: string, market: string, measurementAlt: MeasurementWithDataEntity | null);
+    measurementType: MeasurementTypeEntity | null;
+    measurementQuantity: number | null;
+    constructor(id: number, name: string, subcategory: SubcategoryEntity, gtin: string, description: string, brand: string, gpc: string, imgPath: string, quantity: string, measurement: string, market: string, measurementType: MeasurementTypeEntity | null, measurementQuantity: number | null);
 }
 export declare class ProductWithoutCodeEntity implements ProductWithoutCode {
     id: number;
@@ -109,7 +113,8 @@ export declare class ProductWithoutCodeEntity implements ProductWithoutCode {
     imgPath: string;
     description: string | null;
     brand: string | null;
-    measurement: MeasurementWithDataEntity | null;
+    measurementType: MeasurementTypeEntity | null;
+    measurementQuantity: number | null;
     productType: ProductTypeEntity | null;
     zone: ZoneEntity | null;
     offerType: OfferType | null;
@@ -122,6 +127,6 @@ export declare class ProductWithoutCodeEntity implements ProductWithoutCode {
     parkingLots: number | null;
     cylinderCapacity: number | null;
     mileage: number | null;
-    constructor(id: number, name: string, subcategory: SubcategoryEntity, imgPath: string, description: string | null, brand: string | null, measurement: MeasurementWithDataEntity | null, productType: ProductTypeEntity | null, zone: ZoneEntity | null, offerType: OfferType | null, area: number | null, condition: Condition | null, stratum: Estratum | null, antiquity: number | null, bathrooms: number | null, rooms: number | null, parkingLots: number | null, cylinderCapacity: number | null, mileage: number | null);
+    constructor(id: number, name: string, subcategory: SubcategoryEntity, imgPath: string, description: string | null, brand: string | null, measurementType: MeasurementTypeEntity | null, measurementQuantity: number | null, productType: ProductTypeEntity | null, zone: ZoneEntity | null, offerType: OfferType | null, area: number | null, condition: Condition | null, stratum: Estratum | null, antiquity: number | null, bathrooms: number | null, rooms: number | null, parkingLots: number | null, cylinderCapacity: number | null, mileage: number | null);
 }
 export {};

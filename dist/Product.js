@@ -26,7 +26,7 @@ var Estratum;
 })(Estratum || (exports.Estratum = Estratum = {}));
 exports.EstratumList = Object.values(Estratum).filter(value => typeof value === 'number');
 class ProductWithCodeEntity {
-    constructor(id, name, subcategory, gtin, description, brand, gpc, imgPath, quantity, measurement, market, measurementAlt) {
+    constructor(id, name, subcategory, gtin, description, brand, gpc, imgPath, quantity, measurement, market, measurementType, measurementQuantity) {
         this.id = id;
         this.name = name;
         this.subcategory = subcategory;
@@ -38,19 +38,21 @@ class ProductWithCodeEntity {
         this.quantity = quantity;
         this.measurement = measurement;
         this.market = market;
-        this.measurementAlt = measurementAlt;
+        this.measurementType = measurementType;
+        this.measurementQuantity = measurementQuantity;
     }
 }
 exports.ProductWithCodeEntity = ProductWithCodeEntity;
 class ProductWithoutCodeEntity {
-    constructor(id, name, subcategory, imgPath, description, brand, measurement, productType, zone, offerType, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage) {
+    constructor(id, name, subcategory, imgPath, description, brand, measurementType, measurementQuantity, productType, zone, offerType, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage) {
         this.id = id;
         this.name = name;
         this.subcategory = subcategory;
         this.imgPath = imgPath;
         this.description = description;
         this.brand = brand;
-        this.measurement = measurement;
+        this.measurementType = measurementType;
+        this.measurementQuantity = measurementQuantity;
         this.productType = productType;
         this.zone = zone;
         this.offerType = offerType;

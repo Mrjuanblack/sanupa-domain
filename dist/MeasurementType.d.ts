@@ -14,8 +14,3 @@ export declare class MeasurementTypeEntity implements MeasurementType {
     name: string;
     constructor(id: number, name: string);
 }
-export declare class MeasurementWithDataEntity implements MeasurementWithData {
-    measurementType: MeasurementTypeEntity;
-    quantity: number;
-    constructor(measurementType: MeasurementTypeEntity, quantity: number);
-}
