@@ -8,13 +8,31 @@ export enum OfferType {
     Lease = 2,
     Rental = 3
 }
-
 export const OfferTypeList = Object.values(OfferType).filter(value => typeof value === 'number');
+export function getOfferTypeString(offerType: OfferType): string {
+    switch(offerType) {
+        case OfferType.Sale:
+            return "Venta";
+        case OfferType.Lease:
+            return "Arriendo";
+        case OfferType.Rental:
+            return "Alquiler";
+    }
+}
+
 export enum Condition {
     New = 1,
     Used = 2
 }
 export const ConditionList = Object.values(Condition).filter(value => typeof value === 'number');
+export function getConditionString(condition: Condition): string {
+    switch(condition) {
+        case Condition.New:
+            return "Nuevo";
+        case Condition.Used:
+            return "Usado";
+    }
+}
 export enum Estratum {
     Zero = 1,
     One = 2,
@@ -25,6 +43,24 @@ export enum Estratum {
     Six = 7
 }
 export const EstratumList = Object.values(Estratum).filter(value => typeof value === 'number');
+export function getEstratumString(estratum: Estratum): string {
+    switch(estratum) {
+        case Estratum.Zero:
+            return "Estrato 0";
+        case Estratum.One:
+            return "Estrato 1";
+        case Estratum.Two:
+            return "Estrato 2";
+        case Estratum.Three:
+            return "Estrato 3";
+        case Estratum.Four:
+            return "Estrato 4";
+        case Estratum.Five:
+            return "Estrato 5";
+        case Estratum.Six:
+            return "Estrato 6";
+    }
+}
 
 interface BaseProduct {
     id: number

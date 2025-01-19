@@ -1,6 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProductWithoutCodeEntity = exports.ProductWithCodeEntity = exports.EstratumList = exports.Estratum = exports.ConditionList = exports.Condition = exports.OfferTypeList = exports.OfferType = void 0;
+exports.getOfferTypeString = getOfferTypeString;
+exports.getConditionString = getConditionString;
+exports.getEstratumString = getEstratumString;
 var OfferType;
 (function (OfferType) {
     OfferType[OfferType["Sale"] = 1] = "Sale";
@@ -8,12 +11,30 @@ var OfferType;
     OfferType[OfferType["Rental"] = 3] = "Rental";
 })(OfferType || (exports.OfferType = OfferType = {}));
 exports.OfferTypeList = Object.values(OfferType).filter(value => typeof value === 'number');
+function getOfferTypeString(offerType) {
+    switch (offerType) {
+        case OfferType.Sale:
+            return "Venta";
+        case OfferType.Lease:
+            return "Arriendo";
+        case OfferType.Rental:
+            return "Alquiler";
+    }
+}
 var Condition;
 (function (Condition) {
     Condition[Condition["New"] = 1] = "New";
     Condition[Condition["Used"] = 2] = "Used";
 })(Condition || (exports.Condition = Condition = {}));
 exports.ConditionList = Object.values(Condition).filter(value => typeof value === 'number');
+function getConditionString(condition) {
+    switch (condition) {
+        case Condition.New:
+            return "Nuevo";
+        case Condition.Used:
+            return "Usado";
+    }
+}
 var Estratum;
 (function (Estratum) {
     Estratum[Estratum["Zero"] = 1] = "Zero";
@@ -25,6 +46,24 @@ var Estratum;
     Estratum[Estratum["Six"] = 7] = "Six";
 })(Estratum || (exports.Estratum = Estratum = {}));
 exports.EstratumList = Object.values(Estratum).filter(value => typeof value === 'number');
+function getEstratumString(estratum) {
+    switch (estratum) {
+        case Estratum.Zero:
+            return "Estrato 0";
+        case Estratum.One:
+            return "Estrato 1";
+        case Estratum.Two:
+            return "Estrato 2";
+        case Estratum.Three:
+            return "Estrato 3";
+        case Estratum.Four:
+            return "Estrato 4";
+        case Estratum.Five:
+            return "Estrato 5";
+        case Estratum.Six:
+            return "Estrato 6";
+    }
+}
 class ProductWithCodeEntity {
     constructor(id, name, subcategory, gtin, description, brand, gpc, imgPath, quantity, measurement, market, measurementType, measurementQuantity) {
         this.id = id;

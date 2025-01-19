@@ -8,11 +8,13 @@ export declare enum OfferType {
     Rental = 3
 }
 export declare const OfferTypeList: OfferType[];
+export declare function getOfferTypeString(offerType: OfferType): string;
 export declare enum Condition {
     New = 1,
     Used = 2
 }
 export declare const ConditionList: Condition[];
+export declare function getConditionString(condition: Condition): string;
 export declare enum Estratum {
     Zero = 1,
     One = 2,
@@ -23,6 +25,7 @@ export declare enum Estratum {
     Six = 7
 }
 export declare const EstratumList: Estratum[];
+export declare function getEstratumString(estratum: Estratum): string;
 interface BaseProduct {
     id: number;
     name: string;
