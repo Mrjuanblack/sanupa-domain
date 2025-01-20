@@ -96,7 +96,10 @@ export interface NewProductWithCodeRequest {
     market: string
 }
 export interface NewProductJustCode {
+    name: string
     code: string
+
+    subcategoryId: number
 }
 
 export interface ProductWithoutCode extends BaseProduct {
