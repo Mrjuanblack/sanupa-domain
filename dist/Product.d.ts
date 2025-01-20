@@ -55,6 +55,9 @@ export interface NewProductWithCodeRequest {
     measurement: string;
     market: string;
 }
+export interface NewProductJustCode {
+    code: string;
+}
 export interface ProductWithoutCode extends BaseProduct {
     description: string | null;
     brand: string | null;
