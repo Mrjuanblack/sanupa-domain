@@ -4,6 +4,8 @@ export enum UserRole {
     Partner = 3,
 }
 
+// TODO: Add field for user img
+
 type UserRoleEnumToStringMap = {
     [key in UserRole]: string;
 };
@@ -35,6 +37,11 @@ export interface UserMetadata {
     email: string | null
     phoneNumber: string
     role: UserRole
+}
+
+export interface SimpleUser {
+    id: number,
+    name: string
 }
 
 export function isUserCookie(o: any): o is UserMetadata {

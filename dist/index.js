@@ -23,3 +23,4 @@ __exportStar(require("./Product"), exports);
 __exportStar(require("./ProductType"), exports);
 __exportStar(require("./Location"), exports);
 __exportStar(require("./MeasurementType"), exports);
+__exportStar(require("./PartnerProduct"), exports);

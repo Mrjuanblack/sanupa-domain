@@ -19,6 +19,10 @@ export interface UserMetadata {
     phoneNumber: string;
     role: UserRole;
 }
+export interface SimpleUser {
+    id: number;
+    name: string;
+}
 export declare function isUserCookie(o: any): o is UserMetadata;
 export interface NewUserRequest {
     name: string;
