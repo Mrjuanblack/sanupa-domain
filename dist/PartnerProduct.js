@@ -18,8 +18,7 @@ class UpdatePartnerProductRequestEntity {
 }
 exports.UpdatePartnerProductRequestEntity = UpdatePartnerProductRequestEntity;
 class PartnerProductEntiy {
-    constructor(id, product, partner, price) {
-        this.id = id;
+    constructor(product, partner, price) {
         this.product = product;
         this.partner = partner;
         this.price = price;

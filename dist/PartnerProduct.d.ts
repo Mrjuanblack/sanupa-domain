@@ -23,15 +23,13 @@ export declare class UpdatePartnerProductRequestEntity implements UpdatePartnerP
     constructor(productId: number, partnerId: number, price: number);
 }
 export interface PartnerProduct {
-    id: number;
     product: ProductWithCodeEntity | ProductWithoutCodeEntity;
     partner: SimpleUser;
     price: number;
 }
 export declare class PartnerProductEntiy implements PartnerProduct {
-    id: number;
     product: ProductWithCodeEntity | ProductWithoutCodeEntity;
     partner: SimpleUser;
     price: number;
-    constructor(id: number, product: ProductWithCodeEntity | ProductWithoutCodeEntity, partner: SimpleUser, price: number);
+    constructor(product: ProductWithCodeEntity | ProductWithoutCodeEntity, partner: SimpleUser, price: number);
 }
