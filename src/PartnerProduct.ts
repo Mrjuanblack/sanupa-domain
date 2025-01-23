@@ -1,6 +1,20 @@
 import { ProductWithCodeEntity, ProductWithoutCodeEntity } from "./Product"
 import { SimpleUser } from "./User"
 
+export interface NewPartnerProductRequest {
+    productId: number,
+    partnerId: number,
+    price: number
+}
+
+export class NewPartnerProductRequestEntity implements NewPartnerProductRequest {
+    constructor(
+        public productId: number,
+        public partnerId: number,
+        public price: number
+    ) { }
+}
+
 export interface PartnerProduct {
     id: number
     product: ProductWithCodeEntity | ProductWithoutCodeEntity,
@@ -14,5 +28,5 @@ export class PartnerProductEntiy implements PartnerProduct {
         public product: ProductWithCodeEntity | ProductWithoutCodeEntity,
         public partner: SimpleUser,
         public price: number
-    ) {}
+    ) { }
 }

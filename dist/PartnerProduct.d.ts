@@ -1,5 +1,16 @@
 import { ProductWithCodeEntity, ProductWithoutCodeEntity } from "./Product";
 import { SimpleUser } from "./User";
+export interface NewPartnerProductRequest {
+    productId: number;
+    partnerId: number;
+    price: number;
+}
+export declare class NewPartnerProductRequestEntity implements NewPartnerProductRequest {
+    productId: number;
+    partnerId: number;
+    price: number;
+    constructor(productId: number, partnerId: number, price: number);
+}
 export interface PartnerProduct {
     id: number;
     product: ProductWithCodeEntity | ProductWithoutCodeEntity;
