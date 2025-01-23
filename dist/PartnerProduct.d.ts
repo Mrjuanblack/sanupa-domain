@@ -11,6 +11,17 @@ export declare class NewPartnerProductRequestEntity implements NewPartnerProduct
     price: number;
     constructor(productId: number, partnerId: number, price: number);
 }
+export interface UpdatePartnerProductRequest {
+    productId: number;
+    partnerId: number;
+    price: number;
+}
+export declare class UpdatePartnerProductRequestEntity implements UpdatePartnerProductRequest {
+    productId: number;
+    partnerId: number;
+    price: number;
+    constructor(productId: number, partnerId: number, price: number);
+}
 export interface PartnerProduct {
     id: number;
     product: ProductWithCodeEntity | ProductWithoutCodeEntity;

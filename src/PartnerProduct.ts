@@ -15,6 +15,20 @@ export class NewPartnerProductRequestEntity implements NewPartnerProductRequest 
     ) { }
 }
 
+export interface UpdatePartnerProductRequest {
+    productId: number,
+    partnerId: number,
+    price: number
+}
+
+export class UpdatePartnerProductRequestEntity implements UpdatePartnerProductRequest {
+    constructor(
+        public productId: number,
+        public partnerId: number,
+        public price: number
+    ) { }
+}
+
 export interface PartnerProduct {
     id: number
     product: ProductWithCodeEntity | ProductWithoutCodeEntity,
