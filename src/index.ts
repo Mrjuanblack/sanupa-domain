@@ -8,3 +8,4 @@ export * from './ProductType';
 export * from './Location';
 export * from './MeasurementType';
 export * from './PartnerProduct';
+export * from './Pagination';
