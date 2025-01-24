@@ -19,6 +19,14 @@ export interface UserMetadata {
     phoneNumber: string;
     role: UserRole;
 }
+export interface UpdateUserRequest {
+    id: number;
+    name: string;
+    email: string | null;
+    phoneNumber: string | null;
+    role: UserRole;
+    allowedSubcategories: number[] | null;
+}
 export interface SimpleUser {
     id: number;
     name: string;
@@ -32,6 +40,15 @@ export interface NewUserRequest {
 export interface LoginRequest {
     phoneNumber: string;
     password: string;
+}
+export declare class UpdateUserRequestEntity implements UpdateUserRequest {
+    id: number;
+    name: string;
+    email: string | null;
+    phoneNumber: string | null;
+    role: UserRole;
+    allowedSubcategories: number[] | null;
+    constructor(id: number, name: string, email: string | null, phoneNumber: string | null, role: UserRole, allowedSubcategories: number[] | null);
 }
 export declare class UserEntity implements User {
     id: number;

@@ -39,6 +39,15 @@ export interface UserMetadata {
     role: UserRole
 }
 
+export interface UpdateUserRequest {
+    id: number
+    name: string
+    email: string | null
+    phoneNumber: string | null
+    role: UserRole
+    allowedSubcategories: number[] | null
+}
+
 export interface SimpleUser {
     id: number,
     name: string
@@ -68,6 +77,17 @@ export interface NewUserRequest {
 export interface LoginRequest {
     phoneNumber: string
     password: string
+}
+
+export class UpdateUserRequestEntity implements UpdateUserRequest {
+    constructor(
+        public id: number,
+        public name: string,
+        public email: string | null,
+        public phoneNumber: string | null,
+        public role: UserRole,
+        public allowedSubcategories: number[] | null
+    ) { }
 }
 
 export class UserEntity implements User {
