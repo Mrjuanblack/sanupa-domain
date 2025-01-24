@@ -19,13 +19,8 @@ export interface UserMetadata {
     phoneNumber: string;
     role: UserRole;
 }
-export interface UpdateUserRequest {
-    id: number;
-    name: string;
-    email: string | null;
-    phoneNumber: string;
-    role: UserRole;
-    allowedSubcategories: number[] | null;
+export interface UpdatePermissions {
+    allowedSubcategoriesId: number[];
 }
 export interface SimpleUser {
     id: number;
@@ -41,14 +36,9 @@ export interface LoginRequest {
     phoneNumber: string;
     password: string;
 }
-export declare class UpdateUserRequestEntity implements UpdateUserRequest {
-    id: number;
-    name: string;
-    email: string | null;
-    phoneNumber: string;
-    role: UserRole;
-    allowedSubcategories: number[] | null;
-    constructor(id: number, name: string, email: string | null, phoneNumber: string, role: UserRole, allowedSubcategories: number[] | null);
+export declare class UpdatePermissionsEntity implements UpdatePermissions {
+    allowedSubcategoriesId: number[];
+    constructor(allowedSubcategoriesId: number[]);
 }
 export declare class UserEntity implements User {
     id: number;

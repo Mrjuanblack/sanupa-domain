@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserEntity = exports.UpdateUserRequestEntity = exports.UserRole = void 0;
+exports.UserEntity = exports.UpdatePermissionsEntity = exports.UserRole = void 0;
 exports.getUserRoleString = getUserRoleString;
 exports.isUserCookie = isUserCookie;
 var UserRole;
@@ -29,17 +29,12 @@ function isUserCookie(o) {
         'phoneNumber' in o &&
         typeof o.phoneNumber === 'string');
 }
-class UpdateUserRequestEntity {
-    constructor(id, name, email, phoneNumber, role, allowedSubcategories) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-        this.role = role;
-        this.allowedSubcategories = allowedSubcategories;
+class UpdatePermissionsEntity {
+    constructor(allowedSubcategoriesId) {
+        this.allowedSubcategoriesId = allowedSubcategoriesId;
     }
 }
-exports.UpdateUserRequestEntity = UpdateUserRequestEntity;
+exports.UpdatePermissionsEntity = UpdatePermissionsEntity;
 class UserEntity {
     constructor(id, name, email, phoneNumber, password, role) {
         this.id = id;
