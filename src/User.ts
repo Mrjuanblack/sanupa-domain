@@ -43,7 +43,7 @@ export interface UpdateUserRequest {
     id: number
     name: string
     email: string | null
-    phoneNumber: string | null
+    phoneNumber: string
     role: UserRole
     allowedSubcategories: number[] | null
 }
@@ -84,7 +84,7 @@ export class UpdateUserRequestEntity implements UpdateUserRequest {
         public id: number,
         public name: string,
         public email: string | null,
-        public phoneNumber: string | null,
+        public phoneNumber: string,
         public role: UserRole,
         public allowedSubcategories: number[] | null
     ) { }

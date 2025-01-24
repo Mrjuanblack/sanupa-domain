@@ -23,7 +23,7 @@ export interface UpdateUserRequest {
     id: number;
     name: string;
     email: string | null;
-    phoneNumber: string | null;
+    phoneNumber: string;
     role: UserRole;
     allowedSubcategories: number[] | null;
 }
@@ -45,10 +45,10 @@ export declare class UpdateUserRequestEntity implements UpdateUserRequest {
     id: number;
     name: string;
     email: string | null;
-    phoneNumber: string | null;
+    phoneNumber: string;
     role: UserRole;
     allowedSubcategories: number[] | null;
-    constructor(id: number, name: string, email: string | null, phoneNumber: string | null, role: UserRole, allowedSubcategories: number[] | null);
+    constructor(id: number, name: string, email: string | null, phoneNumber: string, role: UserRole, allowedSubcategories: number[] | null);
 }
 export declare class UserEntity implements User {
     id: number;
