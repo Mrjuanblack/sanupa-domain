@@ -40,6 +40,7 @@ export interface UserMetadata {
 }
 
 export interface UpdatePermissions {
+    id: number
     allowedSubcategoriesId: number[]
 }
 
@@ -75,7 +76,7 @@ export interface LoginRequest {
 }
 
 export class UpdatePermissionsEntity implements UpdatePermissions {
-    constructor(public allowedSubcategoriesId: number[]) { }
+    constructor(public id: number, public allowedSubcategoriesId: number[]) { }
 }
 
 export class UserEntity implements User {

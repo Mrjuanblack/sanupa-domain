@@ -30,7 +30,8 @@ function isUserCookie(o) {
         typeof o.phoneNumber === 'string');
 }
 class UpdatePermissionsEntity {
-    constructor(allowedSubcategoriesId) {
+    constructor(id, allowedSubcategoriesId) {
+        this.id = id;
         this.allowedSubcategoriesId = allowedSubcategoriesId;
     }
 }

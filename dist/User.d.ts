@@ -20,6 +20,7 @@ export interface UserMetadata {
     role: UserRole;
 }
 export interface UpdatePermissions {
+    id: number;
     allowedSubcategoriesId: number[];
 }
 export interface SimpleUser {
@@ -37,8 +38,9 @@ export interface LoginRequest {
     password: string;
 }
 export declare class UpdatePermissionsEntity implements UpdatePermissions {
+    id: number;
     allowedSubcategoriesId: number[];
-    constructor(allowedSubcategoriesId: number[]);
+    constructor(id: number, allowedSubcategoriesId: number[]);
 }
 export declare class UserEntity implements User {
     id: number;
