@@ -98,6 +98,65 @@ export interface NewProductWithoutCodeRequest {
     cylinderCapacity: number | null;
     mileage: number | null;
 }
+export interface UpdateProductWithoutCodeRequest {
+    name: string;
+    description: string | null;
+    brand: string | null;
+    measurementTypeId: number | null;
+    measurementQuantity: number | null;
+    productTypeId: number | null;
+    zoneId: number | null;
+    offerType: OfferType | null;
+    area: number | null;
+    condition: Condition | null;
+    stratum: Estratum | null;
+    antiquity: number | null;
+    bathrooms: number | null;
+    rooms: number | null;
+    parkingLots: number | null;
+    cylinderCapacity: number | null;
+    mileage: number | null;
+}
+export declare class UpdateProductWithoutCodeRequestEntity implements UpdateProductWithoutCodeRequest {
+    name: string;
+    description: string | null;
+    brand: string | null;
+    measurementTypeId: number | null;
+    measurementQuantity: number | null;
+    productTypeId: number | null;
+    zoneId: number | null;
+    offerType: OfferType | null;
+    area: number | null;
+    condition: Condition | null;
+    stratum: Estratum | null;
+    antiquity: number | null;
+    bathrooms: number | null;
+    rooms: number | null;
+    parkingLots: number | null;
+    cylinderCapacity: number | null;
+    mileage: number | null;
+    constructor(name: string, description: string | null, brand: string | null, measurementTypeId: number | null, measurementQuantity: number | null, productTypeId: number | null, zoneId: number | null, offerType: OfferType | null, area: number | null, condition: Condition | null, stratum: Estratum | null, antiquity: number | null, bathrooms: number | null, rooms: number | null, parkingLots: number | null, cylinderCapacity: number | null, mileage: number | null);
+}
+export interface UpdateProductWithCodeRequest {
+    id: number;
+    description: string;
+    brand: string;
+    quantity: string;
+    measurementId: number | null;
+    measurementQuantity: number | null;
+    market: string;
+}
+export declare class UpdateProductWithCodeRequestEntity {
+    id: number;
+    imgPath: string;
+    description: string;
+    brand: string;
+    quantity: string;
+    measurementId: number | null;
+    measurementQuantity: number | null;
+    market: string;
+    constructor(id: number, imgPath: string, description: string, brand: string, quantity: string, measurementId: number | null, measurementQuantity: number | null, market: string);
+}
 export declare class ProductWithCodeEntity implements ProductWithCode {
     id: number;
     name: string;

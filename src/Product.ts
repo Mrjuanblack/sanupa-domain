@@ -143,6 +143,72 @@ export interface NewProductWithoutCodeRequest {
     mileage: number | null
 }
 
+export interface UpdateProductWithoutCodeRequest {
+    name: string
+    description: string | null
+    brand: string | null
+    measurementTypeId: number | null
+    measurementQuantity: number | null
+    productTypeId: number | null
+    zoneId: number | null
+    offerType: OfferType | null
+    area: number | null
+    condition: Condition | null
+    stratum: Estratum | null
+    antiquity: number | null
+    bathrooms: number | null
+    rooms: number | null
+    parkingLots: number | null
+    cylinderCapacity: number | null
+    mileage: number | null
+}
+
+export class UpdateProductWithoutCodeRequestEntity implements UpdateProductWithoutCodeRequest {
+    constructor(
+        public name: string,
+        public description: string | null,
+        public brand: string | null,
+        public measurementTypeId: number | null,
+        public measurementQuantity: number | null,
+        public productTypeId: number | null,
+        public zoneId: number | null,
+        public offerType: OfferType | null,
+        public area: number | null,
+        public condition: Condition | null,
+        public stratum: Estratum | null,
+        public antiquity: number | null,
+        public bathrooms: number | null,
+        public rooms: number | null,
+        public parkingLots: number | null,
+        public cylinderCapacity: number | null,
+        public mileage: number | null
+    ) { }
+}
+
+export interface UpdateProductWithCodeRequest {
+    id: number
+
+    description: string
+    brand: string
+    quantity: string
+    measurementId: number | null
+    measurementQuantity: number | null
+    market: string    
+}
+
+export class UpdateProductWithCodeRequestEntity {
+    constructor(
+        public id: number,
+        public imgPath: string,
+        public description: string,
+        public brand: string,
+        public quantity: string,
+        public measurementId: number | null,
+        public measurementQuantity: number | null,
+        public market: string
+    ) { }
+}
+
 export class ProductWithCodeEntity implements ProductWithCode {
     constructor(
         public id: number,
