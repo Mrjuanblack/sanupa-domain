@@ -65,7 +65,8 @@ function getEstratumString(estratum) {
     }
 }
 class UpdateProductWithoutCodeRequestEntity {
-    constructor(name, description, brand, measurementTypeId, measurementQuantity, productTypeId, zoneId, offerType, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage) {
+    constructor(id, name, description, brand, measurementTypeId, measurementQuantity, productTypeId, zoneId, offerType, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.brand = brand;

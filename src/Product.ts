@@ -144,6 +144,8 @@ export interface NewProductWithoutCodeRequest {
 }
 
 export interface UpdateProductWithoutCodeRequest {
+    id: number
+
     name: string
     description: string | null
     brand: string | null
@@ -165,6 +167,7 @@ export interface UpdateProductWithoutCodeRequest {
 
 export class UpdateProductWithoutCodeRequestEntity implements UpdateProductWithoutCodeRequest {
     constructor(
+        public id: number,
         public name: string,
         public description: string | null,
         public brand: string | null,

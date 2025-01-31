@@ -99,6 +99,7 @@ export interface NewProductWithoutCodeRequest {
     mileage: number | null;
 }
 export interface UpdateProductWithoutCodeRequest {
+    id: number;
     name: string;
     description: string | null;
     brand: string | null;
@@ -118,6 +119,7 @@ export interface UpdateProductWithoutCodeRequest {
     mileage: number | null;
 }
 export declare class UpdateProductWithoutCodeRequestEntity implements UpdateProductWithoutCodeRequest {
+    id: number;
     name: string;
     description: string | null;
     brand: string | null;
@@ -135,7 +137,7 @@ export declare class UpdateProductWithoutCodeRequestEntity implements UpdateProd
     parkingLots: number | null;
     cylinderCapacity: number | null;
     mileage: number | null;
-    constructor(name: string, description: string | null, brand: string | null, measurementTypeId: number | null, measurementQuantity: number | null, productTypeId: number | null, zoneId: number | null, offerType: OfferType | null, area: number | null, condition: Condition | null, stratum: Estratum | null, antiquity: number | null, bathrooms: number | null, rooms: number | null, parkingLots: number | null, cylinderCapacity: number | null, mileage: number | null);
+    constructor(id: number, name: string, description: string | null, brand: string | null, measurementTypeId: number | null, measurementQuantity: number | null, productTypeId: number | null, zoneId: number | null, offerType: OfferType | null, area: number | null, condition: Condition | null, stratum: Estratum | null, antiquity: number | null, bathrooms: number | null, rooms: number | null, parkingLots: number | null, cylinderCapacity: number | null, mileage: number | null);
 }
 export interface UpdateProductWithCodeRequest {
     id: number;
