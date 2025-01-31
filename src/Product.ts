@@ -191,8 +191,7 @@ export interface UpdateProductWithCodeRequest {
     description: string
     brand: string
     measurementId: number | null
-    measurementQuantity: number | null
-    market: string    
+    measurementQuantity: number | null  
 }
 
 export class UpdateProductWithCodeRequestEntity {
@@ -203,7 +202,6 @@ export class UpdateProductWithCodeRequestEntity {
         public brand: string,
         public measurementId: number | null,
         public measurementQuantity: number | null,
-        public market: string
     ) { }
 }
 
