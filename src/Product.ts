@@ -190,7 +190,6 @@ export interface UpdateProductWithCodeRequest {
 
     description: string
     brand: string
-    quantity: string
     measurementId: number | null
     measurementQuantity: number | null
     market: string    
@@ -202,7 +201,6 @@ export class UpdateProductWithCodeRequestEntity {
         public imgPath: string,
         public description: string,
         public brand: string,
-        public quantity: string,
         public measurementId: number | null,
         public measurementQuantity: number | null,
         public market: string

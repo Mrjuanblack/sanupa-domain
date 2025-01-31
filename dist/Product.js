@@ -87,12 +87,11 @@ class UpdateProductWithoutCodeRequestEntity {
 }
 exports.UpdateProductWithoutCodeRequestEntity = UpdateProductWithoutCodeRequestEntity;
 class UpdateProductWithCodeRequestEntity {
-    constructor(id, imgPath, description, brand, quantity, measurementId, measurementQuantity, market) {
+    constructor(id, imgPath, description, brand, measurementId, measurementQuantity, market) {
         this.id = id;
         this.imgPath = imgPath;
         this.description = description;
         this.brand = brand;
-        this.quantity = quantity;
         this.measurementId = measurementId;
         this.measurementQuantity = measurementQuantity;
         this.market = market;

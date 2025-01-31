@@ -141,7 +141,6 @@ export interface UpdateProductWithCodeRequest {
     id: number;
     description: string;
     brand: string;
-    quantity: string;
     measurementId: number | null;
     measurementQuantity: number | null;
     market: string;
@@ -151,11 +150,10 @@ export declare class UpdateProductWithCodeRequestEntity {
     imgPath: string;
     description: string;
     brand: string;
-    quantity: string;
     measurementId: number | null;
     measurementQuantity: number | null;
     market: string;
-    constructor(id: number, imgPath: string, description: string, brand: string, quantity: string, measurementId: number | null, measurementQuantity: number | null, market: string);
+    constructor(id: number, imgPath: string, description: string, brand: string, measurementId: number | null, measurementQuantity: number | null, market: string);
 }
 export declare class ProductWithCodeEntity implements ProductWithCode {
     id: number;
