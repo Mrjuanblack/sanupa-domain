@@ -28,7 +28,6 @@ export declare const EstratumList: Estratum[];
 export declare function getEstratumString(estratum: Estratum): string;
 interface BaseProduct {
     id: number;
-    name: string;
     subcategory: SubcategoryEntity;
     imgPath: string;
 }
@@ -59,6 +58,7 @@ export interface NewProductJustCode {
     subcategoryId: number;
 }
 export interface ProductWithoutCode extends BaseProduct {
+    name: string;
     description: string | null;
     brand: string | null;
     measurementType: MeasurementType | null;
@@ -155,7 +155,6 @@ export declare class UpdateProductWithCodeRequestEntity {
 }
 export declare class ProductWithCodeEntity implements ProductWithCode {
     id: number;
-    name: string;
     subcategory: SubcategoryEntity;
     gtin: string;
     description: string;
@@ -167,7 +166,7 @@ export declare class ProductWithCodeEntity implements ProductWithCode {
     market: string;
     measurementType: MeasurementTypeEntity | null;
     measurementQuantity: number | null;
-    constructor(id: number, name: string, subcategory: SubcategoryEntity, gtin: string, description: string, brand: string, gpc: string, imgPath: string, quantity: string, measurement: string, market: string, measurementType: MeasurementTypeEntity | null, measurementQuantity: number | null);
+    constructor(id: number, subcategory: SubcategoryEntity, gtin: string, description: string, brand: string, gpc: string, imgPath: string, quantity: string, measurement: string, market: string, measurementType: MeasurementTypeEntity | null, measurementQuantity: number | null);
 }
 export declare class ProductWithoutCodeEntity implements ProductWithoutCode {
     id: number;

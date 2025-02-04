@@ -64,7 +64,6 @@ export function getEstratumString(estratum: Estratum): string {
 
 interface BaseProduct {
     id: number
-    name: string
     subcategory: SubcategoryEntity
     imgPath: string
 }
@@ -101,6 +100,7 @@ export interface NewProductJustCode {
 }
 
 export interface ProductWithoutCode extends BaseProduct {
+    name: string
     description: string | null
     brand: string | null
     measurementType: MeasurementType | null
@@ -209,7 +209,6 @@ export class UpdateProductWithCodeRequestEntity {
 export class ProductWithCodeEntity implements ProductWithCode {
     constructor(
         public id: number,
-        public name: string,
         public subcategory: SubcategoryEntity,
         public gtin: string,
         public description: string,
