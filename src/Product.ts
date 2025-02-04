@@ -83,7 +83,6 @@ export interface ProductWithCode extends BaseProduct {
     measurementQuantity: number | null
 }
 export interface NewProductWithCodeRequest {
-    name: string
     subcategoryId: number
     imgPath: string
 
@@ -96,7 +95,6 @@ export interface NewProductWithCodeRequest {
     market: string
 }
 export interface NewProductJustCode {
-    name: string
     code: string
 
     subcategoryId: number
