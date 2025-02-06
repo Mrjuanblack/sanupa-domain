@@ -39,3 +39,20 @@ export declare class PartnerProductEntiy implements PartnerProduct {
     stock: number;
     constructor(product: ProductWithCodeEntity | ProductWithoutCodeEntity, partner: SimpleUser, price: number, stock: number);
 }
+export interface PP_Filter {
+    price: number | null;
+    stock: number | null;
+    subcategoryId: number | null;
+    description: string | null;
+    brand: string | null;
+    name: string | null;
+}
+export declare class PP_FilterEntity implements PP_Filter {
+    price: number | null;
+    stock: number | null;
+    subcategoryId: number | null;
+    description: string | null;
+    brand: string | null;
+    name: string | null;
+    constructor(price: number | null, stock: number | null, subcategoryId: number | null, description: string | null, brand: string | null, name: string | null);
+}

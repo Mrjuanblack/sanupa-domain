@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PartnerProductEntiy = exports.UpdatePartnerProductRequestEntity = exports.NewPartnerProductRequestEntity = void 0;
+exports.PP_FilterEntity = exports.PartnerProductEntiy = exports.UpdatePartnerProductRequestEntity = exports.NewPartnerProductRequestEntity = void 0;
 class NewPartnerProductRequestEntity {
     constructor(productId, partnerId, price, stock) {
         this.productId = productId;
@@ -28,3 +28,14 @@ class PartnerProductEntiy {
     }
 }
 exports.PartnerProductEntiy = PartnerProductEntiy;
+class PP_FilterEntity {
+    constructor(price, stock, subcategoryId, description, brand, name) {
+        this.price = price;
+        this.stock = stock;
+        this.subcategoryId = subcategoryId;
+        this.description = description;
+        this.brand = brand;
+        this.name = name;
+    }
+}
+exports.PP_FilterEntity = PP_FilterEntity;

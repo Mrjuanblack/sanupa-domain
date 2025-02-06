@@ -48,3 +48,30 @@ export class PartnerProductEntiy implements PartnerProduct {
         public stock: number
     ) { }
 }
+
+// Filter for searching products
+export interface PP_Filter {
+    price: number | null,
+    stock: number | null,
+
+    subcategoryId: number | null
+
+    // shared fields
+    description: string | null
+    brand: string | null
+    // For products with code
+    
+    // For products without code
+    name: string | null
+}
+
+export class PP_FilterEntity implements PP_Filter {
+    constructor(
+        public price: number | null,
+        public stock: number | null,
+        public subcategoryId: number | null,
+        public description: string | null,
+        public brand: string | null,
+        public name: string | null
+    ) {}
+}
