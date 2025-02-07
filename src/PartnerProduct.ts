@@ -33,6 +33,32 @@ export class UpdatePartnerProductRequestEntity implements UpdatePartnerProductRe
     ) { }
 }
 
+export interface SimplePartnerProduct {
+    partner: SimpleUser,
+    price: number,
+    stock: number
+}
+
+export class SimplePartnerProductEntity implements SimplePartnerProduct {
+    constructor(
+        public partner: SimpleUser,
+        public price: number,
+        public stock: number
+    ) { }
+}
+
+export interface ListPartnerProduct {
+    product: ProductWithCodeEntity | ProductWithoutCodeEntity,
+    partnerProducts: SimplePartnerProductEntity[]
+}
+
+export class ListPartnerProductEntity implements ListPartnerProduct {
+    constructor(
+        public product: ProductWithCodeEntity | ProductWithoutCodeEntity,
+        public partnerProducts: SimplePartnerProductEntity[]
+    ) { }
+}
+
 export interface PartnerProduct {
     product: ProductWithCodeEntity | ProductWithoutCodeEntity,
     partner: SimpleUser
@@ -51,8 +77,8 @@ export class PartnerProductEntiy implements PartnerProduct {
 
 // Filter for searching products
 export interface PP_Filter {
-    price: number | null,
-    stock: number | null,
+    price: number | null
+    stock: number | null
 
     subcategoryId: number | null
 
@@ -60,7 +86,7 @@ export interface PP_Filter {
     description: string | null
     brand: string | null
     // For products with code
-    
+
     // For products without code
     name: string | null
 }
@@ -73,5 +99,5 @@ export class PP_FilterEntity implements PP_Filter {
         public description: string | null,
         public brand: string | null,
         public name: string | null
-    ) {}
+    ) { }
 }

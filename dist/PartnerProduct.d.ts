@@ -26,6 +26,26 @@ export declare class UpdatePartnerProductRequestEntity implements UpdatePartnerP
     stock: number;
     constructor(productId: number, partnerId: number, price: number, stock: number);
 }
+export interface SimplePartnerProduct {
+    partner: SimpleUser;
+    price: number;
+    stock: number;
+}
+export declare class SimplePartnerProductEntity implements SimplePartnerProduct {
+    partner: SimpleUser;
+    price: number;
+    stock: number;
+    constructor(partner: SimpleUser, price: number, stock: number);
+}
+export interface ListPartnerProduct {
+    product: ProductWithCodeEntity | ProductWithoutCodeEntity;
+    partnerProducts: SimplePartnerProductEntity[];
+}
+export declare class ListPartnerProductEntity implements ListPartnerProduct {
+    product: ProductWithCodeEntity | ProductWithoutCodeEntity;
+    partnerProducts: SimplePartnerProductEntity[];
+    constructor(product: ProductWithCodeEntity | ProductWithoutCodeEntity, partnerProducts: SimplePartnerProductEntity[]);
+}
 export interface PartnerProduct {
     product: ProductWithCodeEntity | ProductWithoutCodeEntity;
     partner: SimpleUser;
