@@ -49,6 +49,13 @@ export interface SimpleUser {
     name: string
 }
 
+export class SimpleUserEntity implements SimpleUser {
+    constructor(
+        public id: number,
+        public name: string
+    ) { }
+}
+
 export function isUserCookie(o: any): o is UserMetadata {
     return (
         typeof o === 'object' &&

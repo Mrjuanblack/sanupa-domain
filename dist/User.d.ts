@@ -27,6 +27,11 @@ export interface SimpleUser {
     id: number;
     name: string;
 }
+export declare class SimpleUserEntity implements SimpleUser {
+    id: number;
+    name: string;
+    constructor(id: number, name: string);
+}
 export declare function isUserCookie(o: any): o is UserMetadata;
 export interface NewUserRequest {
     name: string;
