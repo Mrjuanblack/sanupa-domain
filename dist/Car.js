@@ -10,10 +10,11 @@ class CarEntity {
 }
 exports.CarEntity = CarEntity;
 class NewCarRequestEntity {
-    constructor(productId, partnerId, userId, quantity) {
+    constructor(productId, partnerId, 
+    // public userId: number,
+    quantity) {
         this.productId = productId;
         this.partnerId = partnerId;
-        this.userId = userId;
         this.quantity = quantity;
     }
 }

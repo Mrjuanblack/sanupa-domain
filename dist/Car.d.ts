@@ -13,13 +13,11 @@ export declare class CarEntity implements Car {
 export interface NewCarRequest {
     productId: number;
     partnerId: number;
-    userId: number;
     quantity: number;
 }
 export declare class NewCarRequestEntity implements NewCarRequest {
     productId: number;
     partnerId: number;
-    userId: number;
     quantity: number;
-    constructor(productId: number, partnerId: number, userId: number, quantity: number);
+    constructor(productId: number, partnerId: number, quantity: number);
 }

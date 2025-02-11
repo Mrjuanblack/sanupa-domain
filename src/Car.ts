@@ -24,7 +24,7 @@ export interface NewCarRequest {
     partnerId: number,
 
     // Car Data
-    userId: number,
+    // userId: number, // This will be fetched from the user token
     quantity: number,
 }
 
@@ -32,7 +32,7 @@ export class NewCarRequestEntity implements NewCarRequest {
     constructor(
         public productId: number,
         public partnerId: number,
-        public userId: number,
-        public quantity: number,
+        // public userId: number,
+        public quantity: number
     ) { }
 }
