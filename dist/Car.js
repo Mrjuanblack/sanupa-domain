@@ -2,8 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NewCarRequestEntity = exports.CarEntity = void 0;
 class CarEntity {
-    constructor(product, partnerProduct, userId, quantity) {
-        this.product = product;
+    constructor(partnerProduct, userId, quantity) {
         this.partnerProduct = partnerProduct;
         this.userId = userId;
         this.quantity = quantity;

@@ -1,10 +1,9 @@
-import { SimplePartnerProduct } from "./PartnerProduct"
+import { PartnerProductEntiy, SimplePartnerProduct } from "./PartnerProduct"
 import { ProductWithCodeEntity, ProductWithoutCodeEntity } from "./Product"
 
 export interface Car {
     // Partner Product Data
-    product: ProductWithCodeEntity | ProductWithoutCodeEntity,
-    partnerProduct: SimplePartnerProduct,
+    partnerProduct: PartnerProductEntiy,
 
     // Car Data
     userId: number,
@@ -13,8 +12,7 @@ export interface Car {
 
 export class CarEntity implements Car {
     constructor(
-        public product: ProductWithCodeEntity | ProductWithoutCodeEntity,
-        public partnerProduct: SimplePartnerProduct,
+        public partnerProduct: PartnerProductEntiy,
         public userId: number,
         public quantity: number
     ) { }
