@@ -25,3 +25,4 @@ __exportStar(require("./Location"), exports);
 __exportStar(require("./MeasurementType"), exports);
 __exportStar(require("./PartnerProduct"), exports);
 __exportStar(require("./Pagination"), exports);
+__exportStar(require("./Car"), exports);
