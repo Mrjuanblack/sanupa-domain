@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NewCarRequestEntity = exports.CarEntity = void 0;
+exports.NewCarRequestEntity = exports.SimpleCarEntity = exports.CarEntity = void 0;
 class CarEntity {
     constructor(partnerProduct, userId, quantity) {
         this.partnerProduct = partnerProduct;
@@ -9,6 +9,15 @@ class CarEntity {
     }
 }
 exports.CarEntity = CarEntity;
+class SimpleCarEntity {
+    constructor(productId, partnerId, userId, quantity) {
+        this.productId = productId;
+        this.partnerId = partnerId;
+        this.userId = userId;
+        this.quantity = quantity;
+    }
+}
+exports.SimpleCarEntity = SimpleCarEntity;
 class NewCarRequestEntity {
     constructor(productId, partnerId, 
     // public userId: number,

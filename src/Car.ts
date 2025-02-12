@@ -18,6 +18,22 @@ export class CarEntity implements Car {
     ) { }
 }
 
+export interface SimpleCar {
+    productId: number,
+    partnerId: number,
+    userId: number,
+    quantity: number
+}
+
+export class SimpleCarEntity implements SimpleCar {
+    constructor(
+        public productId: number,
+        public partnerId: number,
+        public userId: number,
+        public quantity: number,
+    ) { }
+}
+
 export interface NewCarRequest {
     // Partner Product Data
     productId: number,
