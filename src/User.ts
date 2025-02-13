@@ -61,14 +61,14 @@ export class SimpleUserEntity implements SimpleUser {
 }
 
 export interface SimpleUser_WithPartnerInfo extends SimpleUser {
-    partnerInfo: PartnerInfoEntity | null
+    partnerInfo: PartnerInfoEntity
 }
 
 export class SimpleUser_WithPartnerInfoEntity implements SimpleUser_WithPartnerInfo {
     constructor(
         public id: number,
         public name: string,
-        public partnerInfo: PartnerInfoEntity | null
+        public partnerInfo: PartnerInfoEntity
     ) { }
 }
 

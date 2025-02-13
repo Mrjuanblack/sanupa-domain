@@ -35,13 +35,13 @@ export declare class SimpleUserEntity implements SimpleUser {
     constructor(id: number, name: string);
 }
 export interface SimpleUser_WithPartnerInfo extends SimpleUser {
-    partnerInfo: PartnerInfoEntity | null;
+    partnerInfo: PartnerInfoEntity;
 }
 export declare class SimpleUser_WithPartnerInfoEntity implements SimpleUser_WithPartnerInfo {
     id: number;
     name: string;
-    partnerInfo: PartnerInfoEntity | null;
-    constructor(id: number, name: string, partnerInfo: PartnerInfoEntity | null);
+    partnerInfo: PartnerInfoEntity;
+    constructor(id: number, name: string, partnerInfo: PartnerInfoEntity);
 }
 export declare function isUserCookie(o: any): o is UserMetadata;
 export interface NewUserRequest {
