@@ -1,3 +1,5 @@
+import { PartnerInfoEntity } from "./PartnerInfo";
+
 export enum UserRole {
     User = 1,
     Admin = 2,
@@ -27,6 +29,8 @@ export interface User {
     phoneNumber: string
     password: string
     role: UserRole
+
+    partnerInfo: PartnerInfoEntity | null
 }
 
 
@@ -46,13 +50,15 @@ export interface UpdatePermissions {
 
 export interface SimpleUser {
     id: number,
-    name: string
+    name: string,
+    partnerInfo: PartnerInfoEntity | null
 }
 
 export class SimpleUserEntity implements SimpleUser {
     constructor(
         public id: number,
-        public name: string
+        public name: string,
+        public partnerInfo: PartnerInfoEntity | null
     ) { }
 }
 
@@ -87,5 +93,13 @@ export class UpdatePermissionsEntity implements UpdatePermissions {
 }
 
 export class UserEntity implements User {
-    constructor(public id: number, public name: string, public email: string | null, public phoneNumber: string, public password: string, public role: UserRole) { }
+    constructor(
+        public id: number,
+        public name: string,
+        public email: string | null,
+        public phoneNumber: string,
+        public password: string,
+        public role: UserRole,
+        public partnerInfo: PartnerInfoEntity
+    ) { }
 }

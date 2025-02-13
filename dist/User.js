@@ -18,9 +18,10 @@ function getUserRoleString(role) {
     return userRoleEnumToString[role];
 }
 class SimpleUserEntity {
-    constructor(id, name) {
+    constructor(id, name, partnerInfo) {
         this.id = id;
         this.name = name;
+        this.partnerInfo = partnerInfo;
     }
 }
 exports.SimpleUserEntity = SimpleUserEntity;
@@ -44,13 +45,14 @@ class UpdatePermissionsEntity {
 }
 exports.UpdatePermissionsEntity = UpdatePermissionsEntity;
 class UserEntity {
-    constructor(id, name, email, phoneNumber, password, role) {
+    constructor(id, name, email, phoneNumber, password, role, partnerInfo) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.password = password;
         this.role = role;
+        this.partnerInfo = partnerInfo;
     }
 }
 exports.UserEntity = UserEntity;

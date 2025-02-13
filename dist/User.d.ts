@@ -1,3 +1,4 @@
+import { PartnerInfoEntity } from "./PartnerInfo";
 export declare enum UserRole {
     User = 1,
     Admin = 2,
@@ -11,6 +12,7 @@ export interface User {
     phoneNumber: string;
     password: string;
     role: UserRole;
+    partnerInfo: PartnerInfoEntity | null;
 }
 export interface UserMetadata {
     id: number;
@@ -26,11 +28,13 @@ export interface UpdatePermissions {
 export interface SimpleUser {
     id: number;
     name: string;
+    partnerInfo: PartnerInfoEntity | null;
 }
 export declare class SimpleUserEntity implements SimpleUser {
     id: number;
     name: string;
-    constructor(id: number, name: string);
+    partnerInfo: PartnerInfoEntity | null;
+    constructor(id: number, name: string, partnerInfo: PartnerInfoEntity | null);
 }
 export declare function isUserCookie(o: any): o is UserMetadata;
 export interface NewUserRequest {
@@ -54,5 +58,6 @@ export declare class UserEntity implements User {
     phoneNumber: string;
     password: string;
     role: UserRole;
-    constructor(id: number, name: string, email: string | null, phoneNumber: string, password: string, role: UserRole);
+    partnerInfo: PartnerInfoEntity;
+    constructor(id: number, name: string, email: string | null, phoneNumber: string, password: string, role: UserRole, partnerInfo: PartnerInfoEntity);
 }
