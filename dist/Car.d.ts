@@ -12,14 +12,16 @@ export declare class CarEntity implements Car {
 }
 export interface SimpleCar {
     partnerProduct: SimplePartnerProductEntity;
+    productId: number;
     userId: number;
     quantity: number;
 }
 export declare class SimpleCarEntity implements SimpleCar {
     partnerProduct: SimplePartnerProductEntity;
+    productId: number;
     userId: number;
     quantity: number;
-    constructor(partnerProduct: SimplePartnerProductEntity, userId: number, quantity: number);
+    constructor(partnerProduct: SimplePartnerProductEntity, productId: number, userId: number, quantity: number);
 }
 export interface NewCarRequest {
     productId: number;

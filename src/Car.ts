@@ -20,6 +20,7 @@ export class CarEntity implements Car {
 
 export interface SimpleCar {
     partnerProduct: SimplePartnerProductEntity,
+    productId: number,
     userId: number,
     quantity: number
 }
@@ -27,6 +28,7 @@ export interface SimpleCar {
 export class SimpleCarEntity implements SimpleCar {
     constructor(
         public partnerProduct: SimplePartnerProductEntity,
+        public productId: number,
         public userId: number,
         public quantity: number,
     ) { }

@@ -10,8 +10,9 @@ class CarEntity {
 }
 exports.CarEntity = CarEntity;
 class SimpleCarEntity {
-    constructor(partnerProduct, userId, quantity) {
+    constructor(partnerProduct, productId, userId, quantity) {
         this.partnerProduct = partnerProduct;
+        this.productId = productId;
         this.userId = userId;
         this.quantity = quantity;
     }
