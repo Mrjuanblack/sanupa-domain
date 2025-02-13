@@ -1,4 +1,4 @@
-import { PartnerInfoEntity } from "./PartnerInfo";
+import { PartnerInfoEntity, SimplePartnerInfoEntity } from "./PartnerInfo";
 
 export enum UserRole {
     User = 1,
@@ -61,14 +61,14 @@ export class SimpleUserEntity implements SimpleUser {
 }
 
 export interface SimpleUser_WithPartnerInfo extends SimpleUser {
-    partnerInfo: PartnerInfoEntity
+    partnerInfo: SimplePartnerInfoEntity
 }
 
 export class SimpleUser_WithPartnerInfoEntity implements SimpleUser_WithPartnerInfo {
     constructor(
         public id: number,
         public name: string,
-        public partnerInfo: PartnerInfoEntity
+        public partnerInfo: SimplePartnerInfoEntity
     ) { }
 }
 

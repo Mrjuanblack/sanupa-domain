@@ -1,5 +1,5 @@
 import { ProductWithCodeEntity, ProductWithoutCodeEntity } from "./Product"
-import { SimpleUser, SimpleUser_WithPartnerInfo } from "./User"
+import { SimpleUser, SimpleUser_WithPartnerInfoEntity } from "./User"
 
 export interface NewPartnerProductRequest {
     productId: number,
@@ -34,14 +34,14 @@ export class UpdatePartnerProductRequestEntity implements UpdatePartnerProductRe
 }
 
 export interface SimplePartnerProduct {
-    partner: SimpleUser_WithPartnerInfo,
+    partner: SimpleUser_WithPartnerInfoEntity,
     price: number,
     stock: number
 }
 
 export class SimplePartnerProductEntity implements SimplePartnerProduct {
     constructor(
-        public partner: SimpleUser_WithPartnerInfo,
+        public partner: SimpleUser_WithPartnerInfoEntity,
         public price: number,
         public stock: number
     ) { }

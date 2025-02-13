@@ -17,6 +17,18 @@ export class PartnerInfoEntity implements PartnerInfo {
     ) { }
 }
 
+export interface SimplePartnerInfo {
+    name: string
+    imgPath: string | null
+}
+
+export class SimplePartnerInfoEntity implements SimplePartnerInfo {
+    constructor(
+        public name: string,
+        public imgPath: string | null
+    ) { }
+}
+
 export interface NewPartnerInfoRequest {
     name: string,
     address: string
