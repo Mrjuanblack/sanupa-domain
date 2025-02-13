@@ -100,6 +100,6 @@ export class UserEntity implements User {
         public phoneNumber: string,
         public password: string,
         public role: UserRole,
-        public partnerInfo: PartnerInfoEntity
+        public partnerInfo: PartnerInfoEntity | null
     ) { }
 }

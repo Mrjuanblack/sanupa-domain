@@ -58,6 +58,6 @@ export declare class UserEntity implements User {
     phoneNumber: string;
     password: string;
     role: UserRole;
-    partnerInfo: PartnerInfoEntity;
-    constructor(id: number, name: string, email: string | null, phoneNumber: string, password: string, role: UserRole, partnerInfo: PartnerInfoEntity);
+    partnerInfo: PartnerInfoEntity | null;
+    constructor(id: number, name: string, email: string | null, phoneNumber: string, password: string, role: UserRole, partnerInfo: PartnerInfoEntity | null);
 }
