@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserEntity = exports.UpdatePermissionsEntity = exports.SimpleUserEntity = exports.UserRole = void 0;
+exports.UserEntity = exports.UpdatePermissionsEntity = exports.SimpleUser_WithPartnerInfoEntity = exports.SimpleUserEntity = exports.UserRole = void 0;
 exports.getUserRoleString = getUserRoleString;
 exports.isUserCookie = isUserCookie;
 var UserRole;
@@ -18,13 +18,20 @@ function getUserRoleString(role) {
     return userRoleEnumToString[role];
 }
 class SimpleUserEntity {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+}
+exports.SimpleUserEntity = SimpleUserEntity;
+class SimpleUser_WithPartnerInfoEntity {
     constructor(id, name, partnerInfo) {
         this.id = id;
         this.name = name;
         this.partnerInfo = partnerInfo;
     }
 }
-exports.SimpleUserEntity = SimpleUserEntity;
+exports.SimpleUser_WithPartnerInfoEntity = SimpleUser_WithPartnerInfoEntity;
 function isUserCookie(o) {
     return (typeof o === 'object' &&
         o !== null &&

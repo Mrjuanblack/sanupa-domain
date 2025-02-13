@@ -28,9 +28,16 @@ export interface UpdatePermissions {
 export interface SimpleUser {
     id: number;
     name: string;
-    partnerInfo: PartnerInfoEntity | null;
 }
 export declare class SimpleUserEntity implements SimpleUser {
+    id: number;
+    name: string;
+    constructor(id: number, name: string);
+}
+export interface SimpleUser_WithPartnerInfo extends SimpleUser {
+    partnerInfo: PartnerInfoEntity | null;
+}
+export declare class SimpleUser_WithPartnerInfoEntity implements SimpleUser_WithPartnerInfo {
     id: number;
     name: string;
     partnerInfo: PartnerInfoEntity | null;

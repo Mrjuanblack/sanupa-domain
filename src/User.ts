@@ -50,11 +50,21 @@ export interface UpdatePermissions {
 
 export interface SimpleUser {
     id: number,
-    name: string,
-    partnerInfo: PartnerInfoEntity | null
+    name: string
 }
 
 export class SimpleUserEntity implements SimpleUser {
+    constructor(
+        public id: number,
+        public name: string
+    ) { }
+}
+
+export interface SimpleUser_WithPartnerInfo extends SimpleUser {
+    partnerInfo: PartnerInfoEntity | null
+}
+
+export class SimpleUser_WithPartnerInfoEntity implements SimpleUser_WithPartnerInfo {
     constructor(
         public id: number,
         public name: string,
