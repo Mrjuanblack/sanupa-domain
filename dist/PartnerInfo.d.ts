@@ -12,3 +12,12 @@ export declare class PartnerInfoEntity implements PartnerInfo {
     imgPath: string | null;
     constructor(name: string, address: string, workingZones: ZoneEntity[], imgPath: string | null);
 }
+export interface NewPartnerInfoRequest {
+    name: string;
+    address: string;
+}
+export declare class NewPartnerInfoRequestEntity implements NewPartnerInfoRequest {
+    name: string;
+    address: string;
+    constructor(name: string, address: string);
+}

@@ -16,3 +16,15 @@ export class PartnerInfoEntity implements PartnerInfo {
         public imgPath: string | null
     ) { }
 }
+
+export interface NewPartnerInfoRequest {
+    name: string,
+    address: string
+}
+
+export class NewPartnerInfoRequestEntity implements NewPartnerInfoRequest {
+    constructor(
+        public name: string,
+        public address: string
+    ) { }
+}

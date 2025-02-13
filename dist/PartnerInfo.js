@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PartnerInfoEntity = void 0;
+exports.NewPartnerInfoRequestEntity = exports.PartnerInfoEntity = void 0;
 class PartnerInfoEntity {
     constructor(name, address, workingZones, imgPath) {
         this.name = name;
@@ -10,3 +10,10 @@ class PartnerInfoEntity {
     }
 }
 exports.PartnerInfoEntity = PartnerInfoEntity;
+class NewPartnerInfoRequestEntity {
+    constructor(name, address) {
+        this.name = name;
+        this.address = address;
+    }
+}
+exports.NewPartnerInfoRequestEntity = NewPartnerInfoRequestEntity;
