@@ -11,3 +11,4 @@ export * from './PartnerProduct';
 export * from './Pagination';
 export * from './Car';
 export * from './PartnerInfo';
+export * from './PartnerWorkingZone';

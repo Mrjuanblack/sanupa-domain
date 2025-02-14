@@ -1,16 +1,16 @@
-import { ZoneEntity } from "./Location";
+import { PartnerWorkingZone } from "./PartnerWorkingZone";
 export interface PartnerInfo {
     name: string;
     address: string;
-    workingZones: ZoneEntity[];
+    workingZones: PartnerWorkingZone[];
     imgPath: string | null;
 }
 export declare class PartnerInfoEntity implements PartnerInfo {
     name: string;
     address: string;
-    workingZones: ZoneEntity[];
+    workingZones: PartnerWorkingZone[];
     imgPath: string | null;
-    constructor(name: string, address: string, workingZones: ZoneEntity[], imgPath: string | null);
+    constructor(name: string, address: string, workingZones: PartnerWorkingZone[], imgPath: string | null);
 }
 export interface SimplePartnerInfo {
     name: string;
