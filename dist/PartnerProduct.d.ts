@@ -1,5 +1,5 @@
 import { ProductWithCodeEntity, ProductWithoutCodeEntity } from "./Product";
-import { SimpleUser, SimpleUser_WithPartnerInfoEntity } from "./User";
+import { SimpleUser_WithPartnerInfoEntity } from "./User";
 export interface NewPartnerProductRequest {
     productId: number;
     partnerId: number;
@@ -48,16 +48,16 @@ export declare class ListPartnerProductEntity implements ListPartnerProduct {
 }
 export interface PartnerProduct {
     product: ProductWithCodeEntity | ProductWithoutCodeEntity;
-    partner: SimpleUser;
+    partner: SimpleUser_WithPartnerInfoEntity;
     price: number;
     stock: number;
 }
 export declare class PartnerProductEntiy implements PartnerProduct {
     product: ProductWithCodeEntity | ProductWithoutCodeEntity;
-    partner: SimpleUser;
+    partner: SimpleUser_WithPartnerInfoEntity;
     price: number;
     stock: number;
-    constructor(product: ProductWithCodeEntity | ProductWithoutCodeEntity, partner: SimpleUser, price: number, stock: number);
+    constructor(product: ProductWithCodeEntity | ProductWithoutCodeEntity, partner: SimpleUser_WithPartnerInfoEntity, price: number, stock: number);
 }
 export interface PP_Filter {
     price: number | null;
