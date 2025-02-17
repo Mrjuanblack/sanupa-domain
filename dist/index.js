@@ -28,3 +28,4 @@ __exportStar(require("./Pagination"), exports);
 __exportStar(require("./Car"), exports);
 __exportStar(require("./PartnerInfo"), exports);
 __exportStar(require("./PartnerWorkingZone"), exports);
+__exportStar(require("./UserAddress"), exports);
