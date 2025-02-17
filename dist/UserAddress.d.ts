@@ -1,25 +1,32 @@
 import { ZoneEntity } from "./Location";
 export interface UserAddress {
+    id: number;
     zone: ZoneEntity;
     details: String;
 }
 export declare class UserAddressEntity implements UserAddress {
+    id: number;
     zone: ZoneEntity;
     details: String;
-    constructor(zone: ZoneEntity, details: String);
+    constructor(id: number, zone: ZoneEntity, details: String);
 }
 export interface NewUserAddressRequest {
     userId: number;
     zoneId: number;
     details: string;
 }
-export declare class NewUserAddressRequestEntity {
+export declare class NewUserAddressRequestEntity implements NewUserAddressRequest {
+    userId: number;
+    zoneId: number;
+    details: string;
     constructor(userId: number, zoneId: number, details: string);
 }
 export interface UpdateUserAddressRequest {
-    userId: number;
+    id: number;
     details: string;
 }
-export declare class UpdateUserAddressRequestEntity {
-    constructor(userId: number, details: string);
+export declare class UpdateUserAddressRequestEntity implements UpdateUserAddressRequest {
+    id: number;
+    details: string;
+    constructor(id: number, details: string);
 }

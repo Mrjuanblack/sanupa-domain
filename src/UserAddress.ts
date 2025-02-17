@@ -1,12 +1,14 @@
 import { ZoneEntity } from "./Location";
 
 export interface UserAddress {
+    id: number
     zone: ZoneEntity
     details: String
 }
 
 export class UserAddressEntity implements UserAddress {
     constructor(
+        public id: number,
         public zone: ZoneEntity,
         public details: String
     ) { }
@@ -18,22 +20,22 @@ export interface NewUserAddressRequest {
     details: string
 }
 
-export class NewUserAddressRequestEntity {
+export class NewUserAddressRequestEntity implements NewUserAddressRequest {
     constructor(
-        userId: number,
-        zoneId: number,
-        details: string
+        public userId: number,
+        public zoneId: number,
+        public details: string
     ) { }
 }
 
 export interface UpdateUserAddressRequest {
-    userId: number
+    id: number
     details: string
 }
 
-export class UpdateUserAddressRequestEntity {
+export class UpdateUserAddressRequestEntity implements UpdateUserAddressRequest {
     constructor(
-        userId: number,
-        details: string
+        public id: number,
+        public details: string
     ) { }
 }
