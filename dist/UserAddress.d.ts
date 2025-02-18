@@ -3,12 +3,14 @@ export interface UserAddress {
     id: number;
     zone: ZoneEntity;
     details: String;
+    active: boolean;
 }
 export declare class UserAddressEntity implements UserAddress {
     id: number;
     zone: ZoneEntity;
     details: String;
-    constructor(id: number, zone: ZoneEntity, details: String);
+    active: boolean;
+    constructor(id: number, zone: ZoneEntity, details: String, active: boolean);
 }
 export interface NewUserAddressRequest {
     userId: number;

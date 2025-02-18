@@ -4,13 +4,15 @@ export interface UserAddress {
     id: number
     zone: ZoneEntity
     details: String
+    active: boolean
 }
 
 export class UserAddressEntity implements UserAddress {
     constructor(
         public id: number,
         public zone: ZoneEntity,
-        public details: String
+        public details: String,
+        public active: boolean
     ) { }
 }
 

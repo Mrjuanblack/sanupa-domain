@@ -2,10 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UpdateUserAddressRequestEntity = exports.NewUserAddressRequestEntity = exports.UserAddressEntity = void 0;
 class UserAddressEntity {
-    constructor(id, zone, details) {
+    constructor(id, zone, details, active) {
         this.id = id;
         this.zone = zone;
         this.details = details;
+        this.active = active;
     }
 }
 exports.UserAddressEntity = UserAddressEntity;
