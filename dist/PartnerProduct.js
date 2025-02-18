@@ -44,13 +44,14 @@ class PartnerProductEntiy {
 }
 exports.PartnerProductEntiy = PartnerProductEntiy;
 class PP_FilterEntity {
-    constructor(price, stock, subcategoryId, description, brand, name) {
+    constructor(price, stock, subcategoryId, description, brand, name, zoneId) {
         this.price = price;
         this.stock = stock;
         this.subcategoryId = subcategoryId;
         this.description = description;
         this.brand = brand;
         this.name = name;
+        this.zoneId = zoneId;
     }
 }
 exports.PP_FilterEntity = PP_FilterEntity;

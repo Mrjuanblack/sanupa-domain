@@ -66,6 +66,7 @@ export interface PP_Filter {
     description: string | null;
     brand: string | null;
     name: string | null;
+    zoneId: number | null;
 }
 export declare class PP_FilterEntity implements PP_Filter {
     price: number | null;
@@ -74,5 +75,6 @@ export declare class PP_FilterEntity implements PP_Filter {
     description: string | null;
     brand: string | null;
     name: string | null;
-    constructor(price: number | null, stock: number | null, subcategoryId: number | null, description: string | null, brand: string | null, name: string | null);
+    zoneId: number | null;
+    constructor(price: number | null, stock: number | null, subcategoryId: number | null, description: string | null, brand: string | null, name: string | null, zoneId: number | null);
 }

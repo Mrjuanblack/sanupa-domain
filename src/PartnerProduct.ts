@@ -89,6 +89,9 @@ export interface PP_Filter {
 
     // For products without code
     name: string | null
+
+    // For filtering products that are available to the user's zone
+    zoneId: number | null
 }
 
 export class PP_FilterEntity implements PP_Filter {
@@ -98,6 +101,7 @@ export class PP_FilterEntity implements PP_Filter {
         public subcategoryId: number | null,
         public description: string | null,
         public brand: string | null,
-        public name: string | null
+        public name: string | null,
+        public zoneId: number | null
     ) { }
 }
