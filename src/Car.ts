@@ -1,5 +1,5 @@
-import { PartnerProductEntiy, SimplePartnerProduct, SimplePartnerProductEntity } from "./PartnerProduct"
-import { ProductWithCodeEntity, ProductWithoutCodeEntity } from "./Product"
+import { PartnerProductEntiy, SimplePartnerProductEntity } from "./PartnerProduct"
+import { SimpleUser_WithPartnerInfo } from "./User"
 
 export interface Car {
     // Partner Product Data
@@ -31,6 +31,18 @@ export class SimpleCarEntity implements SimpleCar {
         public productId: number,
         public userId: number,
         public quantity: number,
+    ) { }
+}
+
+export interface DeliveryCost {
+    partner: SimpleUser_WithPartnerInfo
+    price: number
+}
+
+export class DeliveryCostEntity implements DeliveryCost {
+    constructor(
+        public partner: SimpleUser_WithPartnerInfo,
+        public price: number,
     ) { }
 }
 
