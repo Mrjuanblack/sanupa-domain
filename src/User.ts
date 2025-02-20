@@ -106,6 +106,24 @@ export interface NewUserRequest {
     password: string
 }
 
+export interface UpdateFacturationInfoRequest {
+    name: string
+    lastName: string
+    ccType: CCType
+    cc: string
+    email: string
+}
+
+export class UpdateFacturationInfoRequestEntity implements UpdateFacturationInfoRequest {
+    constructor(
+        public name: string,
+        public lastName: string,
+        public ccType: CCType,
+        public cc: string,
+        public email: string,
+    ) { }
+}
+
 export interface LoginRequest {
     phoneNumber: string
     password: string
@@ -119,7 +137,7 @@ export class UserEntity implements User {
     constructor(
         public id: number,
         public name: string,
-        public lastName: string,
+        public lastName: string | null,
         public email: string | null,
         public ccType: CCType | null,
         public cc: string | null,

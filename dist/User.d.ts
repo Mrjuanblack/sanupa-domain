@@ -61,6 +61,21 @@ export interface NewUserRequest {
     phoneNumber: string;
     password: string;
 }
+export interface UpdateFacturationInfoRequest {
+    name: string;
+    lastName: string;
+    ccType: CCType;
+    cc: string;
+    email: string;
+}
+export declare class UpdateFacturationInfoRequestEntity implements UpdateFacturationInfoRequest {
+    name: string;
+    lastName: string;
+    ccType: CCType;
+    cc: string;
+    email: string;
+    constructor(name: string, lastName: string, ccType: CCType, cc: string, email: string);
+}
 export interface LoginRequest {
     phoneNumber: string;
     password: string;
@@ -73,7 +88,7 @@ export declare class UpdatePermissionsEntity implements UpdatePermissions {
 export declare class UserEntity implements User {
     id: number;
     name: string;
-    lastName: string;
+    lastName: string | null;
     email: string | null;
     ccType: CCType | null;
     cc: string | null;
@@ -81,5 +96,5 @@ export declare class UserEntity implements User {
     password: string;
     role: UserRole;
     partnerInfo: PartnerInfoEntity | null;
-    constructor(id: number, name: string, lastName: string, email: string | null, ccType: CCType | null, cc: string | null, phoneNumber: string, password: string, role: UserRole, partnerInfo: PartnerInfoEntity | null);
+    constructor(id: number, name: string, lastName: string | null, email: string | null, ccType: CCType | null, cc: string | null, phoneNumber: string, password: string, role: UserRole, partnerInfo: PartnerInfoEntity | null);
 }

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserEntity = exports.UpdatePermissionsEntity = exports.SimpleUser_WithPartnerInfoEntity = exports.SimpleUserEntity = exports.UserRole = exports.CCType = void 0;
+exports.UserEntity = exports.UpdatePermissionsEntity = exports.UpdateFacturationInfoRequestEntity = exports.SimpleUser_WithPartnerInfoEntity = exports.SimpleUserEntity = exports.UserRole = exports.CCType = void 0;
 exports.getUserRoleString = getUserRoleString;
 exports.isUserCookie = isUserCookie;
 var CCType;
@@ -51,6 +51,16 @@ function isUserCookie(o) {
         'phoneNumber' in o &&
         typeof o.phoneNumber === 'string');
 }
+class UpdateFacturationInfoRequestEntity {
+    constructor(name, lastName, ccType, cc, email) {
+        this.name = name;
+        this.lastName = lastName;
+        this.ccType = ccType;
+        this.cc = cc;
+        this.email = email;
+    }
+}
+exports.UpdateFacturationInfoRequestEntity = UpdateFacturationInfoRequestEntity;
 class UpdatePermissionsEntity {
     constructor(id, allowedSubcategoriesId) {
         this.id = id;
