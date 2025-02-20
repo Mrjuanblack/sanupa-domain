@@ -1,8 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserEntity = exports.UpdatePermissionsEntity = exports.SimpleUser_WithPartnerInfoEntity = exports.SimpleUserEntity = exports.UserRole = void 0;
+exports.UserEntity = exports.UpdatePermissionsEntity = exports.SimpleUser_WithPartnerInfoEntity = exports.SimpleUserEntity = exports.UserRole = exports.CCType = void 0;
 exports.getUserRoleString = getUserRoleString;
 exports.isUserCookie = isUserCookie;
+var CCType;
+(function (CCType) {
+    CCType[CCType["CC"] = 1] = "CC";
+    CCType[CCType["NIT"] = 2] = "NIT";
+    CCType[CCType["PA"] = 3] = "PA";
+    CCType[CCType["CE"] = 4] = "CE";
+})(CCType || (exports.CCType = CCType = {}));
 var UserRole;
 (function (UserRole) {
     UserRole[UserRole["User"] = 1] = "User";
@@ -52,10 +59,13 @@ class UpdatePermissionsEntity {
 }
 exports.UpdatePermissionsEntity = UpdatePermissionsEntity;
 class UserEntity {
-    constructor(id, name, email, phoneNumber, password, role, partnerInfo) {
+    constructor(id, name, lastName, email, ccType, cc, phoneNumber, password, role, partnerInfo) {
         this.id = id;
         this.name = name;
+        this.lastName = lastName;
         this.email = email;
+        this.ccType = ccType;
+        this.cc = cc;
         this.phoneNumber = phoneNumber;
         this.password = password;
         this.role = role;

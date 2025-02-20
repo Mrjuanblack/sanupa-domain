@@ -1,5 +1,12 @@
 import { PartnerInfoEntity, SimplePartnerInfoEntity } from "./PartnerInfo";
 
+export enum CCType {
+    CC = 1,
+    NIT = 2,
+    PA = 3,
+    CE = 4
+}
+
 export enum UserRole {
     User = 1,
     Admin = 2,
@@ -25,7 +32,10 @@ export function getUserRoleString(role: UserRole) {
 export interface User {
     id: number
     name: string
+    lastName: string | null
     email: string | null
+    ccType: CCType | null
+    cc: string | null
     phoneNumber: string
     password: string
     role: UserRole
@@ -38,7 +48,10 @@ export interface User {
 export interface UserMetadata {
     id: number
     name: string
+    lastName: string | null
     email: string | null
+    ccType: CCType | null
+    cc: string | null
     phoneNumber: string
     role: UserRole
 }
@@ -106,7 +119,10 @@ export class UserEntity implements User {
     constructor(
         public id: number,
         public name: string,
+        public lastName: string,
         public email: string | null,
+        public ccType: CCType | null,
+        public cc: string | null,
         public phoneNumber: string,
         public password: string,
         public role: UserRole,

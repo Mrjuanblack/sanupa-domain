@@ -1,4 +1,10 @@
 import { PartnerInfoEntity, SimplePartnerInfoEntity } from "./PartnerInfo";
+export declare enum CCType {
+    CC = 1,
+    NIT = 2,
+    PA = 3,
+    CE = 4
+}
 export declare enum UserRole {
     User = 1,
     Admin = 2,
@@ -8,7 +14,10 @@ export declare function getUserRoleString(role: UserRole): string;
 export interface User {
     id: number;
     name: string;
+    lastName: string | null;
     email: string | null;
+    ccType: CCType | null;
+    cc: string | null;
     phoneNumber: string;
     password: string;
     role: UserRole;
@@ -17,7 +26,10 @@ export interface User {
 export interface UserMetadata {
     id: number;
     name: string;
+    lastName: string | null;
     email: string | null;
+    ccType: CCType | null;
+    cc: string | null;
     phoneNumber: string;
     role: UserRole;
 }
@@ -61,10 +73,13 @@ export declare class UpdatePermissionsEntity implements UpdatePermissions {
 export declare class UserEntity implements User {
     id: number;
     name: string;
+    lastName: string;
     email: string | null;
+    ccType: CCType | null;
+    cc: string | null;
     phoneNumber: string;
     password: string;
     role: UserRole;
     partnerInfo: PartnerInfoEntity | null;
-    constructor(id: number, name: string, email: string | null, phoneNumber: string, password: string, role: UserRole, partnerInfo: PartnerInfoEntity | null);
+    constructor(id: number, name: string, lastName: string, email: string | null, ccType: CCType | null, cc: string | null, phoneNumber: string, password: string, role: UserRole, partnerInfo: PartnerInfoEntity | null);
 }
