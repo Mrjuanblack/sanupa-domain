@@ -4,7 +4,20 @@ export enum CCType {
     CC = 1,
     NIT = 2,
     PA = 3,
-    CE = 4
+    CE = 4,
+}
+export const CCTypeList = Object.values(CCType).filter(value => typeof value === 'number');
+export function getCCTypeString(ccType: CCType): string {
+    switch(ccType) {
+        case CCType.CC:
+            return "CC";
+        case CCType.NIT:
+            return "NIT";
+        case CCType.PA:
+            return "PA";
+        case CCType.CE:
+            return "CE";
+    }
 }
 
 export enum UserRole {

@@ -5,6 +5,8 @@ export declare enum CCType {
     PA = 3,
     CE = 4
 }
+export declare const CCTypeList: CCType[];
+export declare function getCCTypeString(ccType: CCType): string;
 export declare enum UserRole {
     User = 1,
     Admin = 2,

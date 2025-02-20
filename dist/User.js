@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserEntity = exports.UpdatePermissionsEntity = exports.UpdateFacturationInfoRequestEntity = exports.SimpleUser_WithPartnerInfoEntity = exports.SimpleUserEntity = exports.UserRole = exports.CCType = void 0;
+exports.UserEntity = exports.UpdatePermissionsEntity = exports.UpdateFacturationInfoRequestEntity = exports.SimpleUser_WithPartnerInfoEntity = exports.SimpleUserEntity = exports.UserRole = exports.CCTypeList = exports.CCType = void 0;
+exports.getCCTypeString = getCCTypeString;
 exports.getUserRoleString = getUserRoleString;
 exports.isUserCookie = isUserCookie;
 var CCType;
@@ -10,6 +11,19 @@ var CCType;
     CCType[CCType["PA"] = 3] = "PA";
     CCType[CCType["CE"] = 4] = "CE";
 })(CCType || (exports.CCType = CCType = {}));
+exports.CCTypeList = Object.values(CCType).filter(value => typeof value === 'number');
+function getCCTypeString(ccType) {
+    switch (ccType) {
+        case CCType.CC:
+            return "CC";
+        case CCType.NIT:
+            return "NIT";
+        case CCType.PA:
+            return "PA";
+        case CCType.CE:
+            return "CE";
+    }
+}
 var UserRole;
 (function (UserRole) {
     UserRole[UserRole["User"] = 1] = "User";
