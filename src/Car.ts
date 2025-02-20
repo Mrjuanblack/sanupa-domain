@@ -7,14 +7,16 @@ export interface Car {
 
     // Car Data
     userId: number,
-    quantity: number
+    quantity: number,
+    active: boolean
 }
 
 export class CarEntity implements Car {
     constructor(
         public partnerProduct: PartnerProductEntiy,
         public userId: number,
-        public quantity: number
+        public quantity: number,
+        public active: boolean
     ) { }
 }
 
@@ -22,7 +24,8 @@ export interface SimpleCar {
     partnerProduct: SimplePartnerProductEntity,
     productId: number,
     userId: number,
-    quantity: number
+    quantity: number,
+    active: boolean
 }
 
 export class SimpleCarEntity implements SimpleCar {
@@ -31,6 +34,7 @@ export class SimpleCarEntity implements SimpleCar {
         public productId: number,
         public userId: number,
         public quantity: number,
+        public active: boolean
     ) { }
 }
 

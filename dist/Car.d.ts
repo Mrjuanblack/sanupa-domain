@@ -4,25 +4,29 @@ export interface Car {
     partnerProduct: PartnerProductEntiy;
     userId: number;
     quantity: number;
+    active: boolean;
 }
 export declare class CarEntity implements Car {
     partnerProduct: PartnerProductEntiy;
     userId: number;
     quantity: number;
-    constructor(partnerProduct: PartnerProductEntiy, userId: number, quantity: number);
+    active: boolean;
+    constructor(partnerProduct: PartnerProductEntiy, userId: number, quantity: number, active: boolean);
 }
 export interface SimpleCar {
     partnerProduct: SimplePartnerProductEntity;
     productId: number;
     userId: number;
     quantity: number;
+    active: boolean;
 }
 export declare class SimpleCarEntity implements SimpleCar {
     partnerProduct: SimplePartnerProductEntity;
     productId: number;
     userId: number;
     quantity: number;
-    constructor(partnerProduct: SimplePartnerProductEntity, productId: number, userId: number, quantity: number);
+    active: boolean;
+    constructor(partnerProduct: SimplePartnerProductEntity, productId: number, userId: number, quantity: number, active: boolean);
 }
 export interface DeliveryCost {
     partner: SimpleUser_WithPartnerInfo;

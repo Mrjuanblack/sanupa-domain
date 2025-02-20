@@ -2,19 +2,21 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NewCarRequestEntity = exports.DeliveryCostEntity = exports.SimpleCarEntity = exports.CarEntity = void 0;
 class CarEntity {
-    constructor(partnerProduct, userId, quantity) {
+    constructor(partnerProduct, userId, quantity, active) {
         this.partnerProduct = partnerProduct;
         this.userId = userId;
         this.quantity = quantity;
+        this.active = active;
     }
 }
 exports.CarEntity = CarEntity;
 class SimpleCarEntity {
-    constructor(partnerProduct, productId, userId, quantity) {
+    constructor(partnerProduct, productId, userId, quantity, active) {
         this.partnerProduct = partnerProduct;
         this.productId = productId;
         this.userId = userId;
         this.quantity = quantity;
+        this.active = active;
     }
 }
 exports.SimpleCarEntity = SimpleCarEntity;
