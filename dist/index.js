@@ -29,3 +29,4 @@ __exportStar(require("./Car"), exports);
 __exportStar(require("./PartnerInfo"), exports);
 __exportStar(require("./PartnerWorkingZone"), exports);
 __exportStar(require("./UserAddress"), exports);
+__exportStar(require("./GS1"), exports);
