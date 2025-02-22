@@ -10,11 +10,19 @@ var OrderState;
     OrderState[OrderState["Delivered"] = 5] = "Delivered";
     OrderState[OrderState["Cancelled"] = 99] = "Cancelled";
 })(OrderState || (OrderState = {}));
+var DeliveryTime;
+(function (DeliveryTime) {
+    DeliveryTime[DeliveryTime["Morning"] = 1] = "Morning";
+    DeliveryTime[DeliveryTime["MiddleDay"] = 2] = "MiddleDay";
+    DeliveryTime[DeliveryTime["Afternoon"] = 3] = "Afternoon";
+})(DeliveryTime || (DeliveryTime = {}));
 class ParentOrderEntity {
-    constructor(id, createdAt, childOrders) {
+    constructor(id, createdAt, childOrders, deliveryDate, deliveryTime) {
         this.id = id;
         this.createdAt = createdAt;
         this.childOrders = childOrders;
+        this.deliveryDate = deliveryDate;
+        this.deliveryTime = deliveryTime;
     }
 }
 exports.ParentOrderEntity = ParentOrderEntity;

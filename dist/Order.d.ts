@@ -7,16 +7,25 @@ declare enum OrderState {
     Delivered = 5,
     Cancelled = 99
 }
+declare enum DeliveryTime {
+    Morning = 1,
+    MiddleDay = 2,
+    Afternoon = 3
+}
 interface ParentOrder {
     id: number;
     createdAt: Date;
     childOrders: ChildOrder[];
+    deliveryDate: Date;
+    deliveryTime: DeliveryTime;
 }
 export declare class ParentOrderEntity implements ParentOrder {
     id: number;
     createdAt: Date;
     childOrders: ChildOrder[];
-    constructor(id: number, createdAt: Date, childOrders: ChildOrder[]);
+    deliveryDate: Date;
+    deliveryTime: DeliveryTime;
+    constructor(id: number, createdAt: Date, childOrders: ChildOrder[], deliveryDate: Date, deliveryTime: DeliveryTime);
 }
 interface ChildOrder {
     parentOrderId: number;
