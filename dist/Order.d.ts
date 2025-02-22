@@ -6,6 +6,7 @@ export declare enum OrderState {
     InRoute = 3,
     Arrived = 4,
     Delivered = 5,
+    Finished = 98,
     Cancelled = 99
 }
 export declare const OrderStateList: OrderState[];

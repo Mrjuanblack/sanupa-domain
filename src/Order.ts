@@ -8,6 +8,7 @@ export enum OrderState {
     Arrived = 4,
     Delivered = 5,
 
+    Finished = 98,
     Cancelled = 99
 }
 export const OrderStateList = Object.values(OrderState).filter(value => typeof value === 'number');
@@ -23,6 +24,8 @@ export function getOrderStateString(orderState: OrderState): string {
             return "En la ubicación de entrega";
         case OrderState.Delivered:
             return "Entregado";
+        case OrderState.Finished:
+            return "Finalizado";
         case OrderState.Cancelled:
             return "Cancelado";
     }

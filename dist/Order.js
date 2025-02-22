@@ -10,6 +10,7 @@ var OrderState;
     OrderState[OrderState["InRoute"] = 3] = "InRoute";
     OrderState[OrderState["Arrived"] = 4] = "Arrived";
     OrderState[OrderState["Delivered"] = 5] = "Delivered";
+    OrderState[OrderState["Finished"] = 98] = "Finished";
     OrderState[OrderState["Cancelled"] = 99] = "Cancelled";
 })(OrderState || (exports.OrderState = OrderState = {}));
 exports.OrderStateList = Object.values(OrderState).filter(value => typeof value === 'number');
@@ -25,6 +26,8 @@ function getOrderStateString(orderState) {
             return "En la ubicación de entrega";
         case OrderState.Delivered:
             return "Entregado";
+        case OrderState.Finished:
+            return "Finalizado";
         case OrderState.Cancelled:
             return "Cancelado";
     }
