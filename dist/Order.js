@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SimpleChildOrderEntity = exports.ChildOrderEntity = exports.ParentOrderEntity = exports.DeliveryTimeList = exports.DeliveryTime = exports.OrderStateList = exports.OrderState = void 0;
+exports.SimpleChildOrderEntity = exports.ChildOrderEntity = exports.NewOrderRequestEntity = exports.ParentOrderEntity = exports.DeliveryTimeList = exports.DeliveryTime = exports.OrderStateList = exports.OrderState = void 0;
 exports.getOrderStateString = getOrderStateString;
 exports.getDeliveryTimeString = getDeliveryTimeString;
 var OrderState;
@@ -60,6 +60,13 @@ class ParentOrderEntity {
     }
 }
 exports.ParentOrderEntity = ParentOrderEntity;
+class NewOrderRequestEntity {
+    constructor(deliveryDate, deliveryTime) {
+        this.deliveryDate = deliveryDate;
+        this.deliveryTime = deliveryTime;
+    }
+}
+exports.NewOrderRequestEntity = NewOrderRequestEntity;
 class ChildOrderEntity {
     constructor(parentOrderId, state, price, products) {
         this.parentOrderId = parentOrderId;

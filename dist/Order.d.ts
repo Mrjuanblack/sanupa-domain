@@ -35,6 +35,15 @@ export declare class ParentOrderEntity implements ParentOrder {
     deliveryTime: DeliveryTime;
     constructor(id: number, userId: number, createdAt: Date, childOrders: ChildOrder[], deliveryDate: Date, deliveryTime: DeliveryTime);
 }
+export interface NewOrderRequest {
+    deliveryDate: Date;
+    deliveryTime: DeliveryTime;
+}
+export declare class NewOrderRequestEntity implements NewOrderRequest {
+    deliveryDate: Date;
+    deliveryTime: DeliveryTime;
+    constructor(deliveryDate: Date, deliveryTime: DeliveryTime);
+}
 export interface ChildOrder {
     parentOrderId: number;
     state: OrderState;

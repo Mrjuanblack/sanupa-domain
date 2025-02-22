@@ -70,6 +70,18 @@ export class ParentOrderEntity implements ParentOrder {
     ) { }
 }
 
+export interface NewOrderRequest {
+    deliveryDate: Date
+    deliveryTime: DeliveryTime
+}
+
+export class NewOrderRequestEntity implements NewOrderRequest {
+    constructor(
+        public deliveryDate: Date,
+        public deliveryTime: DeliveryTime
+    ) { }
+}
+
 export interface ChildOrder {
     parentOrderId: number
     state: OrderState
