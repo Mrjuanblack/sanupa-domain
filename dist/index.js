@@ -30,3 +30,4 @@ __exportStar(require("./PartnerInfo"), exports);
 __exportStar(require("./PartnerWorkingZone"), exports);
 __exportStar(require("./UserAddress"), exports);
 __exportStar(require("./GS1"), exports);
+__exportStar(require("./Order"), exports);
