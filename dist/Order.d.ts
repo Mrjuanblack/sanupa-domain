@@ -7,11 +7,15 @@ declare enum OrderState {
     Delivered = 5,
     Cancelled = 99
 }
+export declare const OrderStateList: OrderState[];
+export declare function getOrderStateString(orderState: OrderState): string;
 declare enum DeliveryTime {
     Morning = 1,
     MiddleDay = 2,
     Afternoon = 3
 }
+export declare const DeliveryTimeList: DeliveryTime[];
+export declare function getDeliveryTimeString(deliveryTime: DeliveryTime): string;
 interface ParentOrder {
     id: number;
     userId: number;
