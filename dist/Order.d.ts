@@ -14,6 +14,7 @@ declare enum DeliveryTime {
 }
 interface ParentOrder {
     id: number;
+    userId: number;
     createdAt: Date;
     childOrders: ChildOrder[];
     deliveryDate: Date;
@@ -21,11 +22,12 @@ interface ParentOrder {
 }
 export declare class ParentOrderEntity implements ParentOrder {
     id: number;
+    userId: number;
     createdAt: Date;
     childOrders: ChildOrder[];
     deliveryDate: Date;
     deliveryTime: DeliveryTime;
-    constructor(id: number, createdAt: Date, childOrders: ChildOrder[], deliveryDate: Date, deliveryTime: DeliveryTime);
+    constructor(id: number, userId: number, createdAt: Date, childOrders: ChildOrder[], deliveryDate: Date, deliveryTime: DeliveryTime);
 }
 interface ChildOrder {
     parentOrderId: number;

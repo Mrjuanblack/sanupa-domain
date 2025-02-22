@@ -17,8 +17,9 @@ var DeliveryTime;
     DeliveryTime[DeliveryTime["Afternoon"] = 3] = "Afternoon";
 })(DeliveryTime || (DeliveryTime = {}));
 class ParentOrderEntity {
-    constructor(id, createdAt, childOrders, deliveryDate, deliveryTime) {
+    constructor(id, userId, createdAt, childOrders, deliveryDate, deliveryTime) {
         this.id = id;
+        this.userId = userId;
         this.createdAt = createdAt;
         this.childOrders = childOrders;
         this.deliveryDate = deliveryDate;

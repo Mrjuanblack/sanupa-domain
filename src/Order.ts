@@ -18,6 +18,8 @@ enum DeliveryTime {
 
 interface ParentOrder {
     id: number
+    userId: number
+    
     createdAt: Date
     childOrders: ChildOrder[]
 
@@ -28,6 +30,7 @@ interface ParentOrder {
 export class ParentOrderEntity implements ParentOrder {
     constructor(
         public id: number,
+        public userId: number,
         public createdAt: Date,
         public childOrders: ChildOrder[],
         public deliveryDate: Date,
