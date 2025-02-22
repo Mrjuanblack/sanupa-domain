@@ -1,6 +1,7 @@
+import { SimplePartnerInfoEntity } from "./PartnerInfo";
 import { SimplePartnerProductEntity } from "./PartnerProduct"
 
-enum OrderState {
+export enum OrderState {
     Started = 1,
     Packed = 2,
     InRoute = 3,
@@ -27,7 +28,7 @@ export function getOrderStateString(orderState: OrderState): string {
     }
 }
 
-enum DeliveryTime {
+export enum DeliveryTime {
     Morning = 1,
     MiddleDay = 2,
     Afternoon = 3
@@ -44,7 +45,7 @@ export function getDeliveryTimeString(deliveryTime: DeliveryTime): string {
     }
 }
 
-interface ParentOrder {
+export interface ParentOrder {
     id: number
     userId: number
 
@@ -66,7 +67,7 @@ export class ParentOrderEntity implements ParentOrder {
     ) { }
 }
 
-interface ChildOrder {
+export interface ChildOrder {
     parentOrderId: number
     state: OrderState
     price: number
@@ -80,5 +81,21 @@ export class ChildOrderEntity implements ChildOrder {
         public state: OrderState,
         public price: number,
         public products: SimplePartnerProductEntity[]
+    ) { }
+}
+
+export interface SimpleChildOrder {
+    parentOrderId: number
+    state: OrderState
+    price: number
+    partnerInformation: SimplePartnerInfoEntity
+}
+
+export class SimpleChildOrderEntity implements SimpleChildOrder {
+    constructor(
+        public parentOrderId: number,
+        public state: OrderState,
+        public price: number,
+        public partnerInformation: SimplePartnerInfoEntity
     ) { }
 }

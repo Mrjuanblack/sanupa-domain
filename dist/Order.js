@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ChildOrderEntity = exports.ParentOrderEntity = exports.DeliveryTimeList = exports.OrderStateList = void 0;
+exports.SimpleChildOrderEntity = exports.ChildOrderEntity = exports.ParentOrderEntity = exports.DeliveryTimeList = exports.DeliveryTime = exports.OrderStateList = exports.OrderState = void 0;
 exports.getOrderStateString = getOrderStateString;
 exports.getDeliveryTimeString = getDeliveryTimeString;
 var OrderState;
@@ -11,7 +11,7 @@ var OrderState;
     OrderState[OrderState["Arrived"] = 4] = "Arrived";
     OrderState[OrderState["Delivered"] = 5] = "Delivered";
     OrderState[OrderState["Cancelled"] = 99] = "Cancelled";
-})(OrderState || (OrderState = {}));
+})(OrderState || (exports.OrderState = OrderState = {}));
 exports.OrderStateList = Object.values(OrderState).filter(value => typeof value === 'number');
 function getOrderStateString(orderState) {
     switch (orderState) {
@@ -34,7 +34,7 @@ var DeliveryTime;
     DeliveryTime[DeliveryTime["Morning"] = 1] = "Morning";
     DeliveryTime[DeliveryTime["MiddleDay"] = 2] = "MiddleDay";
     DeliveryTime[DeliveryTime["Afternoon"] = 3] = "Afternoon";
-})(DeliveryTime || (DeliveryTime = {}));
+})(DeliveryTime || (exports.DeliveryTime = DeliveryTime = {}));
 exports.DeliveryTimeList = Object.values(DeliveryTime).filter(value => typeof value === 'number');
 function getDeliveryTimeString(deliveryTime) {
     switch (deliveryTime) {
@@ -66,3 +66,12 @@ class ChildOrderEntity {
     }
 }
 exports.ChildOrderEntity = ChildOrderEntity;
+class SimpleChildOrderEntity {
+    constructor(parentOrderId, state, price, partnerInformation) {
+        this.parentOrderId = parentOrderId;
+        this.state = state;
+        this.price = price;
+        this.partnerInformation = partnerInformation;
+    }
+}
+exports.SimpleChildOrderEntity = SimpleChildOrderEntity;
