@@ -1,5 +1,6 @@
 import { SimplePartnerInfoEntity } from "./PartnerInfo";
 import { PartnerProductEntiy, SimplePartnerProductEntity } from "./PartnerProduct"
+import { UserMetadata } from "./User";
 
 export enum OrderState {
     Started = 1,
@@ -128,6 +129,28 @@ export class SimpleChildOrderEntity implements SimpleChildOrder {
     constructor(
         public id: number,
         public parentOrderId: number,
+        public state: OrderState,
+        public price: number,
+        public deliveryPrice: number,
+        public partnerInformation: SimplePartnerInfoEntity
+    ) { }
+}
+
+export interface SimpleChildOrder_Admin {
+    id: number
+    parentOrderId: number
+    user: UserMetadata
+    state: OrderState
+    price: number
+    deliveryPrice: number
+    partnerInformation: SimplePartnerInfoEntity
+}
+
+export class SimpleChildOrder_AdminEntity implements SimpleChildOrder_Admin {
+    constructor(
+        public id: number,
+        public parentOrderId: number,
+        public user: UserMetadata,
         public state: OrderState,
         public price: number,
         public deliveryPrice: number,
