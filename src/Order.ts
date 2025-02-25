@@ -1,5 +1,5 @@
 import { SimplePartnerInfoEntity } from "./PartnerInfo";
-import { SimplePartnerProductEntity } from "./PartnerProduct"
+import { PartnerProductEntiy, SimplePartnerProductEntity } from "./PartnerProduct"
 
 export enum OrderState {
     Started = 1,
@@ -88,7 +88,7 @@ export interface ChildOrder {
     state: OrderState
     price: number
 
-    products: SimplePartnerProductEntity[]
+    products: PartnerProductEntiy[]
 }
 
 export class ChildOrderEntity implements ChildOrder {
@@ -97,7 +97,7 @@ export class ChildOrderEntity implements ChildOrder {
         public parentOrderId: number,
         public state: OrderState,
         public price: number,
-        public products: SimplePartnerProductEntity[]
+        public products: PartnerProductEntiy[]
     ) { }
 }
 

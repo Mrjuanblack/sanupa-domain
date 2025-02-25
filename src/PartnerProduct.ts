@@ -35,7 +35,6 @@ export class UpdatePartnerProductRequestEntity implements UpdatePartnerProductRe
 
 export interface SimplePartnerProduct {
     partner: SimpleUser_WithPartnerInfoEntity,
-    imgPath: string | null,
     price: number,
     stock: number
 }
@@ -43,7 +42,6 @@ export interface SimplePartnerProduct {
 export class SimplePartnerProductEntity implements SimplePartnerProduct {
     constructor(
         public partner: SimpleUser_WithPartnerInfoEntity,
-        public imgPath: string | null,
         public price: number,
         public stock: number
     ) { }

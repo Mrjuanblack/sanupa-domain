@@ -1,5 +1,5 @@
 import { SimplePartnerInfoEntity } from "./PartnerInfo";
-import { SimplePartnerProductEntity } from "./PartnerProduct";
+import { PartnerProductEntiy } from "./PartnerProduct";
 export declare enum OrderState {
     Started = 1,
     Packed = 2,
@@ -49,15 +49,15 @@ export interface ChildOrder {
     parentOrderId: number;
     state: OrderState;
     price: number;
-    products: SimplePartnerProductEntity[];
+    products: PartnerProductEntiy[];
 }
 export declare class ChildOrderEntity implements ChildOrder {
     id: number;
     parentOrderId: number;
     state: OrderState;
     price: number;
-    products: SimplePartnerProductEntity[];
-    constructor(id: number, parentOrderId: number, state: OrderState, price: number, products: SimplePartnerProductEntity[]);
+    products: PartnerProductEntiy[];
+    constructor(id: number, parentOrderId: number, state: OrderState, price: number, products: PartnerProductEntiy[]);
 }
 export interface SimpleChildOrder {
     id: number;
