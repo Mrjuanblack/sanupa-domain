@@ -44,13 +44,22 @@ export declare class NewOrderRequestEntity implements NewOrderRequest {
     deliveryTime: DeliveryTime;
     constructor(deliveryDate: Date, deliveryTime: DeliveryTime);
 }
+export interface OrderItem {
+    product: PartnerProductEntiy;
+    quantity: number;
+}
+export declare class OrderItemEntity implements OrderItem {
+    product: PartnerProductEntiy;
+    quantity: number;
+    constructor(product: PartnerProductEntiy, quantity: number);
+}
 export interface ChildOrder {
     id: number;
     parentOrderId: number;
     state: OrderState;
     price: number;
     deliveryPrice: number;
-    products: PartnerProductEntiy[];
+    products: OrderItemEntity[];
 }
 export declare class ChildOrderEntity implements ChildOrder {
     id: number;
@@ -58,8 +67,8 @@ export declare class ChildOrderEntity implements ChildOrder {
     state: OrderState;
     price: number;
     deliveryPrice: number;
-    products: PartnerProductEntiy[];
-    constructor(id: number, parentOrderId: number, state: OrderState, price: number, deliveryPrice: number, products: PartnerProductEntiy[]);
+    products: OrderItemEntity[];
+    constructor(id: number, parentOrderId: number, state: OrderState, price: number, deliveryPrice: number, products: OrderItemEntity[]);
 }
 export interface SimpleChildOrder {
     id: number;

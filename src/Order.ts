@@ -82,6 +82,18 @@ export class NewOrderRequestEntity implements NewOrderRequest {
     ) { }
 }
 
+export interface OrderItem {
+    product: PartnerProductEntiy
+    quantity: number
+}
+
+export class OrderItemEntity implements OrderItem {
+    constructor(
+        public product: PartnerProductEntiy,
+        public quantity: number
+    ) { }
+}
+
 export interface ChildOrder {
     id: number
     parentOrderId: number
@@ -89,7 +101,7 @@ export interface ChildOrder {
     price: number
     deliveryPrice: number
 
-    products: PartnerProductEntiy[]
+    products: OrderItemEntity[]
 }
 
 export class ChildOrderEntity implements ChildOrder {
@@ -99,7 +111,7 @@ export class ChildOrderEntity implements ChildOrder {
         public state: OrderState,
         public price: number,
         public deliveryPrice: number,
-        public products: PartnerProductEntiy[]
+        public products: OrderItemEntity[]
     ) { }
 }
 
