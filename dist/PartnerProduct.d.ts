@@ -28,14 +28,16 @@ export declare class UpdatePartnerProductRequestEntity implements UpdatePartnerP
 }
 export interface SimplePartnerProduct {
     partner: SimpleUser_WithPartnerInfoEntity;
+    imgPath: string | null;
     price: number;
     stock: number;
 }
 export declare class SimplePartnerProductEntity implements SimplePartnerProduct {
     partner: SimpleUser_WithPartnerInfoEntity;
+    imgPath: string | null;
     price: number;
     stock: number;
-    constructor(partner: SimpleUser_WithPartnerInfoEntity, price: number, stock: number);
+    constructor(partner: SimpleUser_WithPartnerInfoEntity, imgPath: string | null, price: number, stock: number);
 }
 export interface ListPartnerProduct {
     product: ProductWithCodeEntity | ProductWithoutCodeEntity;
