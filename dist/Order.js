@@ -78,7 +78,8 @@ class ChildOrderEntity {
 }
 exports.ChildOrderEntity = ChildOrderEntity;
 class SimpleChildOrderEntity {
-    constructor(parentOrderId, state, price, partnerInformation) {
+    constructor(id, parentOrderId, state, price, partnerInformation) {
+        this.id = id;
         this.parentOrderId = parentOrderId;
         this.state = state;
         this.price = price;

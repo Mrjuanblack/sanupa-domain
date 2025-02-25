@@ -60,15 +60,17 @@ export declare class ChildOrderEntity implements ChildOrder {
     constructor(id: number, parentOrderId: number, state: OrderState, price: number, products: SimplePartnerProductEntity[]);
 }
 export interface SimpleChildOrder {
+    id: number;
     parentOrderId: number;
     state: OrderState;
     price: number;
     partnerInformation: SimplePartnerInfoEntity;
 }
 export declare class SimpleChildOrderEntity implements SimpleChildOrder {
+    id: number;
     parentOrderId: number;
     state: OrderState;
     price: number;
     partnerInformation: SimplePartnerInfoEntity;
-    constructor(parentOrderId: number, state: OrderState, price: number, partnerInformation: SimplePartnerInfoEntity);
+    constructor(id: number, parentOrderId: number, state: OrderState, price: number, partnerInformation: SimplePartnerInfoEntity);
 }

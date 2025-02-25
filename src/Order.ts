@@ -102,6 +102,7 @@ export class ChildOrderEntity implements ChildOrder {
 }
 
 export interface SimpleChildOrder {
+    id: number,
     parentOrderId: number
     state: OrderState
     price: number
@@ -110,6 +111,7 @@ export interface SimpleChildOrder {
 
 export class SimpleChildOrderEntity implements SimpleChildOrder {
     constructor(
+        public id: number,
         public parentOrderId: number,
         public state: OrderState,
         public price: number,
