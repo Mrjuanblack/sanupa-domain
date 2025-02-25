@@ -49,6 +49,7 @@ export interface ChildOrder {
     parentOrderId: number;
     state: OrderState;
     price: number;
+    deliveryPrice: number;
     products: PartnerProductEntiy[];
 }
 export declare class ChildOrderEntity implements ChildOrder {
@@ -56,14 +57,16 @@ export declare class ChildOrderEntity implements ChildOrder {
     parentOrderId: number;
     state: OrderState;
     price: number;
+    deliveryPrice: number;
     products: PartnerProductEntiy[];
-    constructor(id: number, parentOrderId: number, state: OrderState, price: number, products: PartnerProductEntiy[]);
+    constructor(id: number, parentOrderId: number, state: OrderState, price: number, deliveryPrice: number, products: PartnerProductEntiy[]);
 }
 export interface SimpleChildOrder {
     id: number;
     parentOrderId: number;
     state: OrderState;
     price: number;
+    deliveryPrice: number;
     partnerInformation: SimplePartnerInfoEntity;
 }
 export declare class SimpleChildOrderEntity implements SimpleChildOrder {
@@ -71,6 +74,7 @@ export declare class SimpleChildOrderEntity implements SimpleChildOrder {
     parentOrderId: number;
     state: OrderState;
     price: number;
+    deliveryPrice: number;
     partnerInformation: SimplePartnerInfoEntity;
-    constructor(id: number, parentOrderId: number, state: OrderState, price: number, partnerInformation: SimplePartnerInfoEntity);
+    constructor(id: number, parentOrderId: number, state: OrderState, price: number, deliveryPrice: number, partnerInformation: SimplePartnerInfoEntity);
 }

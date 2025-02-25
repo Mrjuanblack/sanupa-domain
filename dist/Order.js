@@ -68,21 +68,23 @@ class NewOrderRequestEntity {
 }
 exports.NewOrderRequestEntity = NewOrderRequestEntity;
 class ChildOrderEntity {
-    constructor(id, parentOrderId, state, price, products) {
+    constructor(id, parentOrderId, state, price, deliveryPrice, products) {
         this.id = id;
         this.parentOrderId = parentOrderId;
         this.state = state;
         this.price = price;
+        this.deliveryPrice = deliveryPrice;
         this.products = products;
     }
 }
 exports.ChildOrderEntity = ChildOrderEntity;
 class SimpleChildOrderEntity {
-    constructor(id, parentOrderId, state, price, partnerInformation) {
+    constructor(id, parentOrderId, state, price, deliveryPrice, partnerInformation) {
         this.id = id;
         this.parentOrderId = parentOrderId;
         this.state = state;
         this.price = price;
+        this.deliveryPrice = deliveryPrice;
         this.partnerInformation = partnerInformation;
     }
 }

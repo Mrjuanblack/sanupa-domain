@@ -87,6 +87,7 @@ export interface ChildOrder {
     parentOrderId: number
     state: OrderState
     price: number
+    deliveryPrice: number
 
     products: PartnerProductEntiy[]
 }
@@ -97,6 +98,7 @@ export class ChildOrderEntity implements ChildOrder {
         public parentOrderId: number,
         public state: OrderState,
         public price: number,
+        public deliveryPrice: number,
         public products: PartnerProductEntiy[]
     ) { }
 }
@@ -106,6 +108,7 @@ export interface SimpleChildOrder {
     parentOrderId: number
     state: OrderState
     price: number
+    deliveryPrice: number
     partnerInformation: SimplePartnerInfoEntity
 }
 
@@ -115,6 +118,7 @@ export class SimpleChildOrderEntity implements SimpleChildOrder {
         public parentOrderId: number,
         public state: OrderState,
         public price: number,
+        public deliveryPrice: number,
         public partnerInformation: SimplePartnerInfoEntity
     ) { }
 }
