@@ -83,6 +83,7 @@ export class NewOrderRequestEntity implements NewOrderRequest {
 }
 
 export interface ChildOrder {
+    id: number
     parentOrderId: number
     state: OrderState
     price: number
@@ -92,6 +93,7 @@ export interface ChildOrder {
 
 export class ChildOrderEntity implements ChildOrder {
     constructor(
+        public id: number,
         public parentOrderId: number,
         public state: OrderState,
         public price: number,

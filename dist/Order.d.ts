@@ -45,17 +45,19 @@ export declare class NewOrderRequestEntity implements NewOrderRequest {
     constructor(deliveryDate: Date, deliveryTime: DeliveryTime);
 }
 export interface ChildOrder {
+    id: number;
     parentOrderId: number;
     state: OrderState;
     price: number;
     products: SimplePartnerProductEntity[];
 }
 export declare class ChildOrderEntity implements ChildOrder {
+    id: number;
     parentOrderId: number;
     state: OrderState;
     price: number;
     products: SimplePartnerProductEntity[];
-    constructor(parentOrderId: number, state: OrderState, price: number, products: SimplePartnerProductEntity[]);
+    constructor(id: number, parentOrderId: number, state: OrderState, price: number, products: SimplePartnerProductEntity[]);
 }
 export interface SimpleChildOrder {
     parentOrderId: number;

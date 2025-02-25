@@ -68,7 +68,8 @@ class NewOrderRequestEntity {
 }
 exports.NewOrderRequestEntity = NewOrderRequestEntity;
 class ChildOrderEntity {
-    constructor(parentOrderId, state, price, products) {
+    constructor(id, parentOrderId, state, price, products) {
+        this.id = id;
         this.parentOrderId = parentOrderId;
         this.state = state;
         this.price = price;
