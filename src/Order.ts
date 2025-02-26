@@ -86,12 +86,14 @@ export class NewOrderRequestEntity implements NewOrderRequest {
 export interface OrderItem {
     product: PartnerProductEntiy
     quantity: number
+    checked: boolean
 }
 
 export class OrderItemEntity implements OrderItem {
     constructor(
         public product: PartnerProductEntiy,
-        public quantity: number
+        public quantity: number,
+        public checked: boolean
     ) { }
 }
 
@@ -101,6 +103,7 @@ export interface ChildOrder {
     state: OrderState
     price: number
     deliveryPrice: number
+    evidenceImg: string | null
 
     products: OrderItemEntity[]
 }
@@ -112,6 +115,7 @@ export class ChildOrderEntity implements ChildOrder {
         public state: OrderState,
         public price: number,
         public deliveryPrice: number,
+        public evidenceImg: string | null,
         public products: OrderItemEntity[]
     ) { }
 }
@@ -143,6 +147,7 @@ export interface SimpleChildOrder_Admin {
     state: OrderState
     price: number
     deliveryPrice: number
+    evidenceImg: string | null
     partnerInformation: SimplePartnerInfoEntity
 }
 
@@ -154,6 +159,7 @@ export class SimpleChildOrder_AdminEntity implements SimpleChildOrder_Admin {
         public state: OrderState,
         public price: number,
         public deliveryPrice: number,
+        public evidenceImg: string | null,
         public partnerInformation: SimplePartnerInfoEntity
     ) { }
 }

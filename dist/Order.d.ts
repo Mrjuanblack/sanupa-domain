@@ -48,11 +48,13 @@ export declare class NewOrderRequestEntity implements NewOrderRequest {
 export interface OrderItem {
     product: PartnerProductEntiy;
     quantity: number;
+    checked: boolean;
 }
 export declare class OrderItemEntity implements OrderItem {
     product: PartnerProductEntiy;
     quantity: number;
-    constructor(product: PartnerProductEntiy, quantity: number);
+    checked: boolean;
+    constructor(product: PartnerProductEntiy, quantity: number, checked: boolean);
 }
 export interface ChildOrder {
     id: number;
@@ -60,6 +62,7 @@ export interface ChildOrder {
     state: OrderState;
     price: number;
     deliveryPrice: number;
+    evidenceImg: string | null;
     products: OrderItemEntity[];
 }
 export declare class ChildOrderEntity implements ChildOrder {
@@ -68,8 +71,9 @@ export declare class ChildOrderEntity implements ChildOrder {
     state: OrderState;
     price: number;
     deliveryPrice: number;
+    evidenceImg: string | null;
     products: OrderItemEntity[];
-    constructor(id: number, parentOrderId: number, state: OrderState, price: number, deliveryPrice: number, products: OrderItemEntity[]);
+    constructor(id: number, parentOrderId: number, state: OrderState, price: number, deliveryPrice: number, evidenceImg: string | null, products: OrderItemEntity[]);
 }
 export interface SimpleChildOrder {
     id: number;
@@ -95,6 +99,7 @@ export interface SimpleChildOrder_Admin {
     state: OrderState;
     price: number;
     deliveryPrice: number;
+    evidenceImg: string | null;
     partnerInformation: SimplePartnerInfoEntity;
 }
 export declare class SimpleChildOrder_AdminEntity implements SimpleChildOrder_Admin {
@@ -104,6 +109,7 @@ export declare class SimpleChildOrder_AdminEntity implements SimpleChildOrder_Ad
     state: OrderState;
     price: number;
     deliveryPrice: number;
+    evidenceImg: string | null;
     partnerInformation: SimplePartnerInfoEntity;
-    constructor(id: number, parentOrderId: number, user: SimpleUserEntity, state: OrderState, price: number, deliveryPrice: number, partnerInformation: SimplePartnerInfoEntity);
+    constructor(id: number, parentOrderId: number, user: SimpleUserEntity, state: OrderState, price: number, deliveryPrice: number, evidenceImg: string | null, partnerInformation: SimplePartnerInfoEntity);
 }
