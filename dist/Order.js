@@ -68,7 +68,8 @@ class NewOrderRequestEntity {
 }
 exports.NewOrderRequestEntity = NewOrderRequestEntity;
 class OrderItemEntity {
-    constructor(product, quantity, checked) {
+    constructor(id, product, quantity, checked) {
+        this.id = id;
         this.product = product;
         this.quantity = quantity;
         this.checked = checked;

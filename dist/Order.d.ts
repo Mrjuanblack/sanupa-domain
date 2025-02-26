@@ -46,15 +46,17 @@ export declare class NewOrderRequestEntity implements NewOrderRequest {
     constructor(deliveryDate: Date, deliveryTime: DeliveryTime);
 }
 export interface OrderItem {
+    id: number;
     product: PartnerProductEntiy;
     quantity: number;
     checked: boolean;
 }
 export declare class OrderItemEntity implements OrderItem {
+    id: number;
     product: PartnerProductEntiy;
     quantity: number;
     checked: boolean;
-    constructor(product: PartnerProductEntiy, quantity: number, checked: boolean);
+    constructor(id: number, product: PartnerProductEntiy, quantity: number, checked: boolean);
 }
 export interface ChildOrder {
     id: number;

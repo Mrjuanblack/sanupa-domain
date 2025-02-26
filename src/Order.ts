@@ -84,6 +84,7 @@ export class NewOrderRequestEntity implements NewOrderRequest {
 }
 
 export interface OrderItem {
+    id: number
     product: PartnerProductEntiy
     quantity: number
     checked: boolean
@@ -91,6 +92,7 @@ export interface OrderItem {
 
 export class OrderItemEntity implements OrderItem {
     constructor(
+        public id: number,
         public product: PartnerProductEntiy,
         public quantity: number,
         public checked: boolean
