@@ -68,20 +68,20 @@ class NewOrderRequestEntity {
 }
 exports.NewOrderRequestEntity = NewOrderRequestEntity;
 class OrderItemEntity {
-    constructor(id, product, quantity, checked) {
+    constructor(id, product, price, quantity, checked) {
         this.id = id;
         this.product = product;
+        this.price = price;
         this.quantity = quantity;
         this.checked = checked;
     }
 }
 exports.OrderItemEntity = OrderItemEntity;
 class ChildOrderEntity {
-    constructor(id, parentOrderId, state, price, deliveryPrice, evidenceImg, products) {
+    constructor(id, parentOrderId, state, deliveryPrice, evidenceImg, products) {
         this.id = id;
         this.parentOrderId = parentOrderId;
         this.state = state;
-        this.price = price;
         this.deliveryPrice = deliveryPrice;
         this.evidenceImg = evidenceImg;
         this.products = products;
@@ -89,12 +89,11 @@ class ChildOrderEntity {
 }
 exports.ChildOrderEntity = ChildOrderEntity;
 class ChildOrder_AdminEntity {
-    constructor(id, parentOrderId, user, state, price, deliveryPrice, evidenceImg, products) {
+    constructor(id, parentOrderId, user, state, deliveryPrice, evidenceImg, products) {
         this.id = id;
         this.parentOrderId = parentOrderId;
         this.user = user;
         this.state = state;
-        this.price = price;
         this.deliveryPrice = deliveryPrice;
         this.evidenceImg = evidenceImg;
         this.products = products;

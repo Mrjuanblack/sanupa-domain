@@ -48,21 +48,22 @@ export declare class NewOrderRequestEntity implements NewOrderRequest {
 export interface OrderItem {
     id: number;
     product: PartnerProductEntiy;
+    price: number;
     quantity: number;
     checked: boolean;
 }
 export declare class OrderItemEntity implements OrderItem {
     id: number;
     product: PartnerProductEntiy;
+    price: number;
     quantity: number;
     checked: boolean;
-    constructor(id: number, product: PartnerProductEntiy, quantity: number, checked: boolean);
+    constructor(id: number, product: PartnerProductEntiy, price: number, quantity: number, checked: boolean);
 }
 export interface ChildOrder {
     id: number;
     parentOrderId: number;
     state: OrderState;
-    price: number;
     deliveryPrice: number;
     evidenceImg: string | null;
     products: OrderItemEntity[];
@@ -71,18 +72,16 @@ export declare class ChildOrderEntity implements ChildOrder {
     id: number;
     parentOrderId: number;
     state: OrderState;
-    price: number;
     deliveryPrice: number;
     evidenceImg: string | null;
     products: OrderItemEntity[];
-    constructor(id: number, parentOrderId: number, state: OrderState, price: number, deliveryPrice: number, evidenceImg: string | null, products: OrderItemEntity[]);
+    constructor(id: number, parentOrderId: number, state: OrderState, deliveryPrice: number, evidenceImg: string | null, products: OrderItemEntity[]);
 }
 export interface ChildOrder_Admin {
     id: number;
     parentOrderId: number;
     user: SimpleUserEntity;
     state: OrderState;
-    price: number;
     deliveryPrice: number;
     evidenceImg: string | null;
     products: OrderItemEntity[];
@@ -92,11 +91,10 @@ export declare class ChildOrder_AdminEntity implements ChildOrder_Admin {
     parentOrderId: number;
     user: SimpleUserEntity;
     state: OrderState;
-    price: number;
     deliveryPrice: number;
     evidenceImg: string | null;
     products: OrderItemEntity[];
-    constructor(id: number, parentOrderId: number, user: SimpleUserEntity, state: OrderState, price: number, deliveryPrice: number, evidenceImg: string | null, products: OrderItemEntity[]);
+    constructor(id: number, parentOrderId: number, user: SimpleUserEntity, state: OrderState, deliveryPrice: number, evidenceImg: string | null, products: OrderItemEntity[]);
 }
 export interface SimpleChildOrder {
     id: number;

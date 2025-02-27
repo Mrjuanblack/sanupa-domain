@@ -86,6 +86,7 @@ export class NewOrderRequestEntity implements NewOrderRequest {
 export interface OrderItem {
     id: number
     product: PartnerProductEntiy
+    price: number
     quantity: number
     checked: boolean
 }
@@ -94,6 +95,7 @@ export class OrderItemEntity implements OrderItem {
     constructor(
         public id: number,
         public product: PartnerProductEntiy,
+        public price: number,
         public quantity: number,
         public checked: boolean
     ) { }
@@ -103,7 +105,6 @@ export interface ChildOrder {
     id: number
     parentOrderId: number
     state: OrderState
-    price: number
     deliveryPrice: number
     evidenceImg: string | null
 
@@ -115,7 +116,6 @@ export class ChildOrderEntity implements ChildOrder {
         public id: number,
         public parentOrderId: number,
         public state: OrderState,
-        public price: number,
         public deliveryPrice: number,
         public evidenceImg: string | null,
         public products: OrderItemEntity[]
@@ -127,7 +127,6 @@ export interface ChildOrder_Admin {
     parentOrderId: number
     user: SimpleUserEntity
     state: OrderState
-    price: number
     deliveryPrice: number
     evidenceImg: string | null
 
@@ -140,7 +139,6 @@ export class ChildOrder_AdminEntity implements ChildOrder_Admin {
         public parentOrderId: number,
         public user: SimpleUserEntity,
         public state: OrderState,
-        public price: number,
         public deliveryPrice: number,
         public evidenceImg: string | null,
         public products: OrderItemEntity[]
