@@ -77,6 +77,27 @@ export declare class ChildOrderEntity implements ChildOrder {
     products: OrderItemEntity[];
     constructor(id: number, parentOrderId: number, state: OrderState, price: number, deliveryPrice: number, evidenceImg: string | null, products: OrderItemEntity[]);
 }
+export interface ChildOrder_Admin {
+    id: number;
+    parentOrderId: number;
+    user: SimpleUserEntity;
+    state: OrderState;
+    price: number;
+    deliveryPrice: number;
+    evidenceImg: string | null;
+    products: OrderItemEntity[];
+}
+export declare class ChildOrder_AdminEntity implements ChildOrder_Admin {
+    id: number;
+    parentOrderId: number;
+    user: SimpleUserEntity;
+    state: OrderState;
+    price: number;
+    deliveryPrice: number;
+    evidenceImg: string | null;
+    products: OrderItemEntity[];
+    constructor(id: number, parentOrderId: number, user: SimpleUserEntity, state: OrderState, price: number, deliveryPrice: number, evidenceImg: string | null, products: OrderItemEntity[]);
+}
 export interface SimpleChildOrder {
     id: number;
     parentOrderId: number;

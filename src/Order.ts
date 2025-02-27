@@ -122,6 +122,32 @@ export class ChildOrderEntity implements ChildOrder {
     ) { }
 }
 
+export interface ChildOrder_Admin {
+    id: number
+    parentOrderId: number
+    user: SimpleUserEntity
+    state: OrderState
+    price: number
+    deliveryPrice: number
+    evidenceImg: string | null
+
+    products: OrderItemEntity[]
+}
+
+export class ChildOrder_AdminEntity implements ChildOrder_Admin {
+    constructor(
+        public id: number,
+        public parentOrderId: number,
+        public user: SimpleUserEntity,
+        public state: OrderState,
+        public price: number,
+        public deliveryPrice: number,
+        public evidenceImg: string | null,
+        public products: OrderItemEntity[]
+    ) { }
+
+}
+
 export interface SimpleChildOrder {
     id: number,
     parentOrderId: number
