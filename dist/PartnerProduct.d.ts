@@ -4,38 +4,38 @@ export interface NewPartnerProductRequest {
     productId: number;
     partnerId: number;
     price: number;
-    stock: number;
+    stock: number | null;
 }
 export declare class NewPartnerProductRequestEntity implements NewPartnerProductRequest {
     productId: number;
     partnerId: number;
     price: number;
-    stock: number;
-    constructor(productId: number, partnerId: number, price: number, stock: number);
+    stock: number | null;
+    constructor(productId: number, partnerId: number, price: number, stock: number | null);
 }
 export interface UpdatePartnerProductRequest {
     productId: number;
     partnerId: number;
     price: number;
-    stock: number;
+    stock: number | null;
 }
 export declare class UpdatePartnerProductRequestEntity implements UpdatePartnerProductRequest {
     productId: number;
     partnerId: number;
     price: number;
-    stock: number;
-    constructor(productId: number, partnerId: number, price: number, stock: number);
+    stock: number | null;
+    constructor(productId: number, partnerId: number, price: number, stock: number | null);
 }
 export interface SimplePartnerProduct {
     partner: SimpleUser_WithPartnerInfoEntity;
     price: number;
-    stock: number;
+    stock: number | null;
 }
 export declare class SimplePartnerProductEntity implements SimplePartnerProduct {
     partner: SimpleUser_WithPartnerInfoEntity;
     price: number;
-    stock: number;
-    constructor(partner: SimpleUser_WithPartnerInfoEntity, price: number, stock: number);
+    stock: number | null;
+    constructor(partner: SimpleUser_WithPartnerInfoEntity, price: number, stock: number | null);
 }
 export interface ListPartnerProduct {
     product: ProductWithCodeEntity | ProductWithoutCodeEntity;
@@ -50,14 +50,14 @@ export interface PartnerProduct {
     product: ProductWithCodeEntity | ProductWithoutCodeEntity;
     partner: SimpleUser_WithPartnerInfoEntity;
     price: number;
-    stock: number;
+    stock: number | null;
 }
 export declare class PartnerProductEntiy implements PartnerProduct {
     product: ProductWithCodeEntity | ProductWithoutCodeEntity;
     partner: SimpleUser_WithPartnerInfoEntity;
     price: number;
-    stock: number;
-    constructor(product: ProductWithCodeEntity | ProductWithoutCodeEntity, partner: SimpleUser_WithPartnerInfoEntity, price: number, stock: number);
+    stock: number | null;
+    constructor(product: ProductWithCodeEntity | ProductWithoutCodeEntity, partner: SimpleUser_WithPartnerInfoEntity, price: number, stock: number | null);
 }
 export interface PP_Filter {
     price: number | null;

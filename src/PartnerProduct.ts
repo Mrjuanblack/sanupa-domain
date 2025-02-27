@@ -2,10 +2,10 @@ import { ProductWithCodeEntity, ProductWithoutCodeEntity } from "./Product"
 import { SimpleUser, SimpleUser_WithPartnerInfoEntity } from "./User"
 
 export interface NewPartnerProductRequest {
-    productId: number,
-    partnerId: number,
-    price: number,
-    stock: number
+    productId: number
+    partnerId: number
+    price: number
+    stock: number | null
 }
 
 export class NewPartnerProductRequestEntity implements NewPartnerProductRequest {
@@ -13,15 +13,15 @@ export class NewPartnerProductRequestEntity implements NewPartnerProductRequest 
         public productId: number,
         public partnerId: number,
         public price: number,
-        public stock: number
+        public stock: number | null
     ) { }
 }
 
 export interface UpdatePartnerProductRequest {
-    productId: number,
-    partnerId: number,
-    price: number,
-    stock: number
+    productId: number
+    partnerId: number
+    price: number
+    stock: number | null
 }
 
 export class UpdatePartnerProductRequestEntity implements UpdatePartnerProductRequest {
@@ -29,21 +29,21 @@ export class UpdatePartnerProductRequestEntity implements UpdatePartnerProductRe
         public productId: number,
         public partnerId: number,
         public price: number,
-        public stock: number
+        public stock: number | null
     ) { }
 }
 
 export interface SimplePartnerProduct {
-    partner: SimpleUser_WithPartnerInfoEntity,
-    price: number,
-    stock: number
+    partner: SimpleUser_WithPartnerInfoEntity
+    price: number
+    stock: number | null
 }
 
 export class SimplePartnerProductEntity implements SimplePartnerProduct {
     constructor(
         public partner: SimpleUser_WithPartnerInfoEntity,
         public price: number,
-        public stock: number
+        public stock: number | null
     ) { }
 }
 
@@ -63,7 +63,7 @@ export interface PartnerProduct {
     product: ProductWithCodeEntity | ProductWithoutCodeEntity,
     partner: SimpleUser_WithPartnerInfoEntity
     price: number,
-    stock: number
+    stock: number | null
 }
 
 export class PartnerProductEntiy implements PartnerProduct {
@@ -71,7 +71,7 @@ export class PartnerProductEntiy implements PartnerProduct {
         public product: ProductWithCodeEntity | ProductWithoutCodeEntity,
         public partner: SimpleUser_WithPartnerInfoEntity,
         public price: number,
-        public stock: number
+        public stock: number | null
     ) { }
 }
 
