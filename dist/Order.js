@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SimpleChildOrder_AdminEntity = exports.SimpleChildOrderEntity = exports.ChildOrder_AdminEntity = exports.ChildOrderEntity = exports.OrderItemEntity = exports.NewOrderRequestEntity = exports.ParentOrderEntity = exports.DeliveryTimeList = exports.DeliveryTime = exports.OrderStateList = exports.OrderState = void 0;
+exports.SimpleChildOrder_AdminEntity = exports.SimpleChildOrderEntity = exports.ChildOrder_AdminEntity = exports.ChildOrderEntity = exports.OrderItemEntity = exports.NewOrderRequestEntity = exports.SimpleParentOrderEntity = exports.ParentOrderEntity = exports.DeliveryTimeList = exports.DeliveryTime = exports.OrderStateList = exports.OrderState = void 0;
 exports.getOrderStateString = getOrderStateString;
 exports.getDeliveryTimeString = getDeliveryTimeString;
 var OrderState;
@@ -60,6 +60,16 @@ class ParentOrderEntity {
     }
 }
 exports.ParentOrderEntity = ParentOrderEntity;
+class SimpleParentOrderEntity {
+    constructor(id, userId, createdAt, deliveryDate, deliveryTime) {
+        this.id = id;
+        this.userId = userId;
+        this.createdAt = createdAt;
+        this.deliveryDate = deliveryDate;
+        this.deliveryTime = deliveryTime;
+    }
+}
+exports.SimpleParentOrderEntity = SimpleParentOrderEntity;
 class NewOrderRequestEntity {
     constructor(deliveryDate, deliveryTime) {
         this.deliveryDate = deliveryDate;
@@ -78,9 +88,9 @@ class OrderItemEntity {
 }
 exports.OrderItemEntity = OrderItemEntity;
 class ChildOrderEntity {
-    constructor(id, parentOrderId, state, deliveryPrice, evidenceImg, products) {
+    constructor(id, parentOrder, state, deliveryPrice, evidenceImg, products) {
         this.id = id;
-        this.parentOrderId = parentOrderId;
+        this.parentOrder = parentOrder;
         this.state = state;
         this.deliveryPrice = deliveryPrice;
         this.evidenceImg = evidenceImg;
@@ -89,9 +99,9 @@ class ChildOrderEntity {
 }
 exports.ChildOrderEntity = ChildOrderEntity;
 class ChildOrder_AdminEntity {
-    constructor(id, parentOrderId, user, state, deliveryPrice, evidenceImg, products) {
+    constructor(id, parentOrder, user, state, deliveryPrice, evidenceImg, products) {
         this.id = id;
-        this.parentOrderId = parentOrderId;
+        this.parentOrder = parentOrder;
         this.user = user;
         this.state = state;
         this.deliveryPrice = deliveryPrice;
@@ -101,9 +111,9 @@ class ChildOrder_AdminEntity {
 }
 exports.ChildOrder_AdminEntity = ChildOrder_AdminEntity;
 class SimpleChildOrderEntity {
-    constructor(id, parentOrderId, state, price, deliveryPrice, partnerInformation) {
+    constructor(id, parentOrder, state, price, deliveryPrice, partnerInformation) {
         this.id = id;
-        this.parentOrderId = parentOrderId;
+        this.parentOrder = parentOrder;
         this.state = state;
         this.price = price;
         this.deliveryPrice = deliveryPrice;
@@ -112,9 +122,9 @@ class SimpleChildOrderEntity {
 }
 exports.SimpleChildOrderEntity = SimpleChildOrderEntity;
 class SimpleChildOrder_AdminEntity {
-    constructor(id, parentOrderId, user, state, price, deliveryPrice, evidenceImg, partnerInformation) {
+    constructor(id, parentOrder, user, state, price, deliveryPrice, evidenceImg, partnerInformation) {
         this.id = id;
-        this.parentOrderId = parentOrderId;
+        this.parentOrder = parentOrder;
         this.user = user;
         this.state = state;
         this.price = price;

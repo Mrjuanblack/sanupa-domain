@@ -71,6 +71,26 @@ export class ParentOrderEntity implements ParentOrder {
     ) { }
 }
 
+export interface SimpleParentOrder {
+    id: number
+    userId: number
+
+    createdAt: Date
+
+    deliveryDate: Date
+    deliveryTime: DeliveryTime
+}
+
+export class SimpleParentOrderEntity implements SimpleParentOrder {
+    constructor(
+        public id: number,
+        public userId: number,
+        public createdAt: Date,
+        public deliveryDate: Date,
+        public deliveryTime: DeliveryTime,
+    ) { }
+}
+
 export interface NewOrderRequest {
     deliveryDate: Date
     deliveryTime: DeliveryTime
@@ -103,7 +123,7 @@ export class OrderItemEntity implements OrderItem {
 
 export interface ChildOrder {
     id: number
-    parentOrderId: number
+    parentOrder: SimpleParentOrderEntity
     state: OrderState
     deliveryPrice: number
     evidenceImg: string | null
@@ -114,7 +134,7 @@ export interface ChildOrder {
 export class ChildOrderEntity implements ChildOrder {
     constructor(
         public id: number,
-        public parentOrderId: number,
+        public parentOrder: SimpleParentOrderEntity,
         public state: OrderState,
         public deliveryPrice: number,
         public evidenceImg: string | null,
@@ -124,7 +144,7 @@ export class ChildOrderEntity implements ChildOrder {
 
 export interface ChildOrder_Admin {
     id: number
-    parentOrderId: number
+    parentOrder: SimpleParentOrderEntity
     user: SimpleUserEntity
     state: OrderState
     deliveryPrice: number
@@ -136,7 +156,7 @@ export interface ChildOrder_Admin {
 export class ChildOrder_AdminEntity implements ChildOrder_Admin {
     constructor(
         public id: number,
-        public parentOrderId: number,
+        public parentOrder: SimpleParentOrderEntity,
         public user: SimpleUserEntity,
         public state: OrderState,
         public deliveryPrice: number,
@@ -148,7 +168,7 @@ export class ChildOrder_AdminEntity implements ChildOrder_Admin {
 
 export interface SimpleChildOrder {
     id: number,
-    parentOrderId: number
+    parentOrder: SimpleParentOrderEntity
     state: OrderState
     price: number
     deliveryPrice: number
@@ -158,7 +178,7 @@ export interface SimpleChildOrder {
 export class SimpleChildOrderEntity implements SimpleChildOrder {
     constructor(
         public id: number,
-        public parentOrderId: number,
+        public parentOrder: SimpleParentOrderEntity,
         public state: OrderState,
         public price: number,
         public deliveryPrice: number,
@@ -168,7 +188,7 @@ export class SimpleChildOrderEntity implements SimpleChildOrder {
 
 export interface SimpleChildOrder_Admin {
     id: number
-    parentOrderId: number
+    parentOrder: SimpleParentOrderEntity
     user: SimpleUserEntity
     state: OrderState
     price: number
@@ -180,7 +200,7 @@ export interface SimpleChildOrder_Admin {
 export class SimpleChildOrder_AdminEntity implements SimpleChildOrder_Admin {
     constructor(
         public id: number,
-        public parentOrderId: number,
+        public parentOrder: SimpleParentOrderEntity,
         public user: SimpleUserEntity,
         public state: OrderState,
         public price: number,
