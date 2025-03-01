@@ -1,5 +1,10 @@
 import { PartnerInfoEntity, SimplePartnerInfoEntity } from "./PartnerInfo";
 
+export enum LoginErrors {
+    InvalidPassword = 1,
+    NoVerifiedPhone = 2
+}
+
 export enum CCType {
     CC = 1,
     NIT = 2,

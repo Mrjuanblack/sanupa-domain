@@ -1,9 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserEntity = exports.UpdatePermissionsEntity = exports.UpdateFacturationInfoRequestEntity = exports.SimpleUser_WithPartnerInfoEntity = exports.SimpleUserEntity = exports.UserRole = exports.CCTypeList = exports.CCType = void 0;
+exports.UserEntity = exports.UpdatePermissionsEntity = exports.UpdateFacturationInfoRequestEntity = exports.SimpleUser_WithPartnerInfoEntity = exports.SimpleUserEntity = exports.UserRole = exports.CCTypeList = exports.CCType = exports.LoginErrors = void 0;
 exports.getCCTypeString = getCCTypeString;
 exports.getUserRoleString = getUserRoleString;
 exports.isUserCookie = isUserCookie;
+var LoginErrors;
+(function (LoginErrors) {
+    LoginErrors[LoginErrors["InvalidPassword"] = 1] = "InvalidPassword";
+    LoginErrors[LoginErrors["NoVerifiedPhone"] = 2] = "NoVerifiedPhone";
+})(LoginErrors || (exports.LoginErrors = LoginErrors = {}));
 var CCType;
 (function (CCType) {
     CCType[CCType["CC"] = 1] = "CC";
