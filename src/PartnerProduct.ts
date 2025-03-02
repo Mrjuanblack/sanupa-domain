@@ -71,7 +71,7 @@ export interface ListPartnerProduct {
 export class ListPartnerProductEntity implements ListPartnerProduct {
     constructor(
         public product: ProductWithCodeEntity | ProductWithoutCodeEntity,
-        public partnerProducts: SimplePartnerProductEntity[]
+        public partnerProducts: SimplePartnerProduct_HasUserZoneEntity[]
     ) { }
 }
 

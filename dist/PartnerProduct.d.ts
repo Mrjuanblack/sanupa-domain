@@ -56,8 +56,8 @@ export interface ListPartnerProduct {
 }
 export declare class ListPartnerProductEntity implements ListPartnerProduct {
     product: ProductWithCodeEntity | ProductWithoutCodeEntity;
-    partnerProducts: SimplePartnerProductEntity[];
-    constructor(product: ProductWithCodeEntity | ProductWithoutCodeEntity, partnerProducts: SimplePartnerProductEntity[]);
+    partnerProducts: SimplePartnerProduct_HasUserZoneEntity[];
+    constructor(product: ProductWithCodeEntity | ProductWithoutCodeEntity, partnerProducts: SimplePartnerProduct_HasUserZoneEntity[]);
 }
 export interface PartnerProduct {
     product: ProductWithCodeEntity | ProductWithoutCodeEntity;
