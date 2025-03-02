@@ -16,3 +16,4 @@ export * from './UserAddress';
 export * from './GS1';
 export * from './Order';
 export * from './Excel';
+export * from './CustomerSupport';
