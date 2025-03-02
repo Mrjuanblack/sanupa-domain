@@ -81,6 +81,7 @@ export interface ChildOrder {
     state: OrderState;
     deliveryPrice: number;
     evidenceImg: string | null;
+    hasCustomerSupport: boolean;
     products: OrderItemEntity[];
 }
 export declare class ChildOrderEntity implements ChildOrder {
@@ -89,8 +90,9 @@ export declare class ChildOrderEntity implements ChildOrder {
     state: OrderState;
     deliveryPrice: number;
     evidenceImg: string | null;
+    hasCustomerSupport: boolean;
     products: OrderItemEntity[];
-    constructor(id: number, parentOrder: SimpleParentOrderEntity, state: OrderState, deliveryPrice: number, evidenceImg: string | null, products: OrderItemEntity[]);
+    constructor(id: number, parentOrder: SimpleParentOrderEntity, state: OrderState, deliveryPrice: number, evidenceImg: string | null, hasCustomerSupport: boolean, products: OrderItemEntity[]);
 }
 export interface ChildOrder_Admin {
     id: number;
@@ -99,6 +101,7 @@ export interface ChildOrder_Admin {
     state: OrderState;
     deliveryPrice: number;
     evidenceImg: string | null;
+    hasCustomerSupport: boolean;
     products: OrderItemEntity[];
 }
 export declare class ChildOrder_AdminEntity implements ChildOrder_Admin {
@@ -108,8 +111,9 @@ export declare class ChildOrder_AdminEntity implements ChildOrder_Admin {
     state: OrderState;
     deliveryPrice: number;
     evidenceImg: string | null;
+    hasCustomerSupport: boolean;
     products: OrderItemEntity[];
-    constructor(id: number, parentOrder: SimpleParentOrderEntity, user: SimpleUserEntity, state: OrderState, deliveryPrice: number, evidenceImg: string | null, products: OrderItemEntity[]);
+    constructor(id: number, parentOrder: SimpleParentOrderEntity, user: SimpleUserEntity, state: OrderState, deliveryPrice: number, evidenceImg: string | null, hasCustomerSupport: boolean, products: OrderItemEntity[]);
 }
 export interface SimpleChildOrder {
     id: number;
@@ -118,6 +122,7 @@ export interface SimpleChildOrder {
     price: number;
     deliveryPrice: number;
     partnerInformation: SimplePartnerInfoEntity;
+    hasCustomerSupport: boolean;
 }
 export declare class SimpleChildOrderEntity implements SimpleChildOrder {
     id: number;
@@ -126,7 +131,8 @@ export declare class SimpleChildOrderEntity implements SimpleChildOrder {
     price: number;
     deliveryPrice: number;
     partnerInformation: SimplePartnerInfoEntity;
-    constructor(id: number, parentOrder: SimpleParentOrderEntity, state: OrderState, price: number, deliveryPrice: number, partnerInformation: SimplePartnerInfoEntity);
+    hasCustomerSupport: boolean;
+    constructor(id: number, parentOrder: SimpleParentOrderEntity, state: OrderState, price: number, deliveryPrice: number, partnerInformation: SimplePartnerInfoEntity, hasCustomerSupport: boolean);
 }
 export interface SimpleChildOrder_Admin {
     id: number;
@@ -137,6 +143,7 @@ export interface SimpleChildOrder_Admin {
     deliveryPrice: number;
     evidenceImg: string | null;
     partnerInformation: SimplePartnerInfoEntity;
+    hasCustomerSupport: boolean;
 }
 export declare class SimpleChildOrder_AdminEntity implements SimpleChildOrder_Admin {
     id: number;
@@ -147,5 +154,6 @@ export declare class SimpleChildOrder_AdminEntity implements SimpleChildOrder_Ad
     deliveryPrice: number;
     evidenceImg: string | null;
     partnerInformation: SimplePartnerInfoEntity;
-    constructor(id: number, parentOrder: SimpleParentOrderEntity, user: SimpleUserEntity, state: OrderState, price: number, deliveryPrice: number, evidenceImg: string | null, partnerInformation: SimplePartnerInfoEntity);
+    hasCustomerSupport: boolean;
+    constructor(id: number, parentOrder: SimpleParentOrderEntity, user: SimpleUserEntity, state: OrderState, price: number, deliveryPrice: number, evidenceImg: string | null, partnerInformation: SimplePartnerInfoEntity, hasCustomerSupport: boolean);
 }

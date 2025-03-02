@@ -128,6 +128,7 @@ export interface ChildOrder {
     deliveryPrice: number
     evidenceImg: string | null
 
+    hasCustomerSupport: boolean
     products: OrderItemEntity[]
 }
 
@@ -138,6 +139,7 @@ export class ChildOrderEntity implements ChildOrder {
         public state: OrderState,
         public deliveryPrice: number,
         public evidenceImg: string | null,
+        public hasCustomerSupport: boolean,
         public products: OrderItemEntity[]
     ) { }
 }
@@ -150,6 +152,7 @@ export interface ChildOrder_Admin {
     deliveryPrice: number
     evidenceImg: string | null
 
+    hasCustomerSupport: boolean
     products: OrderItemEntity[]
 }
 
@@ -161,6 +164,7 @@ export class ChildOrder_AdminEntity implements ChildOrder_Admin {
         public state: OrderState,
         public deliveryPrice: number,
         public evidenceImg: string | null,
+        public hasCustomerSupport: boolean,
         public products: OrderItemEntity[]
     ) { }
 
@@ -173,6 +177,7 @@ export interface SimpleChildOrder {
     price: number
     deliveryPrice: number
     partnerInformation: SimplePartnerInfoEntity
+    hasCustomerSupport: boolean
 }
 
 export class SimpleChildOrderEntity implements SimpleChildOrder {
@@ -182,7 +187,8 @@ export class SimpleChildOrderEntity implements SimpleChildOrder {
         public state: OrderState,
         public price: number,
         public deliveryPrice: number,
-        public partnerInformation: SimplePartnerInfoEntity
+        public partnerInformation: SimplePartnerInfoEntity,
+        public hasCustomerSupport: boolean,
     ) { }
 }
 
@@ -195,6 +201,7 @@ export interface SimpleChildOrder_Admin {
     deliveryPrice: number
     evidenceImg: string | null
     partnerInformation: SimplePartnerInfoEntity
+    hasCustomerSupport: boolean
 }
 
 export class SimpleChildOrder_AdminEntity implements SimpleChildOrder_Admin {
@@ -206,6 +213,7 @@ export class SimpleChildOrder_AdminEntity implements SimpleChildOrder_Admin {
         public price: number,
         public deliveryPrice: number,
         public evidenceImg: string | null,
-        public partnerInformation: SimplePartnerInfoEntity
+        public partnerInformation: SimplePartnerInfoEntity,
+        public hasCustomerSupport: boolean,
     ) { }
 }

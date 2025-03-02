@@ -88,41 +88,44 @@ class OrderItemEntity {
 }
 exports.OrderItemEntity = OrderItemEntity;
 class ChildOrderEntity {
-    constructor(id, parentOrder, state, deliveryPrice, evidenceImg, products) {
+    constructor(id, parentOrder, state, deliveryPrice, evidenceImg, hasCustomerSupport, products) {
         this.id = id;
         this.parentOrder = parentOrder;
         this.state = state;
         this.deliveryPrice = deliveryPrice;
         this.evidenceImg = evidenceImg;
+        this.hasCustomerSupport = hasCustomerSupport;
         this.products = products;
     }
 }
 exports.ChildOrderEntity = ChildOrderEntity;
 class ChildOrder_AdminEntity {
-    constructor(id, parentOrder, user, state, deliveryPrice, evidenceImg, products) {
+    constructor(id, parentOrder, user, state, deliveryPrice, evidenceImg, hasCustomerSupport, products) {
         this.id = id;
         this.parentOrder = parentOrder;
         this.user = user;
         this.state = state;
         this.deliveryPrice = deliveryPrice;
         this.evidenceImg = evidenceImg;
+        this.hasCustomerSupport = hasCustomerSupport;
         this.products = products;
     }
 }
 exports.ChildOrder_AdminEntity = ChildOrder_AdminEntity;
 class SimpleChildOrderEntity {
-    constructor(id, parentOrder, state, price, deliveryPrice, partnerInformation) {
+    constructor(id, parentOrder, state, price, deliveryPrice, partnerInformation, hasCustomerSupport) {
         this.id = id;
         this.parentOrder = parentOrder;
         this.state = state;
         this.price = price;
         this.deliveryPrice = deliveryPrice;
         this.partnerInformation = partnerInformation;
+        this.hasCustomerSupport = hasCustomerSupport;
     }
 }
 exports.SimpleChildOrderEntity = SimpleChildOrderEntity;
 class SimpleChildOrder_AdminEntity {
-    constructor(id, parentOrder, user, state, price, deliveryPrice, evidenceImg, partnerInformation) {
+    constructor(id, parentOrder, user, state, price, deliveryPrice, evidenceImg, partnerInformation, hasCustomerSupport) {
         this.id = id;
         this.parentOrder = parentOrder;
         this.user = user;
@@ -131,6 +134,7 @@ class SimpleChildOrder_AdminEntity {
         this.deliveryPrice = deliveryPrice;
         this.evidenceImg = evidenceImg;
         this.partnerInformation = partnerInformation;
+        this.hasCustomerSupport = hasCustomerSupport;
     }
 }
 exports.SimpleChildOrder_AdminEntity = SimpleChildOrder_AdminEntity;
