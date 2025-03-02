@@ -47,6 +47,22 @@ export class SimplePartnerProductEntity implements SimplePartnerProduct {
     ) { }
 }
 
+export interface SimplePartnerProduct_HasUserZone {
+    isInUserZone: boolean
+    partner: SimpleUser_WithPartnerInfoEntity
+    price: number
+    stock: number | null
+}
+
+export class SimplePartnerProduct_HasUserZoneEntity implements SimplePartnerProduct_HasUserZone {
+    constructor(
+        public isInUserZone: boolean,
+        public partner: SimpleUser_WithPartnerInfoEntity,
+        public price: number,
+        public stock: number | null
+    ) { }
+}
+
 export interface ListPartnerProduct {
     product: ProductWithCodeEntity | ProductWithoutCodeEntity,
     partnerProducts: SimplePartnerProductEntity[]
