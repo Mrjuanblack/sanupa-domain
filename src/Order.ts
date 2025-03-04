@@ -217,3 +217,17 @@ export class SimpleChildOrder_AdminEntity implements SimpleChildOrder_Admin {
         public hasCustomerSupport: boolean,
     ) { }
 }
+
+export interface OrderReport {
+    gtin: string | null
+    name: string
+    quantity: number
+}
+
+export class OrderReportEntity implements OrderReport {
+    constructor(
+        public gtin: string | null,
+        public name: string,
+        public quantity: number
+    ) { }
+}

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SimpleChildOrder_AdminEntity = exports.SimpleChildOrderEntity = exports.ChildOrder_AdminEntity = exports.ChildOrderEntity = exports.OrderItemEntity = exports.NewOrderRequestEntity = exports.SimpleParentOrderEntity = exports.ParentOrderEntity = exports.DeliveryTimeList = exports.DeliveryTime = exports.OrderStateList = exports.OrderState = void 0;
+exports.OrderReportEntity = exports.SimpleChildOrder_AdminEntity = exports.SimpleChildOrderEntity = exports.ChildOrder_AdminEntity = exports.ChildOrderEntity = exports.OrderItemEntity = exports.NewOrderRequestEntity = exports.SimpleParentOrderEntity = exports.ParentOrderEntity = exports.DeliveryTimeList = exports.DeliveryTime = exports.OrderStateList = exports.OrderState = void 0;
 exports.getOrderStateString = getOrderStateString;
 exports.getDeliveryTimeString = getDeliveryTimeString;
 var OrderState;
@@ -138,3 +138,11 @@ class SimpleChildOrder_AdminEntity {
     }
 }
 exports.SimpleChildOrder_AdminEntity = SimpleChildOrder_AdminEntity;
+class OrderReportEntity {
+    constructor(gtin, name, quantity) {
+        this.gtin = gtin;
+        this.name = name;
+        this.quantity = quantity;
+    }
+}
+exports.OrderReportEntity = OrderReportEntity;

@@ -157,3 +157,14 @@ export declare class SimpleChildOrder_AdminEntity implements SimpleChildOrder_Ad
     hasCustomerSupport: boolean;
     constructor(id: number, parentOrder: SimpleParentOrderEntity, user: SimpleUserEntity, state: OrderState, price: number, deliveryPrice: number, evidenceImg: string | null, partnerInformation: SimplePartnerInfoEntity, hasCustomerSupport: boolean);
 }
+export interface OrderReport {
+    gtin: string | null;
+    name: string;
+    quantity: number;
+}
+export declare class OrderReportEntity implements OrderReport {
+    gtin: string | null;
+    name: string;
+    quantity: number;
+    constructor(gtin: string | null, name: string, quantity: number);
+}
