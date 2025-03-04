@@ -139,7 +139,8 @@ class SimpleChildOrder_AdminEntity {
 }
 exports.SimpleChildOrder_AdminEntity = SimpleChildOrder_AdminEntity;
 class OrderReportEntity {
-    constructor(gtin, name, quantity) {
+    constructor(partnerId, gtin, name, quantity) {
+        this.partnerId = partnerId;
         this.gtin = gtin;
         this.name = name;
         this.quantity = quantity;

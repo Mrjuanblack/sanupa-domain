@@ -219,6 +219,7 @@ export class SimpleChildOrder_AdminEntity implements SimpleChildOrder_Admin {
 }
 
 export interface OrderReport {
+    partnerId: number
     gtin: string | null
     name: string
     quantity: number
@@ -226,6 +227,7 @@ export interface OrderReport {
 
 export class OrderReportEntity implements OrderReport {
     constructor(
+        public partnerId: number,
         public gtin: string | null,
         public name: string,
         public quantity: number
