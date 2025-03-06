@@ -103,7 +103,8 @@ class UserEntity {
 }
 exports.UserEntity = UserEntity;
 class UpdatePasswordRequestEntity {
-    constructor(password) {
+    constructor(oldPassword, password) {
+        this.oldPassword = oldPassword;
         this.password = password;
     }
 }

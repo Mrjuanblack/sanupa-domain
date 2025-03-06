@@ -167,11 +167,13 @@ export class UserEntity implements User {
 }
 
 export interface UpdatePasswordRequest {
+    oldPassword: string
     password: string
 }
 
 export class UpdatePasswordRequestEntity implements UpdatePasswordRequest {
     constructor(
+        public oldPassword: string,
         public password: string
     ) { }
 }

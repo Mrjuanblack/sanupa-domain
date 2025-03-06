@@ -105,11 +105,13 @@ export declare class UserEntity implements User {
     constructor(id: number, name: string, lastName: string | null, email: string | null, ccType: CCType | null, cc: string | null, phoneNumber: string, password: string, role: UserRole, partnerInfo: PartnerInfoEntity | null);
 }
 export interface UpdatePasswordRequest {
+    oldPassword: string;
     password: string;
 }
 export declare class UpdatePasswordRequestEntity implements UpdatePasswordRequest {
+    oldPassword: string;
     password: string;
-    constructor(password: string);
+    constructor(oldPassword: string, password: string);
 }
 export interface UpdatePhoneNumberRequest {
     phoneNumber: string;
