@@ -180,7 +180,7 @@ export interface UpdatePhoneNumberRequest {
     phoneNumber: string
 }
 
-export class UpdatePhoneNumberRequest implements UpdatePhoneNumberRequest {
+export class UpdatePhoneNumberRequestEntity implements UpdatePhoneNumberRequest {
     constructor(
         public phoneNumber: string
     ) { }

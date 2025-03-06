@@ -114,7 +114,7 @@ export declare class UpdatePasswordRequestEntity implements UpdatePasswordReques
 export interface UpdatePhoneNumberRequest {
     phoneNumber: string;
 }
-export declare class UpdatePhoneNumberRequest implements UpdatePhoneNumberRequest {
+export declare class UpdatePhoneNumberRequestEntity implements UpdatePhoneNumberRequest {
     phoneNumber: string;
     constructor(phoneNumber: string);
 }
