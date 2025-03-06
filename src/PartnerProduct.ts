@@ -108,6 +108,9 @@ export interface PP_Filter {
 
     // For filtering products that are available to the user's zone
     zoneId: number | null
+
+    // For filtering by favorite products
+    favorite: boolean
 }
 
 export class PP_FilterEntity implements PP_Filter {
@@ -118,6 +121,7 @@ export class PP_FilterEntity implements PP_Filter {
         public description: string | null,
         public brand: string | null,
         public name: string | null,
-        public zoneId: number | null
+        public zoneId: number | null,
+        public favorite: boolean,
     ) { }
 }
