@@ -34,3 +34,4 @@ __exportStar(require("./Order"), exports);
 __exportStar(require("./Excel"), exports);
 __exportStar(require("./CustomerSupport"), exports);
 __exportStar(require("./WebsocketsConstants"), exports);
+__exportStar(require("./Favorite"), exports);
