@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserEntity = exports.UpdatePermissionsEntity = exports.UpdateFacturationInfoRequestEntity = exports.SimpleUser_WithPartnerInfoEntity = exports.SimpleUserEntity = exports.UserRole = exports.CCTypeList = exports.CCType = exports.LoginErrors = void 0;
+exports.UpdateNamesRequestEntity = exports.UpdateEmailRequestEntity = exports.UpdateIdentificationRequestEntity = exports.UpdatePhoneNumberRequest = exports.UpdatePasswordRequestEntity = exports.UserEntity = exports.UpdatePermissionsEntity = exports.UpdateFacturationInfoRequestEntity = exports.SimpleUser_WithPartnerInfoEntity = exports.SimpleUserEntity = exports.UserRole = exports.CCTypeList = exports.CCType = exports.LoginErrors = void 0;
 exports.getCCTypeString = getCCTypeString;
 exports.getUserRoleString = getUserRoleString;
 exports.isUserCookie = isUserCookie;
@@ -102,3 +102,35 @@ class UserEntity {
     }
 }
 exports.UserEntity = UserEntity;
+class UpdatePasswordRequestEntity {
+    constructor(password) {
+        this.password = password;
+    }
+}
+exports.UpdatePasswordRequestEntity = UpdatePasswordRequestEntity;
+class UpdatePhoneNumberRequest {
+    constructor(phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+}
+exports.UpdatePhoneNumberRequest = UpdatePhoneNumberRequest;
+class UpdateIdentificationRequestEntity {
+    constructor(ccType, cc) {
+        this.ccType = ccType;
+        this.cc = cc;
+    }
+}
+exports.UpdateIdentificationRequestEntity = UpdateIdentificationRequestEntity;
+class UpdateEmailRequestEntity {
+    constructor(email) {
+        this.email = email;
+    }
+}
+exports.UpdateEmailRequestEntity = UpdateEmailRequestEntity;
+class UpdateNamesRequestEntity {
+    constructor(name, lastName) {
+        this.name = name;
+        this.lastName = lastName;
+    }
+}
+exports.UpdateNamesRequestEntity = UpdateNamesRequestEntity;

@@ -13,7 +13,7 @@ export enum CCType {
 }
 export const CCTypeList = Object.values(CCType).filter(value => typeof value === 'number');
 export function getCCTypeString(ccType: CCType): string {
-    switch(ccType) {
+    switch (ccType) {
         case CCType.CC:
             return "CC";
         case CCType.NIT:
@@ -163,5 +163,59 @@ export class UserEntity implements User {
         public password: string,
         public role: UserRole,
         public partnerInfo: PartnerInfoEntity | null
+    ) { }
+}
+
+export interface UpdatePasswordRequest {
+    password: string
+}
+
+export class UpdatePasswordRequestEntity implements UpdatePasswordRequest {
+    constructor(
+        public password: string
+    ) { }
+}
+
+export interface UpdatePhoneNumberRequest {
+    phoneNumber: string
+}
+
+export class UpdatePhoneNumberRequest implements UpdatePhoneNumberRequest {
+    constructor(
+        public phoneNumber: string
+    ) { }
+}
+
+export interface UpdateIdentificationRequest {
+    ccType: CCType
+    cc: string
+}
+
+export class UpdateIdentificationRequestEntity implements UpdateIdentificationRequest {
+    constructor(
+        public ccType: CCType,
+        public cc: string
+    ) { }
+}
+
+export interface UpdateEmailRequest {
+    email: string
+}
+
+export class UpdateEmailRequestEntity implements UpdateEmailRequest {
+    constructor(
+        public email: string
+    ) { }
+}
+
+export interface UpdateNamesRequest {
+    name: string
+    lastName: string
+}
+
+export class UpdateNamesRequestEntity implements UpdateNamesRequest {
+    constructor(
+        public name: string,
+        public lastName: string
     ) { }
 }

@@ -104,3 +104,42 @@ export declare class UserEntity implements User {
     partnerInfo: PartnerInfoEntity | null;
     constructor(id: number, name: string, lastName: string | null, email: string | null, ccType: CCType | null, cc: string | null, phoneNumber: string, password: string, role: UserRole, partnerInfo: PartnerInfoEntity | null);
 }
+export interface UpdatePasswordRequest {
+    password: string;
+}
+export declare class UpdatePasswordRequestEntity implements UpdatePasswordRequest {
+    password: string;
+    constructor(password: string);
+}
+export interface UpdatePhoneNumberRequest {
+    phoneNumber: string;
+}
+export declare class UpdatePhoneNumberRequest implements UpdatePhoneNumberRequest {
+    phoneNumber: string;
+    constructor(phoneNumber: string);
+}
+export interface UpdateIdentificationRequest {
+    ccType: CCType;
+    cc: string;
+}
+export declare class UpdateIdentificationRequestEntity implements UpdateIdentificationRequest {
+    ccType: CCType;
+    cc: string;
+    constructor(ccType: CCType, cc: string);
+}
+export interface UpdateEmailRequest {
+    email: string;
+}
+export declare class UpdateEmailRequestEntity implements UpdateEmailRequest {
+    email: string;
+    constructor(email: string);
+}
+export interface UpdateNamesRequest {
+    name: string;
+    lastName: string;
+}
+export declare class UpdateNamesRequestEntity implements UpdateNamesRequest {
+    name: string;
+    lastName: string;
+    constructor(name: string, lastName: string);
+}
