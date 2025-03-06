@@ -64,12 +64,14 @@ export class SimplePartnerProduct_HasUserZoneEntity implements SimplePartnerProd
 }
 
 export interface ListPartnerProduct {
+    favorite: boolean
     product: ProductWithCodeEntity | ProductWithoutCodeEntity,
     partnerProducts: SimplePartnerProductEntity[]
 }
 
 export class ListPartnerProductEntity implements ListPartnerProduct {
     constructor(
+        public favorite: boolean,
         public product: ProductWithCodeEntity | ProductWithoutCodeEntity,
         public partnerProducts: SimplePartnerProduct_HasUserZoneEntity[]
     ) { }

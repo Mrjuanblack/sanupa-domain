@@ -37,7 +37,8 @@ class SimplePartnerProduct_HasUserZoneEntity {
 }
 exports.SimplePartnerProduct_HasUserZoneEntity = SimplePartnerProduct_HasUserZoneEntity;
 class ListPartnerProductEntity {
-    constructor(product, partnerProducts) {
+    constructor(favorite, product, partnerProducts) {
+        this.favorite = favorite;
         this.product = product;
         this.partnerProducts = partnerProducts;
     }

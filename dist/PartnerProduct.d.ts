@@ -51,13 +51,15 @@ export declare class SimplePartnerProduct_HasUserZoneEntity implements SimplePar
     constructor(isInUserZone: boolean, partner: SimpleUser_WithPartnerInfoEntity, price: number, stock: number | null);
 }
 export interface ListPartnerProduct {
+    favorite: boolean;
     product: ProductWithCodeEntity | ProductWithoutCodeEntity;
     partnerProducts: SimplePartnerProductEntity[];
 }
 export declare class ListPartnerProductEntity implements ListPartnerProduct {
+    favorite: boolean;
     product: ProductWithCodeEntity | ProductWithoutCodeEntity;
     partnerProducts: SimplePartnerProduct_HasUserZoneEntity[];
-    constructor(product: ProductWithCodeEntity | ProductWithoutCodeEntity, partnerProducts: SimplePartnerProduct_HasUserZoneEntity[]);
+    constructor(favorite: boolean, product: ProductWithCodeEntity | ProductWithoutCodeEntity, partnerProducts: SimplePartnerProduct_HasUserZoneEntity[]);
 }
 export interface PartnerProduct {
     product: ProductWithCodeEntity | ProductWithoutCodeEntity;
