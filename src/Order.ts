@@ -52,6 +52,7 @@ export function getDeliveryTimeString(deliveryTime: DeliveryTime): string {
 export interface ParentOrder {
     id: number
     userId: number
+    address: string
 
     createdAt: Date
     childOrders: ChildOrder[]
@@ -64,6 +65,7 @@ export class ParentOrderEntity implements ParentOrder {
     constructor(
         public id: number,
         public userId: number,
+        public address: string,
         public createdAt: Date,
         public childOrders: ChildOrder[],
         public deliveryDate: Date,
