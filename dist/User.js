@@ -8,6 +8,7 @@ var LoginErrors;
 (function (LoginErrors) {
     LoginErrors[LoginErrors["InvalidPassword"] = 1] = "InvalidPassword";
     LoginErrors[LoginErrors["NoVerifiedPhone"] = 2] = "NoVerifiedPhone";
+    LoginErrors[LoginErrors["Inactive"] = 3] = "Inactive";
 })(LoginErrors || (exports.LoginErrors = LoginErrors = {}));
 var CCType;
 (function (CCType) {
