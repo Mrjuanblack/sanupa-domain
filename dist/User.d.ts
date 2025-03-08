@@ -27,6 +27,7 @@ export interface User {
     phoneNumber: string;
     password: string;
     role: UserRole;
+    active: boolean;
     partnerInfo: PartnerInfoEntity | null;
 }
 export interface UserMetadata {
@@ -101,8 +102,9 @@ export declare class UserEntity implements User {
     phoneNumber: string;
     password: string;
     role: UserRole;
+    active: boolean;
     partnerInfo: PartnerInfoEntity | null;
-    constructor(id: number, name: string, lastName: string | null, email: string | null, ccType: CCType | null, cc: string | null, phoneNumber: string, password: string, role: UserRole, partnerInfo: PartnerInfoEntity | null);
+    constructor(id: number, name: string, lastName: string | null, email: string | null, ccType: CCType | null, cc: string | null, phoneNumber: string, password: string, role: UserRole, active: boolean, partnerInfo: PartnerInfoEntity | null);
 }
 export interface UpdatePasswordRequest {
     oldPassword: string;

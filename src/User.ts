@@ -57,6 +57,7 @@ export interface User {
     phoneNumber: string
     password: string
     role: UserRole
+    active: boolean
 
     partnerInfo: PartnerInfoEntity | null
 }
@@ -162,6 +163,7 @@ export class UserEntity implements User {
         public phoneNumber: string,
         public password: string,
         public role: UserRole,
+        public active: boolean,
         public partnerInfo: PartnerInfoEntity | null
     ) { }
 }

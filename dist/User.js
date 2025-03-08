@@ -88,7 +88,7 @@ class UpdatePermissionsEntity {
 }
 exports.UpdatePermissionsEntity = UpdatePermissionsEntity;
 class UserEntity {
-    constructor(id, name, lastName, email, ccType, cc, phoneNumber, password, role, partnerInfo) {
+    constructor(id, name, lastName, email, ccType, cc, phoneNumber, password, role, active, partnerInfo) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
@@ -98,6 +98,7 @@ class UserEntity {
         this.phoneNumber = phoneNumber;
         this.password = password;
         this.role = role;
+        this.active = active;
         this.partnerInfo = partnerInfo;
     }
 }
