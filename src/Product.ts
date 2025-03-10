@@ -10,7 +10,7 @@ export enum OfferType {
 }
 export const OfferTypeList = Object.values(OfferType).filter(value => typeof value === 'number');
 export function getOfferTypeString(offerType: OfferType): string {
-    switch(offerType) {
+    switch (offerType) {
         case OfferType.Sale:
             return "Venta";
         case OfferType.Lease:
@@ -26,7 +26,7 @@ export enum Condition {
 }
 export const ConditionList = Object.values(Condition).filter(value => typeof value === 'number');
 export function getConditionString(condition: Condition): string {
-    switch(condition) {
+    switch (condition) {
         case Condition.New:
             return "Nuevo";
         case Condition.Used:
@@ -44,7 +44,7 @@ export enum Estratum {
 }
 export const EstratumList = Object.values(Estratum).filter(value => typeof value === 'number');
 export function getEstratumString(estratum: Estratum): string {
-    switch(estratum) {
+    switch (estratum) {
         case Estratum.Zero:
             return "Estrato 0";
         case Estratum.One:
@@ -70,6 +70,7 @@ interface BaseProduct {
 export interface ProductWithCode extends BaseProduct {
     //GS1 data
     gtin: string
+    name: string
     description: string
     brand: string
     gpc: string
@@ -189,16 +190,18 @@ export class UpdateProductWithoutCodeRequestEntity implements UpdateProductWitho
 export interface UpdateProductWithCodeRequest {
     id: number
 
+    name: string
     description: string
     brand: string
     measurementId: number | null
-    measurementQuantity: number | null  
+    measurementQuantity: number | null
 }
 
-export class UpdateProductWithCodeRequestEntity {
+export class UpdateProductWithCodeRequestEntity implements UpdateProductWithCodeRequest {
     constructor(
         public id: number,
         public imgPath: string,
+        public name: string,
         public description: string,
         public brand: string,
         public measurementId: number | null,
@@ -211,6 +214,7 @@ export class ProductWithCodeEntity implements ProductWithCode {
         public id: number,
         public subcategory: SubcategoryEntity,
         public gtin: string,
+        public name: string,
         public description: string,
         public brand: string,
         public gpc: string,

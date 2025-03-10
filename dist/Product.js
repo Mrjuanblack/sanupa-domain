@@ -88,9 +88,10 @@ class UpdateProductWithoutCodeRequestEntity {
 }
 exports.UpdateProductWithoutCodeRequestEntity = UpdateProductWithoutCodeRequestEntity;
 class UpdateProductWithCodeRequestEntity {
-    constructor(id, imgPath, description, brand, measurementId, measurementQuantity) {
+    constructor(id, imgPath, name, description, brand, measurementId, measurementQuantity) {
         this.id = id;
         this.imgPath = imgPath;
+        this.name = name;
         this.description = description;
         this.brand = brand;
         this.measurementId = measurementId;
@@ -99,10 +100,11 @@ class UpdateProductWithCodeRequestEntity {
 }
 exports.UpdateProductWithCodeRequestEntity = UpdateProductWithCodeRequestEntity;
 class ProductWithCodeEntity {
-    constructor(id, subcategory, gtin, description, brand, gpc, imgPath, quantity, measurement, market, measurementType, measurementQuantity) {
+    constructor(id, subcategory, gtin, name, description, brand, gpc, imgPath, quantity, measurement, market, measurementType, measurementQuantity) {
         this.id = id;
         this.subcategory = subcategory;
         this.gtin = gtin;
+        this.name = name;
         this.description = description;
         this.brand = brand;
         this.gpc = gpc;

@@ -33,6 +33,7 @@ interface BaseProduct {
 }
 export interface ProductWithCode extends BaseProduct {
     gtin: string;
+    name: string;
     description: string;
     brand: string;
     gpc: string;
@@ -139,24 +140,27 @@ export declare class UpdateProductWithoutCodeRequestEntity implements UpdateProd
 }
 export interface UpdateProductWithCodeRequest {
     id: number;
+    name: string;
     description: string;
     brand: string;
     measurementId: number | null;
     measurementQuantity: number | null;
 }
-export declare class UpdateProductWithCodeRequestEntity {
+export declare class UpdateProductWithCodeRequestEntity implements UpdateProductWithCodeRequest {
     id: number;
     imgPath: string;
+    name: string;
     description: string;
     brand: string;
     measurementId: number | null;
     measurementQuantity: number | null;
-    constructor(id: number, imgPath: string, description: string, brand: string, measurementId: number | null, measurementQuantity: number | null);
+    constructor(id: number, imgPath: string, name: string, description: string, brand: string, measurementId: number | null, measurementQuantity: number | null);
 }
 export declare class ProductWithCodeEntity implements ProductWithCode {
     id: number;
     subcategory: SubcategoryEntity;
     gtin: string;
+    name: string;
     description: string;
     brand: string;
     gpc: string;
@@ -166,7 +170,7 @@ export declare class ProductWithCodeEntity implements ProductWithCode {
     market: string;
     measurementType: MeasurementTypeEntity | null;
     measurementQuantity: number | null;
-    constructor(id: number, subcategory: SubcategoryEntity, gtin: string, description: string, brand: string, gpc: string, imgPath: string, quantity: string, measurement: string, market: string, measurementType: MeasurementTypeEntity | null, measurementQuantity: number | null);
+    constructor(id: number, subcategory: SubcategoryEntity, gtin: string, name: string, description: string, brand: string, gpc: string, imgPath: string, quantity: string, measurement: string, market: string, measurementType: MeasurementTypeEntity | null, measurementQuantity: number | null);
 }
 export declare class ProductWithoutCodeEntity implements ProductWithoutCode {
     id: number;
