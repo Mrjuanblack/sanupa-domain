@@ -87,6 +87,7 @@ export interface NewProductWithCodeRequest {
     imgPath: string
 
     gtin: string
+    name: string
     description: string
     brand: string
     gpc: string

@@ -47,6 +47,7 @@ export interface NewProductWithCodeRequest {
     subcategoryId: number;
     imgPath: string;
     gtin: string;
+    name: string;
     description: string;
     brand: string;
     gpc: string;
