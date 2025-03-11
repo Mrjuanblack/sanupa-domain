@@ -6,6 +6,7 @@ export interface Subcategory {
     name: string
     imgPath: string | null
     usesCode: boolean
+    uniqueName: boolean
     active: boolean
 
     // Fields that will be available for products and for filtering
@@ -32,6 +33,7 @@ export interface NewSubcategoryRequest {
     categoryId: number
     name: string
     usesCode: boolean
+    uniqueName: boolean
 
     description: boolean
     brand: boolean
@@ -58,6 +60,7 @@ export class SubcategoryEntity implements Subcategory {
         public name: string,
         public imgPath: string | null,
         public usesCode: boolean,
+        public uniqueName: boolean,
         public active: boolean,
         public description: boolean,
         public brand: boolean,
