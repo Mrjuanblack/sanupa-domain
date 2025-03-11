@@ -98,6 +98,7 @@ export interface PP_Filter {
     price: number | null
     stock: number | null
 
+    categoryId: number | null
     subcategoryId: number | null
 
     // shared fields
@@ -119,6 +120,7 @@ export class PP_FilterEntity implements PP_Filter {
     constructor(
         public price: number | null,
         public stock: number | null,
+        public categoryId: number | null,
         public subcategoryId: number | null,
         public description: string | null,
         public brand: string | null,

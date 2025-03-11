@@ -77,6 +77,7 @@ export declare class PartnerProductEntiy implements PartnerProduct {
 export interface PP_Filter {
     price: number | null;
     stock: number | null;
+    categoryId: number | null;
     subcategoryId: number | null;
     description: string | null;
     brand: string | null;
@@ -87,11 +88,12 @@ export interface PP_Filter {
 export declare class PP_FilterEntity implements PP_Filter {
     price: number | null;
     stock: number | null;
+    categoryId: number | null;
     subcategoryId: number | null;
     description: string | null;
     brand: string | null;
     name: string | null;
     zoneId: number | null;
     favorite: boolean;
-    constructor(price: number | null, stock: number | null, subcategoryId: number | null, description: string | null, brand: string | null, name: string | null, zoneId: number | null, favorite: boolean);
+    constructor(price: number | null, stock: number | null, categoryId: number | null, subcategoryId: number | null, description: string | null, brand: string | null, name: string | null, zoneId: number | null, favorite: boolean);
 }
