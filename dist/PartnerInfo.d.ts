@@ -1,16 +1,20 @@
-import { PartnerWorkingZone } from "./PartnerWorkingZone";
+import { PartnerWorking_City, PartnerWorking_Community, PartnerWorking_Zone } from "./PartnerWorkingZone";
 export interface PartnerInfo {
     name: string;
     address: string;
-    workingZones: PartnerWorkingZone[];
+    workingArea_Zones: PartnerWorking_Zone[];
+    workingArea_Communities: PartnerWorking_Community[];
+    workingArea_Cities: PartnerWorking_City[];
     imgPath: string | null;
 }
 export declare class PartnerInfoEntity implements PartnerInfo {
     name: string;
     address: string;
-    workingZones: PartnerWorkingZone[];
+    workingArea_Zones: PartnerWorking_Zone[];
+    workingArea_Communities: PartnerWorking_Community[];
+    workingArea_Cities: PartnerWorking_City[];
     imgPath: string | null;
-    constructor(name: string, address: string, workingZones: PartnerWorkingZone[], imgPath: string | null);
+    constructor(name: string, address: string, workingArea_Zones: PartnerWorking_Zone[], workingArea_Communities: PartnerWorking_Community[], workingArea_Cities: PartnerWorking_City[], imgPath: string | null);
 }
 export interface SimplePartnerInfo {
     name: string;

@@ -23,13 +23,24 @@ export interface NewCityRequest {
     name: string
 }
 
-export interface Zone {
+export interface Community {
     id: number
     city: City
     name: string
 }
-export interface NewZoneRequest {
+
+export interface NewCommunityRequest {
     city: City
+    name: string
+}
+
+export interface Zone {
+    id: number
+    community: Community
+    name: string
+}
+export interface NewZoneRequest {
+    city: Community
     name: string
 }
 
@@ -67,13 +78,25 @@ export class CityEntity implements City {
     }
 }
 
-export class ZoneEntity implements Zone {
+export class CommunityEntity implements Community {
     id: number
     city: City
     name: string
+
     constructor(id: number, city: City, name: string) {
         this.id = id
         this.city = city
+        this.name = name
+    }
+}
+
+export class ZoneEntity implements Zone {
+    id: number
+    community: Community
+    name: string
+    constructor(id: number, community: Community, name: string) {
+        this.id = id
+        this.community = community
         this.name = name
     }
 }

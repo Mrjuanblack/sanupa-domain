@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ZoneEntity = exports.CityEntity = exports.RegionEntity = exports.CountryEntity = void 0;
+exports.ZoneEntity = exports.CommunityEntity = exports.CityEntity = exports.RegionEntity = exports.CountryEntity = void 0;
 class CountryEntity {
     constructor(id, name) {
         this.id = id;
@@ -24,10 +24,18 @@ class CityEntity {
     }
 }
 exports.CityEntity = CityEntity;
-class ZoneEntity {
+class CommunityEntity {
     constructor(id, city, name) {
         this.id = id;
         this.city = city;
+        this.name = name;
+    }
+}
+exports.CommunityEntity = CommunityEntity;
+class ZoneEntity {
+    constructor(id, community, name) {
+        this.id = id;
+        this.community = community;
         this.name = name;
     }
 }

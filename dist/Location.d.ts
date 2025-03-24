@@ -20,13 +20,22 @@ export interface NewCityRequest {
     region: Region;
     name: string;
 }
-export interface Zone {
+export interface Community {
     id: number;
     city: City;
     name: string;
 }
-export interface NewZoneRequest {
+export interface NewCommunityRequest {
     city: City;
+    name: string;
+}
+export interface Zone {
+    id: number;
+    community: Community;
+    name: string;
+}
+export interface NewZoneRequest {
+    city: Community;
     name: string;
 }
 export declare class CountryEntity implements Country {
@@ -46,9 +55,15 @@ export declare class CityEntity implements City {
     name: string;
     constructor(id: number, region: Region, name: string);
 }
-export declare class ZoneEntity implements Zone {
+export declare class CommunityEntity implements Community {
     id: number;
     city: City;
     name: string;
     constructor(id: number, city: City, name: string);
+}
+export declare class ZoneEntity implements Zone {
+    id: number;
+    community: Community;
+    name: string;
+    constructor(id: number, community: Community, name: string);
 }

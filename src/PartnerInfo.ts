@@ -1,10 +1,12 @@
 import { ZoneEntity } from "./Location"
-import { PartnerWorkingZone } from "./PartnerWorkingZone"
+import { PartnerWorking_City, PartnerWorking_Community, PartnerWorking_Zone } from "./PartnerWorkingZone"
 
 export interface PartnerInfo {
     name: string
     address: string
-    workingZones: PartnerWorkingZone[]
+    workingArea_Zones: PartnerWorking_Zone[]
+    workingArea_Communities: PartnerWorking_Community[]
+    workingArea_Cities: PartnerWorking_City[]
 
     imgPath: string | null
 }
@@ -13,7 +15,9 @@ export class PartnerInfoEntity implements PartnerInfo {
     constructor(
         public name: string,
         public address: string,
-        public workingZones: PartnerWorkingZone[],
+        public workingArea_Zones: PartnerWorking_Zone[],
+        public workingArea_Communities: PartnerWorking_Community[],
+        public workingArea_Cities: PartnerWorking_City[],
         public imgPath: string | null
     ) { }
 }
