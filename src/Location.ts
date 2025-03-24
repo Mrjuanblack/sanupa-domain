@@ -40,7 +40,7 @@ export interface Zone {
     name: string
 }
 export interface NewZoneRequest {
-    city: Community
+    community: Community
     name: string
 }
 
