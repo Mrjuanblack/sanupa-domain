@@ -61,6 +61,12 @@ export interface NewProductJustCode {
     code: string;
     subcategoryId: number;
 }
+export interface NewProduct_GS1 {
+    code: string;
+    subcategoryId: number;
+    name: string;
+    description: string;
+}
 export interface ProductWithoutCode extends BaseProduct {
     name: string;
     description: string | null;
