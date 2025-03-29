@@ -78,6 +78,10 @@ export interface ProductWithCode extends BaseProduct {
     measurement: string
     market: string
 
+    //Aditional Img
+    secondImgPath: string
+    thirdImgPath: string | null
+
     //Measurement data that will be used if the measurement and quantity data is updated
     measurementType: MeasurementType | null
     measurementQuantity: number | null
@@ -95,6 +99,7 @@ export interface NewProductWithCodeRequest {
     measurement: string
     market: string
 }
+
 export interface NewProductJustCode {
     code: string
 
@@ -220,6 +225,8 @@ export class ProductWithCodeEntity implements ProductWithCode {
         public brand: string,
         public gpc: string,
         public imgPath: string,
+        public secondImgPath: string,
+        public thirdImgPath: string | null,
         public quantity: string,
         public measurement: string,
         public market: string,
