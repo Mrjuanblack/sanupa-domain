@@ -1,4 +1,5 @@
 export interface GS1_Result {
+    code: string;
     description: string;
     brand: string;
     imageUrl: string;
@@ -6,10 +7,11 @@ export interface GS1_Result {
     netContentValue: string;
 }
 export declare class GS1_ResultEntity implements GS1_Result {
+    code: string;
     description: string;
     brand: string;
     imageUrl: string;
     netContentCode: string;
     netContentValue: string;
-    constructor(description: string, brand: string, imageUrl: string, netContentCode: string, netContentValue: string);
+    constructor(code: string, description: string, brand: string, imageUrl: string, netContentCode: string, netContentValue: string);
 }
