@@ -211,4 +211,7 @@ export declare class ProductWithoutCodeEntity implements ProductWithoutCode {
     mileage: number | null;
     constructor(id: number, name: string, subcategory: SubcategoryEntity, imgPath: string, minImgPath: string, description: string | null, brand: string | null, measurementType: MeasurementTypeEntity | null, measurementQuantity: number | null, productType: ProductTypeEntity | null, zone: ZoneEntity | null, offerType: OfferType | null, area: number | null, condition: Condition | null, stratum: Estratum | null, antiquity: number | null, bathrooms: number | null, rooms: number | null, parkingLots: number | null, cylinderCapacity: number | null, mileage: number | null);
 }
+export interface UrlUploadRequest {
+    url: string;
+}
 export {};

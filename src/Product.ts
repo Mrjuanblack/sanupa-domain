@@ -273,3 +273,7 @@ export class ProductWithoutCodeEntity implements ProductWithoutCode {
         public mileage: number | null,
     ) { }
 }
+
+export interface UrlUploadRequest {
+    url: string
+}
