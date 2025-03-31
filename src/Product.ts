@@ -66,6 +66,7 @@ interface BaseProduct {
     id: number
     subcategory: SubcategoryEntity
     imgPath: string
+    minImgPath: string
 }
 export interface ProductWithCode extends BaseProduct {
     //GS1 data
@@ -234,6 +235,7 @@ export class ProductWithCodeEntity implements ProductWithCode {
         public brand: string,
         public gpc: string,
         public imgPath: string,
+        public minImgPath: string,
         public secondImgPath: string,
         public thirdImgPath: string | null,
         public codeImgPath: string | null,
@@ -252,6 +254,7 @@ export class ProductWithoutCodeEntity implements ProductWithoutCode {
         public name: string,
         public subcategory: SubcategoryEntity,
         public imgPath: string,
+        public minImgPath: string,
         public description: string | null,
         public brand: string | null,
         public measurementType: MeasurementTypeEntity | null,

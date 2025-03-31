@@ -100,7 +100,7 @@ class UpdateProductWithCodeRequestEntity {
 }
 exports.UpdateProductWithCodeRequestEntity = UpdateProductWithCodeRequestEntity;
 class ProductWithCodeEntity {
-    constructor(id, subcategory, gtin, name, description, brand, gpc, imgPath, secondImgPath, thirdImgPath, codeImgPath, quantity, measurement, market, measurementType, measurementQuantity) {
+    constructor(id, subcategory, gtin, name, description, brand, gpc, imgPath, minImgPath, secondImgPath, thirdImgPath, codeImgPath, quantity, measurement, market, measurementType, measurementQuantity) {
         this.id = id;
         this.subcategory = subcategory;
         this.gtin = gtin;
@@ -109,6 +109,7 @@ class ProductWithCodeEntity {
         this.brand = brand;
         this.gpc = gpc;
         this.imgPath = imgPath;
+        this.minImgPath = minImgPath;
         this.secondImgPath = secondImgPath;
         this.thirdImgPath = thirdImgPath;
         this.codeImgPath = codeImgPath;
@@ -121,11 +122,12 @@ class ProductWithCodeEntity {
 }
 exports.ProductWithCodeEntity = ProductWithCodeEntity;
 class ProductWithoutCodeEntity {
-    constructor(id, name, subcategory, imgPath, description, brand, measurementType, measurementQuantity, productType, zone, offerType, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage) {
+    constructor(id, name, subcategory, imgPath, minImgPath, description, brand, measurementType, measurementQuantity, productType, zone, offerType, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage) {
         this.id = id;
         this.name = name;
         this.subcategory = subcategory;
         this.imgPath = imgPath;
+        this.minImgPath = minImgPath;
         this.description = description;
         this.brand = brand;
         this.measurementType = measurementType;
