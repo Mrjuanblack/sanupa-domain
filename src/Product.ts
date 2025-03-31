@@ -81,6 +81,7 @@ export interface ProductWithCode extends BaseProduct {
     //Aditional Img
     secondImgPath: string
     thirdImgPath: string | null
+    codeImgPath: string | null
 
     //Measurement data that will be used if the measurement and quantity data is updated
     measurementType: MeasurementType | null
@@ -235,6 +236,7 @@ export class ProductWithCodeEntity implements ProductWithCode {
         public imgPath: string,
         public secondImgPath: string,
         public thirdImgPath: string | null,
+        public codeImgPath: string | null,
         public quantity: string,
         public measurement: string,
         public market: string,

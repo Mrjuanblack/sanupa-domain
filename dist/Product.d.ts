@@ -42,6 +42,7 @@ export interface ProductWithCode extends BaseProduct {
     market: string;
     secondImgPath: string;
     thirdImgPath: string | null;
+    codeImgPath: string | null;
     measurementType: MeasurementType | null;
     measurementQuantity: number | null;
 }
@@ -176,12 +177,13 @@ export declare class ProductWithCodeEntity implements ProductWithCode {
     imgPath: string;
     secondImgPath: string;
     thirdImgPath: string | null;
+    codeImgPath: string | null;
     quantity: string;
     measurement: string;
     market: string;
     measurementType: MeasurementTypeEntity | null;
     measurementQuantity: number | null;
-    constructor(id: number, subcategory: SubcategoryEntity, gtin: string, name: string, description: string, brand: string, gpc: string, imgPath: string, secondImgPath: string, thirdImgPath: string | null, quantity: string, measurement: string, market: string, measurementType: MeasurementTypeEntity | null, measurementQuantity: number | null);
+    constructor(id: number, subcategory: SubcategoryEntity, gtin: string, name: string, description: string, brand: string, gpc: string, imgPath: string, secondImgPath: string, thirdImgPath: string | null, codeImgPath: string | null, quantity: string, measurement: string, market: string, measurementType: MeasurementTypeEntity | null, measurementQuantity: number | null);
 }
 export declare class ProductWithoutCodeEntity implements ProductWithoutCode {
     id: number;
