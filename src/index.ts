@@ -19,3 +19,4 @@ export * from './Excel';
 export * from './CustomerSupport';
 export * from './WebsocketsConstants';
 export * from './Favorite';
+export * from './ProductReport';
