@@ -33,7 +33,8 @@ interface BaseProduct {
     minImgPath: string;
 }
 export interface ProductWithCode extends BaseProduct {
-    hasBeenEdited: boolean;
+    verifiedByAdmin: boolean;
+    awaitingVerification: boolean;
     gtin: string;
     name: string;
     description: string;
@@ -186,8 +187,9 @@ export declare class ProductWithCodeEntity implements ProductWithCode {
     market: string;
     measurementType: MeasurementTypeEntity | null;
     measurementQuantity: number | null;
-    hasBeenEdited: boolean;
-    constructor(id: number, subcategory: SubcategoryEntity, gtin: string, name: string, description: string, brand: string, gpc: string, imgPath: string, minImgPath: string, secondImgPath: string, thirdImgPath: string | null, codeImgPath: string | null, quantity: string, measurement: string, market: string, measurementType: MeasurementTypeEntity | null, measurementQuantity: number | null, hasBeenEdited: boolean);
+    verifiedByAdmin: boolean;
+    awaitingVerification: boolean;
+    constructor(id: number, subcategory: SubcategoryEntity, gtin: string, name: string, description: string, brand: string, gpc: string, imgPath: string, minImgPath: string, secondImgPath: string, thirdImgPath: string | null, codeImgPath: string | null, quantity: string, measurement: string, market: string, measurementType: MeasurementTypeEntity | null, measurementQuantity: number | null, verifiedByAdmin: boolean, awaitingVerification: boolean);
 }
 export declare class ProductWithoutCodeEntity implements ProductWithoutCode {
     id: number;

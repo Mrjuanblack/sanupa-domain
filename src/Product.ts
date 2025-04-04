@@ -69,7 +69,8 @@ interface BaseProduct {
     minImgPath: string
 }
 export interface ProductWithCode extends BaseProduct {
-    hasBeenEdited: boolean
+    verifiedByAdmin: boolean
+    awaitingVerification: boolean
     //GS1 data
     gtin: string
     name: string
@@ -245,7 +246,8 @@ export class ProductWithCodeEntity implements ProductWithCode {
         public market: string,
         public measurementType: MeasurementTypeEntity | null,
         public measurementQuantity: number | null,
-        public hasBeenEdited: boolean
+        public verifiedByAdmin: boolean,
+        public awaitingVerification: boolean
     ) { }
 }
 
