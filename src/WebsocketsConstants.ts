@@ -19,12 +19,12 @@ export enum WS_ProductsCreate {
     ProductsCreateError = "productsCreateError"
 }
 
-export interface EmailProgressResult {
+export interface ProductsCreateProgressResult {
     index: number
     total: number
 }
 
-export interface EmailError {
+export interface ProductsCreateError {
     index: number
     total: number
     error: string
