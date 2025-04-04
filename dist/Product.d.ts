@@ -71,6 +71,11 @@ export interface NewProduct_GS1 {
     name: string;
     description: string;
 }
+export interface UpdateProduct_GS1 {
+    productId: number;
+    name: string;
+    description: string;
+}
 export interface ProductWithoutCode extends BaseProduct {
     name: string;
     description: string | null;
