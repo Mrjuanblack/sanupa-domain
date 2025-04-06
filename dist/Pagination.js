@@ -1,6 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PaginationResultEntity = exports.PaginationRequestWithFilterEntity = exports.PaginationRequestEntity = void 0;
+exports.PaginationResultEntity = exports.PaginationRequestWithFilterEntity = exports.PaginationRequestEntity = exports.AdminReviewSortType = void 0;
+var AdminReviewSortType;
+(function (AdminReviewSortType) {
+    AdminReviewSortType[AdminReviewSortType["NoReviewed"] = 1] = "NoReviewed";
+    AdminReviewSortType[AdminReviewSortType["PendingReview"] = 2] = "PendingReview";
+})(AdminReviewSortType || (exports.AdminReviewSortType = AdminReviewSortType = {}));
 class PaginationRequestEntity {
     constructor(page, pageSize) {
         this.page = page;
