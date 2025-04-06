@@ -1,7 +1,8 @@
 import { PP_Filter } from "./PartnerProduct";
 export declare enum AdminReviewSortType {
     NoReviewed = 1,
-    PendingReview = 2
+    PendingReview = 2,
+    Reviewed = 3
 }
 export interface PaginationRequest {
     page: number;

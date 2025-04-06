@@ -5,6 +5,7 @@ var AdminReviewSortType;
 (function (AdminReviewSortType) {
     AdminReviewSortType[AdminReviewSortType["NoReviewed"] = 1] = "NoReviewed";
     AdminReviewSortType[AdminReviewSortType["PendingReview"] = 2] = "PendingReview";
+    AdminReviewSortType[AdminReviewSortType["Reviewed"] = 3] = "Reviewed";
 })(AdminReviewSortType || (exports.AdminReviewSortType = AdminReviewSortType = {}));
 class PaginationRequestEntity {
     constructor(page, pageSize) {
