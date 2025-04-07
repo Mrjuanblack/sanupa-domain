@@ -37,3 +37,5 @@ __exportStar(require("./WebsocketsConstants"), exports);
 __exportStar(require("./Favorite"), exports);
 __exportStar(require("./ProductReport"), exports);
 __exportStar(require("./TempFile"), exports);
+__exportStar(require("./Subcategory_ProductType"), exports);
+__exportStar(require("./Subcategory_Brand"), exports);

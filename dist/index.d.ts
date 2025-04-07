@@ -21,3 +21,5 @@ export * from './WebsocketsConstants';
 export * from './Favorite';
 export * from './ProductReport';
 export * from './TempFile';
+export * from './Subcategory_ProductType';
+export * from './Subcategory_Brand';
