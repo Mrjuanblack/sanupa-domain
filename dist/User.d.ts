@@ -15,7 +15,8 @@ export declare function getCCTypeString(ccType: CCType): string;
 export declare enum UserRole {
     User = 1,
     Admin = 2,
-    Partner = 3
+    Partner = 3,
+    PhotoAssistant = 4
 }
 export declare function getUserRoleString(role: UserRole): string;
 export interface User {

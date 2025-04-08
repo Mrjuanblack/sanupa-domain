@@ -35,11 +35,13 @@ var UserRole;
     UserRole[UserRole["User"] = 1] = "User";
     UserRole[UserRole["Admin"] = 2] = "Admin";
     UserRole[UserRole["Partner"] = 3] = "Partner";
+    UserRole[UserRole["PhotoAssistant"] = 4] = "PhotoAssistant";
 })(UserRole || (exports.UserRole = UserRole = {}));
 const userRoleEnumToString = {
     [UserRole.User]: 'Usuario',
     [UserRole.Admin]: 'Administrador',
     [UserRole.Partner]: 'Socio',
+    [UserRole.PhotoAssistant]: 'Asistente de Fotos',
 };
 function getUserRoleString(role) {
     return userRoleEnumToString[role];
