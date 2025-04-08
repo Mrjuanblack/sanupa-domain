@@ -2,6 +2,8 @@ import { ZoneEntity } from "./Location"
 import { MeasurementType, MeasurementTypeEntity } from "./MeasurementType"
 import { ProductTypeEntity } from "./ProductType"
 import { SubcategoryEntity } from "./Subcategory"
+import { SubcategoryBrandEntity } from "./Subcategory_Brand";
+import { SubcategoryProductType } from "./Subcategory_ProductType";
 
 export enum OfferType {
     Sale = 1,
@@ -81,6 +83,11 @@ export interface ProductWithCode extends BaseProduct {
     measurement: string
     market: string
 
+    s_productType: SubcategoryProductType | null
+    s_brand: SubcategoryBrandEntity | null
+    complementaryInfo: string | null
+
+
     //Aditional Img
     secondImgPath: string
     thirdImgPath: string | null
@@ -102,6 +109,10 @@ export interface NewProductWithCodeRequest {
     quantity: string
     measurement: string
     market: string
+
+    productTypeId: number
+    brandId: number
+    complementaryInfo: string | null
 }
 
 export interface NewProductJustCode {
@@ -243,6 +254,9 @@ export class ProductWithCodeEntity implements ProductWithCode {
         public description: string,
         public brand: string,
         public gpc: string,
+        public s_productType: SubcategoryProductType | null,
+        public s_brand: SubcategoryBrandEntity | null,
+        public complementaryInfo: string | null,
         public imgPath: string,
         public minImgPath: string,
         public secondImgPath: string,

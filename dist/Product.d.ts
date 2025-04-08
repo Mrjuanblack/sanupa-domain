@@ -2,6 +2,8 @@ import { ZoneEntity } from "./Location";
 import { MeasurementType, MeasurementTypeEntity } from "./MeasurementType";
 import { ProductTypeEntity } from "./ProductType";
 import { SubcategoryEntity } from "./Subcategory";
+import { SubcategoryBrandEntity } from "./Subcategory_Brand";
+import { SubcategoryProductType } from "./Subcategory_ProductType";
 export declare enum OfferType {
     Sale = 1,
     Lease = 2,
@@ -43,6 +45,9 @@ export interface ProductWithCode extends BaseProduct {
     quantity: string;
     measurement: string;
     market: string;
+    s_productType: SubcategoryProductType | null;
+    s_brand: SubcategoryBrandEntity | null;
+    complementaryInfo: string | null;
     secondImgPath: string;
     thirdImgPath: string | null;
     codeImgPath: string | null;
@@ -60,6 +65,9 @@ export interface NewProductWithCodeRequest {
     quantity: string;
     measurement: string;
     market: string;
+    productTypeId: number;
+    brandId: number;
+    complementaryInfo: string | null;
 }
 export interface NewProductJustCode {
     code: string;
@@ -182,6 +190,9 @@ export declare class ProductWithCodeEntity implements ProductWithCode {
     description: string;
     brand: string;
     gpc: string;
+    s_productType: SubcategoryProductType | null;
+    s_brand: SubcategoryBrandEntity | null;
+    complementaryInfo: string | null;
     imgPath: string;
     minImgPath: string;
     secondImgPath: string;
@@ -194,7 +205,7 @@ export declare class ProductWithCodeEntity implements ProductWithCode {
     measurementQuantity: number | null;
     verifiedByAdmin: boolean;
     awaitingVerification: boolean;
-    constructor(id: number, subcategory: SubcategoryEntity, gtin: string, name: string, description: string, brand: string, gpc: string, imgPath: string, minImgPath: string, secondImgPath: string, thirdImgPath: string | null, codeImgPath: string | null, quantity: string, measurement: string, market: string, measurementType: MeasurementTypeEntity | null, measurementQuantity: number | null, verifiedByAdmin: boolean, awaitingVerification: boolean);
+    constructor(id: number, subcategory: SubcategoryEntity, gtin: string, name: string, description: string, brand: string, gpc: string, s_productType: SubcategoryProductType | null, s_brand: SubcategoryBrandEntity | null, complementaryInfo: string | null, imgPath: string, minImgPath: string, secondImgPath: string, thirdImgPath: string | null, codeImgPath: string | null, quantity: string, measurement: string, market: string, measurementType: MeasurementTypeEntity | null, measurementQuantity: number | null, verifiedByAdmin: boolean, awaitingVerification: boolean);
 }
 export declare class ProductWithoutCodeEntity implements ProductWithoutCode {
     id: number;
