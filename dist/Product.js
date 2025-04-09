@@ -86,7 +86,7 @@ function getGS1UnitString(unit) {
         case GS1_Unit.EA:
             return "Und";
         case GS1_Unit.UNDF:
-            return "";
+            return "Indf.";
     }
 }
 var OfferType;

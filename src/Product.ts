@@ -85,7 +85,7 @@ export function getGS1UnitString(unit: GS1_Unit): string {
         case GS1_Unit.EA:
             return "Und";
         case GS1_Unit.UNDF:
-            return "";
+            return "Indf.";
     }
 }
 
