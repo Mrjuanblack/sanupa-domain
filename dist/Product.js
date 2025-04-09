@@ -15,12 +15,7 @@ function getComplementaryInfo(quantityString, unitsString) {
     const units = parseStringToGS1_Unit(unitsString);
     const quantity = (_a = (0, Utils_1.parseStringToNumber)(quantityString)) !== null && _a !== void 0 ? _a : 1;
     if (isSingularUnit(units)) {
-        if (quantity !== 1) {
-            return `${quantity} ${getGS1UnitString(units)}`;
-        }
-        else {
-            return null;
-        }
+        return null;
     }
     return `${quantity} ${getGS1UnitString(units)}`;
 }

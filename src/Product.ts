@@ -10,11 +10,7 @@ export function getComplementaryInfo(quantityString: string, unitsString: string
     const units = parseStringToGS1_Unit(unitsString);
     const quantity = parseStringToNumber(quantityString) ?? 1;
     if (isSingularUnit(units)) {
-        if (quantity !== 1) {
-            return `${quantity} ${getGS1UnitString(units)}`
-        } else {
-            return null
-        }
+        return null;
     }
     return `${quantity} ${getGS1UnitString(units)}`
 }
