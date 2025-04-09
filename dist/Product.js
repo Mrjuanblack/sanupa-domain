@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProductWithoutCodeEntity = exports.ProductWithCodeEntity = exports.UpdateProductWithCodeRequestEntity = exports.UpdateProductWithoutCodeRequestEntity = exports.EstratumList = exports.Estratum = exports.ConditionList = exports.Condition = exports.OfferTypeList = exports.OfferType = exports.GS1_Unit = void 0;
 exports.parseStringToGS1_Unit = parseStringToGS1_Unit;
+exports.isSingularUnit = isSingularUnit;
 exports.getGS1UnitString = getGS1UnitString;
 exports.getOfferTypeString = getOfferTypeString;
 exports.getConditionString = getConditionString;
@@ -33,6 +34,18 @@ function parseStringToGS1_Unit(value) {
     if (findResult === undefined)
         return GS1_Unit.UNDF;
     return findResult;
+}
+function isSingularUnit(value) {
+    switch (value) {
+        case GS1_Unit.H87:
+        case GS1_Unit.PTN:
+        case GS1_Unit.KT:
+        case GS1_Unit.G26:
+        case GS1_Unit.EA:
+            return true;
+        default:
+            return false;
+    }
 }
 function getGS1UnitString(unit) {
     switch (unit) {

@@ -26,6 +26,7 @@ export declare enum GS1_Unit {
     UNDF = "-----"
 }
 export declare function parseStringToGS1_Unit(value: string): GS1_Unit;
+export declare function isSingularUnit(value: GS1_Unit): boolean;
 export declare function getGS1UnitString(unit: GS1_Unit): string;
 export declare enum OfferType {
     Sale = 1,

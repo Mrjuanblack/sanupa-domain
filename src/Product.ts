@@ -29,8 +29,21 @@ export enum GS1_Unit {
 
 export function parseStringToGS1_Unit(value: string): GS1_Unit {
     const findResult = Object.values(GS1_Unit).find(x => x.toLowerCase() === value.toLowerCase());
-    if(findResult === undefined) return GS1_Unit.UNDF;
+    if (findResult === undefined) return GS1_Unit.UNDF;
     return findResult;
+}
+
+export function isSingularUnit(value: GS1_Unit): boolean {
+    switch (value) {
+        case GS1_Unit.H87:
+        case GS1_Unit.PTN:
+        case GS1_Unit.KT:
+        case GS1_Unit.G26:
+        case GS1_Unit.EA:
+            return true;
+        default:
+            return false;
+    }
 }
 
 export function getGS1UnitString(unit: GS1_Unit): string {
