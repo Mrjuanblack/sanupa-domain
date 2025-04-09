@@ -1,12 +1,38 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProductWithoutCodeEntity = exports.ProductWithCodeEntity = exports.UpdateProductWithCodeRequestEntity = exports.UpdateProductWithoutCodeRequestEntity = exports.EstratumList = exports.Estratum = exports.ConditionList = exports.Condition = exports.OfferTypeList = exports.OfferType = exports.GS1_Unit = void 0;
+exports.getComplementaryInfo = getComplementaryInfo;
+exports.getQuantityBasedOnUnits = getQuantityBasedOnUnits;
 exports.parseStringToGS1_Unit = parseStringToGS1_Unit;
 exports.isSingularUnit = isSingularUnit;
 exports.getGS1UnitString = getGS1UnitString;
 exports.getOfferTypeString = getOfferTypeString;
 exports.getConditionString = getConditionString;
 exports.getEstratumString = getEstratumString;
+const Utils_1 = require("./Utils");
+function getComplementaryInfo(quantityString, unitsString) {
+    var _a;
+    const units = parseStringToGS1_Unit(unitsString);
+    const quantity = (_a = (0, Utils_1.parseStringToNumber)(quantityString)) !== null && _a !== void 0 ? _a : 1;
+    if (isSingularUnit(units)) {
+        if (quantity !== 1) {
+            return `${quantity} ${getGS1UnitString(units)}`;
+        }
+        else {
+            return null;
+        }
+    }
+    return `${quantity} ${getGS1UnitString(units)}`;
+}
+function getQuantityBasedOnUnits(quantityString, unitsString) {
+    var _a;
+    const units = parseStringToGS1_Unit(unitsString);
+    const quantity = (_a = (0, Utils_1.parseStringToNumber)(quantityString)) !== null && _a !== void 0 ? _a : 1;
+    if (isSingularUnit(units)) {
+        return quantity;
+    }
+    return null;
+}
 var GS1_Unit;
 (function (GS1_Unit) {
     GS1_Unit["CM"] = "CMT";

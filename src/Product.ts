@@ -4,6 +4,29 @@ import { ProductTypeEntity } from "./ProductType"
 import { SubcategoryEntity } from "./Subcategory"
 import { SubcategoryBrandEntity } from "./Subcategory_Brand";
 import { SubcategoryProductType } from "./Subcategory_ProductType";
+import { parseStringToNumber } from "./Utils";
+
+export function getComplementaryInfo(quantityString: string, unitsString: string): string | null {
+    const units = parseStringToGS1_Unit(unitsString);
+    const quantity = parseStringToNumber(quantityString) ?? 1;
+    if (isSingularUnit(units)) {
+        if (quantity !== 1) {
+            return `${quantity} ${getGS1UnitString(units)}`
+        } else {
+            return null
+        }
+    }
+    return `${quantity} ${getGS1UnitString(units)}`
+}
+
+export function getQuantityBasedOnUnits(quantityString: string, unitsString: string): number | null {
+    const units = parseStringToGS1_Unit(unitsString);
+    const quantity = parseStringToNumber(quantityString) ?? 1;
+    if (isSingularUnit(units)) {
+        return quantity;
+    }
+    return null
+}
 
 export enum GS1_Unit {
     CM = "CMT",

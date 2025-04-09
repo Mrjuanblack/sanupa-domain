@@ -4,6 +4,8 @@ import { ProductTypeEntity } from "./ProductType";
 import { SubcategoryEntity } from "./Subcategory";
 import { SubcategoryBrandEntity } from "./Subcategory_Brand";
 import { SubcategoryProductType } from "./Subcategory_ProductType";
+export declare function getComplementaryInfo(quantityString: string, unitsString: string): string | null;
+export declare function getQuantityBasedOnUnits(quantityString: string, unitsString: string): number | null;
 export declare enum GS1_Unit {
     CM = "CMT",
     CMQ = "CMQ",
