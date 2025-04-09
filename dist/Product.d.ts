@@ -89,8 +89,8 @@ export interface NewProductWithCodeRequest {
     quantity: string;
     measurement: string;
     market: string;
-    productTypeId: number;
-    brandId: number;
+    productTypeId: number | null;
+    brandId: number | null;
     complementaryInfo: string | null;
 }
 export interface NewProductJustCode {

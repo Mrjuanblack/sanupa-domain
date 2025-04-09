@@ -194,8 +194,8 @@ export interface NewProductWithCodeRequest {
     measurement: string
     market: string
 
-    productTypeId: number
-    brandId: number
+    productTypeId: number | null
+    brandId: number | null
     complementaryInfo: string | null
 }
 
