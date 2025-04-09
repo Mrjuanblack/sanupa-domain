@@ -11,6 +11,8 @@ function parseStringToInt(value) {
     return false;
 }
 function parseStringToNumber(value) {
+    if (value.trim() === "")
+        return undefined;
     const num = Number(value);
     if (isNaN(num))
         return undefined;

@@ -6,6 +6,8 @@ export function parseStringToInt(value: string | undefined): number | false {
 }
 
 export function parseStringToNumber(value: string): number | undefined {
+    if (value.trim() === "") return undefined;
+
     const num = Number(value);
     if (isNaN(num)) return undefined;
 
