@@ -4,6 +4,29 @@ import { ProductTypeEntity } from "./ProductType";
 import { SubcategoryEntity } from "./Subcategory";
 import { SubcategoryBrandEntity } from "./Subcategory_Brand";
 import { SubcategoryProductType } from "./Subcategory_ProductType";
+export declare enum GS1_Unit {
+    CM = "CMT",
+    CMQ = "CMQ",
+    GRM = "GRM",
+    KG = "KGM",
+    LBR = "LBR",
+    LTR = "LTR",
+    MTR = "MTR",
+    MGM = "MGM",
+    MLT = "MLT",
+    MMT = "MMT",
+    OZA = "OZA",
+    ONZ = "ONZ",
+    SET = "SET",
+    H87 = "H87",
+    PTN = "PTN",
+    KT = "KT",
+    G26 = "G26",
+    EA = "EA",
+    UNDF = "-----"
+}
+export declare function parseStringToGS1_Unit(value: string): GS1_Unit;
+export declare function getGS1UnitString(unit: GS1_Unit): string;
 export declare enum OfferType {
     Sale = 1,
     Lease = 2,

@@ -5,6 +5,77 @@ import { SubcategoryEntity } from "./Subcategory"
 import { SubcategoryBrandEntity } from "./Subcategory_Brand";
 import { SubcategoryProductType } from "./Subcategory_ProductType";
 
+export enum GS1_Unit {
+    CM = "CMT",
+    CMQ = "CMQ",
+    GRM = "GRM",
+    KG = "KGM",
+    LBR = "LBR",
+    LTR = "LTR",
+    MTR = "MTR",
+    MGM = "MGM",
+    MLT = "MLT",
+    MMT = "MMT",
+    OZA = "OZA",
+    ONZ = "ONZ",
+    SET = "SET",
+    H87 = "H87",
+    PTN = "PTN",
+    KT = "KT",
+    G26 = "G26",
+    EA = "EA",
+    UNDF = "-----"
+}
+
+export function parseStringToGS1_Unit(value: string): GS1_Unit {
+    const findResult = Object.values(GS1_Unit).find(x => x.toLowerCase() === value.toLowerCase());
+    if(findResult === undefined) return GS1_Unit.UNDF;
+    return findResult;
+}
+
+export function getGS1UnitString(unit: GS1_Unit): string {
+    switch (unit) {
+        case GS1_Unit.CM:
+            return "cm";
+        case GS1_Unit.CMQ:
+            return "cm3";
+        case GS1_Unit.GRM:
+            return "gramos";
+        case GS1_Unit.KG:
+            return "Kg";
+        case GS1_Unit.LBR:
+            return "Libra";
+        case GS1_Unit.LTR:
+            return "Litro";
+        case GS1_Unit.MTR:
+            return "metros";
+        case GS1_Unit.MGM:
+            return "mg";
+        case GS1_Unit.MLT:
+            return "mL";
+        case GS1_Unit.MMT:
+            return "mm";
+        case GS1_Unit.OZA:
+            return "Onzas";
+        case GS1_Unit.ONZ:
+            return "Onzas";
+        case GS1_Unit.SET:
+            return "Set";
+        case GS1_Unit.H87:
+            return "Und";
+        case GS1_Unit.PTN:
+            return "Und";
+        case GS1_Unit.KT:
+            return "Und";
+        case GS1_Unit.G26:
+            return "Und";
+        case GS1_Unit.EA:
+            return "Und";
+        case GS1_Unit.UNDF:
+            return "";
+    }
+}
+
 export enum OfferType {
     Sale = 1,
     Lease = 2,

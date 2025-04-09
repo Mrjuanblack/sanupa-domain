@@ -1,9 +1,81 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProductWithoutCodeEntity = exports.ProductWithCodeEntity = exports.UpdateProductWithCodeRequestEntity = exports.UpdateProductWithoutCodeRequestEntity = exports.EstratumList = exports.Estratum = exports.ConditionList = exports.Condition = exports.OfferTypeList = exports.OfferType = void 0;
+exports.ProductWithoutCodeEntity = exports.ProductWithCodeEntity = exports.UpdateProductWithCodeRequestEntity = exports.UpdateProductWithoutCodeRequestEntity = exports.EstratumList = exports.Estratum = exports.ConditionList = exports.Condition = exports.OfferTypeList = exports.OfferType = exports.GS1_Unit = void 0;
+exports.parseStringToGS1_Unit = parseStringToGS1_Unit;
+exports.getGS1UnitString = getGS1UnitString;
 exports.getOfferTypeString = getOfferTypeString;
 exports.getConditionString = getConditionString;
 exports.getEstratumString = getEstratumString;
+var GS1_Unit;
+(function (GS1_Unit) {
+    GS1_Unit["CM"] = "CMT";
+    GS1_Unit["CMQ"] = "CMQ";
+    GS1_Unit["GRM"] = "GRM";
+    GS1_Unit["KG"] = "KGM";
+    GS1_Unit["LBR"] = "LBR";
+    GS1_Unit["LTR"] = "LTR";
+    GS1_Unit["MTR"] = "MTR";
+    GS1_Unit["MGM"] = "MGM";
+    GS1_Unit["MLT"] = "MLT";
+    GS1_Unit["MMT"] = "MMT";
+    GS1_Unit["OZA"] = "OZA";
+    GS1_Unit["ONZ"] = "ONZ";
+    GS1_Unit["SET"] = "SET";
+    GS1_Unit["H87"] = "H87";
+    GS1_Unit["PTN"] = "PTN";
+    GS1_Unit["KT"] = "KT";
+    GS1_Unit["G26"] = "G26";
+    GS1_Unit["EA"] = "EA";
+    GS1_Unit["UNDF"] = "-----";
+})(GS1_Unit || (exports.GS1_Unit = GS1_Unit = {}));
+function parseStringToGS1_Unit(value) {
+    const findResult = Object.values(GS1_Unit).find(x => x.toLowerCase() === value.toLowerCase());
+    if (findResult === undefined)
+        return GS1_Unit.UNDF;
+    return findResult;
+}
+function getGS1UnitString(unit) {
+    switch (unit) {
+        case GS1_Unit.CM:
+            return "cm";
+        case GS1_Unit.CMQ:
+            return "cm3";
+        case GS1_Unit.GRM:
+            return "gramos";
+        case GS1_Unit.KG:
+            return "Kg";
+        case GS1_Unit.LBR:
+            return "Libra";
+        case GS1_Unit.LTR:
+            return "Litro";
+        case GS1_Unit.MTR:
+            return "metros";
+        case GS1_Unit.MGM:
+            return "mg";
+        case GS1_Unit.MLT:
+            return "mL";
+        case GS1_Unit.MMT:
+            return "mm";
+        case GS1_Unit.OZA:
+            return "Onzas";
+        case GS1_Unit.ONZ:
+            return "Onzas";
+        case GS1_Unit.SET:
+            return "Set";
+        case GS1_Unit.H87:
+            return "Und";
+        case GS1_Unit.PTN:
+            return "Und";
+        case GS1_Unit.KT:
+            return "Und";
+        case GS1_Unit.G26:
+            return "Und";
+        case GS1_Unit.EA:
+            return "Und";
+        case GS1_Unit.UNDF:
+            return "";
+    }
+}
 var OfferType;
 (function (OfferType) {
     OfferType[OfferType["Sale"] = 1] = "Sale";
