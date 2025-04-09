@@ -25,6 +25,7 @@ export declare enum GS1_Unit {
     KT = "KT",
     G26 = "G26",
     EA = "EA",
+    U_1N = "1N",
     UNDF = "-----"
 }
 export declare function parseStringToGS1_Unit(value: string): GS1_Unit;
