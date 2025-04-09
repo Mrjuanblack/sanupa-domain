@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.parseStringToInt = parseStringToInt;
+exports.parseStringToNumber = parseStringToNumber;
 function parseStringToInt(value) {
     if (!value)
         return false;
@@ -8,4 +9,12 @@ function parseStringToInt(value) {
     if (Number.isInteger(parsed))
         return parsed;
     return false;
+}
+function parseStringToNumber(value) {
+    const num = Number(value);
+    if (isNaN(num))
+        return undefined;
+    // Check if it's a float with meaningful decimal part
+    const hasDecimalInfo = value.includes('.') && !/\.0+$/.test(value);
+    return hasDecimalInfo ? num : Math.trunc(num);
 }
