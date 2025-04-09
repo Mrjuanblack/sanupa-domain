@@ -100,12 +100,18 @@ export interface NewProductJustCode {
 export interface NewProduct_GS1 {
     code: string;
     subcategoryId: number;
-    name: string;
+    productTypeId: number;
+    brandId: number;
+    complementaryInfo: string | null;
+    quantity: number | null;
     description: string;
 }
 export interface UpdateProduct_GS1 {
     productId: number;
-    name: string;
+    productTypeId: number;
+    brandId: number;
+    complementaryInfo: string | null;
+    quantity: number | null;
     description: string;
 }
 export interface ProductWithoutCode extends BaseProduct {
