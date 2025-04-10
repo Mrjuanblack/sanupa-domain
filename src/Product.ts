@@ -260,6 +260,7 @@ export interface NewProduct_GS1 {
 
 export interface UpdateProduct_GS1 {
     productId: number
+    subcategoryId: number
 
     productTypeId: number
     brandId: number
