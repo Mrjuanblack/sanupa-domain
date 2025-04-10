@@ -1,8 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProductWithoutCodeEntity = exports.ProductWithCodeEntity = exports.UpdateProductWithCodeRequestEntity = exports.UpdateProductWithoutCodeRequestEntity = exports.EstratumList = exports.Estratum = exports.ConditionList = exports.Condition = exports.OfferTypeList = exports.OfferType = exports.GS1_Unit = void 0;
+exports.ProductWithoutCodeEntity = exports.ProductWithCodeEntity = exports.UpdateProductWithCodeRequestEntity = exports.UpdateProductWithoutCodeRequestEntity = exports.EstratumList = exports.Estratum = exports.ConditionList = exports.Condition = exports.OfferTypeList = exports.OfferType = exports.GS1_Unit = exports.ProductStateList = exports.ProductState = void 0;
 exports.getComplementaryInfo = getComplementaryInfo;
 exports.getQuantityBasedOnUnits = getQuantityBasedOnUnits;
+exports.getProductStateString = getProductStateString;
 exports.parseStringToGS1_Unit = parseStringToGS1_Unit;
 exports.isSingularUnit = isSingularUnit;
 exports.getGS1UnitString = getGS1UnitString;
@@ -27,6 +28,29 @@ function getQuantityBasedOnUnits(quantityString, unitsString) {
         return quantity;
     }
     return null;
+}
+var ProductState;
+(function (ProductState) {
+    ProductState[ProductState["PreCreated"] = 1] = "PreCreated";
+    ProductState[ProductState["Created"] = 2] = "Created";
+    ProductState[ProductState["Verified"] = 3] = "Verified";
+    ProductState[ProductState["Error"] = 4] = "Error";
+    ProductState[ProductState["Finalized"] = 5] = "Finalized";
+})(ProductState || (exports.ProductState = ProductState = {}));
+exports.ProductStateList = Object.values(ProductState).filter(value => typeof value === 'number');
+function getProductStateString(productState) {
+    switch (productState) {
+        case ProductState.PreCreated:
+            return "Pre-Creado";
+        case ProductState.Created:
+            return "Creado";
+        case ProductState.Verified:
+            return "Verificado";
+        case ProductState.Error:
+            return "Error";
+        case ProductState.Finalized:
+            return "Finalizado";
+    }
 }
 var GS1_Unit;
 (function (GS1_Unit) {
@@ -205,7 +229,7 @@ class UpdateProductWithCodeRequestEntity {
 }
 exports.UpdateProductWithCodeRequestEntity = UpdateProductWithCodeRequestEntity;
 class ProductWithCodeEntity {
-    constructor(id, subcategory, gtin, name, description, brand, gpc, s_productType, s_brand, complementaryInfo, imgPath, minImgPath, secondImgPath, thirdImgPath, codeImgPath, quantity, measurement, market, measurementType, measurementQuantity, verifiedByAdmin, awaitingVerification) {
+    constructor(id, subcategory, gtin, name, description, brand, gpc, s_productType, s_brand, complementaryInfo, imgPath, minImgPath, secondImgPath, thirdImgPath, codeImgPath, quantity, measurement, market, measurementType, measurementQuantity, productState) {
         this.id = id;
         this.subcategory = subcategory;
         this.gtin = gtin;
@@ -226,8 +250,7 @@ class ProductWithCodeEntity {
         this.market = market;
         this.measurementType = measurementType;
         this.measurementQuantity = measurementQuantity;
-        this.verifiedByAdmin = verifiedByAdmin;
-        this.awaitingVerification = awaitingVerification;
+        this.productState = productState;
     }
 }
 exports.ProductWithCodeEntity = ProductWithCodeEntity;

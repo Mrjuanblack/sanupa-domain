@@ -6,6 +6,15 @@ import { SubcategoryBrandEntity } from "./Subcategory_Brand";
 import { SubcategoryProductType } from "./Subcategory_ProductType";
 export declare function getComplementaryInfo(quantityString: string, unitsString: string): string | null;
 export declare function getQuantityBasedOnUnits(quantityString: string, unitsString: string): number | null;
+export declare enum ProductState {
+    PreCreated = 1,
+    Created = 2,
+    Verified = 3,
+    Error = 4,
+    Finalized = 5
+}
+export declare const ProductStateList: ProductState[];
+export declare function getProductStateString(productState: ProductState): string;
 export declare enum GS1_Unit {
     CM = "CMT",
     CMQ = "CMQ",
@@ -62,8 +71,7 @@ interface BaseProduct {
     minImgPath: string;
 }
 export interface ProductWithCode extends BaseProduct {
-    verifiedByAdmin: boolean;
-    awaitingVerification: boolean;
+    productState: ProductState;
     gtin: string;
     name: string;
     description: string;
@@ -236,9 +244,8 @@ export declare class ProductWithCodeEntity implements ProductWithCode {
     market: string;
     measurementType: MeasurementTypeEntity | null;
     measurementQuantity: number | null;
-    verifiedByAdmin: boolean;
-    awaitingVerification: boolean;
-    constructor(id: number, subcategory: SubcategoryEntity, gtin: string, name: string, description: string, brand: string, gpc: string, s_productType: SubcategoryProductType | null, s_brand: SubcategoryBrandEntity | null, complementaryInfo: string | null, imgPath: string, minImgPath: string, secondImgPath: string, thirdImgPath: string | null, codeImgPath: string | null, quantity: string, measurement: string, market: string, measurementType: MeasurementTypeEntity | null, measurementQuantity: number | null, verifiedByAdmin: boolean, awaitingVerification: boolean);
+    productState: ProductState;
+    constructor(id: number, subcategory: SubcategoryEntity, gtin: string, name: string, description: string, brand: string, gpc: string, s_productType: SubcategoryProductType | null, s_brand: SubcategoryBrandEntity | null, complementaryInfo: string | null, imgPath: string, minImgPath: string, secondImgPath: string, thirdImgPath: string | null, codeImgPath: string | null, quantity: string, measurement: string, market: string, measurementType: MeasurementTypeEntity | null, measurementQuantity: number | null, productState: ProductState);
 }
 export declare class ProductWithoutCodeEntity implements ProductWithoutCode {
     id: number;

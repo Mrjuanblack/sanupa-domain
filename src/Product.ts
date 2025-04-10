@@ -24,6 +24,29 @@ export function getQuantityBasedOnUnits(quantityString: string, unitsString: str
     return null
 }
 
+export enum ProductState {
+    PreCreated = 1,
+    Created = 2,
+    Verified = 3,
+    Error = 4,
+    Finalized = 5
+}
+export const ProductStateList = Object.values(ProductState).filter(value => typeof value === 'number');
+export function getProductStateString(productState: ProductState): string {
+    switch (productState) {
+        case ProductState.PreCreated:
+            return "Pre-Creado";
+        case ProductState.Created:
+            return "Creado";
+        case ProductState.Verified:
+            return "Verificado";
+        case ProductState.Error:
+            return "Error";
+        case ProductState.Finalized:
+            return "Finalizado";
+    }
+}
+
 export enum GS1_Unit {
     CM = "CMT",
     CMQ = "CMQ",
@@ -173,8 +196,7 @@ interface BaseProduct {
     minImgPath: string
 }
 export interface ProductWithCode extends BaseProduct {
-    verifiedByAdmin: boolean
-    awaitingVerification: boolean
+    productState: ProductState
     //GS1 data
     gtin: string
     name: string
@@ -377,8 +399,7 @@ export class ProductWithCodeEntity implements ProductWithCode {
         public market: string,
         public measurementType: MeasurementTypeEntity | null,
         public measurementQuantity: number | null,
-        public verifiedByAdmin: boolean,
-        public awaitingVerification: boolean
+        public productState: ProductState
     ) { }
 }
 
