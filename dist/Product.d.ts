@@ -69,6 +69,7 @@ interface BaseProduct {
     subcategory: SubcategoryEntity;
     imgPath: string;
     minImgPath: string;
+    lastUpdated: Date;
 }
 export interface ProductWithCode extends BaseProduct {
     productState: ProductState;
@@ -226,6 +227,7 @@ export declare class UpdateProductWithCodeRequestEntity implements UpdateProduct
 export declare class ProductWithCodeEntity implements ProductWithCode {
     id: number;
     subcategory: SubcategoryEntity;
+    lastUpdated: Date;
     gtin: string;
     name: string;
     description: string;
@@ -245,12 +247,13 @@ export declare class ProductWithCodeEntity implements ProductWithCode {
     measurementType: MeasurementTypeEntity | null;
     measurementQuantity: number | null;
     productState: ProductState;
-    constructor(id: number, subcategory: SubcategoryEntity, gtin: string, name: string, description: string, brand: string, gpc: string, s_productType: SubcategoryProductType | null, s_brand: SubcategoryBrandEntity | null, complementaryInfo: string | null, imgPath: string, minImgPath: string, secondImgPath: string, thirdImgPath: string | null, codeImgPath: string | null, quantity: string, measurement: string, market: string, measurementType: MeasurementTypeEntity | null, measurementQuantity: number | null, productState: ProductState);
+    constructor(id: number, subcategory: SubcategoryEntity, lastUpdated: Date, gtin: string, name: string, description: string, brand: string, gpc: string, s_productType: SubcategoryProductType | null, s_brand: SubcategoryBrandEntity | null, complementaryInfo: string | null, imgPath: string, minImgPath: string, secondImgPath: string, thirdImgPath: string | null, codeImgPath: string | null, quantity: string, measurement: string, market: string, measurementType: MeasurementTypeEntity | null, measurementQuantity: number | null, productState: ProductState);
 }
 export declare class ProductWithoutCodeEntity implements ProductWithoutCode {
     id: number;
     name: string;
     subcategory: SubcategoryEntity;
+    lastUpdated: Date;
     imgPath: string;
     minImgPath: string;
     description: string | null;
@@ -269,7 +272,7 @@ export declare class ProductWithoutCodeEntity implements ProductWithoutCode {
     parkingLots: number | null;
     cylinderCapacity: number | null;
     mileage: number | null;
-    constructor(id: number, name: string, subcategory: SubcategoryEntity, imgPath: string, minImgPath: string, description: string | null, brand: string | null, measurementType: MeasurementTypeEntity | null, measurementQuantity: number | null, productType: ProductTypeEntity | null, zone: ZoneEntity | null, offerType: OfferType | null, area: number | null, condition: Condition | null, stratum: Estratum | null, antiquity: number | null, bathrooms: number | null, rooms: number | null, parkingLots: number | null, cylinderCapacity: number | null, mileage: number | null);
+    constructor(id: number, name: string, subcategory: SubcategoryEntity, lastUpdated: Date, imgPath: string, minImgPath: string, description: string | null, brand: string | null, measurementType: MeasurementTypeEntity | null, measurementQuantity: number | null, productType: ProductTypeEntity | null, zone: ZoneEntity | null, offerType: OfferType | null, area: number | null, condition: Condition | null, stratum: Estratum | null, antiquity: number | null, bathrooms: number | null, rooms: number | null, parkingLots: number | null, cylinderCapacity: number | null, mileage: number | null);
 }
 export interface UrlUploadRequest {
     url: string;

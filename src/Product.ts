@@ -194,6 +194,7 @@ interface BaseProduct {
     subcategory: SubcategoryEntity
     imgPath: string
     minImgPath: string
+    lastUpdated: Date
 }
 export interface ProductWithCode extends BaseProduct {
     productState: ProductState
@@ -381,6 +382,7 @@ export class ProductWithCodeEntity implements ProductWithCode {
     constructor(
         public id: number,
         public subcategory: SubcategoryEntity,
+        public lastUpdated: Date,
         public gtin: string,
         public name: string,
         public description: string,
@@ -409,6 +411,7 @@ export class ProductWithoutCodeEntity implements ProductWithoutCode {
         public id: number,
         public name: string,
         public subcategory: SubcategoryEntity,
+        public lastUpdated: Date,
         public imgPath: string,
         public minImgPath: string,
         public description: string | null,

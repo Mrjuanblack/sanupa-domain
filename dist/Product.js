@@ -229,9 +229,10 @@ class UpdateProductWithCodeRequestEntity {
 }
 exports.UpdateProductWithCodeRequestEntity = UpdateProductWithCodeRequestEntity;
 class ProductWithCodeEntity {
-    constructor(id, subcategory, gtin, name, description, brand, gpc, s_productType, s_brand, complementaryInfo, imgPath, minImgPath, secondImgPath, thirdImgPath, codeImgPath, quantity, measurement, market, measurementType, measurementQuantity, productState) {
+    constructor(id, subcategory, lastUpdated, gtin, name, description, brand, gpc, s_productType, s_brand, complementaryInfo, imgPath, minImgPath, secondImgPath, thirdImgPath, codeImgPath, quantity, measurement, market, measurementType, measurementQuantity, productState) {
         this.id = id;
         this.subcategory = subcategory;
+        this.lastUpdated = lastUpdated;
         this.gtin = gtin;
         this.name = name;
         this.description = description;
@@ -255,10 +256,11 @@ class ProductWithCodeEntity {
 }
 exports.ProductWithCodeEntity = ProductWithCodeEntity;
 class ProductWithoutCodeEntity {
-    constructor(id, name, subcategory, imgPath, minImgPath, description, brand, measurementType, measurementQuantity, productType, zone, offerType, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage) {
+    constructor(id, name, subcategory, lastUpdated, imgPath, minImgPath, description, brand, measurementType, measurementQuantity, productType, zone, offerType, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage) {
         this.id = id;
         this.name = name;
         this.subcategory = subcategory;
+        this.lastUpdated = lastUpdated;
         this.imgPath = imgPath;
         this.minImgPath = minImgPath;
         this.description = description;
