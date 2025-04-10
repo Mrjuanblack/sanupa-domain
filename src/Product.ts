@@ -12,6 +12,9 @@ export function getComplementaryInfo(quantityString: string, unitsString: string
     if (isSingularUnit(units)) {
         return null;
     }
+    if(units === GS1_Unit.UNDF) {
+        return null;
+    }
     return `${quantity} ${getGS1UnitString(units)}`
 }
 
@@ -66,7 +69,6 @@ export enum GS1_Unit {
     KT = "KT",
     G26 = "G26",
     EA = "EA",
-    U_1N = "1N",
     UNDF = "-----"
 }
 
@@ -83,7 +85,6 @@ export function isSingularUnit(value: GS1_Unit): boolean {
         case GS1_Unit.KT:
         case GS1_Unit.G26:
         case GS1_Unit.EA:
-        case GS1_Unit.U_1N:
             return true;
         default:
             return false;
@@ -123,10 +124,9 @@ export function getGS1UnitString(unit: GS1_Unit): string {
         case GS1_Unit.KT:
         case GS1_Unit.G26:
         case GS1_Unit.EA:
-        case GS1_Unit.U_1N:
             return "Und";
         case GS1_Unit.UNDF:
-            return "Indf.";
+            return "";
     }
 }
 

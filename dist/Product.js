@@ -18,6 +18,9 @@ function getComplementaryInfo(quantityString, unitsString) {
     if (isSingularUnit(units)) {
         return null;
     }
+    if (units === GS1_Unit.UNDF) {
+        return null;
+    }
     return `${quantity} ${getGS1UnitString(units)}`;
 }
 function getQuantityBasedOnUnits(quantityString, unitsString) {
@@ -72,7 +75,6 @@ var GS1_Unit;
     GS1_Unit["KT"] = "KT";
     GS1_Unit["G26"] = "G26";
     GS1_Unit["EA"] = "EA";
-    GS1_Unit["U_1N"] = "1N";
     GS1_Unit["UNDF"] = "-----";
 })(GS1_Unit || (exports.GS1_Unit = GS1_Unit = {}));
 function parseStringToGS1_Unit(value) {
@@ -88,7 +90,6 @@ function isSingularUnit(value) {
         case GS1_Unit.KT:
         case GS1_Unit.G26:
         case GS1_Unit.EA:
-        case GS1_Unit.U_1N:
             return true;
         default:
             return false;
@@ -127,10 +128,9 @@ function getGS1UnitString(unit) {
         case GS1_Unit.KT:
         case GS1_Unit.G26:
         case GS1_Unit.EA:
-        case GS1_Unit.U_1N:
             return "Und";
         case GS1_Unit.UNDF:
-            return "Indf.";
+            return "";
     }
 }
 var OfferType;
