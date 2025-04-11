@@ -125,6 +125,7 @@ export interface UpdateProduct_GS1 {
     complementaryInfo: string | null;
     quantity: number | null;
     description: string;
+    errorReport: string | null;
 }
 export interface ProductWithoutCode extends BaseProduct {
     name: string;

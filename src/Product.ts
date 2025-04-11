@@ -12,7 +12,7 @@ export function getComplementaryInfo(quantityString: string, unitsString: string
     if (isSingularUnit(units)) {
         return null;
     }
-    if(units === GS1_Unit.UNDF) {
+    if (units === GS1_Unit.UNDF) {
         return null;
     }
     return `${quantity} ${getGS1UnitString(units)}`
@@ -268,6 +268,8 @@ export interface UpdateProduct_GS1 {
     quantity: number | null
 
     description: string
+
+    errorReport: string | null
 }
 
 export interface ProductWithoutCode extends BaseProduct {
