@@ -39,3 +39,4 @@ __exportStar(require("./ProductReport"), exports);
 __exportStar(require("./TempFile"), exports);
 __exportStar(require("./Subcategory_ProductType"), exports);
 __exportStar(require("./Subcategory_Brand"), exports);
+__exportStar(require("./ErrorReport"), exports);
