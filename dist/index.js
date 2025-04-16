@@ -40,3 +40,4 @@ __exportStar(require("./TempFile"), exports);
 __exportStar(require("./Subcategory_ProductType"), exports);
 __exportStar(require("./Subcategory_Brand"), exports);
 __exportStar(require("./ErrorReport"), exports);
+__exportStar(require("./PhotoProcessorDailyCount"), exports);
