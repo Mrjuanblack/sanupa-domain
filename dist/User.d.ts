@@ -16,7 +16,8 @@ export declare enum UserRole {
     User = 1,
     Admin = 2,
     Partner = 3,
-    PhotoAssistant = 4
+    PhotoAssistant = 4,
+    Verifier = 5
 }
 export declare function getUserRoleString(role: UserRole): string;
 export interface User {

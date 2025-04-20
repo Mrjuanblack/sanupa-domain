@@ -30,7 +30,8 @@ export enum UserRole {
     User = 1,
     Admin = 2,
     Partner = 3,
-    PhotoAssistant = 4
+    PhotoAssistant = 4,
+    Verifier = 5
 }
 
 // TODO: Add field for user img
@@ -44,6 +45,7 @@ const userRoleEnumToString: UserRoleEnumToStringMap = {
     [UserRole.Admin]: 'Administrador',
     [UserRole.Partner]: 'Socio',
     [UserRole.PhotoAssistant]: 'Asistente de Fotos',
+    [UserRole.Verifier]: 'Verificador'
 }
 
 export function getUserRoleString(role: UserRole) {
