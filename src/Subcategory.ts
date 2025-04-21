@@ -35,6 +35,8 @@ export interface NewSubcategoryRequest {
     categoryId: number
     name: string
     usesCode: boolean
+    usesSizeMeasurement: boolean
+    usesSubunits: boolean
     uniqueName: boolean
 
     description: boolean
