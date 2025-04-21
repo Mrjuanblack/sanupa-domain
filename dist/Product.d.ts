@@ -84,7 +84,7 @@ export interface ProductWithCode extends BaseProduct {
     s_productType: SubcategoryProductType | null;
     s_brand: SubcategoryBrandEntity | null;
     s_subunitType: SubcategorySubunitType | null;
-    subunitValue: number | null;
+    measurementInfo: string | null;
     complementaryInfo: string | null;
     secondImgPath: string;
     thirdImgPath: string | null;
@@ -127,6 +127,7 @@ export interface UpdateProduct_GS1 {
     productTypeId: number | null;
     brandId: number | null;
     subunitTypeId: number | null;
+    measurementInfo: string | null;
     complementaryInfo: string | null;
     name: string | null;
     quantity: number | null;
@@ -242,7 +243,7 @@ export declare class ProductWithCodeEntity implements ProductWithCode {
     s_productType: SubcategoryProductType | null;
     s_brand: SubcategoryBrandEntity | null;
     s_subunitType: SubcategorySubunitType | null;
-    subunitValue: number | null;
+    measurementInfo: string | null;
     complementaryInfo: string | null;
     imgPath: string;
     minImgPath: string;
@@ -255,7 +256,7 @@ export declare class ProductWithCodeEntity implements ProductWithCode {
     measurementType: MeasurementTypeEntity | null;
     measurementQuantity: number | null;
     productState: ProductState;
-    constructor(id: number, subcategory: SubcategoryEntity, lastUpdated: Date, gtin: string, name: string, description: string, brand: string, gpc: string, s_productType: SubcategoryProductType | null, s_brand: SubcategoryBrandEntity | null, s_subunitType: SubcategorySubunitType | null, subunitValue: number | null, complementaryInfo: string | null, imgPath: string, minImgPath: string, secondImgPath: string, thirdImgPath: string | null, codeImgPath: string | null, quantity: string, measurement: string, market: string, measurementType: MeasurementTypeEntity | null, measurementQuantity: number | null, productState: ProductState);
+    constructor(id: number, subcategory: SubcategoryEntity, lastUpdated: Date, gtin: string, name: string, description: string, brand: string, gpc: string, s_productType: SubcategoryProductType | null, s_brand: SubcategoryBrandEntity | null, s_subunitType: SubcategorySubunitType | null, measurementInfo: string | null, complementaryInfo: string | null, imgPath: string, minImgPath: string, secondImgPath: string, thirdImgPath: string | null, codeImgPath: string | null, quantity: string, measurement: string, market: string, measurementType: MeasurementTypeEntity | null, measurementQuantity: number | null, productState: ProductState);
 }
 export declare class ProductWithoutCodeEntity implements ProductWithoutCode {
     id: number;
