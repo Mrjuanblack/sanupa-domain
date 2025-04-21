@@ -4,6 +4,7 @@ import { ProductTypeEntity } from "./ProductType"
 import { SubcategoryEntity } from "./Subcategory"
 import { SubcategoryBrandEntity } from "./Subcategory_Brand";
 import { SubcategoryProductType } from "./Subcategory_ProductType";
+import { SubcategorySubunitType } from "./Subcateogry_SubunitType";
 import { parseStringToNumber } from "./Utils";
 
 export function getComplementaryInfo(quantityString: string, unitsString: string): string | null {
@@ -210,6 +211,7 @@ export interface ProductWithCode extends BaseProduct {
 
     s_productType: SubcategoryProductType | null
     s_brand: SubcategoryBrandEntity | null
+    s_subunitType: SubcategorySubunitType | null
     complementaryInfo: string | null
 
 
@@ -252,6 +254,7 @@ export interface NewProduct_GS1 {
 
     productTypeId: number
     brandId: number
+    subunitTypeId: number | null
     complementaryInfo: string | null
     quantity: number | null
 
@@ -264,8 +267,10 @@ export interface UpdateProduct_GS1 {
 
     productTypeId: number | null
     brandId: number | null
+    subunitTypeId: number | null
     complementaryInfo: string | null
     quantity: number | null
+
 
     description: string
 }
@@ -391,6 +396,7 @@ export class ProductWithCodeEntity implements ProductWithCode {
         public gpc: string,
         public s_productType: SubcategoryProductType | null,
         public s_brand: SubcategoryBrandEntity | null,
+        public s_subunitType: SubcategorySubunitType | null,
         public complementaryInfo: string | null,
         public imgPath: string,
         public minImgPath: string,

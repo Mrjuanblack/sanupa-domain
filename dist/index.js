@@ -42,3 +42,4 @@ __exportStar(require("./Subcategory_Brand"), exports);
 __exportStar(require("./ErrorReport"), exports);
 __exportStar(require("./PhotoProcessorDailyCount"), exports);
 __exportStar(require("./ProcessedProductsDailyCount"), exports);
+__exportStar(require("./Subcateogry_SubunitType"), exports);

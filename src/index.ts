@@ -26,3 +26,4 @@ export * from './Subcategory_Brand';
 export * from './ErrorReport';
 export * from './PhotoProcessorDailyCount';
 export * from './ProcessedProductsDailyCount';
+export * from './Subcateogry_SubunitType';
