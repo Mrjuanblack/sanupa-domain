@@ -212,6 +212,7 @@ export interface ProductWithCode extends BaseProduct {
     s_productType: SubcategoryProductType | null
     s_brand: SubcategoryBrandEntity | null
     s_subunitType: SubcategorySubunitType | null
+    subunitValue: number | null
     complementaryInfo: string | null
 
 
@@ -397,6 +398,7 @@ export class ProductWithCodeEntity implements ProductWithCode {
         public s_productType: SubcategoryProductType | null,
         public s_brand: SubcategoryBrandEntity | null,
         public s_subunitType: SubcategorySubunitType | null,
+        public subunitValue: number | null,
         public complementaryInfo: string | null,
         public imgPath: string,
         public minImgPath: string,
