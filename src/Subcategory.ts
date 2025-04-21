@@ -6,6 +6,8 @@ export interface Subcategory {
     name: string
     imgPath: string | null
     usesCode: boolean
+    usesSizeMeasurement: boolean
+    usesSubunits: boolean
     uniqueName: boolean
     active: boolean
 
@@ -60,6 +62,8 @@ export class SubcategoryEntity implements Subcategory {
         public name: string,
         public imgPath: string | null,
         public usesCode: boolean,
+        public usesSizeMeasurement: boolean,
+        public usesSubunits: boolean,
         public uniqueName: boolean,
         public active: boolean,
         public description: boolean,
