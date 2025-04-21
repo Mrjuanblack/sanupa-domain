@@ -269,8 +269,8 @@ export interface UpdateProduct_GS1 {
     brandId: number | null
     subunitTypeId: number | null
     complementaryInfo: string | null
+    name: string | null
     quantity: number | null
-
 
     description: string
 }
