@@ -13,7 +13,7 @@ export function getComplementaryInfo(quantityString: string, unitsString: string
     if (isSingularUnit(units)) {
         return null;
     }
-    if(units === GS1_Unit.UNDF) {
+    if (units === GS1_Unit.UNDF) {
         return null;
     }
     return `${quantity} ${getGS1UnitString(units)}`
@@ -220,10 +220,6 @@ export interface ProductWithCode extends BaseProduct {
     secondImgPath: string
     thirdImgPath: string | null
     codeImgPath: string | null
-
-    //Measurement data that will be used if the measurement and quantity data is updated
-    measurementType: MeasurementType | null
-    measurementQuantity: number | null
 }
 export interface NewProductWithCodeRequest {
     subcategoryId: number
@@ -245,7 +241,6 @@ export interface NewProductWithCodeRequest {
 
 export interface NewProductJustCode {
     code: string
-
     subcategoryId: number
 }
 
@@ -280,10 +275,12 @@ export interface UpdateProduct_GS1 {
 export interface ProductWithoutCode extends BaseProduct {
     name: string
     description: string | null
-    brand: string | null
-    measurementType: MeasurementType | null
-    measurementQuantity: number | null
-    productType: ProductTypeEntity | null
+
+    s_productType: SubcategoryProductType | null
+    s_brand: SubcategoryBrandEntity | null
+    s_subunitType: SubcategorySubunitType | null
+    measurementInfo: string | null
+
     zone: ZoneEntity | null
     offerType: OfferType | null
     area: number | null
@@ -302,10 +299,10 @@ export interface NewProductWithoutCodeRequest {
     subcategoryId: number
 
     description: string | null
-    brand: string | null
-    measurementTypeId: number | null
-    measurementQuantity: number | null
-    productTypeId: number | null
+    productTypeId: number
+    brandId: number
+    subunitTypeId: number | null
+    quantity: number | null
     zoneId: number | null
     offerType: OfferType | null
     area: number | null
@@ -324,10 +321,10 @@ export interface UpdateProductWithoutCodeRequest {
 
     name: string
     description: string | null
-    brand: string | null
-    measurementTypeId: number | null
-    measurementQuantity: number | null
-    productTypeId: number | null
+    productTypeId: number
+    brandId: number
+    subunitTypeId: number | null
+    quantity: number | null
     zoneId: number | null
     offerType: OfferType | null
     area: number | null
@@ -346,10 +343,10 @@ export class UpdateProductWithoutCodeRequestEntity implements UpdateProductWitho
         public id: number,
         public name: string,
         public description: string | null,
-        public brand: string | null,
-        public measurementTypeId: number | null,
-        public measurementQuantity: number | null,
-        public productTypeId: number | null,
+        public productTypeId: number,
+        public brandId: number,
+        public subunitTypeId: number | null,
+        public quantity: number | null,
         public zoneId: number | null,
         public offerType: OfferType | null,
         public area: number | null,
@@ -425,10 +422,10 @@ export class ProductWithoutCodeEntity implements ProductWithoutCode {
         public imgPath: string,
         public minImgPath: string,
         public description: string | null,
-        public brand: string | null,
-        public measurementType: MeasurementTypeEntity | null,
-        public measurementQuantity: number | null,
-        public productType: ProductTypeEntity | null,
+        public s_productType: SubcategoryProductType | null,
+        public s_brand: SubcategoryBrandEntity | null,
+        public s_subunitType: SubcategorySubunitType | null,
+        public measurementInfo: string | null,
         public zone: ZoneEntity | null,
         public offerType: OfferType | null,
         public area: number | null,

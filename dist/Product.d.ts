@@ -1,6 +1,5 @@
 import { ZoneEntity } from "./Location";
-import { MeasurementType, MeasurementTypeEntity } from "./MeasurementType";
-import { ProductTypeEntity } from "./ProductType";
+import { MeasurementTypeEntity } from "./MeasurementType";
 import { SubcategoryEntity } from "./Subcategory";
 import { SubcategoryBrandEntity } from "./Subcategory_Brand";
 import { SubcategoryProductType } from "./Subcategory_ProductType";
@@ -89,8 +88,6 @@ export interface ProductWithCode extends BaseProduct {
     secondImgPath: string;
     thirdImgPath: string | null;
     codeImgPath: string | null;
-    measurementType: MeasurementType | null;
-    measurementQuantity: number | null;
 }
 export interface NewProductWithCodeRequest {
     subcategoryId: number;
@@ -136,10 +133,10 @@ export interface UpdateProduct_GS1 {
 export interface ProductWithoutCode extends BaseProduct {
     name: string;
     description: string | null;
-    brand: string | null;
-    measurementType: MeasurementType | null;
-    measurementQuantity: number | null;
-    productType: ProductTypeEntity | null;
+    s_productType: SubcategoryProductType | null;
+    s_brand: SubcategoryBrandEntity | null;
+    s_subunitType: SubcategorySubunitType | null;
+    measurementInfo: string | null;
     zone: ZoneEntity | null;
     offerType: OfferType | null;
     area: number | null;
@@ -156,10 +153,10 @@ export interface NewProductWithoutCodeRequest {
     name: string;
     subcategoryId: number;
     description: string | null;
-    brand: string | null;
-    measurementTypeId: number | null;
-    measurementQuantity: number | null;
-    productTypeId: number | null;
+    productTypeId: number;
+    brandId: number;
+    subunitTypeId: number | null;
+    quantity: number | null;
     zoneId: number | null;
     offerType: OfferType | null;
     area: number | null;
@@ -176,10 +173,10 @@ export interface UpdateProductWithoutCodeRequest {
     id: number;
     name: string;
     description: string | null;
-    brand: string | null;
-    measurementTypeId: number | null;
-    measurementQuantity: number | null;
-    productTypeId: number | null;
+    productTypeId: number;
+    brandId: number;
+    subunitTypeId: number | null;
+    quantity: number | null;
     zoneId: number | null;
     offerType: OfferType | null;
     area: number | null;
@@ -196,10 +193,10 @@ export declare class UpdateProductWithoutCodeRequestEntity implements UpdateProd
     id: number;
     name: string;
     description: string | null;
-    brand: string | null;
-    measurementTypeId: number | null;
-    measurementQuantity: number | null;
-    productTypeId: number | null;
+    productTypeId: number;
+    brandId: number;
+    subunitTypeId: number | null;
+    quantity: number | null;
     zoneId: number | null;
     offerType: OfferType | null;
     area: number | null;
@@ -211,7 +208,7 @@ export declare class UpdateProductWithoutCodeRequestEntity implements UpdateProd
     parkingLots: number | null;
     cylinderCapacity: number | null;
     mileage: number | null;
-    constructor(id: number, name: string, description: string | null, brand: string | null, measurementTypeId: number | null, measurementQuantity: number | null, productTypeId: number | null, zoneId: number | null, offerType: OfferType | null, area: number | null, condition: Condition | null, stratum: Estratum | null, antiquity: number | null, bathrooms: number | null, rooms: number | null, parkingLots: number | null, cylinderCapacity: number | null, mileage: number | null);
+    constructor(id: number, name: string, description: string | null, productTypeId: number, brandId: number, subunitTypeId: number | null, quantity: number | null, zoneId: number | null, offerType: OfferType | null, area: number | null, condition: Condition | null, stratum: Estratum | null, antiquity: number | null, bathrooms: number | null, rooms: number | null, parkingLots: number | null, cylinderCapacity: number | null, mileage: number | null);
 }
 export interface UpdateProductWithCodeRequest {
     id: number;
@@ -266,10 +263,10 @@ export declare class ProductWithoutCodeEntity implements ProductWithoutCode {
     imgPath: string;
     minImgPath: string;
     description: string | null;
-    brand: string | null;
-    measurementType: MeasurementTypeEntity | null;
-    measurementQuantity: number | null;
-    productType: ProductTypeEntity | null;
+    s_productType: SubcategoryProductType | null;
+    s_brand: SubcategoryBrandEntity | null;
+    s_subunitType: SubcategorySubunitType | null;
+    measurementInfo: string | null;
     zone: ZoneEntity | null;
     offerType: OfferType | null;
     area: number | null;
@@ -281,7 +278,7 @@ export declare class ProductWithoutCodeEntity implements ProductWithoutCode {
     parkingLots: number | null;
     cylinderCapacity: number | null;
     mileage: number | null;
-    constructor(id: number, name: string, subcategory: SubcategoryEntity, lastUpdated: Date, imgPath: string, minImgPath: string, description: string | null, brand: string | null, measurementType: MeasurementTypeEntity | null, measurementQuantity: number | null, productType: ProductTypeEntity | null, zone: ZoneEntity | null, offerType: OfferType | null, area: number | null, condition: Condition | null, stratum: Estratum | null, antiquity: number | null, bathrooms: number | null, rooms: number | null, parkingLots: number | null, cylinderCapacity: number | null, mileage: number | null);
+    constructor(id: number, name: string, subcategory: SubcategoryEntity, lastUpdated: Date, imgPath: string, minImgPath: string, description: string | null, s_productType: SubcategoryProductType | null, s_brand: SubcategoryBrandEntity | null, s_subunitType: SubcategorySubunitType | null, measurementInfo: string | null, zone: ZoneEntity | null, offerType: OfferType | null, area: number | null, condition: Condition | null, stratum: Estratum | null, antiquity: number | null, bathrooms: number | null, rooms: number | null, parkingLots: number | null, cylinderCapacity: number | null, mileage: number | null);
 }
 export interface UrlUploadRequest {
     url: string;

@@ -194,14 +194,14 @@ function getEstratumString(estratum) {
     }
 }
 class UpdateProductWithoutCodeRequestEntity {
-    constructor(id, name, description, brand, measurementTypeId, measurementQuantity, productTypeId, zoneId, offerType, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage) {
+    constructor(id, name, description, productTypeId, brandId, subunitTypeId, quantity, zoneId, offerType, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.brand = brand;
-        this.measurementTypeId = measurementTypeId;
-        this.measurementQuantity = measurementQuantity;
         this.productTypeId = productTypeId;
+        this.brandId = brandId;
+        this.subunitTypeId = subunitTypeId;
+        this.quantity = quantity;
         this.zoneId = zoneId;
         this.offerType = offerType;
         this.area = area;
@@ -258,7 +258,7 @@ class ProductWithCodeEntity {
 }
 exports.ProductWithCodeEntity = ProductWithCodeEntity;
 class ProductWithoutCodeEntity {
-    constructor(id, name, subcategory, lastUpdated, imgPath, minImgPath, description, brand, measurementType, measurementQuantity, productType, zone, offerType, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage) {
+    constructor(id, name, subcategory, lastUpdated, imgPath, minImgPath, description, s_productType, s_brand, s_subunitType, measurementInfo, zone, offerType, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage) {
         this.id = id;
         this.name = name;
         this.subcategory = subcategory;
@@ -266,10 +266,10 @@ class ProductWithoutCodeEntity {
         this.imgPath = imgPath;
         this.minImgPath = minImgPath;
         this.description = description;
-        this.brand = brand;
-        this.measurementType = measurementType;
-        this.measurementQuantity = measurementQuantity;
-        this.productType = productType;
+        this.s_productType = s_productType;
+        this.s_brand = s_brand;
+        this.s_subunitType = s_subunitType;
+        this.measurementInfo = measurementInfo;
         this.zone = zone;
         this.offerType = offerType;
         this.area = area;
