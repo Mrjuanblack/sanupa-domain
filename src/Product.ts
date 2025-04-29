@@ -200,7 +200,7 @@ interface BaseProduct {
 export interface ProductWithCode extends BaseProduct {
     productState: ProductState
     //GS1 data
-    gtin: string
+    gtin: string | null
     name: string
     description: string
     brand: string
@@ -388,7 +388,7 @@ export class ProductWithCodeEntity implements ProductWithCode {
         public id: number,
         public subcategory: SubcategoryEntity,
         public lastUpdated: Date,
-        public gtin: string,
+        public gtin: string | null,
         public name: string,
         public description: string,
         public brand: string,
@@ -406,8 +406,6 @@ export class ProductWithCodeEntity implements ProductWithCode {
         public quantity: string,
         public measurement: string,
         public market: string,
-        public measurementType: MeasurementTypeEntity | null,
-        public measurementQuantity: number | null,
         public productState: ProductState
     ) { }
 }
