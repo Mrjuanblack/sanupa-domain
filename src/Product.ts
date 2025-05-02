@@ -195,6 +195,11 @@ interface BaseProduct {
     subcategory: SubcategoryEntity
     imgPath: string
     minImgPath: string
+    //Aditional Img
+    secondImgPath: string
+    thirdImgPath: string | null
+    codeImgPath: string | null
+
     lastUpdated: Date
 }
 export interface ProductWithCode extends BaseProduct {
@@ -215,11 +220,6 @@ export interface ProductWithCode extends BaseProduct {
     measurementInfo: string | null
     complementaryInfo: string | null
 
-
-    //Aditional Img
-    secondImgPath: string
-    thirdImgPath: string | null
-    codeImgPath: string | null
 }
 export interface NewProductWithCodeRequest {
     subcategoryId: number
@@ -292,6 +292,7 @@ export interface ProductWithoutCode extends BaseProduct {
     parkingLots: number | null
     cylinderCapacity: number | null
     mileage: number | null
+    
 }
 
 export interface NewProductWithoutCodeRequest {
@@ -419,6 +420,9 @@ export class ProductWithoutCodeEntity implements ProductWithoutCode {
         public lastUpdated: Date,
         public imgPath: string,
         public minImgPath: string,
+        public secondImgPath: string,
+        public thirdImgPath: string | null,
+        public codeImgPath: string | null,
         public description: string | null,
         public s_productType: SubcategoryProductType | null,
         public s_brand: SubcategoryBrandEntity | null,

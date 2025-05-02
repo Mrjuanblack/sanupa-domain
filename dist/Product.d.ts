@@ -67,6 +67,9 @@ interface BaseProduct {
     subcategory: SubcategoryEntity;
     imgPath: string;
     minImgPath: string;
+    secondImgPath: string;
+    thirdImgPath: string | null;
+    codeImgPath: string | null;
     lastUpdated: Date;
 }
 export interface ProductWithCode extends BaseProduct {
@@ -84,9 +87,6 @@ export interface ProductWithCode extends BaseProduct {
     s_subunitType: SubcategorySubunitType | null;
     measurementInfo: string | null;
     complementaryInfo: string | null;
-    secondImgPath: string;
-    thirdImgPath: string | null;
-    codeImgPath: string | null;
 }
 export interface NewProductWithCodeRequest {
     subcategoryId: number;
@@ -259,6 +259,9 @@ export declare class ProductWithoutCodeEntity implements ProductWithoutCode {
     lastUpdated: Date;
     imgPath: string;
     minImgPath: string;
+    secondImgPath: string;
+    thirdImgPath: string | null;
+    codeImgPath: string | null;
     description: string | null;
     s_productType: SubcategoryProductType | null;
     s_brand: SubcategoryBrandEntity | null;
@@ -275,7 +278,7 @@ export declare class ProductWithoutCodeEntity implements ProductWithoutCode {
     parkingLots: number | null;
     cylinderCapacity: number | null;
     mileage: number | null;
-    constructor(id: number, name: string, subcategory: SubcategoryEntity, lastUpdated: Date, imgPath: string, minImgPath: string, description: string | null, s_productType: SubcategoryProductType | null, s_brand: SubcategoryBrandEntity | null, s_subunitType: SubcategorySubunitType | null, measurementInfo: string | null, zone: ZoneEntity | null, offerType: OfferType | null, area: number | null, condition: Condition | null, stratum: Estratum | null, antiquity: number | null, bathrooms: number | null, rooms: number | null, parkingLots: number | null, cylinderCapacity: number | null, mileage: number | null);
+    constructor(id: number, name: string, subcategory: SubcategoryEntity, lastUpdated: Date, imgPath: string, minImgPath: string, secondImgPath: string, thirdImgPath: string | null, codeImgPath: string | null, description: string | null, s_productType: SubcategoryProductType | null, s_brand: SubcategoryBrandEntity | null, s_subunitType: SubcategorySubunitType | null, measurementInfo: string | null, zone: ZoneEntity | null, offerType: OfferType | null, area: number | null, condition: Condition | null, stratum: Estratum | null, antiquity: number | null, bathrooms: number | null, rooms: number | null, parkingLots: number | null, cylinderCapacity: number | null, mileage: number | null);
 }
 export interface UrlUploadRequest {
     url: string;
