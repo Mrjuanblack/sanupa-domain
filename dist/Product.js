@@ -256,7 +256,7 @@ class ProductWithCodeEntity {
 }
 exports.ProductWithCodeEntity = ProductWithCodeEntity;
 class ProductWithoutCodeEntity {
-    constructor(id, name, subcategory, lastUpdated, imgPath, minImgPath, secondImgPath, thirdImgPath, codeImgPath, description, s_productType, s_brand, s_subunitType, measurementInfo, zone, offerType, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage) {
+    constructor(id, name, subcategory, lastUpdated, imgPath, minImgPath, secondImgPath, thirdImgPath, description, s_productType, s_brand, s_subunitType, measurementInfo, zone, offerType, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage) {
         this.id = id;
         this.name = name;
         this.subcategory = subcategory;
@@ -265,7 +265,6 @@ class ProductWithoutCodeEntity {
         this.minImgPath = minImgPath;
         this.secondImgPath = secondImgPath;
         this.thirdImgPath = thirdImgPath;
-        this.codeImgPath = codeImgPath;
         this.description = description;
         this.s_productType = s_productType;
         this.s_brand = s_brand;

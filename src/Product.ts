@@ -198,7 +198,6 @@ interface BaseProduct {
     //Aditional Img
     secondImgPath: string
     thirdImgPath: string | null
-    codeImgPath: string | null
 
     lastUpdated: Date
 }
@@ -220,6 +219,7 @@ export interface ProductWithCode extends BaseProduct {
     measurementInfo: string | null
     complementaryInfo: string | null
 
+    codeImgPath: string | null
 }
 export interface NewProductWithCodeRequest {
     subcategoryId: number
@@ -422,7 +422,6 @@ export class ProductWithoutCodeEntity implements ProductWithoutCode {
         public minImgPath: string,
         public secondImgPath: string,
         public thirdImgPath: string | null,
-        public codeImgPath: string | null,
         public description: string | null,
         public s_productType: SubcategoryProductType | null,
         public s_brand: SubcategoryBrandEntity | null,
