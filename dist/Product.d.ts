@@ -151,6 +151,8 @@ export interface ProductWithoutCode extends BaseProduct {
 export interface NewProductWithoutCodeRequest {
     name: string;
     subcategoryId: number;
+    mainImgPath: string;
+    minImgPath: string;
     description: string | null;
     productTypeId: number;
     brandId: number;
