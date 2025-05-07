@@ -1,38 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PP_FilterEntity = exports.PartnerProductEntiy = exports.ListPartnerProductEntity = exports.SimplePartnerProduct_HasUserZoneEntity = exports.SimplePartnerProductEntity = exports.UpdatePartnerProductRequestEntity = exports.NewPartnerProductRequestEntity = void 0;
-class NewPartnerProductRequestEntity {
-    constructor(productId, partnerId, price, stock) {
-        this.productId = productId;
-        this.partnerId = partnerId;
-        this.price = price;
-        this.stock = stock;
-    }
-}
-exports.NewPartnerProductRequestEntity = NewPartnerProductRequestEntity;
-class UpdatePartnerProductRequestEntity {
-    constructor(productId, partnerId, price, stock) {
-        this.productId = productId;
-        this.partnerId = partnerId;
-        this.price = price;
-        this.stock = stock;
-    }
-}
-exports.UpdatePartnerProductRequestEntity = UpdatePartnerProductRequestEntity;
+exports.PP_FilterEntity = exports.PartnerProductEntiy = exports.ListPartnerProductEntity = exports.SimplePartnerProduct_HasUserZoneEntity = exports.SimplePartnerProductEntity = void 0;
 class SimplePartnerProductEntity {
-    constructor(partner, price, stock) {
+    constructor(partner, priceSubunit, stock, price) {
         this.partner = partner;
-        this.price = price;
+        this.priceSubunit = priceSubunit;
         this.stock = stock;
+        this.price = price;
     }
 }
 exports.SimplePartnerProductEntity = SimplePartnerProductEntity;
 class SimplePartnerProduct_HasUserZoneEntity {
-    constructor(isInUserZone, partner, price, stock) {
+    constructor(isInUserZone, partner, priceSubunit, stock, price) {
         this.isInUserZone = isInUserZone;
         this.partner = partner;
-        this.price = price;
+        this.priceSubunit = priceSubunit;
         this.stock = stock;
+        this.price = price;
     }
 }
 exports.SimplePartnerProduct_HasUserZoneEntity = SimplePartnerProduct_HasUserZoneEntity;

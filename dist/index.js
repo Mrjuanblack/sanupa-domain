@@ -43,3 +43,4 @@ __exportStar(require("./ErrorReport"), exports);
 __exportStar(require("./PhotoProcessorDailyCount"), exports);
 __exportStar(require("./ProcessedProductsDailyCount"), exports);
 __exportStar(require("./Subcateogry_SubunitType"), exports);
+__exportStar(require("./Price"), exports);

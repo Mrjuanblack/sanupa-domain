@@ -27,3 +27,4 @@ export * from './ErrorReport';
 export * from './PhotoProcessorDailyCount';
 export * from './ProcessedProductsDailyCount';
 export * from './Subcateogry_SubunitType';
+export * from './Price';

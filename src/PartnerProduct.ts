@@ -1,65 +1,53 @@
+import { PriceEntity } from "./Price"
 import { ProductWithCodeEntity, ProductWithoutCodeEntity } from "./Product"
-import { SimpleUser, SimpleUser_WithPartnerInfoEntity } from "./User"
+import { SimpleUser_WithPartnerInfoEntity } from "./User"
 
 export interface NewPartnerProductRequest {
-    productId: number
+    productId: number | null
+    productWithoutCodeId: number | null
     partnerId: number
-    price: number
+    priceSubunit: number | null
     stock: number | null
-}
-
-export class NewPartnerProductRequestEntity implements NewPartnerProductRequest {
-    constructor(
-        public productId: number,
-        public partnerId: number,
-        public price: number,
-        public stock: number | null
-    ) { }
 }
 
 export interface UpdatePartnerProductRequest {
     productId: number
     partnerId: number
-    price: number
+    priceSubunit: number | null
     stock: number | null
-}
-
-export class UpdatePartnerProductRequestEntity implements UpdatePartnerProductRequest {
-    constructor(
-        public productId: number,
-        public partnerId: number,
-        public price: number,
-        public stock: number | null
-    ) { }
 }
 
 export interface SimplePartnerProduct {
     partner: SimpleUser_WithPartnerInfoEntity
-    price: number
+    priceSubunit: number | null
     stock: number | null
+    price: PriceEntity[]
 }
 
 export class SimplePartnerProductEntity implements SimplePartnerProduct {
     constructor(
         public partner: SimpleUser_WithPartnerInfoEntity,
-        public price: number,
-        public stock: number | null
+        public priceSubunit: number | null,
+        public stock: number | null,
+        public price: PriceEntity[]
     ) { }
 }
 
 export interface SimplePartnerProduct_HasUserZone {
     isInUserZone: boolean
     partner: SimpleUser_WithPartnerInfoEntity
-    price: number
+    priceSubunit: number | null
     stock: number | null
+    price: PriceEntity[]
 }
 
 export class SimplePartnerProduct_HasUserZoneEntity implements SimplePartnerProduct_HasUserZone {
     constructor(
         public isInUserZone: boolean,
         public partner: SimpleUser_WithPartnerInfoEntity,
-        public price: number,
-        public stock: number | null
+        public priceSubunit: number | null,
+        public stock: number | null,
+        public price: PriceEntity[]
     ) { }
 }
 

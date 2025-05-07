@@ -1,54 +1,46 @@
+import { PriceEntity } from "./Price";
 import { ProductWithCodeEntity, ProductWithoutCodeEntity } from "./Product";
 import { SimpleUser_WithPartnerInfoEntity } from "./User";
 export interface NewPartnerProductRequest {
-    productId: number;
+    productId: number | null;
+    productWithoutCodeId: number | null;
     partnerId: number;
-    price: number;
+    priceSubunit: number | null;
     stock: number | null;
-}
-export declare class NewPartnerProductRequestEntity implements NewPartnerProductRequest {
-    productId: number;
-    partnerId: number;
-    price: number;
-    stock: number | null;
-    constructor(productId: number, partnerId: number, price: number, stock: number | null);
 }
 export interface UpdatePartnerProductRequest {
     productId: number;
     partnerId: number;
-    price: number;
+    priceSubunit: number | null;
     stock: number | null;
-}
-export declare class UpdatePartnerProductRequestEntity implements UpdatePartnerProductRequest {
-    productId: number;
-    partnerId: number;
-    price: number;
-    stock: number | null;
-    constructor(productId: number, partnerId: number, price: number, stock: number | null);
 }
 export interface SimplePartnerProduct {
     partner: SimpleUser_WithPartnerInfoEntity;
-    price: number;
+    priceSubunit: number | null;
     stock: number | null;
+    price: PriceEntity[];
 }
 export declare class SimplePartnerProductEntity implements SimplePartnerProduct {
     partner: SimpleUser_WithPartnerInfoEntity;
-    price: number;
+    priceSubunit: number | null;
     stock: number | null;
-    constructor(partner: SimpleUser_WithPartnerInfoEntity, price: number, stock: number | null);
+    price: PriceEntity[];
+    constructor(partner: SimpleUser_WithPartnerInfoEntity, priceSubunit: number | null, stock: number | null, price: PriceEntity[]);
 }
 export interface SimplePartnerProduct_HasUserZone {
     isInUserZone: boolean;
     partner: SimpleUser_WithPartnerInfoEntity;
-    price: number;
+    priceSubunit: number | null;
     stock: number | null;
+    price: PriceEntity[];
 }
 export declare class SimplePartnerProduct_HasUserZoneEntity implements SimplePartnerProduct_HasUserZone {
     isInUserZone: boolean;
     partner: SimpleUser_WithPartnerInfoEntity;
-    price: number;
+    priceSubunit: number | null;
     stock: number | null;
-    constructor(isInUserZone: boolean, partner: SimpleUser_WithPartnerInfoEntity, price: number, stock: number | null);
+    price: PriceEntity[];
+    constructor(isInUserZone: boolean, partner: SimpleUser_WithPartnerInfoEntity, priceSubunit: number | null, stock: number | null, price: PriceEntity[]);
 }
 export interface ListPartnerProduct {
     favorite: boolean;
