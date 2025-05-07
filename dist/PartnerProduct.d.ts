@@ -1,19 +1,32 @@
 import { PriceEntity } from "./Price";
 import { ProductWithCodeEntity, ProductWithoutCodeEntity } from "./Product";
 import { SimpleUser_WithPartnerInfoEntity } from "./User";
-export interface NewPartnerProductRequest {
-    productId: number | null;
-    productWithoutCodeId: number | null;
-    partnerId: number;
-    priceSubunit: number | null;
-    stock: number | null;
-}
-export interface UpdatePartnerProductRequest {
+export type NewPartnerProductRequest = {
     productId: number;
+    productWithoutCodeId: null;
     partnerId: number;
     priceSubunit: number | null;
     stock: number | null;
-}
+} | {
+    productId: null;
+    productWithoutCodeId: number;
+    partnerId: number;
+    priceSubunit: number | null;
+    stock: number | null;
+};
+export type UpdatePartnerProductRequest = {
+    productId: number;
+    productWithoutCodeId: null;
+    partnerId: number;
+    priceSubunit: number | null;
+    stock: number | null;
+} | {
+    productId: null;
+    productWithoutCodeId: number;
+    partnerId: number;
+    priceSubunit: number | null;
+    stock: number | null;
+};
 export interface SimplePartnerProduct {
     partner: SimpleUser_WithPartnerInfoEntity;
     priceSubunit: number | null;
