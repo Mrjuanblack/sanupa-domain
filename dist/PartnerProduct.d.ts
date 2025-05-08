@@ -19,18 +19,27 @@ export type UpdatePartnerProductRequest = {
     priceSubunit: number | null;
     stock: number | null;
 };
+export type MutualExclusiveProductId = {
+    productId: number;
+    productWithoutCodeId: null;
+} | {
+    productId: null;
+    productWithoutCodeId: number;
+};
 export interface SimplePartnerProduct {
     partner: SimpleUser_WithPartnerInfoEntity;
+    product: MutualExclusiveProductId;
     priceSubunit: number | null;
     stock: number | null;
     price: PriceEntity[];
 }
 export declare class SimplePartnerProductEntity implements SimplePartnerProduct {
     partner: SimpleUser_WithPartnerInfoEntity;
+    product: MutualExclusiveProductId;
     priceSubunit: number | null;
     stock: number | null;
     price: PriceEntity[];
-    constructor(partner: SimpleUser_WithPartnerInfoEntity, priceSubunit: number | null, stock: number | null, price: PriceEntity[]);
+    constructor(partner: SimpleUser_WithPartnerInfoEntity, product: MutualExclusiveProductId, priceSubunit: number | null, stock: number | null, price: PriceEntity[]);
 }
 export interface SimplePartnerProduct_HasUserZone {
     isInUserZone: boolean;
@@ -50,7 +59,7 @@ export declare class SimplePartnerProduct_HasUserZoneEntity implements SimplePar
 export interface ListPartnerProduct {
     favorite: boolean;
     product: ProductWithCodeEntity | ProductWithoutCodeEntity;
-    partnerProducts: SimplePartnerProductEntity[];
+    partnerProducts: SimplePartnerProduct_HasUserZoneEntity[];
 }
 export declare class ListPartnerProductEntity implements ListPartnerProduct {
     favorite: boolean;

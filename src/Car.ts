@@ -22,7 +22,6 @@ export class CarEntity implements Car {
 
 export interface SimpleCar {
     partnerProduct: SimplePartnerProductEntity,
-    productId: number,
     userId: number,
     quantity: number,
     active: boolean

@@ -22,8 +22,17 @@ export type UpdatePartnerProductRequest = {
     stock: number | null;
 }
 
+export type MutualExclusiveProductId = {
+    productId: number
+    productWithoutCodeId: null
+} | {
+    productId: null
+    productWithoutCodeId: number
+}
+
 export interface SimplePartnerProduct {
     partner: SimpleUser_WithPartnerInfoEntity
+    product: MutualExclusiveProductId
     priceSubunit: number | null
     stock: number | null
     price: PriceEntity[]
@@ -32,6 +41,7 @@ export interface SimplePartnerProduct {
 export class SimplePartnerProductEntity implements SimplePartnerProduct {
     constructor(
         public partner: SimpleUser_WithPartnerInfoEntity,
+        public product: MutualExclusiveProductId,
         public priceSubunit: number | null,
         public stock: number | null,
         public price: PriceEntity[]
@@ -59,7 +69,7 @@ export class SimplePartnerProduct_HasUserZoneEntity implements SimplePartnerProd
 export interface ListPartnerProduct {
     favorite: boolean
     product: ProductWithCodeEntity | ProductWithoutCodeEntity,
-    partnerProducts: SimplePartnerProductEntity[]
+    partnerProducts: SimplePartnerProduct_HasUserZoneEntity[]
 }
 
 export class ListPartnerProductEntity implements ListPartnerProduct {
