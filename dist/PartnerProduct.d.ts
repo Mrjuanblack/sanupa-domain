@@ -1,30 +1,23 @@
 import { PriceEntity } from "./Price";
 import { ProductWithCodeEntity, ProductWithoutCodeEntity } from "./Product";
 import { SimpleUser_WithPartnerInfoEntity } from "./User";
-export type NewPartnerProductRequest = {
-    productId: number;
-    productWithoutCodeId: null;
-    partnerId: number;
-    priceSubunit: number | null;
-    stock: number | null;
-} | {
-    productId: null;
-    productWithoutCodeId: number;
-    partnerId: number;
-    priceSubunit: number | null;
-    stock: number | null;
-};
-export type UpdatePartnerProductRequest = {
-    id: number;
-    priceSubunit: number | null;
-    stock: number | null;
-};
 export type MutualExclusiveProductId = {
     productId: number;
     productWithoutCodeId: null;
 } | {
     productId: null;
     productWithoutCodeId: number;
+};
+export interface NewPartnerProductRequest {
+    product: MutualExclusiveProductId;
+    partnerId: number;
+    priceSubunit: number | null;
+    stock: number | null;
+}
+export type UpdatePartnerProductRequest = {
+    id: number;
+    priceSubunit: number | null;
+    stock: number | null;
 };
 export interface SimplePartnerProduct {
     partner: SimpleUser_WithPartnerInfoEntity;
