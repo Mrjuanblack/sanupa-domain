@@ -20,6 +20,7 @@ export type UpdatePartnerProductRequest = {
     stock: number | null;
 };
 export interface SimplePartnerProduct {
+    id: number;
     partner: SimpleUser_WithPartnerInfoEntity;
     product: MutualExclusiveProductId;
     priceSubunit: number | null;
@@ -27,12 +28,13 @@ export interface SimplePartnerProduct {
     price: PriceEntity[];
 }
 export declare class SimplePartnerProductEntity implements SimplePartnerProduct {
+    id: number;
     partner: SimpleUser_WithPartnerInfoEntity;
     product: MutualExclusiveProductId;
     priceSubunit: number | null;
     stock: number | null;
     price: PriceEntity[];
-    constructor(partner: SimpleUser_WithPartnerInfoEntity, product: MutualExclusiveProductId, priceSubunit: number | null, stock: number | null, price: PriceEntity[]);
+    constructor(id: number, partner: SimpleUser_WithPartnerInfoEntity, product: MutualExclusiveProductId, priceSubunit: number | null, stock: number | null, price: PriceEntity[]);
 }
 export interface SimplePartnerProduct_HasUserZone {
     isInUserZone: boolean;
@@ -61,17 +63,19 @@ export declare class ListPartnerProductEntity implements ListPartnerProduct {
     constructor(favorite: boolean, product: ProductWithCodeEntity | ProductWithoutCodeEntity, partnerProducts: SimplePartnerProduct_HasUserZoneEntity[]);
 }
 export interface PartnerProduct {
+    id: number;
     product: ProductWithCodeEntity | ProductWithoutCodeEntity;
     partner: SimpleUser_WithPartnerInfoEntity;
     price: PriceEntity[];
     stock: number | null;
 }
 export declare class PartnerProductEntiy implements PartnerProduct {
+    id: number;
     product: ProductWithCodeEntity | ProductWithoutCodeEntity;
     partner: SimpleUser_WithPartnerInfoEntity;
     price: PriceEntity[];
     stock: number | null;
-    constructor(product: ProductWithCodeEntity | ProductWithoutCodeEntity, partner: SimpleUser_WithPartnerInfoEntity, price: PriceEntity[], stock: number | null);
+    constructor(id: number, product: ProductWithCodeEntity | ProductWithoutCodeEntity, partner: SimpleUser_WithPartnerInfoEntity, price: PriceEntity[], stock: number | null);
 }
 export interface PP_Filter {
     price: number | null;

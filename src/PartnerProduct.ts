@@ -24,6 +24,7 @@ export type UpdatePartnerProductRequest = {
 }
 
 export interface SimplePartnerProduct {
+    id: number
     partner: SimpleUser_WithPartnerInfoEntity
     product: MutualExclusiveProductId
     priceSubunit: number | null
@@ -33,6 +34,7 @@ export interface SimplePartnerProduct {
 
 export class SimplePartnerProductEntity implements SimplePartnerProduct {
     constructor(
+        public id: number,
         public partner: SimpleUser_WithPartnerInfoEntity,
         public product: MutualExclusiveProductId,
         public priceSubunit: number | null,
@@ -74,6 +76,7 @@ export class ListPartnerProductEntity implements ListPartnerProduct {
 }
 
 export interface PartnerProduct {
+    id: number,
     product: ProductWithCodeEntity | ProductWithoutCodeEntity,
     partner: SimpleUser_WithPartnerInfoEntity
     price: PriceEntity[],
@@ -82,6 +85,7 @@ export interface PartnerProduct {
 
 export class PartnerProductEntiy implements PartnerProduct {
     constructor(
+        public id: number,
         public product: ProductWithCodeEntity | ProductWithoutCodeEntity,
         public partner: SimpleUser_WithPartnerInfoEntity,
         public price: PriceEntity[],

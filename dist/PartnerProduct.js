@@ -2,7 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PP_FilterEntity = exports.PartnerProductEntiy = exports.ListPartnerProductEntity = exports.SimplePartnerProduct_HasUserZoneEntity = exports.SimplePartnerProductEntity = void 0;
 class SimplePartnerProductEntity {
-    constructor(partner, product, priceSubunit, stock, price) {
+    constructor(id, partner, product, priceSubunit, stock, price) {
+        this.id = id;
         this.partner = partner;
         this.product = product;
         this.priceSubunit = priceSubunit;
@@ -30,7 +31,8 @@ class ListPartnerProductEntity {
 }
 exports.ListPartnerProductEntity = ListPartnerProductEntity;
 class PartnerProductEntiy {
-    constructor(product, partner, price, stock) {
+    constructor(id, product, partner, price, stock) {
+        this.id = id;
         this.product = product;
         this.partner = partner;
         this.price = price;
