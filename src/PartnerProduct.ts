@@ -17,15 +17,7 @@ export type NewPartnerProductRequest = {
 }
 
 export type UpdatePartnerProductRequest = {
-    productId: number;
-    productWithoutCodeId: null;
-    partnerId: number;
-    priceSubunit: number | null;
-    stock: number | null;
-} | {
-    productId: null;
-    productWithoutCodeId: number;
-    partnerId: number;
+    id: number
     priceSubunit: number | null;
     stock: number | null;
 }
