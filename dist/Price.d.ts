@@ -20,6 +20,7 @@ export declare class PriceEntity implements Price {
     constructor(id: number, partnerProductId: number, min: number, max: number, price: number);
 }
 export interface UpdatePriceRequest {
+    id: number;
     partnerProductId: number;
     min: number;
     max: number;

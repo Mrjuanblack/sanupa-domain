@@ -24,6 +24,7 @@ export class PriceEntity implements Price {
 }
 
 export interface UpdatePriceRequest {
+    id: number,
     partnerProductId: number,
     min: number,
     max: number,
