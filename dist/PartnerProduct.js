@@ -13,7 +13,8 @@ class SimplePartnerProductEntity {
 }
 exports.SimplePartnerProductEntity = SimplePartnerProductEntity;
 class SimplePartnerProduct_HasUserZoneEntity {
-    constructor(isInUserZone, partner, priceSubunit, stock, price) {
+    constructor(id, isInUserZone, partner, priceSubunit, stock, price) {
+        this.id = id;
         this.isInUserZone = isInUserZone;
         this.partner = partner;
         this.priceSubunit = priceSubunit;

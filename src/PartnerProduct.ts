@@ -44,6 +44,7 @@ export class SimplePartnerProductEntity implements SimplePartnerProduct {
 }
 
 export interface SimplePartnerProduct_HasUserZone {
+    id: number
     isInUserZone: boolean
     partner: SimpleUser_WithPartnerInfoEntity
     priceSubunit: number | null
@@ -53,6 +54,7 @@ export interface SimplePartnerProduct_HasUserZone {
 
 export class SimplePartnerProduct_HasUserZoneEntity implements SimplePartnerProduct_HasUserZone {
     constructor(
+        public id: number,
         public isInUserZone: boolean,
         public partner: SimpleUser_WithPartnerInfoEntity,
         public priceSubunit: number | null,

@@ -37,6 +37,7 @@ export declare class SimplePartnerProductEntity implements SimplePartnerProduct 
     constructor(id: number, partner: SimpleUser_WithPartnerInfoEntity, product: MutualExclusiveProductId, priceSubunit: number | null, stock: number | null, price: PriceEntity[]);
 }
 export interface SimplePartnerProduct_HasUserZone {
+    id: number;
     isInUserZone: boolean;
     partner: SimpleUser_WithPartnerInfoEntity;
     priceSubunit: number | null;
@@ -44,12 +45,13 @@ export interface SimplePartnerProduct_HasUserZone {
     price: PriceEntity[];
 }
 export declare class SimplePartnerProduct_HasUserZoneEntity implements SimplePartnerProduct_HasUserZone {
+    id: number;
     isInUserZone: boolean;
     partner: SimpleUser_WithPartnerInfoEntity;
     priceSubunit: number | null;
     stock: number | null;
     price: PriceEntity[];
-    constructor(isInUserZone: boolean, partner: SimpleUser_WithPartnerInfoEntity, priceSubunit: number | null, stock: number | null, price: PriceEntity[]);
+    constructor(id: number, isInUserZone: boolean, partner: SimpleUser_WithPartnerInfoEntity, priceSubunit: number | null, stock: number | null, price: PriceEntity[]);
 }
 export interface ListPartnerProduct {
     favorite: boolean;
