@@ -38,13 +38,11 @@ export declare class DeliveryCostEntity implements DeliveryCost {
     constructor(partner: SimpleUser_WithPartnerInfo, price: number);
 }
 export interface NewCarRequest {
-    productId: number;
-    partnerId: number;
+    partnerProductId: number;
     quantity: number;
 }
 export declare class NewCarRequestEntity implements NewCarRequest {
-    productId: number;
-    partnerId: number;
+    partnerProductId: number;
     quantity: number;
-    constructor(productId: number, partnerId: number, quantity: number);
+    constructor(partnerProductId: number, quantity: number);
 }

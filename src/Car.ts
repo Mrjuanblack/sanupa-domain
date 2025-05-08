@@ -52,8 +52,7 @@ export class DeliveryCostEntity implements DeliveryCost {
 
 export interface NewCarRequest {
     // Partner Product Data
-    productId: number,
-    partnerId: number,
+    partnerProductId: number,
 
     // Car Data
     // userId: number, // This will be fetched from the user token
@@ -62,8 +61,7 @@ export interface NewCarRequest {
 
 export class NewCarRequestEntity implements NewCarRequest {
     constructor(
-        public productId: number,
-        public partnerId: number,
+        public partnerProductId: number,
         // public userId: number,
         public quantity: number
     ) { }

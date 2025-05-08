@@ -28,11 +28,10 @@ class DeliveryCostEntity {
 }
 exports.DeliveryCostEntity = DeliveryCostEntity;
 class NewCarRequestEntity {
-    constructor(productId, partnerId, 
+    constructor(partnerProductId, 
     // public userId: number,
     quantity) {
-        this.productId = productId;
-        this.partnerId = partnerId;
+        this.partnerProductId = partnerProductId;
         this.quantity = quantity;
     }
 }
