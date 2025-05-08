@@ -32,10 +32,11 @@ class ListPartnerProductEntity {
 }
 exports.ListPartnerProductEntity = ListPartnerProductEntity;
 class PartnerProductEntiy {
-    constructor(id, product, partner, price, stock) {
+    constructor(id, product, partner, priceSubunit, price, stock) {
         this.id = id;
         this.product = product;
         this.partner = partner;
+        this.priceSubunit = priceSubunit;
         this.price = price;
         this.stock = stock;
     }

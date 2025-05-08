@@ -80,7 +80,8 @@ export class ListPartnerProductEntity implements ListPartnerProduct {
 export interface PartnerProduct {
     id: number,
     product: ProductWithCodeEntity | ProductWithoutCodeEntity,
-    partner: SimpleUser_WithPartnerInfoEntity
+    partner: SimpleUser_WithPartnerInfoEntity,
+    priceSubunit: number | null,
     price: PriceEntity[],
     stock: number | null
 }
@@ -90,6 +91,7 @@ export class PartnerProductEntiy implements PartnerProduct {
         public id: number,
         public product: ProductWithCodeEntity | ProductWithoutCodeEntity,
         public partner: SimpleUser_WithPartnerInfoEntity,
+        public priceSubunit: number | null,
         public price: PriceEntity[],
         public stock: number | null
     ) { }

@@ -68,6 +68,7 @@ export interface PartnerProduct {
     id: number;
     product: ProductWithCodeEntity | ProductWithoutCodeEntity;
     partner: SimpleUser_WithPartnerInfoEntity;
+    priceSubunit: number | null;
     price: PriceEntity[];
     stock: number | null;
 }
@@ -75,9 +76,10 @@ export declare class PartnerProductEntiy implements PartnerProduct {
     id: number;
     product: ProductWithCodeEntity | ProductWithoutCodeEntity;
     partner: SimpleUser_WithPartnerInfoEntity;
+    priceSubunit: number | null;
     price: PriceEntity[];
     stock: number | null;
-    constructor(id: number, product: ProductWithCodeEntity | ProductWithoutCodeEntity, partner: SimpleUser_WithPartnerInfoEntity, price: PriceEntity[], stock: number | null);
+    constructor(id: number, product: ProductWithCodeEntity | ProductWithoutCodeEntity, partner: SimpleUser_WithPartnerInfoEntity, priceSubunit: number | null, price: PriceEntity[], stock: number | null);
 }
 export interface PP_Filter {
     price: number | null;
