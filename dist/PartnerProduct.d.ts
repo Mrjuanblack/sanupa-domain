@@ -61,15 +61,15 @@ export declare class ListPartnerProductEntity implements ListPartnerProduct {
 export interface PartnerProduct {
     product: ProductWithCodeEntity | ProductWithoutCodeEntity;
     partner: SimpleUser_WithPartnerInfoEntity;
-    price: number;
+    price: PriceEntity[];
     stock: number | null;
 }
 export declare class PartnerProductEntiy implements PartnerProduct {
     product: ProductWithCodeEntity | ProductWithoutCodeEntity;
     partner: SimpleUser_WithPartnerInfoEntity;
-    price: number;
+    price: PriceEntity[];
     stock: number | null;
-    constructor(product: ProductWithCodeEntity | ProductWithoutCodeEntity, partner: SimpleUser_WithPartnerInfoEntity, price: number, stock: number | null);
+    constructor(product: ProductWithCodeEntity | ProductWithoutCodeEntity, partner: SimpleUser_WithPartnerInfoEntity, price: PriceEntity[], stock: number | null);
 }
 export interface PP_Filter {
     price: number | null;

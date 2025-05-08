@@ -73,7 +73,7 @@ export class ListPartnerProductEntity implements ListPartnerProduct {
 export interface PartnerProduct {
     product: ProductWithCodeEntity | ProductWithoutCodeEntity,
     partner: SimpleUser_WithPartnerInfoEntity
-    price: number,
+    price: PriceEntity[],
     stock: number | null
 }
 
@@ -81,7 +81,7 @@ export class PartnerProductEntiy implements PartnerProduct {
     constructor(
         public product: ProductWithCodeEntity | ProductWithoutCodeEntity,
         public partner: SimpleUser_WithPartnerInfoEntity,
-        public price: number,
+        public price: PriceEntity[],
         public stock: number | null
     ) { }
 }
