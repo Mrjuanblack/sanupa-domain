@@ -30,7 +30,6 @@ export interface SimpleCar {
 export class SimpleCarEntity implements SimpleCar {
     constructor(
         public partnerProduct: SimplePartnerProductEntity,
-        public productId: number,
         public userId: number,
         public quantity: number,
         public active: boolean
