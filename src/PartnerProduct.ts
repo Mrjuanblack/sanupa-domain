@@ -31,6 +31,7 @@ export type UpdatePartnerProductRequest = {
 
 export interface SimplePartnerProduct {
     id: number
+    internalCode: string | null
     partner: SimpleUser_WithPartnerInfoEntity
     product: MutualExclusiveProductId
     priceSubunit: number | null
@@ -41,6 +42,7 @@ export interface SimplePartnerProduct {
 export class SimplePartnerProductEntity implements SimplePartnerProduct {
     constructor(
         public id: number,
+        public internalCode: string | null,
         public partner: SimpleUser_WithPartnerInfoEntity,
         public product: MutualExclusiveProductId,
         public priceSubunit: number | null,
@@ -51,6 +53,7 @@ export class SimplePartnerProductEntity implements SimplePartnerProduct {
 
 export interface SimplePartnerProduct_HasUserZone {
     id: number
+    internalCode: string | null
     isInUserZone: boolean
     partner: SimpleUser_WithPartnerInfoEntity
     priceSubunit: number | null
@@ -61,6 +64,7 @@ export interface SimplePartnerProduct_HasUserZone {
 export class SimplePartnerProduct_HasUserZoneEntity implements SimplePartnerProduct_HasUserZone {
     constructor(
         public id: number,
+        public internalCode: string | null,
         public isInUserZone: boolean,
         public partner: SimpleUser_WithPartnerInfoEntity,
         public priceSubunit: number | null,
@@ -85,6 +89,7 @@ export class ListPartnerProductEntity implements ListPartnerProduct {
 
 export interface PartnerProduct {
     id: number,
+    internalCode: string | null,
     product: ProductWithCodeEntity | ProductWithoutCodeEntity,
     partner: SimpleUser_WithPartnerInfoEntity,
     priceSubunit: number | null,
@@ -95,6 +100,7 @@ export interface PartnerProduct {
 export class PartnerProductEntiy implements PartnerProduct {
     constructor(
         public id: number,
+        public internalCode: string | null,
         public product: ProductWithCodeEntity | ProductWithoutCodeEntity,
         public partner: SimpleUser_WithPartnerInfoEntity,
         public priceSubunit: number | null,
