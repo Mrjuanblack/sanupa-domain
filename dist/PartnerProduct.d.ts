@@ -11,6 +11,7 @@ export type MutualExclusiveProductId = {
 export interface NewPartnerProductRequest {
     product: MutualExclusiveProductId;
     partnerId: number;
+    internalCode: string | null;
     price: {
         min: number;
         max: number;
