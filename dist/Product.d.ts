@@ -101,6 +101,8 @@ export interface NewProductWithCodeRequest {
     market: string;
     productTypeId: number | null;
     brandId: number | null;
+    subunitTypeId: number | null;
+    measurementInfo: string | null;
     complementaryInfo: string | null;
 }
 export interface NewProductJustCode {

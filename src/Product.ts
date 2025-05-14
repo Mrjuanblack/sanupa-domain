@@ -236,6 +236,8 @@ export interface NewProductWithCodeRequest {
 
     productTypeId: number | null
     brandId: number | null
+    subunitTypeId: number | null
+    measurementInfo: string | null
     complementaryInfo: string | null
 }
 
