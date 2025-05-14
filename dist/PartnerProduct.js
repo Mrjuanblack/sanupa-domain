@@ -2,8 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PP_FilterEntity = exports.PartnerProductEntiy = exports.ListPartnerProductEntity = exports.SimplePartnerProduct_HasUserZoneEntity = exports.SimplePartnerProductEntity = exports.PartnerProduct_NotValidatedEntity = void 0;
 class PartnerProduct_NotValidatedEntity {
-    constructor(id, product) {
+    constructor(id, partnerId, product) {
         this.id = id;
+        this.partnerId = partnerId;
         this.product = product;
     }
 }

@@ -27,12 +27,14 @@ export type UpdatePartnerProductRequest = {
 };
 export interface PartnerProduct_NotValidated {
     id: number;
+    partnerId: number;
     product: ProductWithCodeEntity | ProductWithoutCodeEntity;
 }
 export declare class PartnerProduct_NotValidatedEntity implements PartnerProduct_NotValidated {
     id: number;
+    partnerId: number;
     product: ProductWithCodeEntity | ProductWithoutCodeEntity;
-    constructor(id: number, product: ProductWithCodeEntity | ProductWithoutCodeEntity);
+    constructor(id: number, partnerId: number, product: ProductWithCodeEntity | ProductWithoutCodeEntity);
 }
 export interface SimplePartnerProduct {
     id: number;
