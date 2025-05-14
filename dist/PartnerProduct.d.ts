@@ -25,6 +25,15 @@ export type UpdatePartnerProductRequest = {
     priceSubunit: number | null;
     stock: number | null;
 };
+export interface PartnerProduct_NotValidated {
+    id: number;
+    product: ProductWithCodeEntity | ProductWithoutCodeEntity;
+}
+export declare class PartnerProduct_NotValidatedEntity implements PartnerProduct_NotValidated {
+    id: number;
+    product: ProductWithCodeEntity | ProductWithoutCodeEntity;
+    constructor(id: number, product: ProductWithCodeEntity | ProductWithoutCodeEntity);
+}
 export interface SimplePartnerProduct {
     id: number;
     internalCode: string | null;
