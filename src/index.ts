@@ -28,3 +28,4 @@ export * from './PhotoProcessorDailyCount';
 export * from './ProcessedProductsDailyCount';
 export * from './Subcateogry_SubunitType';
 export * from './Price';
+export * from './ProductErrorReport';
