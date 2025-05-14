@@ -257,6 +257,20 @@ export interface NewProduct_GS1 {
     description: string
 }
 
+export interface NewProduct_Suggest {
+    subcategoryId: number
+
+    productTypeId: number
+    brandId: number
+    subunitTypeId: number | null
+    quantity: number | null
+
+    measurementInfo: string | null
+
+    name: string
+    description: string
+}
+
 export interface UpdateProduct_GS1 {
     productId: number
     subcategoryId: number
