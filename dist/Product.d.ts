@@ -91,7 +91,7 @@ export interface ProductWithCode extends BaseProduct {
 export interface NewProductWithCodeRequest {
     subcategoryId: number;
     imgPath: string;
-    gtin: string;
+    gtin: string | null;
     name: string;
     description: string;
     brand: string;
