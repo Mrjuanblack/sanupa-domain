@@ -258,6 +258,7 @@ export interface NewProduct_GS1 {
 }
 
 export interface NewProduct_Suggest {
+    code: string | null
     subcategoryId: number
 
     productTypeId: number
