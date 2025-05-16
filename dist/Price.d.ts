@@ -22,3 +22,4 @@ export interface UpdatePriceRequest {
     max: number;
     price: number;
 }
+export declare function findPrice(quantity: number, prices: Price[]): Price;
