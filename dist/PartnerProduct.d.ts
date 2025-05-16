@@ -1,4 +1,4 @@
-import { PriceEntity } from "./Price";
+import { NewPriceRequest, PriceEntity } from "./Price";
 import { ProductWithCodeEntity, ProductWithoutCodeEntity } from "./Product";
 import { SimpleUser_WithPartnerInfoEntity } from "./User";
 export type MutualExclusiveProductId = {
@@ -12,11 +12,7 @@ export interface NewPartnerProductRequest {
     product: MutualExclusiveProductId;
     partnerId: number;
     internalCode: string | null;
-    price: {
-        min: number;
-        max: number;
-        price: number;
-    }[];
+    price: NewPriceRequest[];
     priceSubunit: number | null;
     stock: number | null;
 }
