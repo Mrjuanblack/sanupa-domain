@@ -138,6 +138,21 @@ export declare class SimpleChildOrderEntity implements SimpleChildOrder {
     hasCustomerSupport: boolean;
     constructor(id: number, parentOrder: SimpleParentOrderEntity, state: OrderState, price: number, deliveryPrice: number, partnerInformation: SimplePartnerInfoEntity, hasCustomerSupport: boolean);
 }
+export interface SimpleChildOrder_Partner {
+    id: number;
+    parentOrder: SimpleParentOrderEntity;
+    state: OrderState;
+    price: number;
+    deliveryPrice: number;
+}
+export declare class SimpleChildOrder_PartnerEntity implements SimpleChildOrder_Partner {
+    id: number;
+    parentOrder: SimpleParentOrderEntity;
+    state: OrderState;
+    price: number;
+    deliveryPrice: number;
+    constructor(id: number, parentOrder: SimpleParentOrderEntity, state: OrderState, price: number, deliveryPrice: number);
+}
 export interface SimpleChildOrder_Admin {
     id: number;
     parentOrder: SimpleParentOrderEntity;

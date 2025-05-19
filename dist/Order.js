@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OrderReportEntity = exports.SimpleChildOrder_AdminEntity = exports.SimpleChildOrderEntity = exports.ChildOrder_AdminEntity = exports.ChildOrderEntity = exports.OrderItemEntity = exports.NewOrderRequestEntity = exports.SimpleParentOrderEntity = exports.ParentOrderEntity = exports.DeliveryTimeList = exports.DeliveryTime = exports.OrderStateList = exports.OrderState = void 0;
+exports.OrderReportEntity = exports.SimpleChildOrder_AdminEntity = exports.SimpleChildOrder_PartnerEntity = exports.SimpleChildOrderEntity = exports.ChildOrder_AdminEntity = exports.ChildOrderEntity = exports.OrderItemEntity = exports.NewOrderRequestEntity = exports.SimpleParentOrderEntity = exports.ParentOrderEntity = exports.DeliveryTimeList = exports.DeliveryTime = exports.OrderStateList = exports.OrderState = void 0;
 exports.getOrderStateString = getOrderStateString;
 exports.getDeliveryTimeString = getDeliveryTimeString;
 var OrderState;
@@ -126,6 +126,16 @@ class SimpleChildOrderEntity {
     }
 }
 exports.SimpleChildOrderEntity = SimpleChildOrderEntity;
+class SimpleChildOrder_PartnerEntity {
+    constructor(id, parentOrder, state, price, deliveryPrice) {
+        this.id = id;
+        this.parentOrder = parentOrder;
+        this.state = state;
+        this.price = price;
+        this.deliveryPrice = deliveryPrice;
+    }
+}
+exports.SimpleChildOrder_PartnerEntity = SimpleChildOrder_PartnerEntity;
 class SimpleChildOrder_AdminEntity {
     constructor(id, parentOrder, user, state, price, deliveryPrice, evidenceImg, partnerInformation, hasCustomerSupport) {
         this.id = id;

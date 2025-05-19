@@ -196,6 +196,24 @@ export class SimpleChildOrderEntity implements SimpleChildOrder {
     ) { }
 }
 
+export interface SimpleChildOrder_Partner {
+    id: number,
+    parentOrder: SimpleParentOrderEntity
+    state: OrderState
+    price: number
+    deliveryPrice: number
+}
+
+export class SimpleChildOrder_PartnerEntity implements SimpleChildOrder_Partner {
+    constructor(
+        public id: number,
+        public parentOrder: SimpleParentOrderEntity,
+        public state: OrderState,
+        public price: number,
+        public deliveryPrice: number,
+    ) { }
+}
+
 export interface SimpleChildOrder_Admin {
     id: number
     parentOrder: SimpleParentOrderEntity
