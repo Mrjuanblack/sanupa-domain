@@ -15,10 +15,12 @@ export interface City {
     id: number;
     region: Region;
     name: string;
+    shortName: string;
 }
 export interface NewCityRequest {
     region: Region;
     name: string;
+    shortName: string;
 }
 export interface Community {
     id: number;
@@ -53,7 +55,8 @@ export declare class CityEntity implements City {
     id: number;
     region: Region;
     name: string;
-    constructor(id: number, region: Region, name: string);
+    shortName: string;
+    constructor(id: number, region: Region, name: string, shortName: string);
 }
 export declare class CommunityEntity implements Community {
     id: number;

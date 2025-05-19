@@ -17,10 +17,11 @@ class RegionEntity {
 }
 exports.RegionEntity = RegionEntity;
 class CityEntity {
-    constructor(id, region, name) {
+    constructor(id, region, name, shortName) {
         this.id = id;
         this.region = region;
         this.name = name;
+        this.shortName = shortName;
     }
 }
 exports.CityEntity = CityEntity;

@@ -17,10 +17,12 @@ export interface City {
     id: number
     region: Region
     name: string
+    shortName: string
 }
 export interface NewCityRequest {
     region: Region
     name: string
+    shortName: string
 }
 
 export interface Community {
@@ -70,11 +72,13 @@ export class CityEntity implements City {
     id: number
     region: Region
     name: string
+    shortName: string
 
-    constructor(id: number, region: Region, name: string) {
+    constructor(id: number, region: Region, name: string, shortName: string) {
         this.id = id
         this.region = region
         this.name = name
+        this.shortName = shortName
     }
 }
 
