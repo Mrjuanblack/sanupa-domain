@@ -1,3 +1,4 @@
+import { ZoneEntity } from "./Location";
 import { SimplePartnerInfoEntity } from "./PartnerInfo";
 import { PartnerProductEntiy } from "./PartnerProduct"
 import { SimpleUserEntity } from "./User";
@@ -53,6 +54,7 @@ export interface ParentOrder {
     id: number
     userId: number
     address: string
+    zone: ZoneEntity
 
     createdAt: Date
     childOrders: ChildOrder[]
@@ -66,6 +68,7 @@ export class ParentOrderEntity implements ParentOrder {
         public id: number,
         public userId: number,
         public address: string,
+        public zone: ZoneEntity,
         public createdAt: Date,
         public childOrders: ChildOrder[],
         public deliveryDate: Date,
@@ -78,6 +81,8 @@ export interface SimpleParentOrder {
     userId: number
     address: string
 
+    zone: ZoneEntity
+
     createdAt: Date
 
     deliveryDate: Date
@@ -89,6 +94,7 @@ export class SimpleParentOrderEntity implements SimpleParentOrder {
         public id: number,
         public userId: number,
         public address: string,
+        public zone: ZoneEntity,
         public createdAt: Date,
         public deliveryDate: Date,
         public deliveryTime: DeliveryTime,

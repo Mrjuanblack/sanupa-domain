@@ -50,10 +50,11 @@ function getDeliveryTimeString(deliveryTime) {
     }
 }
 class ParentOrderEntity {
-    constructor(id, userId, address, createdAt, childOrders, deliveryDate, deliveryTime) {
+    constructor(id, userId, address, zone, createdAt, childOrders, deliveryDate, deliveryTime) {
         this.id = id;
         this.userId = userId;
         this.address = address;
+        this.zone = zone;
         this.createdAt = createdAt;
         this.childOrders = childOrders;
         this.deliveryDate = deliveryDate;
@@ -62,10 +63,11 @@ class ParentOrderEntity {
 }
 exports.ParentOrderEntity = ParentOrderEntity;
 class SimpleParentOrderEntity {
-    constructor(id, userId, address, createdAt, deliveryDate, deliveryTime) {
+    constructor(id, userId, address, zone, createdAt, deliveryDate, deliveryTime) {
         this.id = id;
         this.userId = userId;
         this.address = address;
+        this.zone = zone;
         this.createdAt = createdAt;
         this.deliveryDate = deliveryDate;
         this.deliveryTime = deliveryTime;

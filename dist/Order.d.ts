@@ -1,3 +1,4 @@
+import { ZoneEntity } from "./Location";
 import { SimplePartnerInfoEntity } from "./PartnerInfo";
 import { PartnerProductEntiy } from "./PartnerProduct";
 import { SimpleUserEntity } from "./User";
@@ -23,6 +24,7 @@ export interface ParentOrder {
     id: number;
     userId: number;
     address: string;
+    zone: ZoneEntity;
     createdAt: Date;
     childOrders: ChildOrder[];
     deliveryDate: Date;
@@ -32,16 +34,18 @@ export declare class ParentOrderEntity implements ParentOrder {
     id: number;
     userId: number;
     address: string;
+    zone: ZoneEntity;
     createdAt: Date;
     childOrders: ChildOrder[];
     deliveryDate: Date;
     deliveryTime: DeliveryTime;
-    constructor(id: number, userId: number, address: string, createdAt: Date, childOrders: ChildOrder[], deliveryDate: Date, deliveryTime: DeliveryTime);
+    constructor(id: number, userId: number, address: string, zone: ZoneEntity, createdAt: Date, childOrders: ChildOrder[], deliveryDate: Date, deliveryTime: DeliveryTime);
 }
 export interface SimpleParentOrder {
     id: number;
     userId: number;
     address: string;
+    zone: ZoneEntity;
     createdAt: Date;
     deliveryDate: Date;
     deliveryTime: DeliveryTime;
@@ -50,10 +54,11 @@ export declare class SimpleParentOrderEntity implements SimpleParentOrder {
     id: number;
     userId: number;
     address: string;
+    zone: ZoneEntity;
     createdAt: Date;
     deliveryDate: Date;
     deliveryTime: DeliveryTime;
-    constructor(id: number, userId: number, address: string, createdAt: Date, deliveryDate: Date, deliveryTime: DeliveryTime);
+    constructor(id: number, userId: number, address: string, zone: ZoneEntity, createdAt: Date, deliveryDate: Date, deliveryTime: DeliveryTime);
 }
 export interface NewOrderRequest {
     deliveryDate: Date;
