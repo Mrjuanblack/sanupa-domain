@@ -76,6 +76,7 @@ export class ParentOrderEntity implements ParentOrder {
 export interface SimpleParentOrder {
     id: number
     userId: number
+    address: string
 
     createdAt: Date
 
@@ -87,6 +88,7 @@ export class SimpleParentOrderEntity implements SimpleParentOrder {
     constructor(
         public id: number,
         public userId: number,
+        public address: string,
         public createdAt: Date,
         public deliveryDate: Date,
         public deliveryTime: DeliveryTime,

@@ -41,6 +41,7 @@ export declare class ParentOrderEntity implements ParentOrder {
 export interface SimpleParentOrder {
     id: number;
     userId: number;
+    address: string;
     createdAt: Date;
     deliveryDate: Date;
     deliveryTime: DeliveryTime;
@@ -48,10 +49,11 @@ export interface SimpleParentOrder {
 export declare class SimpleParentOrderEntity implements SimpleParentOrder {
     id: number;
     userId: number;
+    address: string;
     createdAt: Date;
     deliveryDate: Date;
     deliveryTime: DeliveryTime;
-    constructor(id: number, userId: number, createdAt: Date, deliveryDate: Date, deliveryTime: DeliveryTime);
+    constructor(id: number, userId: number, address: string, createdAt: Date, deliveryDate: Date, deliveryTime: DeliveryTime);
 }
 export interface NewOrderRequest {
     deliveryDate: Date;

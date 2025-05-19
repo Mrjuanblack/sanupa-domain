@@ -62,9 +62,10 @@ class ParentOrderEntity {
 }
 exports.ParentOrderEntity = ParentOrderEntity;
 class SimpleParentOrderEntity {
-    constructor(id, userId, createdAt, deliveryDate, deliveryTime) {
+    constructor(id, userId, address, createdAt, deliveryDate, deliveryTime) {
         this.id = id;
         this.userId = userId;
+        this.address = address;
         this.createdAt = createdAt;
         this.deliveryDate = deliveryDate;
         this.deliveryTime = deliveryTime;
