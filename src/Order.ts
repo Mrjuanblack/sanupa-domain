@@ -49,6 +49,16 @@ export function getDeliveryTimeString(deliveryTime: DeliveryTime): string {
             return "2:00 PM - 6:00pm"
     }
 }
+export function getDeliveryMaxTimeString(deliveryTime: DeliveryTime): string {
+    switch (deliveryTime) {
+        case DeliveryTime.Morning:
+            return "12:00 PM"
+        case DeliveryTime.MiddleDay:
+            return "2:00 PM"
+        case DeliveryTime.Afternoon:
+            return "6:00 PM"
+    }
+}
 
 export interface ParentOrder {
     id: number

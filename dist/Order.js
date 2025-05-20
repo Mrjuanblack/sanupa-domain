@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.OrderReportEntity = exports.SimpleChildOrder_AdminEntity = exports.SimpleChildOrder_PartnerEntity = exports.SimpleChildOrderEntity = exports.ChildOrder_AdminEntity = exports.ChildOrderEntity = exports.OrderItemEntity = exports.NewOrderRequestEntity = exports.SimpleParentOrderEntity = exports.ParentOrderEntity = exports.DeliveryTimeList = exports.DeliveryTime = exports.OrderStateList = exports.OrderState = void 0;
 exports.getOrderStateString = getOrderStateString;
 exports.getDeliveryTimeString = getDeliveryTimeString;
+exports.getDeliveryMaxTimeString = getDeliveryMaxTimeString;
 var OrderState;
 (function (OrderState) {
     OrderState[OrderState["Started"] = 1] = "Started";
@@ -47,6 +48,16 @@ function getDeliveryTimeString(deliveryTime) {
             return "12:00 PM - 2:00 PM";
         case DeliveryTime.Afternoon:
             return "2:00 PM - 6:00pm";
+    }
+}
+function getDeliveryMaxTimeString(deliveryTime) {
+    switch (deliveryTime) {
+        case DeliveryTime.Morning:
+            return "12:00 PM";
+        case DeliveryTime.MiddleDay:
+            return "2:00 PM";
+        case DeliveryTime.Afternoon:
+            return "6:00 PM";
     }
 }
 class ParentOrderEntity {

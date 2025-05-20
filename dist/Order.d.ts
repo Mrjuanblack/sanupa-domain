@@ -20,6 +20,7 @@ export declare enum DeliveryTime {
 }
 export declare const DeliveryTimeList: DeliveryTime[];
 export declare function getDeliveryTimeString(deliveryTime: DeliveryTime): string;
+export declare function getDeliveryMaxTimeString(deliveryTime: DeliveryTime): string;
 export interface ParentOrder {
     id: number;
     userId: number;
