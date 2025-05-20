@@ -129,6 +129,7 @@ export class NewOrderRequestEntity implements NewOrderRequest {
 
 export interface OrderItem {
     id: number
+    childOrderId: number
     product: PartnerProductEntiy
     price: number
     quantity: number
@@ -138,6 +139,7 @@ export interface OrderItem {
 export class OrderItemEntity implements OrderItem {
     constructor(
         public id: number,
+        public childOrderId: number,
         public product: PartnerProductEntiy,
         public price: number,
         public quantity: number,

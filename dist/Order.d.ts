@@ -76,6 +76,7 @@ export declare class NewOrderRequestEntity implements NewOrderRequest {
 }
 export interface OrderItem {
     id: number;
+    childOrderId: number;
     product: PartnerProductEntiy;
     price: number;
     quantity: number;
@@ -83,11 +84,12 @@ export interface OrderItem {
 }
 export declare class OrderItemEntity implements OrderItem {
     id: number;
+    childOrderId: number;
     product: PartnerProductEntiy;
     price: number;
     quantity: number;
     quantityChecked: number;
-    constructor(id: number, product: PartnerProductEntiy, price: number, quantity: number, quantityChecked: number);
+    constructor(id: number, childOrderId: number, product: PartnerProductEntiy, price: number, quantity: number, quantityChecked: number);
 }
 export interface ChildOrder {
     id: number;
