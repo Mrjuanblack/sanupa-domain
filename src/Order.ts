@@ -132,7 +132,7 @@ export interface OrderItem {
     product: PartnerProductEntiy
     price: number
     quantity: number
-    checked: boolean
+    quantityChecked: number
 }
 
 export class OrderItemEntity implements OrderItem {
@@ -141,7 +141,7 @@ export class OrderItemEntity implements OrderItem {
         public product: PartnerProductEntiy,
         public price: number,
         public quantity: number,
-        public checked: boolean
+        public quantityChecked: number
     ) { }
 }
 

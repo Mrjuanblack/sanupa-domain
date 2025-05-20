@@ -79,15 +79,15 @@ export interface OrderItem {
     product: PartnerProductEntiy;
     price: number;
     quantity: number;
-    checked: boolean;
+    quantityChecked: number;
 }
 export declare class OrderItemEntity implements OrderItem {
     id: number;
     product: PartnerProductEntiy;
     price: number;
     quantity: number;
-    checked: boolean;
-    constructor(id: number, product: PartnerProductEntiy, price: number, quantity: number, checked: boolean);
+    quantityChecked: number;
+    constructor(id: number, product: PartnerProductEntiy, price: number, quantity: number, quantityChecked: number);
 }
 export interface ChildOrder {
     id: number;

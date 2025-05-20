@@ -95,12 +95,12 @@ class NewOrderRequestEntity {
 }
 exports.NewOrderRequestEntity = NewOrderRequestEntity;
 class OrderItemEntity {
-    constructor(id, product, price, quantity, checked) {
+    constructor(id, product, price, quantity, quantityChecked) {
         this.id = id;
         this.product = product;
         this.price = price;
         this.quantity = quantity;
-        this.checked = checked;
+        this.quantityChecked = quantityChecked;
     }
 }
 exports.OrderItemEntity = OrderItemEntity;
