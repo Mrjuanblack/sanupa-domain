@@ -53,6 +53,7 @@ export function getDeliveryTimeString(deliveryTime: DeliveryTime): string {
 export interface ParentOrder {
     id: number
     userId: number
+    name: string
     address: string
     zone: ZoneEntity
 
@@ -67,6 +68,7 @@ export class ParentOrderEntity implements ParentOrder {
     constructor(
         public id: number,
         public userId: number,
+        public name: string,
         public address: string,
         public zone: ZoneEntity,
         public createdAt: Date,
@@ -79,6 +81,7 @@ export class ParentOrderEntity implements ParentOrder {
 export interface SimpleParentOrder {
     id: number
     userId: number
+    name: string
     address: string
 
     zone: ZoneEntity
@@ -93,6 +96,7 @@ export class SimpleParentOrderEntity implements SimpleParentOrder {
     constructor(
         public id: number,
         public userId: number,
+        public name: string,
         public address: string,
         public zone: ZoneEntity,
         public createdAt: Date,
