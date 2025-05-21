@@ -1,22 +1,29 @@
+import { UserRole } from "./User";
+export declare enum CustomerSupportType {
+    Partner_UnableToSendOnTime = 1,
+    Partner_NoStock = 2
+}
+export declare enum CustomerSupportAnswer {
+    Partner_UnableToSendOnTime_Reprogram = 1,
+    Partner_UnableToSendOnTime_Cancel = 2,
+    Partner_NoStock_SendAnyway = 3,
+    Partner_NoStock_Cancel = 4
+}
+export declare const CustomerSupportTypeList: CustomerSupportType[];
+export declare function getCustomerSupportTypeString(customerSupportType: CustomerSupportType): string;
+export declare const isAnswerAllowedByRole: (role: UserRole, answer: CustomerSupportAnswer) => boolean;
 export interface CustomerSupport {
     childOrderId: number;
-    userId: number;
-    text: string;
-    img: string | null;
+    type: CustomerSupportType;
+    answer: CustomerSupportAnswer | null;
 }
 export declare class CustomerSupportEntity implements CustomerSupport {
     childOrderId: number;
-    userId: number;
-    text: string;
-    img: string | null;
-    constructor(childOrderId: number, userId: number, text: string, img: string | null);
+    type: CustomerSupportType;
+    answer: CustomerSupportAnswer | null;
+    constructor(childOrderId: number, type: CustomerSupportType, answer: CustomerSupportAnswer | null);
 }
 export interface NewCustomerSupport {
     childOrderId: number;
-    text: string;
-}
-export declare class NewCustomerSupportEntity implements NewCustomerSupport {
-    childOrderId: number;
-    text: string;
-    constructor(childOrderId: number, text: string);
+    type: CustomerSupportType;
 }
