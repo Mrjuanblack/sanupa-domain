@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PaginationResultEntity = exports.PaginationRequestWithFilterEntity = exports.PaginationRequestEntity = void 0;
+exports.PaginationResultEntity = exports.PaginationRequest_DateRangeEntity = exports.PaginationRequestWithFilterEntity = exports.PaginationRequestEntity = void 0;
 class PaginationRequestEntity {
     constructor(page, pageSize) {
         this.page = page;
@@ -16,6 +16,15 @@ class PaginationRequestWithFilterEntity {
     }
 }
 exports.PaginationRequestWithFilterEntity = PaginationRequestWithFilterEntity;
+class PaginationRequest_DateRangeEntity {
+    constructor(page, pageSize, startDate, endDate) {
+        this.page = page;
+        this.pageSize = pageSize;
+        this.startDate = startDate;
+        this.endDate = endDate;
+    }
+}
+exports.PaginationRequest_DateRangeEntity = PaginationRequest_DateRangeEntity;
 class PaginationResultEntity {
     constructor(items, totalItems, page, pageSize) {
         this.items = items;

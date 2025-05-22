@@ -10,6 +10,10 @@ export interface PaginationRequest_AdminReviewProducts extends PaginationRequest
 export interface PaginationRequestWithFilter extends PaginationRequest {
     filter: PP_Filter;
 }
+export interface PaginationRequest_DateRange extends PaginationRequest {
+    startDate: Date | null;
+    endDate: Date | null;
+}
 export declare class PaginationRequestEntity implements PaginationRequest {
     page: number;
     pageSize: number;
@@ -20,6 +24,13 @@ export declare class PaginationRequestWithFilterEntity implements PaginationRequ
     pageSize: number;
     filter: PP_Filter;
     constructor(page: number, pageSize: number, filter: PP_Filter);
+}
+export declare class PaginationRequest_DateRangeEntity implements PaginationRequest_DateRange {
+    page: number;
+    pageSize: number;
+    startDate: Date | null;
+    endDate: Date | null;
+    constructor(page: number, pageSize: number, startDate: Date | null, endDate: Date | null);
 }
 export interface PaginationResult<T> {
     items: T[];

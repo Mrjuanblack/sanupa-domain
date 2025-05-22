@@ -14,6 +14,11 @@ export interface PaginationRequestWithFilter extends PaginationRequest {
     filter: PP_Filter
 }
 
+export interface PaginationRequest_DateRange extends PaginationRequest {
+    startDate: Date | null
+    endDate: Date | null
+}
+
 export class PaginationRequestEntity implements PaginationRequest {
     constructor(public page: number, public pageSize: number) { }
 }
@@ -23,6 +28,15 @@ export class PaginationRequestWithFilterEntity implements PaginationRequestWithF
         public page: number,
         public pageSize: number,
         public filter: PP_Filter
+    ) { }
+}
+
+export class PaginationRequest_DateRangeEntity implements PaginationRequest_DateRange {
+    constructor(
+        public page: number,
+        public pageSize: number,
+        public startDate: Date | null,
+        public endDate: Date | null
     ) { }
 }
 
