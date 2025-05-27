@@ -14,7 +14,7 @@ export interface PaginationRequestWithFilter extends PaginationRequest {
 export interface PaginationRequest_DateRange extends PaginationRequest {
     startDate: Date | null;
     endDate: Date | null;
-    deliveryTime: DeliveryTime;
+    deliveryTime: DeliveryTime[];
 }
 export declare class PaginationRequestEntity implements PaginationRequest {
     page: number;
@@ -32,8 +32,8 @@ export declare class PaginationRequest_DateRangeEntity implements PaginationRequ
     pageSize: number;
     startDate: Date | null;
     endDate: Date | null;
-    deliveryTime: DeliveryTime;
-    constructor(page: number, pageSize: number, startDate: Date | null, endDate: Date | null, deliveryTime: DeliveryTime);
+    deliveryTime: DeliveryTime[];
+    constructor(page: number, pageSize: number, startDate: Date | null, endDate: Date | null, deliveryTime: DeliveryTime[]);
 }
 export interface PaginationResult<T> {
     items: T[];
