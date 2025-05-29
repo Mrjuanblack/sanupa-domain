@@ -1,7 +1,9 @@
 import { UserRole } from "./User";
 export declare enum CustomerSupportType {
     Partner_UnableToSendOnTime = 1,
-    Partner_NoStock = 2
+    Partner_NoStock = 2,
+    User_NotOnTime = 3,
+    User_Generic = 4
 }
 export declare enum CustomerSupportAnswer {
     Partner_UnableToSendOnTime_Reprogram = 1,
@@ -19,6 +21,7 @@ export interface CustomerSupport {
     userAnsweredId: number;
     type: CustomerSupportType;
     answer: CustomerSupportAnswer | null;
+    genericText: string | null;
 }
 export declare class CustomerSupportEntity implements CustomerSupport {
     childOrderId: number;
@@ -26,7 +29,8 @@ export declare class CustomerSupportEntity implements CustomerSupport {
     userAnsweredId: number;
     type: CustomerSupportType;
     answer: CustomerSupportAnswer | null;
-    constructor(childOrderId: number, userCreatorId: number, userAnsweredId: number, type: CustomerSupportType, answer: CustomerSupportAnswer | null);
+    genericText: string | null;
+    constructor(childOrderId: number, userCreatorId: number, userAnsweredId: number, type: CustomerSupportType, answer: CustomerSupportAnswer | null, genericText: string | null);
 }
 export interface NewCustomerSupport {
     childOrderId: number;

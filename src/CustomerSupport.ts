@@ -30,8 +30,12 @@ import { UserRole } from "./User";
 //     ) { }
 // }
 export enum CustomerSupportType {
+    // Partner
     Partner_UnableToSendOnTime = 1,
-    Partner_NoStock = 2
+    Partner_NoStock = 2,
+    // User
+    User_NotOnTime = 3,
+    User_Generic = 4
 }
 export enum CustomerSupportAnswer {
     // Answers for Partner_UnableToSendOnTime
@@ -48,6 +52,10 @@ export function getCustomerSupportTypeString(customerSupportType: CustomerSuppor
             return "No se puede enviar a tiempo"
         case CustomerSupportType.Partner_NoStock:
             return "No hay stock"
+        case CustomerSupportType.User_NotOnTime:
+            return "No se entregó a tiempo"
+        case CustomerSupportType.User_Generic:
+            return "Otro"
     }
 }
 export const isAnswerAllowedByRole = (role: UserRole, answer: CustomerSupportAnswer): boolean => {
@@ -66,6 +74,9 @@ export const isAnswerAllowedByType = (type: CustomerSupportType, answer: Custome
             return answer === CustomerSupportAnswer.Partner_UnableToSendOnTime_Reprogram || answer === CustomerSupportAnswer.Partner_UnableToSendOnTime_Cancel
         case CustomerSupportType.Partner_NoStock:
             return answer === CustomerSupportAnswer.Partner_NoStock_SendAnyway || answer === CustomerSupportAnswer.Partner_NoStock_Cancel
+        case CustomerSupportType.User_NotOnTime:
+        case CustomerSupportType.User_Generic:
+            return true;
     }
 }
 export interface CustomerSupport {
@@ -74,6 +85,7 @@ export interface CustomerSupport {
     userAnsweredId: number
     type: CustomerSupportType
     answer: CustomerSupportAnswer | null
+    genericText: string | null
 }
 export class CustomerSupportEntity implements CustomerSupport {
     constructor(
@@ -81,7 +93,8 @@ export class CustomerSupportEntity implements CustomerSupport {
         public userCreatorId: number,
         public userAnsweredId: number,
         public type: CustomerSupportType,
-        public answer: CustomerSupportAnswer | null
+        public answer: CustomerSupportAnswer | null,
+        public genericText: string | null
     ) { }
 }
 export interface NewCustomerSupport {

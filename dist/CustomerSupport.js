@@ -29,8 +29,12 @@ const User_1 = require("./User");
 // }
 var CustomerSupportType;
 (function (CustomerSupportType) {
+    // Partner
     CustomerSupportType[CustomerSupportType["Partner_UnableToSendOnTime"] = 1] = "Partner_UnableToSendOnTime";
     CustomerSupportType[CustomerSupportType["Partner_NoStock"] = 2] = "Partner_NoStock";
+    // User
+    CustomerSupportType[CustomerSupportType["User_NotOnTime"] = 3] = "User_NotOnTime";
+    CustomerSupportType[CustomerSupportType["User_Generic"] = 4] = "User_Generic";
 })(CustomerSupportType || (exports.CustomerSupportType = CustomerSupportType = {}));
 var CustomerSupportAnswer;
 (function (CustomerSupportAnswer) {
@@ -48,6 +52,10 @@ function getCustomerSupportTypeString(customerSupportType) {
             return "No se puede enviar a tiempo";
         case CustomerSupportType.Partner_NoStock:
             return "No hay stock";
+        case CustomerSupportType.User_NotOnTime:
+            return "No se entregó a tiempo";
+        case CustomerSupportType.User_Generic:
+            return "Otro";
     }
 }
 const isAnswerAllowedByRole = (role, answer) => {
@@ -67,16 +75,20 @@ const isAnswerAllowedByType = (type, answer) => {
             return answer === CustomerSupportAnswer.Partner_UnableToSendOnTime_Reprogram || answer === CustomerSupportAnswer.Partner_UnableToSendOnTime_Cancel;
         case CustomerSupportType.Partner_NoStock:
             return answer === CustomerSupportAnswer.Partner_NoStock_SendAnyway || answer === CustomerSupportAnswer.Partner_NoStock_Cancel;
+        case CustomerSupportType.User_NotOnTime:
+        case CustomerSupportType.User_Generic:
+            return true;
     }
 };
 exports.isAnswerAllowedByType = isAnswerAllowedByType;
 class CustomerSupportEntity {
-    constructor(childOrderId, userCreatorId, userAnsweredId, type, answer) {
+    constructor(childOrderId, userCreatorId, userAnsweredId, type, answer, genericText) {
         this.childOrderId = childOrderId;
         this.userCreatorId = userCreatorId;
         this.userAnsweredId = userAnsweredId;
         this.type = type;
         this.answer = answer;
+        this.genericText = genericText;
     }
 }
 exports.CustomerSupportEntity = CustomerSupportEntity;
