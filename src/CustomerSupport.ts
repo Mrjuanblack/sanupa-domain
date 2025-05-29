@@ -100,4 +100,5 @@ export class CustomerSupportEntity implements CustomerSupport {
 export interface NewCustomerSupport {
     childOrderId: number
     type: CustomerSupportType
+    genericText: string | null
 }
