@@ -62,8 +62,9 @@ const isAnswerAllowedByRole = (role, answer) => {
 };
 exports.isAnswerAllowedByRole = isAnswerAllowedByRole;
 class CustomerSupportEntity {
-    constructor(childOrderId, type, answer) {
+    constructor(childOrderId, partnerId, type, answer) {
         this.childOrderId = childOrderId;
+        this.partnerId = partnerId;
         this.type = type;
         this.answer = answer;
     }

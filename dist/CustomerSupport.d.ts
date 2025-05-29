@@ -14,14 +14,16 @@ export declare function getCustomerSupportTypeString(customerSupportType: Custom
 export declare const isAnswerAllowedByRole: (role: UserRole, answer: CustomerSupportAnswer) => boolean;
 export interface CustomerSupport {
     childOrderId: number;
+    partnerId: number;
     type: CustomerSupportType;
     answer: CustomerSupportAnswer | null;
 }
 export declare class CustomerSupportEntity implements CustomerSupport {
     childOrderId: number;
+    partnerId: number;
     type: CustomerSupportType;
     answer: CustomerSupportAnswer | null;
-    constructor(childOrderId: number, type: CustomerSupportType, answer: CustomerSupportAnswer | null);
+    constructor(childOrderId: number, partnerId: number, type: CustomerSupportType, answer: CustomerSupportAnswer | null);
 }
 export interface NewCustomerSupport {
     childOrderId: number;
