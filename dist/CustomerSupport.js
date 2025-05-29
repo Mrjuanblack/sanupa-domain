@@ -3,7 +3,7 @@
 //     childOrderId: number
 //     userId: number
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CustomerSupportEntity = exports.isAnswerAllowedByRole = exports.CustomerSupportTypeList = exports.CustomerSupportAnswer = exports.CustomerSupportType = void 0;
+exports.CustomerSupportEntity = exports.isAnswerAllowedByType = exports.isAnswerAllowedByRole = exports.CustomerSupportTypeList = exports.CustomerSupportAnswer = exports.CustomerSupportType = void 0;
 exports.getCustomerSupportTypeString = getCustomerSupportTypeString;
 const User_1 = require("./User");
 //     text: string
@@ -61,6 +61,15 @@ const isAnswerAllowedByRole = (role, answer) => {
     }
 };
 exports.isAnswerAllowedByRole = isAnswerAllowedByRole;
+const isAnswerAllowedByType = (type, answer) => {
+    switch (type) {
+        case CustomerSupportType.Partner_UnableToSendOnTime:
+            return answer === CustomerSupportAnswer.Partner_UnableToSendOnTime_Reprogram || answer === CustomerSupportAnswer.Partner_UnableToSendOnTime_Cancel;
+        case CustomerSupportType.Partner_NoStock:
+            return answer === CustomerSupportAnswer.Partner_NoStock_SendAnyway || answer === CustomerSupportAnswer.Partner_NoStock_Cancel;
+    }
+};
+exports.isAnswerAllowedByType = isAnswerAllowedByType;
 class CustomerSupportEntity {
     constructor(childOrderId, userCreatorId, userAnsweredId, type, answer) {
         this.childOrderId = childOrderId;

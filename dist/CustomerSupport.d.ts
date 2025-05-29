@@ -12,6 +12,7 @@ export declare enum CustomerSupportAnswer {
 export declare const CustomerSupportTypeList: CustomerSupportType[];
 export declare function getCustomerSupportTypeString(customerSupportType: CustomerSupportType): string;
 export declare const isAnswerAllowedByRole: (role: UserRole, answer: CustomerSupportAnswer) => boolean;
+export declare const isAnswerAllowedByType: (type: CustomerSupportType, answer: CustomerSupportAnswer) => boolean;
 export interface CustomerSupport {
     childOrderId: number;
     userCreatorId: number;

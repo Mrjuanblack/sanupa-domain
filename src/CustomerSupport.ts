@@ -60,6 +60,14 @@ export const isAnswerAllowedByRole = (role: UserRole, answer: CustomerSupportAns
             return [UserRole.User, UserRole.Partner].includes(role)
     }
 }
+export const isAnswerAllowedByType = (type: CustomerSupportType, answer: CustomerSupportAnswer): boolean => {
+    switch (type) {
+        case CustomerSupportType.Partner_UnableToSendOnTime:
+            return answer === CustomerSupportAnswer.Partner_UnableToSendOnTime_Reprogram || answer === CustomerSupportAnswer.Partner_UnableToSendOnTime_Cancel
+        case CustomerSupportType.Partner_NoStock:
+            return answer === CustomerSupportAnswer.Partner_NoStock_SendAnyway || answer === CustomerSupportAnswer.Partner_NoStock_Cancel
+    }
+}
 export interface CustomerSupport {
     childOrderId: number
     userCreatorId: number
