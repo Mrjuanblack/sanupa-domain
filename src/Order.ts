@@ -32,6 +32,10 @@ export function getOrderStateString(orderState: OrderState): string {
             return "Cancelado";
     }
 }
+export const isOrderEditable = (orderState: OrderState): boolean => {
+    const allowedStates = [OrderState.Started, OrderState.Packed]
+    return allowedStates.includes(orderState)
+}
 
 export enum DeliveryTime {
     Morning = 1,

@@ -13,6 +13,7 @@ export declare enum OrderState {
 }
 export declare const OrderStateList: OrderState[];
 export declare function getOrderStateString(orderState: OrderState): string;
+export declare const isOrderEditable: (orderState: OrderState) => boolean;
 export declare enum DeliveryTime {
     Morning = 1,
     MiddleDay = 2,

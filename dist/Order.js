@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OrderReportEntity = exports.SimpleChildOrder_AdminEntity = exports.SimpleChildOrder_PartnerEntity = exports.SimpleChildOrderEntity = exports.ChildOrder_AdminEntity = exports.ChildOrderEntity = exports.OrderItemEntity = exports.NewOrderRequestEntity = exports.SimpleParentOrderEntity = exports.ParentOrderEntity = exports.DeliveryTimeList = exports.DeliveryTime = exports.OrderStateList = exports.OrderState = void 0;
+exports.OrderReportEntity = exports.SimpleChildOrder_AdminEntity = exports.SimpleChildOrder_PartnerEntity = exports.SimpleChildOrderEntity = exports.ChildOrder_AdminEntity = exports.ChildOrderEntity = exports.OrderItemEntity = exports.NewOrderRequestEntity = exports.SimpleParentOrderEntity = exports.ParentOrderEntity = exports.DeliveryTimeList = exports.DeliveryTime = exports.isOrderEditable = exports.OrderStateList = exports.OrderState = void 0;
 exports.getOrderStateString = getOrderStateString;
 exports.getDeliveryTimeString = getDeliveryTimeString;
 exports.getDeliveryMaxTimeString = getDeliveryMaxTimeString;
@@ -33,6 +33,11 @@ function getOrderStateString(orderState) {
             return "Cancelado";
     }
 }
+const isOrderEditable = (orderState) => {
+    const allowedStates = [OrderState.Started, OrderState.Packed];
+    return allowedStates.includes(orderState);
+};
+exports.isOrderEditable = isOrderEditable;
 var DeliveryTime;
 (function (DeliveryTime) {
     DeliveryTime[DeliveryTime["Morning"] = 1] = "Morning";
