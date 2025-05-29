@@ -62,14 +62,16 @@ export const isAnswerAllowedByRole = (role: UserRole, answer: CustomerSupportAns
 }
 export interface CustomerSupport {
     childOrderId: number
-    partnerId: number
+    userCreatorId: number
+    userAnsweredId: number
     type: CustomerSupportType
     answer: CustomerSupportAnswer | null
 }
 export class CustomerSupportEntity implements CustomerSupport {
     constructor(
         public childOrderId: number,
-        public partnerId: number,
+        public userCreatorId: number,
+        public userAnsweredId: number,
         public type: CustomerSupportType,
         public answer: CustomerSupportAnswer | null
     ) { }
