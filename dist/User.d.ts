@@ -150,3 +150,7 @@ export declare class UpdateNamesRequestEntity implements UpdateNamesRequest {
     lastName: string;
     constructor(name: string, lastName: string);
 }
+export interface ResetPasswordRequest {
+    newPassword: string;
+    code: string;
+}

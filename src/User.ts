@@ -228,3 +228,8 @@ export class UpdateNamesRequestEntity implements UpdateNamesRequest {
         public lastName: string
     ) { }
 }
+
+export interface ResetPasswordRequest {
+    newPassword: string
+    code: string
+}
