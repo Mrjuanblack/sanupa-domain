@@ -152,5 +152,5 @@ export declare class UpdateNamesRequestEntity implements UpdateNamesRequest {
 }
 export interface ResetPasswordRequest {
     newPassword: string;
-    code: string;
+    code: number;
 }
