@@ -160,3 +160,6 @@ export interface ResetPasswordRequest {
     newPassword: string;
     code: number;
 }
+export interface FetchDeliveryUsersByNameRequest {
+    name: string;
+}
