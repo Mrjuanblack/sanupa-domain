@@ -19,6 +19,9 @@ export declare enum UserRole {
     PhotoAssistant = 4,
     Verifier = 5
 }
+export declare enum AdditionalRole {
+    Delivery = 1
+}
 export declare function getUserRoleString(role: UserRole): string;
 export interface User {
     id: number;
@@ -30,6 +33,7 @@ export interface User {
     phoneNumber: string;
     password: string;
     role: UserRole;
+    additionalRoles: AdditionalRole[];
     active: boolean;
     partnerInfo: PartnerInfoEntity | null;
 }
@@ -42,6 +46,7 @@ export interface UserMetadata {
     cc: string | null;
     phoneNumber: string;
     role: UserRole;
+    additionalRoles: AdditionalRole[];
 }
 export interface UpdatePermissions {
     id: number;
@@ -105,9 +110,10 @@ export declare class UserEntity implements User {
     phoneNumber: string;
     password: string;
     role: UserRole;
+    additionalRoles: AdditionalRole[];
     active: boolean;
     partnerInfo: PartnerInfoEntity | null;
-    constructor(id: number, name: string, lastName: string | null, email: string | null, ccType: CCType | null, cc: string | null, phoneNumber: string, password: string, role: UserRole, active: boolean, partnerInfo: PartnerInfoEntity | null);
+    constructor(id: number, name: string, lastName: string | null, email: string | null, ccType: CCType | null, cc: string | null, phoneNumber: string, password: string, role: UserRole, additionalRoles: AdditionalRole[], active: boolean, partnerInfo: PartnerInfoEntity | null);
 }
 export interface UpdatePasswordRequest {
     oldPassword: string;

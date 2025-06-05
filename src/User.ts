@@ -34,6 +34,10 @@ export enum UserRole {
     Verifier = 5
 }
 
+export enum AdditionalRole {
+    Delivery = 1
+}
+
 // TODO: Add field for user img
 
 type UserRoleEnumToStringMap = {
@@ -62,6 +66,7 @@ export interface User {
     phoneNumber: string
     password: string
     role: UserRole
+    additionalRoles: AdditionalRole[]
     active: boolean
 
     partnerInfo: PartnerInfoEntity | null
@@ -78,6 +83,7 @@ export interface UserMetadata {
     cc: string | null
     phoneNumber: string
     role: UserRole
+    additionalRoles: AdditionalRole[]
 }
 
 export interface UpdatePermissions {
@@ -168,6 +174,7 @@ export class UserEntity implements User {
         public phoneNumber: string,
         public password: string,
         public role: UserRole,
+        public additionalRoles: AdditionalRole[],
         public active: boolean,
         public partnerInfo: PartnerInfoEntity | null
     ) { }

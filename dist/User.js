@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateNamesRequestEntity = exports.UpdateEmailRequestEntity = exports.UpdateIdentificationRequestEntity = exports.UpdatePhoneNumberRequestEntity = exports.UpdatePasswordRequestEntity = exports.UserEntity = exports.UpdatePermissionsEntity = exports.UpdateFacturationInfoRequestEntity = exports.SimpleUser_WithPartnerInfoEntity = exports.SimpleUserEntity = exports.UserRole = exports.CCTypeList = exports.CCType = exports.LoginErrors = void 0;
+exports.UpdateNamesRequestEntity = exports.UpdateEmailRequestEntity = exports.UpdateIdentificationRequestEntity = exports.UpdatePhoneNumberRequestEntity = exports.UpdatePasswordRequestEntity = exports.UserEntity = exports.UpdatePermissionsEntity = exports.UpdateFacturationInfoRequestEntity = exports.SimpleUser_WithPartnerInfoEntity = exports.SimpleUserEntity = exports.AdditionalRole = exports.UserRole = exports.CCTypeList = exports.CCType = exports.LoginErrors = void 0;
 exports.getCCTypeString = getCCTypeString;
 exports.getUserRoleString = getUserRoleString;
 exports.isUserCookie = isUserCookie;
@@ -38,6 +38,10 @@ var UserRole;
     UserRole[UserRole["PhotoAssistant"] = 4] = "PhotoAssistant";
     UserRole[UserRole["Verifier"] = 5] = "Verifier";
 })(UserRole || (exports.UserRole = UserRole = {}));
+var AdditionalRole;
+(function (AdditionalRole) {
+    AdditionalRole[AdditionalRole["Delivery"] = 1] = "Delivery";
+})(AdditionalRole || (exports.AdditionalRole = AdditionalRole = {}));
 const userRoleEnumToString = {
     [UserRole.User]: 'Usuario',
     [UserRole.Admin]: 'Administrador',
@@ -93,7 +97,7 @@ class UpdatePermissionsEntity {
 }
 exports.UpdatePermissionsEntity = UpdatePermissionsEntity;
 class UserEntity {
-    constructor(id, name, lastName, email, ccType, cc, phoneNumber, password, role, active, partnerInfo) {
+    constructor(id, name, lastName, email, ccType, cc, phoneNumber, password, role, additionalRoles, active, partnerInfo) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
@@ -103,6 +107,7 @@ class UserEntity {
         this.phoneNumber = phoneNumber;
         this.password = password;
         this.role = role;
+        this.additionalRoles = additionalRoles;
         this.active = active;
         this.partnerInfo = partnerInfo;
     }
