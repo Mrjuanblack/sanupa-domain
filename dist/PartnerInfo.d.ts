@@ -18,12 +18,14 @@ export declare class PartnerInfoEntity implements PartnerInfo {
 }
 export interface SimplePartnerInfo {
     name: string;
+    address: string;
     imgPath: string | null;
 }
 export declare class SimplePartnerInfoEntity implements SimplePartnerInfo {
     name: string;
+    address: string;
     imgPath: string | null;
-    constructor(name: string, imgPath: string | null);
+    constructor(name: string, address: string, imgPath: string | null);
 }
 export interface NewPartnerInfoRequest {
     name: string;

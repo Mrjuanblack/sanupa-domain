@@ -24,12 +24,14 @@ export class PartnerInfoEntity implements PartnerInfo {
 
 export interface SimplePartnerInfo {
     name: string
+    address: string
     imgPath: string | null
 }
 
 export class SimplePartnerInfoEntity implements SimplePartnerInfo {
     constructor(
         public name: string,
+        public address: string,
         public imgPath: string | null
     ) { }
 }

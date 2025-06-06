@@ -13,8 +13,9 @@ class PartnerInfoEntity {
 }
 exports.PartnerInfoEntity = PartnerInfoEntity;
 class SimplePartnerInfoEntity {
-    constructor(name, imgPath) {
+    constructor(name, address, imgPath) {
         this.name = name;
+        this.address = address;
         this.imgPath = imgPath;
     }
 }
