@@ -46,3 +46,4 @@ __exportStar(require("./Subcateogry_SubunitType"), exports);
 __exportStar(require("./Price"), exports);
 __exportStar(require("./ProductErrorReport"), exports);
 __exportStar(require("./NoTable"), exports);
+__exportStar(require("./ProductRequest"), exports);

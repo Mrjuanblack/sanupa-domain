@@ -30,3 +30,4 @@ export * from './Subcateogry_SubunitType';
 export * from './Price';
 export * from './ProductErrorReport';
 export * from './NoTable';
+export * from './ProductRequest';
