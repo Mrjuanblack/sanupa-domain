@@ -2,8 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NewPartnerInfoRequestEntity = exports.SimplePartnerInfoEntity = exports.PartnerInfoEntity = void 0;
 class PartnerInfoEntity {
-    constructor(name, address, workingArea_Zones, workingArea_Communities, workingArea_Cities, imgPath) {
+    constructor(name, zone, address, workingArea_Zones, workingArea_Communities, workingArea_Cities, imgPath) {
         this.name = name;
+        this.zone = zone;
         this.address = address;
         this.workingArea_Zones = workingArea_Zones;
         this.workingArea_Communities = workingArea_Communities;

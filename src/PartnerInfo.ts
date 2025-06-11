@@ -1,8 +1,9 @@
-import { ZoneEntity } from "./Location"
+import { Zone } from "./Location"
 import { PartnerWorking_City, PartnerWorking_Community, PartnerWorking_Zone } from "./PartnerWorkingZone"
 
 export interface PartnerInfo {
     name: string
+    zone: Zone
     address: string
     workingArea_Zones: PartnerWorking_Zone[]
     workingArea_Communities: PartnerWorking_Community[]
@@ -14,6 +15,7 @@ export interface PartnerInfo {
 export class PartnerInfoEntity implements PartnerInfo {
     constructor(
         public name: string,
+        public zone: Zone,
         public address: string,
         public workingArea_Zones: PartnerWorking_Zone[],
         public workingArea_Communities: PartnerWorking_Community[],
