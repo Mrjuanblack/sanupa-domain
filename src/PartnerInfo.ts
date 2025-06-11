@@ -27,6 +27,7 @@ export class PartnerInfoEntity implements PartnerInfo {
 export interface SimplePartnerInfo {
     name: string
     address: string
+    zone: Zone
     imgPath: string | null
 }
 
@@ -34,18 +35,13 @@ export class SimplePartnerInfoEntity implements SimplePartnerInfo {
     constructor(
         public name: string,
         public address: string,
+        public zone: Zone,
         public imgPath: string | null
     ) { }
 }
 
 export interface NewPartnerInfoRequest {
     name: string,
-    address: string
-}
-
-export class NewPartnerInfoRequestEntity implements NewPartnerInfoRequest {
-    constructor(
-        public name: string,
-        public address: string
-    ) { }
+    address: string,
+    zoneId: number
 }
