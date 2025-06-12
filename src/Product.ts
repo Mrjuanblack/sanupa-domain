@@ -2,8 +2,8 @@ import { ZoneEntity } from "./Location"
 import { MeasurementType, MeasurementTypeEntity } from "./MeasurementType"
 import { ProductTypeEntity } from "./ProductType"
 import { SubcategoryEntity } from "./Subcategory"
-import { SubcategoryBrandEntity } from "./Subcategory_Brand";
-import { SubcategoryProductType } from "./Subcategory_ProductType";
+import { SubcategoryBrand, SubcategoryBrand_Suggestion, SubcategoryBrandEntity } from "./Subcategory_Brand";
+import { SubcategoryProductType, SubcategoryProductType_Suggestion } from "./Subcategory_ProductType";
 import { SubcategorySubunitType } from "./Subcateogry_SubunitType";
 import { parseStringToNumber } from "./Utils";
 
@@ -214,7 +214,9 @@ export interface ProductWithCode extends BaseProduct {
     market: string
 
     s_productType: SubcategoryProductType | null
-    s_brand: SubcategoryBrandEntity | null
+    s_productTypeSuggestion: SubcategoryProductType_Suggestion | null
+    s_brand: SubcategoryBrand | null
+    s_brandSuggestion: SubcategoryBrand_Suggestion | null
     s_subunitType: SubcategorySubunitType | null
     measurementInfo: string | null
     complementaryInfo: string | null
@@ -264,7 +266,9 @@ export interface NewProduct_Suggest {
     subcategoryId: number
 
     productTypeId: number | null
+    productTypeSuggestion: string | null
     brandId: number | null
+    brandSuggestion: string | null
     subunitTypeId: number | null
     quantity: number | null
 
@@ -309,7 +313,7 @@ export interface ProductWithoutCode extends BaseProduct {
     parkingLots: number | null
     cylinderCapacity: number | null
     mileage: number | null
-    
+
 }
 
 export interface NewProductWithoutCodeRequest {
@@ -414,7 +418,9 @@ export class ProductWithCodeEntity implements ProductWithCode {
         public brand: string,
         public gpc: string,
         public s_productType: SubcategoryProductType | null,
+        public s_productTypeSuggestion: SubcategoryProductType_Suggestion | null,
         public s_brand: SubcategoryBrandEntity | null,
+        public s_brandSuggestion: SubcategoryBrand_Suggestion | null,
         public s_subunitType: SubcategorySubunitType | null,
         public measurementInfo: string | null,
         public complementaryInfo: string | null,

@@ -26,3 +26,21 @@ export declare class SubcategoryBrandWithProductsCountEntity implements Subcateg
     productsCount: number;
     constructor(id: number, subcategoryId: number, name: string, productsCount: number);
 }
+export interface SubcategoryBrand_Suggestion {
+    id: number;
+    subcategoryId: number;
+    name: string;
+    createdBy: number;
+}
+export interface NewSubcategorBrand_SuggestionRequest {
+    subcategoryId: number;
+    name: string;
+    createdBy: number;
+}
+export declare class SubcategoryBrand_SuggestionEntity implements SubcategoryBrand_Suggestion {
+    id: number;
+    subcategoryId: number;
+    name: string;
+    createdBy: number;
+    constructor(id: number, subcategoryId: number, name: string, createdBy: number);
+}

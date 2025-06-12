@@ -29,3 +29,26 @@ export class SubcategoryProductTypeWithProductsCountEntity implements Subcategor
         public productsCount: number
     ) { }
 }
+
+// User's suggestions
+export interface SubcategoryProductType_Suggestion {
+    id: number
+    subcategoryId: number
+    name: string
+    createdBy: number
+}
+
+export interface NewSubcategorProductType_SuggestionRequest {
+    subcategoryId: number
+    name: string
+    createdBy: number
+}
+
+export class SubcategoryProductType_SuggestionEntity implements SubcategoryProductType_Suggestion {
+    constructor(
+        public id: number,
+        public subcategoryId: number,
+        public name: string,
+        public createdBy: number
+    ) { }
+}

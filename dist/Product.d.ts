@@ -1,7 +1,7 @@
 import { ZoneEntity } from "./Location";
 import { SubcategoryEntity } from "./Subcategory";
-import { SubcategoryBrandEntity } from "./Subcategory_Brand";
-import { SubcategoryProductType } from "./Subcategory_ProductType";
+import { SubcategoryBrand, SubcategoryBrand_Suggestion, SubcategoryBrandEntity } from "./Subcategory_Brand";
+import { SubcategoryProductType, SubcategoryProductType_Suggestion } from "./Subcategory_ProductType";
 import { SubcategorySubunitType } from "./Subcateogry_SubunitType";
 export declare function getComplementaryInfo(quantityString: string, unitsString: string): string | null;
 export declare function getQuantityBasedOnUnits(quantityString: string, unitsString: string): number | null;
@@ -82,7 +82,9 @@ export interface ProductWithCode extends BaseProduct {
     measurement: string;
     market: string;
     s_productType: SubcategoryProductType | null;
-    s_brand: SubcategoryBrandEntity | null;
+    s_productTypeSuggestion: SubcategoryProductType_Suggestion | null;
+    s_brand: SubcategoryBrand | null;
+    s_brandSuggestion: SubcategoryBrand_Suggestion | null;
     s_subunitType: SubcategorySubunitType | null;
     measurementInfo: string | null;
     complementaryInfo: string | null;
@@ -123,7 +125,9 @@ export interface NewProduct_Suggest {
     code: string | null;
     subcategoryId: number;
     productTypeId: number | null;
+    productTypeSuggestion: string | null;
     brandId: number | null;
+    brandSuggestion: string | null;
     subunitTypeId: number | null;
     quantity: number | null;
     measurementInfo: string | null;
@@ -252,7 +256,9 @@ export declare class ProductWithCodeEntity implements ProductWithCode {
     brand: string;
     gpc: string;
     s_productType: SubcategoryProductType | null;
+    s_productTypeSuggestion: SubcategoryProductType_Suggestion | null;
     s_brand: SubcategoryBrandEntity | null;
+    s_brandSuggestion: SubcategoryBrand_Suggestion | null;
     s_subunitType: SubcategorySubunitType | null;
     measurementInfo: string | null;
     complementaryInfo: string | null;
@@ -265,7 +271,7 @@ export declare class ProductWithCodeEntity implements ProductWithCode {
     measurement: string;
     market: string;
     productState: ProductState;
-    constructor(id: number, subcategory: SubcategoryEntity, lastUpdated: Date, gtin: string | null, name: string, description: string, brand: string, gpc: string, s_productType: SubcategoryProductType | null, s_brand: SubcategoryBrandEntity | null, s_subunitType: SubcategorySubunitType | null, measurementInfo: string | null, complementaryInfo: string | null, imgPath: string, minImgPath: string, secondImgPath: string, thirdImgPath: string | null, codeImgPath: string | null, quantity: string, measurement: string, market: string, productState: ProductState);
+    constructor(id: number, subcategory: SubcategoryEntity, lastUpdated: Date, gtin: string | null, name: string, description: string, brand: string, gpc: string, s_productType: SubcategoryProductType | null, s_productTypeSuggestion: SubcategoryProductType_Suggestion | null, s_brand: SubcategoryBrandEntity | null, s_brandSuggestion: SubcategoryBrand_Suggestion | null, s_subunitType: SubcategorySubunitType | null, measurementInfo: string | null, complementaryInfo: string | null, imgPath: string, minImgPath: string, secondImgPath: string, thirdImgPath: string | null, codeImgPath: string | null, quantity: string, measurement: string, market: string, productState: ProductState);
 }
 export declare class ProductWithoutCodeEntity implements ProductWithoutCode {
     id: number;
