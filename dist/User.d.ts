@@ -70,6 +70,15 @@ export declare class SimpleUser_WithPartnerInfoEntity implements SimpleUser_With
     partnerInfo: SimplePartnerInfoEntity;
     constructor(id: number, name: string, partnerInfo: SimplePartnerInfoEntity);
 }
+export interface SimpleUser_ContactInfo extends SimpleUser {
+    phoneNumber: string;
+}
+export declare class SimpleUser_ContactInfoEntity implements SimpleUser_ContactInfo {
+    id: number;
+    name: string;
+    phoneNumber: string;
+    constructor(id: number, name: string, phoneNumber: string);
+}
 export declare function isUserCookie(o: any): o is UserMetadata;
 export interface NewUserRequest {
     name: string;

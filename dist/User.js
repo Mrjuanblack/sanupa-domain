@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateNamesRequestEntity = exports.UpdateEmailRequestEntity = exports.UpdateIdentificationRequestEntity = exports.UpdatePhoneNumberRequestEntity = exports.UpdatePasswordRequestEntity = exports.UserEntity = exports.UpdatePermissionsEntity = exports.UpdateFacturationInfoRequestEntity = exports.SimpleUser_WithPartnerInfoEntity = exports.SimpleUserEntity = exports.AdditionalRole = exports.UserRole = exports.CCTypeList = exports.CCType = exports.LoginErrors = void 0;
+exports.UpdateNamesRequestEntity = exports.UpdateEmailRequestEntity = exports.UpdateIdentificationRequestEntity = exports.UpdatePhoneNumberRequestEntity = exports.UpdatePasswordRequestEntity = exports.UserEntity = exports.UpdatePermissionsEntity = exports.UpdateFacturationInfoRequestEntity = exports.SimpleUser_ContactInfoEntity = exports.SimpleUser_WithPartnerInfoEntity = exports.SimpleUserEntity = exports.AdditionalRole = exports.UserRole = exports.CCTypeList = exports.CCType = exports.LoginErrors = void 0;
 exports.getCCTypeString = getCCTypeString;
 exports.getUserRoleString = getUserRoleString;
 exports.isUserCookie = isUserCookie;
@@ -67,6 +67,14 @@ class SimpleUser_WithPartnerInfoEntity {
     }
 }
 exports.SimpleUser_WithPartnerInfoEntity = SimpleUser_WithPartnerInfoEntity;
+class SimpleUser_ContactInfoEntity {
+    constructor(id, name, phoneNumber) {
+        this.id = id;
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+    }
+}
+exports.SimpleUser_ContactInfoEntity = SimpleUser_ContactInfoEntity;
 function isUserCookie(o) {
     return (typeof o === 'object' &&
         o !== null &&

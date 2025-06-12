@@ -115,6 +115,18 @@ export class SimpleUser_WithPartnerInfoEntity implements SimpleUser_WithPartnerI
     ) { }
 }
 
+export interface SimpleUser_ContactInfo extends SimpleUser {
+    phoneNumber: string
+}
+
+export class SimpleUser_ContactInfoEntity implements SimpleUser_ContactInfo {
+    constructor(
+        public id: number,
+        public name: string,
+        public phoneNumber: string
+    ) { }
+}
+
 export function isUserCookie(o: any): o is UserMetadata {
     return (
         typeof o === 'object' &&
