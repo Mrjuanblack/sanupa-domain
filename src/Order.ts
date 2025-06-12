@@ -159,6 +159,7 @@ export interface ChildOrder {
     evidenceImg: string | null
 
     deliveryUserId: number | null
+    deliveryUserAccepted: boolean
 
     hasCustomerSupport: boolean
     products: OrderItemEntity[]
@@ -172,6 +173,7 @@ export class ChildOrderEntity implements ChildOrder {
         public deliveryPrice: number,
         public evidenceImg: string | null,
         public deliveryUserId: number | null,
+        public deliveryUserAccepted: boolean,
         public hasCustomerSupport: boolean,
         public products: OrderItemEntity[]
     ) { }
@@ -184,6 +186,7 @@ export interface ChildOrder_Admin {
     state: OrderState
     deliveryPrice: number
     deliveryUserId: number | null
+    deliveryUserAccepted: boolean
     evidenceImg: string | null
 
     hasCustomerSupport: boolean
@@ -198,6 +201,7 @@ export class ChildOrder_AdminEntity implements ChildOrder_Admin {
         public state: OrderState,
         public deliveryPrice: number,
         public deliveryUserId: number | null,
+        public deliveryUserAccepted: boolean,
         public evidenceImg: string | null,
         public hasCustomerSupport: boolean,
         public products: OrderItemEntity[]
@@ -212,6 +216,7 @@ export interface SimpleChildOrder {
     price: number
     deliveryPrice: number
     deliveryUserId: number | null
+    deliveryUserAccepted: boolean
     partnerInformation: SimplePartnerInfoEntity
     hasCustomerSupport: boolean
 }
@@ -224,6 +229,7 @@ export class SimpleChildOrderEntity implements SimpleChildOrder {
         public price: number,
         public deliveryPrice: number,
         public deliveryUserId: number | null,
+        public deliveryUserAccepted: boolean,
         public partnerInformation: SimplePartnerInfoEntity,
         public hasCustomerSupport: boolean,
     ) { }
@@ -235,6 +241,7 @@ export interface SimpleChildOrder_Partner {
     state: OrderState
     price: number
     deliveryPrice: number
+    deliveryUserAccepted: boolean
     deliveryUserId: number | null
 }
 
@@ -245,6 +252,7 @@ export class SimpleChildOrder_PartnerEntity implements SimpleChildOrder_Partner 
         public state: OrderState,
         public price: number,
         public deliveryPrice: number,
+        public deliveryUserAccepted: boolean,
         public deliveryUserId: number | null,
     ) { }
 }
@@ -257,6 +265,7 @@ export interface SimpleChildOrder_Admin {
     price: number
     deliveryPrice: number
     deliveryUserId: number | null
+    deliveryUserAccepted: boolean
     evidenceImg: string | null
     partnerInformation: SimplePartnerInfoEntity
     hasCustomerSupport: boolean
@@ -271,6 +280,7 @@ export class SimpleChildOrder_AdminEntity implements SimpleChildOrder_Admin {
         public price: number,
         public deliveryPrice: number,
         public deliveryUserId: number | null,
+        public deliveryUserAccepted: boolean,
         public evidenceImg: string | null,
         public partnerInformation: SimplePartnerInfoEntity,
         public hasCustomerSupport: boolean,
