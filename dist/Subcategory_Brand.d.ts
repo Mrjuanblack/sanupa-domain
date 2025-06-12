@@ -32,7 +32,7 @@ export interface SubcategoryBrand_Suggestion {
     name: string;
     createdBy: number;
 }
-export interface NewSubcategorBrand_SuggestionRequest {
+export interface NewSubcategoryBrand_SuggestionRequest {
     subcategoryId: number;
     name: string;
     createdBy: number;

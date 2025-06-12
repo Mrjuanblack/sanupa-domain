@@ -38,7 +38,7 @@ export interface SubcategoryProductType_Suggestion {
     createdBy: number
 }
 
-export interface NewSubcategorProductType_SuggestionRequest {
+export interface NewSubcategoryProductType_SuggestionRequest {
     subcategoryId: number
     name: string
     createdBy: number
