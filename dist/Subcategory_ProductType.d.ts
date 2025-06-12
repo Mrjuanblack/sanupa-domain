@@ -6,7 +6,7 @@ export interface SubcategoryProductType {
 export interface SubcategoryProductTypeWithProductsCount extends SubcategoryProductType {
     productsCount: number;
 }
-export interface NewSubcategorProductTypeRequest {
+export interface NewSubcategoryProductTypeRequest {
     subcategoryId: number;
     name: string;
 }
