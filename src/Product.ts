@@ -263,8 +263,8 @@ export interface NewProduct_Suggest {
     code: string | null
     subcategoryId: number
 
-    productTypeId: number
-    brandId: number
+    productTypeId: number | null
+    brandId: number | null
     subunitTypeId: number | null
     quantity: number | null
 
