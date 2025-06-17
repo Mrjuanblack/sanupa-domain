@@ -111,7 +111,7 @@ class OrderItemEntity {
 }
 exports.OrderItemEntity = OrderItemEntity;
 class ChildOrderEntity {
-    constructor(id, parentOrder, state, deliveryPrice, evidenceImg, deliveryUserId, deliveryUserAccepted, hasCustomerSupport, products) {
+    constructor(id, parentOrder, state, deliveryPrice, evidenceImg, deliveryUserId, deliveryUserAccepted, hasCustomerSupport, products, updatedAt) {
         this.id = id;
         this.parentOrder = parentOrder;
         this.state = state;
@@ -121,11 +121,12 @@ class ChildOrderEntity {
         this.deliveryUserAccepted = deliveryUserAccepted;
         this.hasCustomerSupport = hasCustomerSupport;
         this.products = products;
+        this.updatedAt = updatedAt;
     }
 }
 exports.ChildOrderEntity = ChildOrderEntity;
 class ChildOrder_AdminEntity {
-    constructor(id, parentOrder, user, state, deliveryPrice, deliveryUserId, deliveryUserAccepted, evidenceImg, hasCustomerSupport, products) {
+    constructor(id, parentOrder, user, state, deliveryPrice, deliveryUserId, deliveryUserAccepted, evidenceImg, hasCustomerSupport, products, updatedAt) {
         this.id = id;
         this.parentOrder = parentOrder;
         this.user = user;
@@ -136,11 +137,12 @@ class ChildOrder_AdminEntity {
         this.evidenceImg = evidenceImg;
         this.hasCustomerSupport = hasCustomerSupport;
         this.products = products;
+        this.updatedAt = updatedAt;
     }
 }
 exports.ChildOrder_AdminEntity = ChildOrder_AdminEntity;
 class SimpleChildOrderEntity {
-    constructor(id, parentOrder, state, price, deliveryPrice, deliveryUserId, deliveryUserAccepted, partnerInformation, hasCustomerSupport) {
+    constructor(id, parentOrder, state, price, deliveryPrice, deliveryUserId, deliveryUserAccepted, partnerInformation, hasCustomerSupport, updatedAt) {
         this.id = id;
         this.parentOrder = parentOrder;
         this.state = state;
@@ -150,11 +152,12 @@ class SimpleChildOrderEntity {
         this.deliveryUserAccepted = deliveryUserAccepted;
         this.partnerInformation = partnerInformation;
         this.hasCustomerSupport = hasCustomerSupport;
+        this.updatedAt = updatedAt;
     }
 }
 exports.SimpleChildOrderEntity = SimpleChildOrderEntity;
 class SimpleChildOrder_PartnerEntity {
-    constructor(id, parentOrder, state, price, deliveryPrice, deliveryUserAccepted, deliveryUserId) {
+    constructor(id, parentOrder, state, price, deliveryPrice, deliveryUserAccepted, deliveryUserId, updatedAt) {
         this.id = id;
         this.parentOrder = parentOrder;
         this.state = state;
@@ -162,11 +165,12 @@ class SimpleChildOrder_PartnerEntity {
         this.deliveryPrice = deliveryPrice;
         this.deliveryUserAccepted = deliveryUserAccepted;
         this.deliveryUserId = deliveryUserId;
+        this.updatedAt = updatedAt;
     }
 }
 exports.SimpleChildOrder_PartnerEntity = SimpleChildOrder_PartnerEntity;
 class SimpleChildOrder_AdminEntity {
-    constructor(id, parentOrder, user, state, price, deliveryPrice, deliveryUserId, deliveryUserAccepted, evidenceImg, partnerInformation, hasCustomerSupport) {
+    constructor(id, parentOrder, user, state, price, deliveryPrice, deliveryUserId, deliveryUserAccepted, evidenceImg, partnerInformation, hasCustomerSupport, updatedAt) {
         this.id = id;
         this.parentOrder = parentOrder;
         this.user = user;
@@ -178,6 +182,7 @@ class SimpleChildOrder_AdminEntity {
         this.evidenceImg = evidenceImg;
         this.partnerInformation = partnerInformation;
         this.hasCustomerSupport = hasCustomerSupport;
+        this.updatedAt = updatedAt;
     }
 }
 exports.SimpleChildOrder_AdminEntity = SimpleChildOrder_AdminEntity;

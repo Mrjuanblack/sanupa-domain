@@ -163,6 +163,8 @@ export interface ChildOrder {
 
     hasCustomerSupport: boolean
     products: OrderItemEntity[]
+
+    updatedAt: Date
 }
 
 export class ChildOrderEntity implements ChildOrder {
@@ -175,7 +177,9 @@ export class ChildOrderEntity implements ChildOrder {
         public deliveryUserId: number | null,
         public deliveryUserAccepted: boolean,
         public hasCustomerSupport: boolean,
-        public products: OrderItemEntity[]
+        public products: OrderItemEntity[],
+        public updatedAt: Date
+        
     ) { }
 }
 
@@ -191,6 +195,7 @@ export interface ChildOrder_Admin {
 
     hasCustomerSupport: boolean
     products: OrderItemEntity[]
+    updatedAt: Date
 }
 
 export class ChildOrder_AdminEntity implements ChildOrder_Admin {
@@ -204,7 +209,8 @@ export class ChildOrder_AdminEntity implements ChildOrder_Admin {
         public deliveryUserAccepted: boolean,
         public evidenceImg: string | null,
         public hasCustomerSupport: boolean,
-        public products: OrderItemEntity[]
+        public products: OrderItemEntity[],
+        public updatedAt: Date
     ) { }
 
 }
@@ -219,6 +225,7 @@ export interface SimpleChildOrder {
     deliveryUserAccepted: boolean
     partnerInformation: SimplePartnerInfoEntity
     hasCustomerSupport: boolean
+    updatedAt: Date
 }
 
 export class SimpleChildOrderEntity implements SimpleChildOrder {
@@ -232,6 +239,7 @@ export class SimpleChildOrderEntity implements SimpleChildOrder {
         public deliveryUserAccepted: boolean,
         public partnerInformation: SimplePartnerInfoEntity,
         public hasCustomerSupport: boolean,
+        public updatedAt: Date,
     ) { }
 }
 
@@ -243,6 +251,7 @@ export interface SimpleChildOrder_Partner {
     deliveryPrice: number
     deliveryUserAccepted: boolean
     deliveryUserId: number | null
+    updatedAt: Date
 }
 
 export class SimpleChildOrder_PartnerEntity implements SimpleChildOrder_Partner {
@@ -254,6 +263,7 @@ export class SimpleChildOrder_PartnerEntity implements SimpleChildOrder_Partner 
         public deliveryPrice: number,
         public deliveryUserAccepted: boolean,
         public deliveryUserId: number | null,
+        public updatedAt: Date
     ) { }
 }
 
@@ -269,6 +279,7 @@ export interface SimpleChildOrder_Admin {
     evidenceImg: string | null
     partnerInformation: SimplePartnerInfoEntity
     hasCustomerSupport: boolean
+    updatedAt: Date
 }
 
 export class SimpleChildOrder_AdminEntity implements SimpleChildOrder_Admin {
@@ -284,6 +295,7 @@ export class SimpleChildOrder_AdminEntity implements SimpleChildOrder_Admin {
         public evidenceImg: string | null,
         public partnerInformation: SimplePartnerInfoEntity,
         public hasCustomerSupport: boolean,
+        public updatedAt: Date
     ) { }
 }
 
