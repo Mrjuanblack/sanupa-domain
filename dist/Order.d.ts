@@ -92,6 +92,19 @@ export declare class OrderItemEntity implements OrderItem {
     quantityChecked: number;
     constructor(id: number, childOrderId: number, product: PartnerProductEntiy, price: number, quantity: number, quantityChecked: number);
 }
+export interface ChildOrder_MonthlyOverview {
+    datePeriod: Date;
+    totalChildOrders: number;
+    totalIncome: number;
+    totalIncomDelivery: number;
+}
+export declare class ChildOrder_MonthlyOverviewEntity implements ChildOrder_MonthlyOverview {
+    datePeriod: Date;
+    totalChildOrders: number;
+    totalIncome: number;
+    totalIncomDelivery: number;
+    constructor(datePeriod: Date, totalChildOrders: number, totalIncome: number, totalIncomDelivery: number);
+}
 export interface ChildOrder {
     id: number;
     parentOrder: SimpleParentOrderEntity;

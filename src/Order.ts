@@ -151,6 +151,22 @@ export class OrderItemEntity implements OrderItem {
     ) { }
 }
 
+export interface ChildOrder_MonthlyOverview {
+    datePeriod: Date
+    totalChildOrders: number
+    totalIncome: number
+    totalIncomDelivery: number
+}
+
+export class ChildOrder_MonthlyOverviewEntity implements ChildOrder_MonthlyOverview {
+    constructor(
+        public datePeriod: Date,
+        public totalChildOrders: number,
+        public totalIncome: number,
+        public totalIncomDelivery: number
+    ) { }
+}
+
 export interface ChildOrder {
     id: number
     parentOrder: SimpleParentOrderEntity

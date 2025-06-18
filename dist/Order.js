@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OrderReportEntity = exports.SimpleChildOrder_AdminEntity = exports.SimpleChildOrder_PartnerEntity = exports.SimpleChildOrderEntity = exports.ChildOrder_AdminEntity = exports.ChildOrderEntity = exports.OrderItemEntity = exports.NewOrderRequestEntity = exports.SimpleParentOrderEntity = exports.ParentOrderEntity = exports.DeliveryTimeList = exports.DeliveryTime = exports.isOrderEditable = exports.OrderStateList = exports.OrderState = void 0;
+exports.OrderReportEntity = exports.SimpleChildOrder_AdminEntity = exports.SimpleChildOrder_PartnerEntity = exports.SimpleChildOrderEntity = exports.ChildOrder_AdminEntity = exports.ChildOrderEntity = exports.ChildOrder_MonthlyOverviewEntity = exports.OrderItemEntity = exports.NewOrderRequestEntity = exports.SimpleParentOrderEntity = exports.ParentOrderEntity = exports.DeliveryTimeList = exports.DeliveryTime = exports.isOrderEditable = exports.OrderStateList = exports.OrderState = void 0;
 exports.getOrderStateString = getOrderStateString;
 exports.getDeliveryTimeString = getDeliveryTimeString;
 exports.getDeliveryMaxTimeString = getDeliveryMaxTimeString;
@@ -110,6 +110,15 @@ class OrderItemEntity {
     }
 }
 exports.OrderItemEntity = OrderItemEntity;
+class ChildOrder_MonthlyOverviewEntity {
+    constructor(datePeriod, totalChildOrders, totalIncome, totalIncomDelivery) {
+        this.datePeriod = datePeriod;
+        this.totalChildOrders = totalChildOrders;
+        this.totalIncome = totalIncome;
+        this.totalIncomDelivery = totalIncomDelivery;
+    }
+}
+exports.ChildOrder_MonthlyOverviewEntity = ChildOrder_MonthlyOverviewEntity;
 class ChildOrderEntity {
     constructor(id, parentOrder, state, deliveryPrice, evidenceImg, deliveryUserId, deliveryUserAccepted, hasCustomerSupport, products, updatedAt, rating) {
         this.id = id;
