@@ -165,6 +165,7 @@ export interface ChildOrder {
     products: OrderItemEntity[]
 
     updatedAt: Date
+    rating: number | null
 }
 
 export class ChildOrderEntity implements ChildOrder {
@@ -178,8 +179,8 @@ export class ChildOrderEntity implements ChildOrder {
         public deliveryUserAccepted: boolean,
         public hasCustomerSupport: boolean,
         public products: OrderItemEntity[],
-        public updatedAt: Date
-        
+        public updatedAt: Date,
+        public rating: number | null
     ) { }
 }
 
@@ -196,6 +197,7 @@ export interface ChildOrder_Admin {
     hasCustomerSupport: boolean
     products: OrderItemEntity[]
     updatedAt: Date
+    rating: number | null
 }
 
 export class ChildOrder_AdminEntity implements ChildOrder_Admin {
@@ -210,7 +212,8 @@ export class ChildOrder_AdminEntity implements ChildOrder_Admin {
         public evidenceImg: string | null,
         public hasCustomerSupport: boolean,
         public products: OrderItemEntity[],
-        public updatedAt: Date
+        public updatedAt: Date,
+        public rating: number | null
     ) { }
 
 }
@@ -226,6 +229,7 @@ export interface SimpleChildOrder {
     partnerInformation: SimplePartnerInfoEntity
     hasCustomerSupport: boolean
     updatedAt: Date
+    rating: number | null
 }
 
 export class SimpleChildOrderEntity implements SimpleChildOrder {
@@ -240,6 +244,7 @@ export class SimpleChildOrderEntity implements SimpleChildOrder {
         public partnerInformation: SimplePartnerInfoEntity,
         public hasCustomerSupport: boolean,
         public updatedAt: Date,
+        public rating: number | null
     ) { }
 }
 
@@ -252,6 +257,7 @@ export interface SimpleChildOrder_Partner {
     deliveryUserAccepted: boolean
     deliveryUserId: number | null
     updatedAt: Date
+    rating: number | null
 }
 
 export class SimpleChildOrder_PartnerEntity implements SimpleChildOrder_Partner {
@@ -263,7 +269,8 @@ export class SimpleChildOrder_PartnerEntity implements SimpleChildOrder_Partner 
         public deliveryPrice: number,
         public deliveryUserAccepted: boolean,
         public deliveryUserId: number | null,
-        public updatedAt: Date
+        public updatedAt: Date,
+        public rating: number | null
     ) { }
 }
 
@@ -280,6 +287,7 @@ export interface SimpleChildOrder_Admin {
     partnerInformation: SimplePartnerInfoEntity
     hasCustomerSupport: boolean
     updatedAt: Date
+    rating: number | null
 }
 
 export class SimpleChildOrder_AdminEntity implements SimpleChildOrder_Admin {
@@ -295,7 +303,8 @@ export class SimpleChildOrder_AdminEntity implements SimpleChildOrder_Admin {
         public evidenceImg: string | null,
         public partnerInformation: SimplePartnerInfoEntity,
         public hasCustomerSupport: boolean,
-        public updatedAt: Date
+        public updatedAt: Date,
+        public rating: number | null
     ) { }
 }
 
