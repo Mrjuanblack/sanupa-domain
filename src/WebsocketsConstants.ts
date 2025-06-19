@@ -44,7 +44,7 @@ export interface WS_NotificationData{
     myStoreStats: MyStoreStats
 }
 export class WS_Notifications {
-    static GetNotificationEventName_Send = (userId: number) => {
+    static GetNotificationRoomName = (userId: number) => {
         return `notification:${userId}`
     }
 

@@ -14,7 +14,7 @@ var WS_ProductsCreate;
 class WS_Notifications {
 }
 exports.WS_Notifications = WS_Notifications;
-WS_Notifications.GetNotificationEventName_Send = (userId) => {
+WS_Notifications.GetNotificationRoomName = (userId) => {
     return `notification:${userId}`;
 };
 WS_Notifications.GetNotificationEventName_Error = (userId) => {
