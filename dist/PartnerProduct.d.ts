@@ -18,7 +18,7 @@ export interface NewPartnerProductRequest {
 }
 export type UpdatePartnerProductRequest = {
     id: number;
-    priceSubunit: number | null;
+    price: NewPriceRequest[];
     stock: number | null;
 };
 export interface PartnerProduct_NotValidated {
