@@ -28,6 +28,9 @@ export interface ProductsCreateError {
     total: number;
     error: string;
 }
+export declare enum WS_NotificationEvents {
+    Refresh = "notificationRefresh"
+}
 export interface WS_NotificationData {
     myCartCount: MyCartCount;
     myStoreCount: MyStoreCount;

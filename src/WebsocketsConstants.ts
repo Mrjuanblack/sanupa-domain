@@ -36,6 +36,10 @@ export interface ProductsCreateError {
     error: string
 }
 
+export enum WS_NotificationEvents {
+    Refresh = "notificationRefresh"
+}
+
 // Notifications
 export interface WS_NotificationData{
     myCartCount: MyCartCount

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WS_Notifications = exports.WS_ProductsCreate = exports.WS_Emails = void 0;
+exports.WS_Notifications = exports.WS_NotificationEvents = exports.WS_ProductsCreate = exports.WS_Emails = void 0;
 var WS_Emails;
 (function (WS_Emails) {
     WS_Emails["EmailProgress"] = "emailProgress";
@@ -11,6 +11,10 @@ var WS_ProductsCreate;
     WS_ProductsCreate["ProductsCreateProgress"] = "productsCreateProgress";
     WS_ProductsCreate["ProductsCreateError"] = "productsCreateError";
 })(WS_ProductsCreate || (exports.WS_ProductsCreate = WS_ProductsCreate = {}));
+var WS_NotificationEvents;
+(function (WS_NotificationEvents) {
+    WS_NotificationEvents["Refresh"] = "notificationRefresh";
+})(WS_NotificationEvents || (exports.WS_NotificationEvents = WS_NotificationEvents = {}));
 class WS_Notifications {
 }
 exports.WS_Notifications = WS_Notifications;
