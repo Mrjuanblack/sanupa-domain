@@ -11,9 +11,11 @@ var WS_ProductsCreate;
     WS_ProductsCreate["ProductsCreateProgress"] = "productsCreateProgress";
     WS_ProductsCreate["ProductsCreateError"] = "productsCreateError";
 })(WS_ProductsCreate || (exports.WS_ProductsCreate = WS_ProductsCreate = {}));
+// Notifications
 var WS_NotificationEvents;
 (function (WS_NotificationEvents) {
     WS_NotificationEvents["Refresh"] = "notificationRefresh";
+    WS_NotificationEvents["UpdateStock"] = "notificationUpdateStock";
 })(WS_NotificationEvents || (exports.WS_NotificationEvents = WS_NotificationEvents = {}));
 class WS_Notifications {
 }

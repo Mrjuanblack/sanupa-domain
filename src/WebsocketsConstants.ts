@@ -36,17 +36,24 @@ export interface ProductsCreateError {
     error: string
 }
 
+// Notifications
 export enum WS_NotificationEvents {
-    Refresh = "notificationRefresh"
+    Refresh = "notificationRefresh",
+    UpdateStock = "notificationUpdateStock"
 }
 
-// Notifications
-export interface WS_NotificationData{
+export interface WS_NotificationData_Counters{
     myCartCount: MyCartCount
     myStoreCount: MyStoreCount | null
     myDeliveriesCount: MyDeliveriesCount | null
     myStoreStats: MyStoreStats | null
 }
+
+export interface WS_NotificationData_UpdateStock {
+    partnerProductId: number
+    newStock: number | null
+}
+
 export class WS_Notifications {
     static GetNotificationRoomName = (userId: number) => {
         return `notification:${userId}`

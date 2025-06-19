@@ -100,19 +100,6 @@ export declare class PartnerProductEntiy implements PartnerProduct {
     stock: number | null;
     constructor(id: number, internalCode: string | null, product: ProductWithCodeEntity | ProductWithoutCodeEntity, partner: SimpleUser_WithPartnerInfoEntity, priceSubunit: number | null, price: PriceEntity[], stock: number | null);
 }
-export interface PartnerProduct_UpdateStock {
-    partnerProductId: number;
-    newStock: number | null;
-}
-/**
- * Class used for when a partner sends an order and the stock is updated for all the products in that order.
- * This class is fetched from the backend after sending the order and is used to update other products in the partner's page.
- */
-export declare class PartnerProduct_UpdateStockEntity implements PartnerProduct_UpdateStock {
-    partnerProductId: number;
-    newStock: number | null;
-    constructor(partnerProductId: number, newStock: number | null);
-}
 export interface PP_Filter {
     price: number | null;
     stock: number | null;
