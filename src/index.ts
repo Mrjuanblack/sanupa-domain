@@ -32,3 +32,4 @@ export * from './ProductErrorReport';
 export * from './NoTable';
 export * from './ProductRequest';
 export * from './DeliveryWorkingZone';
+export * from './ServerSentEvents';

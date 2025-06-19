@@ -48,3 +48,4 @@ __exportStar(require("./ProductErrorReport"), exports);
 __exportStar(require("./NoTable"), exports);
 __exportStar(require("./ProductRequest"), exports);
 __exportStar(require("./DeliveryWorkingZone"), exports);
+__exportStar(require("./ServerSentEvents"), exports);
