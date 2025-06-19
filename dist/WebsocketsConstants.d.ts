@@ -33,9 +33,9 @@ export declare enum WS_NotificationEvents {
 }
 export interface WS_NotificationData {
     myCartCount: MyCartCount;
-    myStoreCount: MyStoreCount;
-    myDeliveriesCount: MyDeliveriesCount;
-    myStoreStats: MyStoreStats;
+    myStoreCount: MyStoreCount | null;
+    myDeliveriesCount: MyDeliveriesCount | null;
+    myStoreStats: MyStoreStats | null;
 }
 export declare class WS_Notifications {
     static GetNotificationRoomName: (userId: number) => string;
