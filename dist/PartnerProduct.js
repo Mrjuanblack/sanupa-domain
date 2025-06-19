@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PP_FilterEntity = exports.PartnerProductEntiy = exports.ListPartnerProductEntity = exports.SimplePartnerProduct_HasUserZoneEntity = exports.SimplePartnerProductEntity = exports.PartnerProduct_NotValidatedEntity = void 0;
+exports.PP_FilterEntity = exports.PartnerProduct_UpdateStockEntity = exports.PartnerProductEntiy = exports.ListPartnerProductEntity = exports.SimplePartnerProduct_HasUserZoneEntity = exports.SimplePartnerProductEntity = exports.PartnerProduct_NotValidatedEntity = void 0;
 class PartnerProduct_NotValidatedEntity {
     constructor(id, partnerId, product) {
         this.id = id;
@@ -53,6 +53,17 @@ class PartnerProductEntiy {
     }
 }
 exports.PartnerProductEntiy = PartnerProductEntiy;
+/**
+ * Class used for when a partner sends an order and the stock is updated for all the products in that order.
+ * This class is fetched from the backend after sending the order and is used to update other products in the partner's page.
+ */
+class PartnerProduct_UpdateStockEntity {
+    constructor(partnerProductId, newStock) {
+        this.partnerProductId = partnerProductId;
+        this.newStock = newStock;
+    }
+}
+exports.PartnerProduct_UpdateStockEntity = PartnerProduct_UpdateStockEntity;
 class PP_FilterEntity {
     constructor(price, stock, categoryId, subcategoryId, description, brand, name, zoneId, favorite) {
         this.price = price;
