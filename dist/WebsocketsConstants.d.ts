@@ -1,3 +1,7 @@
+import { MyCartCount, MyStoreCount, MyDeliveriesCount, MyStoreStats } from "./NoTable";
+export interface WS_GenericError {
+    error: string;
+}
 export declare enum WS_Emails {
     EmailProgress = "emailProgress",
     EmailError = "emailError"
@@ -23,4 +27,15 @@ export interface ProductsCreateError {
     index: number;
     total: number;
     error: string;
+}
+export interface WS_NotificationData {
+    myCartCount: MyCartCount;
+    myStoreCount: MyStoreCount;
+    myDeliveriesCount: MyDeliveriesCount;
+    myStoreStats: MyStoreStats;
+}
+export declare class WS_Notifications {
+    static GetNotificationEventName_Send: (userId: number) => string;
+    static GetNotificationEventName_Error: (userId: number) => string;
+    static GetNotificationEventName_Connected: (userId: number) => string;
 }
