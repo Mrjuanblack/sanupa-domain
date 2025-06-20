@@ -64,9 +64,9 @@ class SimpleParentOrderEntity {
 }
 exports.SimpleParentOrderEntity = SimpleParentOrderEntity;
 class NewOrderRequestEntity {
-    constructor(deliveryDate, deliveryTime) {
+    constructor(deliveryDate, deliveryTimeId) {
         this.deliveryDate = deliveryDate;
-        this.deliveryTime = deliveryTime;
+        this.deliveryTimeId = deliveryTimeId;
     }
 }
 exports.NewOrderRequestEntity = NewOrderRequestEntity;

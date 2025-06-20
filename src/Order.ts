@@ -95,13 +95,13 @@ export class SimpleParentOrderEntity implements SimpleParentOrder {
 
 export interface NewOrderRequest {
     deliveryDate: Date
-    deliveryTime: TimeRangeEntity
+    deliveryTimeId: number
 }
 
 export class NewOrderRequestEntity implements NewOrderRequest {
     constructor(
         public deliveryDate: Date,
-        public deliveryTime: TimeRangeEntity
+        public deliveryTimeId: number
     ) { }
 }
 

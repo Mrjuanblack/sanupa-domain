@@ -61,12 +61,12 @@ export declare class SimpleParentOrderEntity implements SimpleParentOrder {
 }
 export interface NewOrderRequest {
     deliveryDate: Date;
-    deliveryTime: TimeRangeEntity;
+    deliveryTimeId: number;
 }
 export declare class NewOrderRequestEntity implements NewOrderRequest {
     deliveryDate: Date;
-    deliveryTime: TimeRangeEntity;
-    constructor(deliveryDate: Date, deliveryTime: TimeRangeEntity);
+    deliveryTimeId: number;
+    constructor(deliveryDate: Date, deliveryTimeId: number);
 }
 export interface OrderItem {
     id: number;
