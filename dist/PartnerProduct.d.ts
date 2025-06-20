@@ -40,6 +40,7 @@ export interface SimplePartnerProduct {
     priceSubunit: number | null;
     stock: number | null;
     price: PriceEntity[];
+    active: boolean;
 }
 export declare class SimplePartnerProductEntity implements SimplePartnerProduct {
     id: number;
@@ -49,7 +50,8 @@ export declare class SimplePartnerProductEntity implements SimplePartnerProduct 
     priceSubunit: number | null;
     stock: number | null;
     price: PriceEntity[];
-    constructor(id: number, internalCode: string | null, partner: SimpleUser_WithPartnerInfoEntity, product: MutualExclusiveProductId, priceSubunit: number | null, stock: number | null, price: PriceEntity[]);
+    active: boolean;
+    constructor(id: number, internalCode: string | null, partner: SimpleUser_WithPartnerInfoEntity, product: MutualExclusiveProductId, priceSubunit: number | null, stock: number | null, price: PriceEntity[], active: boolean);
 }
 export interface SimplePartnerProduct_HasUserZone {
     id: number;
@@ -59,6 +61,7 @@ export interface SimplePartnerProduct_HasUserZone {
     priceSubunit: number | null;
     stock: number | null;
     price: PriceEntity[];
+    active: boolean;
 }
 export declare class SimplePartnerProduct_HasUserZoneEntity implements SimplePartnerProduct_HasUserZone {
     id: number;
@@ -68,7 +71,8 @@ export declare class SimplePartnerProduct_HasUserZoneEntity implements SimplePar
     priceSubunit: number | null;
     stock: number | null;
     price: PriceEntity[];
-    constructor(id: number, internalCode: string | null, isInUserZone: boolean, partner: SimpleUser_WithPartnerInfoEntity, priceSubunit: number | null, stock: number | null, price: PriceEntity[]);
+    active: boolean;
+    constructor(id: number, internalCode: string | null, isInUserZone: boolean, partner: SimpleUser_WithPartnerInfoEntity, priceSubunit: number | null, stock: number | null, price: PriceEntity[], active: boolean);
 }
 export interface ListPartnerProduct {
     favorite: boolean;
@@ -89,6 +93,7 @@ export interface PartnerProduct {
     priceSubunit: number | null;
     price: PriceEntity[];
     stock: number | null;
+    active: boolean;
 }
 export declare class PartnerProductEntiy implements PartnerProduct {
     id: number;
@@ -98,7 +103,8 @@ export declare class PartnerProductEntiy implements PartnerProduct {
     priceSubunit: number | null;
     price: PriceEntity[];
     stock: number | null;
-    constructor(id: number, internalCode: string | null, product: ProductWithCodeEntity | ProductWithoutCodeEntity, partner: SimpleUser_WithPartnerInfoEntity, priceSubunit: number | null, price: PriceEntity[], stock: number | null);
+    active: boolean;
+    constructor(id: number, internalCode: string | null, product: ProductWithCodeEntity | ProductWithoutCodeEntity, partner: SimpleUser_WithPartnerInfoEntity, priceSubunit: number | null, price: PriceEntity[], stock: number | null, active: boolean);
 }
 export interface PP_Filter {
     price: number | null;

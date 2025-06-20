@@ -10,7 +10,7 @@ class PartnerProduct_NotValidatedEntity {
 }
 exports.PartnerProduct_NotValidatedEntity = PartnerProduct_NotValidatedEntity;
 class SimplePartnerProductEntity {
-    constructor(id, internalCode, partner, product, priceSubunit, stock, price) {
+    constructor(id, internalCode, partner, product, priceSubunit, stock, price, active) {
         this.id = id;
         this.internalCode = internalCode;
         this.partner = partner;
@@ -18,11 +18,12 @@ class SimplePartnerProductEntity {
         this.priceSubunit = priceSubunit;
         this.stock = stock;
         this.price = price;
+        this.active = active;
     }
 }
 exports.SimplePartnerProductEntity = SimplePartnerProductEntity;
 class SimplePartnerProduct_HasUserZoneEntity {
-    constructor(id, internalCode, isInUserZone, partner, priceSubunit, stock, price) {
+    constructor(id, internalCode, isInUserZone, partner, priceSubunit, stock, price, active) {
         this.id = id;
         this.internalCode = internalCode;
         this.isInUserZone = isInUserZone;
@@ -30,6 +31,7 @@ class SimplePartnerProduct_HasUserZoneEntity {
         this.priceSubunit = priceSubunit;
         this.stock = stock;
         this.price = price;
+        this.active = active;
     }
 }
 exports.SimplePartnerProduct_HasUserZoneEntity = SimplePartnerProduct_HasUserZoneEntity;
@@ -42,7 +44,7 @@ class ListPartnerProductEntity {
 }
 exports.ListPartnerProductEntity = ListPartnerProductEntity;
 class PartnerProductEntiy {
-    constructor(id, internalCode, product, partner, priceSubunit, price, stock) {
+    constructor(id, internalCode, product, partner, priceSubunit, price, stock, active) {
         this.id = id;
         this.internalCode = internalCode;
         this.product = product;
@@ -50,6 +52,7 @@ class PartnerProductEntiy {
         this.priceSubunit = priceSubunit;
         this.price = price;
         this.stock = stock;
+        this.active = active;
     }
 }
 exports.PartnerProductEntiy = PartnerProductEntiy;

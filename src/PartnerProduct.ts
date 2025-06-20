@@ -47,6 +47,7 @@ export interface SimplePartnerProduct {
     priceSubunit: number | null
     stock: number | null
     price: PriceEntity[]
+    active: boolean
 }
 
 export class SimplePartnerProductEntity implements SimplePartnerProduct {
@@ -57,7 +58,8 @@ export class SimplePartnerProductEntity implements SimplePartnerProduct {
         public product: MutualExclusiveProductId,
         public priceSubunit: number | null,
         public stock: number | null,
-        public price: PriceEntity[]
+        public price: PriceEntity[],
+        public active: boolean
     ) { }
 }
 
@@ -69,6 +71,7 @@ export interface SimplePartnerProduct_HasUserZone {
     priceSubunit: number | null
     stock: number | null
     price: PriceEntity[]
+    active: boolean
 }
 
 export class SimplePartnerProduct_HasUserZoneEntity implements SimplePartnerProduct_HasUserZone {
@@ -79,7 +82,8 @@ export class SimplePartnerProduct_HasUserZoneEntity implements SimplePartnerProd
         public partner: SimpleUser_WithPartnerInfoEntity,
         public priceSubunit: number | null,
         public stock: number | null,
-        public price: PriceEntity[]
+        public price: PriceEntity[],
+        public active: boolean
     ) { }
 }
 
@@ -104,7 +108,8 @@ export interface PartnerProduct {
     partner: SimpleUser_WithPartnerInfoEntity,
     priceSubunit: number | null,
     price: PriceEntity[],
-    stock: number | null
+    stock: number | null,
+    active: boolean
 }
 
 export class PartnerProductEntiy implements PartnerProduct {
@@ -115,7 +120,8 @@ export class PartnerProductEntiy implements PartnerProduct {
         public partner: SimpleUser_WithPartnerInfoEntity,
         public priceSubunit: number | null,
         public price: PriceEntity[],
-        public stock: number | null
+        public stock: number | null,
+        public active: boolean
     ) { }
 }
 
