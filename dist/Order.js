@@ -1,9 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OrderReportEntity = exports.SimpleChildOrder_AdminEntity = exports.SimpleChildOrder_PartnerEntity = exports.SimpleChildOrderEntity = exports.ChildOrder_AdminEntity = exports.ChildOrderEntity = exports.ChildOrder_MonthlyOverviewEntity = exports.OrderItemEntity = exports.NewOrderRequestEntity = exports.SimpleParentOrderEntity = exports.ParentOrderEntity = exports.DeliveryTimeList = exports.DeliveryTime = exports.isOrderEditable = exports.OrderStateList = exports.OrderState = void 0;
+exports.OrderReportEntity = exports.SimpleChildOrder_AdminEntity = exports.SimpleChildOrder_PartnerEntity = exports.SimpleChildOrderEntity = exports.ChildOrder_AdminEntity = exports.ChildOrderEntity = exports.ChildOrder_MonthlyOverviewEntity = exports.OrderItemEntity = exports.NewOrderRequestEntity = exports.SimpleParentOrderEntity = exports.ParentOrderEntity = exports.isOrderEditable = exports.OrderStateList = exports.OrderState = void 0;
 exports.getOrderStateString = getOrderStateString;
-exports.getDeliveryTimeString = getDeliveryTimeString;
-exports.getDeliveryMaxTimeString = getDeliveryMaxTimeString;
 var OrderState;
 (function (OrderState) {
     OrderState[OrderState["Started"] = 1] = "Started";
@@ -38,33 +36,6 @@ const isOrderEditable = (orderState) => {
     return allowedStates.includes(orderState);
 };
 exports.isOrderEditable = isOrderEditable;
-var DeliveryTime;
-(function (DeliveryTime) {
-    DeliveryTime[DeliveryTime["Morning"] = 1] = "Morning";
-    DeliveryTime[DeliveryTime["MiddleDay"] = 2] = "MiddleDay";
-    DeliveryTime[DeliveryTime["Afternoon"] = 3] = "Afternoon";
-})(DeliveryTime || (exports.DeliveryTime = DeliveryTime = {}));
-exports.DeliveryTimeList = Object.values(DeliveryTime).filter(value => typeof value === 'number');
-function getDeliveryTimeString(deliveryTime) {
-    switch (deliveryTime) {
-        case DeliveryTime.Morning:
-            return "07:00 AM - 12:00 PM";
-        case DeliveryTime.MiddleDay:
-            return "12:00 PM - 2:00 PM";
-        case DeliveryTime.Afternoon:
-            return "2:00 PM - 6:00pm";
-    }
-}
-function getDeliveryMaxTimeString(deliveryTime) {
-    switch (deliveryTime) {
-        case DeliveryTime.Morning:
-            return "12:00 PM";
-        case DeliveryTime.MiddleDay:
-            return "2:00 PM";
-        case DeliveryTime.Afternoon:
-            return "6:00 PM";
-    }
-}
 class ParentOrderEntity {
     constructor(id, userId, name, address, zone, createdAt, childOrders, deliveryDate, deliveryTime) {
         this.id = id;

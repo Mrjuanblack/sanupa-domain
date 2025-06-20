@@ -1,4 +1,3 @@
-import { DeliveryTime } from "./Order"
 import { PP_Filter } from "./PartnerProduct"
 import { ProductState } from "./Product"
 
@@ -18,7 +17,7 @@ export interface PaginationRequestWithFilter extends PaginationRequest {
 export interface PaginationRequest_DateRange extends PaginationRequest {
     startDate: Date | null
     endDate: Date | null
-    deliveryTime: DeliveryTime[]
+    deliveryTimeIds: number[]
 }
 
 export class PaginationRequestEntity implements PaginationRequest {
@@ -39,7 +38,7 @@ export class PaginationRequest_DateRangeEntity implements PaginationRequest_Date
         public pageSize: number,
         public startDate: Date | null,
         public endDate: Date | null,
-        public deliveryTime: DeliveryTime[]
+        public deliveryTimeIds: number[]
     ) { }
 }
 

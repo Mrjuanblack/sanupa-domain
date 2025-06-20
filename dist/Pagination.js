@@ -17,12 +17,12 @@ class PaginationRequestWithFilterEntity {
 }
 exports.PaginationRequestWithFilterEntity = PaginationRequestWithFilterEntity;
 class PaginationRequest_DateRangeEntity {
-    constructor(page, pageSize, startDate, endDate, deliveryTime) {
+    constructor(page, pageSize, startDate, endDate, deliveryTimeIds) {
         this.page = page;
         this.pageSize = pageSize;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.deliveryTime = deliveryTime;
+        this.deliveryTimeIds = deliveryTimeIds;
     }
 }
 exports.PaginationRequest_DateRangeEntity = PaginationRequest_DateRangeEntity;

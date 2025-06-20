@@ -1,6 +1,7 @@
 import { ZoneEntity } from "./Location";
 import { SimplePartnerInfoEntity } from "./PartnerInfo";
 import { PartnerProductEntiy } from "./PartnerProduct";
+import { TimeRangeEntity } from "./TimeRange";
 import { SimpleUserEntity } from "./User";
 export declare enum OrderState {
     Started = 1,
@@ -14,14 +15,6 @@ export declare enum OrderState {
 export declare const OrderStateList: OrderState[];
 export declare function getOrderStateString(orderState: OrderState): string;
 export declare const isOrderEditable: (orderState: OrderState) => boolean;
-export declare enum DeliveryTime {
-    Morning = 1,
-    MiddleDay = 2,
-    Afternoon = 3
-}
-export declare const DeliveryTimeList: DeliveryTime[];
-export declare function getDeliveryTimeString(deliveryTime: DeliveryTime): string;
-export declare function getDeliveryMaxTimeString(deliveryTime: DeliveryTime): string;
 export interface ParentOrder {
     id: number;
     userId: number;
@@ -31,7 +24,7 @@ export interface ParentOrder {
     createdAt: Date;
     childOrders: ChildOrder[];
     deliveryDate: Date;
-    deliveryTime: DeliveryTime;
+    deliveryTime: TimeRangeEntity;
 }
 export declare class ParentOrderEntity implements ParentOrder {
     id: number;
@@ -42,8 +35,8 @@ export declare class ParentOrderEntity implements ParentOrder {
     createdAt: Date;
     childOrders: ChildOrder[];
     deliveryDate: Date;
-    deliveryTime: DeliveryTime;
-    constructor(id: number, userId: number, name: string, address: string, zone: ZoneEntity, createdAt: Date, childOrders: ChildOrder[], deliveryDate: Date, deliveryTime: DeliveryTime);
+    deliveryTime: TimeRangeEntity;
+    constructor(id: number, userId: number, name: string, address: string, zone: ZoneEntity, createdAt: Date, childOrders: ChildOrder[], deliveryDate: Date, deliveryTime: TimeRangeEntity);
 }
 export interface SimpleParentOrder {
     id: number;
@@ -53,7 +46,7 @@ export interface SimpleParentOrder {
     zone: ZoneEntity;
     createdAt: Date;
     deliveryDate: Date;
-    deliveryTime: DeliveryTime;
+    deliveryTime: TimeRangeEntity;
 }
 export declare class SimpleParentOrderEntity implements SimpleParentOrder {
     id: number;
@@ -63,17 +56,17 @@ export declare class SimpleParentOrderEntity implements SimpleParentOrder {
     zone: ZoneEntity;
     createdAt: Date;
     deliveryDate: Date;
-    deliveryTime: DeliveryTime;
-    constructor(id: number, userId: number, name: string, address: string, zone: ZoneEntity, createdAt: Date, deliveryDate: Date, deliveryTime: DeliveryTime);
+    deliveryTime: TimeRangeEntity;
+    constructor(id: number, userId: number, name: string, address: string, zone: ZoneEntity, createdAt: Date, deliveryDate: Date, deliveryTime: TimeRangeEntity);
 }
 export interface NewOrderRequest {
     deliveryDate: Date;
-    deliveryTime: DeliveryTime;
+    deliveryTime: TimeRangeEntity;
 }
 export declare class NewOrderRequestEntity implements NewOrderRequest {
     deliveryDate: Date;
-    deliveryTime: DeliveryTime;
-    constructor(deliveryDate: Date, deliveryTime: DeliveryTime);
+    deliveryTime: TimeRangeEntity;
+    constructor(deliveryDate: Date, deliveryTime: TimeRangeEntity);
 }
 export interface OrderItem {
     id: number;

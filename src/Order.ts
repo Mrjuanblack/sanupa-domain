@@ -1,6 +1,7 @@
 import { ZoneEntity } from "./Location";
 import { SimplePartnerInfoEntity } from "./PartnerInfo";
 import { PartnerProductEntiy } from "./PartnerProduct"
+import { TimeRangeEntity } from "./TimeRange";
 import { SimpleUserEntity } from "./User";
 
 export enum OrderState {
@@ -37,33 +38,6 @@ export const isOrderEditable = (orderState: OrderState): boolean => {
     return allowedStates.includes(orderState)
 }
 
-export enum DeliveryTime {
-    Morning = 1,
-    MiddleDay = 2,
-    Afternoon = 3
-}
-export const DeliveryTimeList = Object.values(DeliveryTime).filter(value => typeof value === 'number');
-export function getDeliveryTimeString(deliveryTime: DeliveryTime): string {
-    switch (deliveryTime) {
-        case DeliveryTime.Morning:
-            return "07:00 AM - 12:00 PM"
-        case DeliveryTime.MiddleDay:
-            return "12:00 PM - 2:00 PM"
-        case DeliveryTime.Afternoon:
-            return "2:00 PM - 6:00pm"
-    }
-}
-export function getDeliveryMaxTimeString(deliveryTime: DeliveryTime): string {
-    switch (deliveryTime) {
-        case DeliveryTime.Morning:
-            return "12:00 PM"
-        case DeliveryTime.MiddleDay:
-            return "2:00 PM"
-        case DeliveryTime.Afternoon:
-            return "6:00 PM"
-    }
-}
-
 export interface ParentOrder {
     id: number
     userId: number
@@ -75,7 +49,7 @@ export interface ParentOrder {
     childOrders: ChildOrder[]
 
     deliveryDate: Date
-    deliveryTime: DeliveryTime
+    deliveryTime: TimeRangeEntity
 }
 
 export class ParentOrderEntity implements ParentOrder {
@@ -88,7 +62,7 @@ export class ParentOrderEntity implements ParentOrder {
         public createdAt: Date,
         public childOrders: ChildOrder[],
         public deliveryDate: Date,
-        public deliveryTime: DeliveryTime
+        public deliveryTime: TimeRangeEntity
     ) { }
 }
 
@@ -103,7 +77,7 @@ export interface SimpleParentOrder {
     createdAt: Date
 
     deliveryDate: Date
-    deliveryTime: DeliveryTime
+    deliveryTime: TimeRangeEntity
 }
 
 export class SimpleParentOrderEntity implements SimpleParentOrder {
@@ -115,19 +89,19 @@ export class SimpleParentOrderEntity implements SimpleParentOrder {
         public zone: ZoneEntity,
         public createdAt: Date,
         public deliveryDate: Date,
-        public deliveryTime: DeliveryTime,
+        public deliveryTime: TimeRangeEntity,
     ) { }
 }
 
 export interface NewOrderRequest {
     deliveryDate: Date
-    deliveryTime: DeliveryTime
+    deliveryTime: TimeRangeEntity
 }
 
 export class NewOrderRequestEntity implements NewOrderRequest {
     constructor(
         public deliveryDate: Date,
-        public deliveryTime: DeliveryTime
+        public deliveryTime: TimeRangeEntity
     ) { }
 }
 
