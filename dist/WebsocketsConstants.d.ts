@@ -42,6 +42,15 @@ export interface WS_NotificationData_UpdateStock {
     partnerProductId: number;
     newStock: number | null;
 }
+export declare enum WS_RegularNotificationType {
+    DeliveryTimeWarning = "deliveryTimeWarning",
+    DeliveryTimeFailure = "deliveryTimeFailure"
+}
+export interface WS_NotificationData_RegularNotification {
+    type: WS_RegularNotificationType;
+    id: number;
+    actionUrl: string | null;
+}
 export declare class WS_Notifications {
     static GetNotificationRoomName: (userId: number) => string;
     static GetNotificationEventName_Error: (userId: number) => string;
