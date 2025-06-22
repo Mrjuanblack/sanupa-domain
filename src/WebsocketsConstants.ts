@@ -62,7 +62,7 @@ export enum WS_RegularNotificationType {
 export interface WS_NotificationData_RegularNotification {
     type: WS_RegularNotificationType
     id: number
-    actionUrl: string | null
+    orderId: number | null
 }
 
 export class WS_Notifications {

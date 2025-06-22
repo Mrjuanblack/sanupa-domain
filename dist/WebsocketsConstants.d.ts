@@ -49,7 +49,7 @@ export declare enum WS_RegularNotificationType {
 export interface WS_NotificationData_RegularNotification {
     type: WS_RegularNotificationType;
     id: number;
-    actionUrl: string | null;
+    orderId: number | null;
 }
 export declare class WS_Notifications {
     static GetNotificationRoomName: (userId: number) => string;
