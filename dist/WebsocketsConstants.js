@@ -19,8 +19,8 @@ var WS_NotificationEvents;
 })(WS_NotificationEvents || (exports.WS_NotificationEvents = WS_NotificationEvents = {}));
 var WS_RegularNotificationType;
 (function (WS_RegularNotificationType) {
-    WS_RegularNotificationType["DeliveryTimeWarning"] = "deliveryTimeWarning";
-    WS_RegularNotificationType["DeliveryTimeFailure"] = "deliveryTimeFailure";
+    WS_RegularNotificationType[WS_RegularNotificationType["DeliveryTimeWarning"] = 1] = "DeliveryTimeWarning";
+    WS_RegularNotificationType[WS_RegularNotificationType["DeliveryTimeFailure"] = 2] = "DeliveryTimeFailure";
 })(WS_RegularNotificationType || (exports.WS_RegularNotificationType = WS_RegularNotificationType = {}));
 class WS_Notifications {
 }

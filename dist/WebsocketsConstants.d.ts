@@ -43,8 +43,8 @@ export interface WS_NotificationData_UpdateStock {
     newStock: number | null;
 }
 export declare enum WS_RegularNotificationType {
-    DeliveryTimeWarning = "deliveryTimeWarning",
-    DeliveryTimeFailure = "deliveryTimeFailure"
+    DeliveryTimeWarning = 1,
+    DeliveryTimeFailure = 2
 }
 export interface WS_NotificationData_RegularNotification {
     type: WS_RegularNotificationType;

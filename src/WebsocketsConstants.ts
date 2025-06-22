@@ -42,7 +42,7 @@ export enum WS_NotificationEvents {
     UpdateStock = "notificationUpdateStock"
 }
 
-export interface WS_NotificationData_Counters{
+export interface WS_NotificationData_Counters {
     myCartCount: MyCartCount
     myStoreCount: MyStoreCount | null
     myDeliveriesCount: MyDeliveriesCount | null
@@ -54,9 +54,9 @@ export interface WS_NotificationData_UpdateStock {
     newStock: number | null
 }
 
-export enum WS_RegularNotificationType{
-    DeliveryTimeWarning = "deliveryTimeWarning",
-    DeliveryTimeFailure = "deliveryTimeFailure",
+export enum WS_RegularNotificationType {
+    DeliveryTimeWarning = 1,
+    DeliveryTimeFailure = 2
 }
 
 export interface WS_NotificationData_RegularNotification {
