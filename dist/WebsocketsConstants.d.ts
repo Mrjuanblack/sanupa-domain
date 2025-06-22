@@ -49,6 +49,7 @@ export declare enum WS_RegularNotificationType {
 export interface WS_NotificationData_RegularNotification {
     type: WS_RegularNotificationType;
     id: number;
+    userId: number;
     orderId: number | null;
 }
 export declare class WS_Notifications {
