@@ -1,5 +1,14 @@
 import { MyCartCount, MyStoreCount, MyDeliveriesCount, MyStoreStats } from "./NoTable"
 
+export interface WS_GenericProgressResult {
+    index: number
+    total: number
+}
+
+export enum WS_GenericProgress {
+    GenericProgress = "genericProgress"
+}
+
 export interface WS_GenericError {
     error: string
 }

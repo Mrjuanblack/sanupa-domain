@@ -1,6 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WS_Notifications = exports.WS_RegularNotificationType = exports.WS_NotificationEvents = exports.WS_ProductsCreate = exports.WS_Emails = void 0;
+exports.WS_Notifications = exports.WS_RegularNotificationType = exports.WS_NotificationEvents = exports.WS_ProductsCreate = exports.WS_Emails = exports.WS_GenericProgress = void 0;
+var WS_GenericProgress;
+(function (WS_GenericProgress) {
+    WS_GenericProgress["GenericProgress"] = "genericProgress";
+})(WS_GenericProgress || (exports.WS_GenericProgress = WS_GenericProgress = {}));
 var WS_Emails;
 (function (WS_Emails) {
     WS_Emails["EmailProgress"] = "emailProgress";
