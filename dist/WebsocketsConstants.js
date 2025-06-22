@@ -16,6 +16,7 @@ var WS_NotificationEvents;
 (function (WS_NotificationEvents) {
     WS_NotificationEvents["Refresh"] = "notificationRefresh";
     WS_NotificationEvents["UpdateStock"] = "notificationUpdateStock";
+    WS_NotificationEvents["RegularNotification"] = "notificationRegular";
 })(WS_NotificationEvents || (exports.WS_NotificationEvents = WS_NotificationEvents = {}));
 var WS_RegularNotificationType;
 (function (WS_RegularNotificationType) {

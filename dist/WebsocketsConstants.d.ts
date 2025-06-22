@@ -30,7 +30,8 @@ export interface ProductsCreateError {
 }
 export declare enum WS_NotificationEvents {
     Refresh = "notificationRefresh",
-    UpdateStock = "notificationUpdateStock"
+    UpdateStock = "notificationUpdateStock",
+    RegularNotification = "notificationRegular"
 }
 export interface WS_NotificationData_Counters {
     myCartCount: MyCartCount;
