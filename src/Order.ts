@@ -1,3 +1,4 @@
+import { ChildOrder_LateDelivery } from "./ChildOrder_LateDelivery";
 import { ZoneEntity } from "./Location";
 import { SimplePartnerInfoEntity } from "./PartnerInfo";
 import { PartnerProductEntiy } from "./PartnerProduct"
@@ -156,6 +157,8 @@ export interface ChildOrder {
 
     updatedAt: Date
     rating: number | null
+
+    lateDelivery: ChildOrder_LateDelivery | null
 }
 
 export class ChildOrderEntity implements ChildOrder {
@@ -170,7 +173,8 @@ export class ChildOrderEntity implements ChildOrder {
         public hasCustomerSupport: boolean,
         public products: OrderItemEntity[],
         public updatedAt: Date,
-        public rating: number | null
+        public rating: number | null,
+        public lateDelivery: ChildOrder_LateDelivery | null
     ) { }
 }
 
@@ -188,6 +192,7 @@ export interface ChildOrder_Admin {
     products: OrderItemEntity[]
     updatedAt: Date
     rating: number | null
+    lateDelivery: ChildOrder_LateDelivery | null
 }
 
 export class ChildOrder_AdminEntity implements ChildOrder_Admin {
@@ -203,7 +208,8 @@ export class ChildOrder_AdminEntity implements ChildOrder_Admin {
         public hasCustomerSupport: boolean,
         public products: OrderItemEntity[],
         public updatedAt: Date,
-        public rating: number | null
+        public rating: number | null,
+        public lateDelivery: ChildOrder_LateDelivery | null
     ) { }
 
 }
@@ -220,6 +226,7 @@ export interface SimpleChildOrder {
     hasCustomerSupport: boolean
     updatedAt: Date
     rating: number | null
+    lateDelivery: ChildOrder_LateDelivery | null
 }
 
 export class SimpleChildOrderEntity implements SimpleChildOrder {
@@ -234,7 +241,8 @@ export class SimpleChildOrderEntity implements SimpleChildOrder {
         public partnerInformation: SimplePartnerInfoEntity,
         public hasCustomerSupport: boolean,
         public updatedAt: Date,
-        public rating: number | null
+        public rating: number | null,
+        public lateDelivery: ChildOrder_LateDelivery | null
     ) { }
 }
 
@@ -248,6 +256,7 @@ export interface SimpleChildOrder_Partner {
     deliveryUserId: number | null
     updatedAt: Date
     rating: number | null
+    lateDelivery: ChildOrder_LateDelivery | null
 }
 
 export class SimpleChildOrder_PartnerEntity implements SimpleChildOrder_Partner {
@@ -260,7 +269,8 @@ export class SimpleChildOrder_PartnerEntity implements SimpleChildOrder_Partner 
         public deliveryUserAccepted: boolean,
         public deliveryUserId: number | null,
         public updatedAt: Date,
-        public rating: number | null
+        public rating: number | null,
+        public lateDelivery: ChildOrder_LateDelivery | null
     ) { }
 }
 
@@ -278,6 +288,7 @@ export interface SimpleChildOrder_Admin {
     hasCustomerSupport: boolean
     updatedAt: Date
     rating: number | null
+    lateDelivery: ChildOrder_LateDelivery | null
 }
 
 export class SimpleChildOrder_AdminEntity implements SimpleChildOrder_Admin {
@@ -294,7 +305,8 @@ export class SimpleChildOrder_AdminEntity implements SimpleChildOrder_Admin {
         public partnerInformation: SimplePartnerInfoEntity,
         public hasCustomerSupport: boolean,
         public updatedAt: Date,
-        public rating: number | null
+        public rating: number | null,
+        public lateDelivery: ChildOrder_LateDelivery | null
     ) { }
 }
 

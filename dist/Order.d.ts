@@ -1,3 +1,4 @@
+import { ChildOrder_LateDelivery } from "./ChildOrder_LateDelivery";
 import { ZoneEntity } from "./Location";
 import { SimplePartnerInfoEntity } from "./PartnerInfo";
 import { PartnerProductEntiy } from "./PartnerProduct";
@@ -110,6 +111,7 @@ export interface ChildOrder {
     products: OrderItemEntity[];
     updatedAt: Date;
     rating: number | null;
+    lateDelivery: ChildOrder_LateDelivery | null;
 }
 export declare class ChildOrderEntity implements ChildOrder {
     id: number;
@@ -123,7 +125,8 @@ export declare class ChildOrderEntity implements ChildOrder {
     products: OrderItemEntity[];
     updatedAt: Date;
     rating: number | null;
-    constructor(id: number, parentOrder: SimpleParentOrderEntity, state: OrderState, deliveryPrice: number, evidenceImg: string | null, deliveryUserId: number | null, deliveryUserAccepted: boolean, hasCustomerSupport: boolean, products: OrderItemEntity[], updatedAt: Date, rating: number | null);
+    lateDelivery: ChildOrder_LateDelivery | null;
+    constructor(id: number, parentOrder: SimpleParentOrderEntity, state: OrderState, deliveryPrice: number, evidenceImg: string | null, deliveryUserId: number | null, deliveryUserAccepted: boolean, hasCustomerSupport: boolean, products: OrderItemEntity[], updatedAt: Date, rating: number | null, lateDelivery: ChildOrder_LateDelivery | null);
 }
 export interface ChildOrder_Admin {
     id: number;
@@ -138,6 +141,7 @@ export interface ChildOrder_Admin {
     products: OrderItemEntity[];
     updatedAt: Date;
     rating: number | null;
+    lateDelivery: ChildOrder_LateDelivery | null;
 }
 export declare class ChildOrder_AdminEntity implements ChildOrder_Admin {
     id: number;
@@ -152,7 +156,8 @@ export declare class ChildOrder_AdminEntity implements ChildOrder_Admin {
     products: OrderItemEntity[];
     updatedAt: Date;
     rating: number | null;
-    constructor(id: number, parentOrder: SimpleParentOrderEntity, user: SimpleUserEntity, state: OrderState, deliveryPrice: number, deliveryUserId: number | null, deliveryUserAccepted: boolean, evidenceImg: string | null, hasCustomerSupport: boolean, products: OrderItemEntity[], updatedAt: Date, rating: number | null);
+    lateDelivery: ChildOrder_LateDelivery | null;
+    constructor(id: number, parentOrder: SimpleParentOrderEntity, user: SimpleUserEntity, state: OrderState, deliveryPrice: number, deliveryUserId: number | null, deliveryUserAccepted: boolean, evidenceImg: string | null, hasCustomerSupport: boolean, products: OrderItemEntity[], updatedAt: Date, rating: number | null, lateDelivery: ChildOrder_LateDelivery | null);
 }
 export interface SimpleChildOrder {
     id: number;
@@ -166,6 +171,7 @@ export interface SimpleChildOrder {
     hasCustomerSupport: boolean;
     updatedAt: Date;
     rating: number | null;
+    lateDelivery: ChildOrder_LateDelivery | null;
 }
 export declare class SimpleChildOrderEntity implements SimpleChildOrder {
     id: number;
@@ -179,7 +185,8 @@ export declare class SimpleChildOrderEntity implements SimpleChildOrder {
     hasCustomerSupport: boolean;
     updatedAt: Date;
     rating: number | null;
-    constructor(id: number, parentOrder: SimpleParentOrderEntity, state: OrderState, price: number, deliveryPrice: number, deliveryUserId: number | null, deliveryUserAccepted: boolean, partnerInformation: SimplePartnerInfoEntity, hasCustomerSupport: boolean, updatedAt: Date, rating: number | null);
+    lateDelivery: ChildOrder_LateDelivery | null;
+    constructor(id: number, parentOrder: SimpleParentOrderEntity, state: OrderState, price: number, deliveryPrice: number, deliveryUserId: number | null, deliveryUserAccepted: boolean, partnerInformation: SimplePartnerInfoEntity, hasCustomerSupport: boolean, updatedAt: Date, rating: number | null, lateDelivery: ChildOrder_LateDelivery | null);
 }
 export interface SimpleChildOrder_Partner {
     id: number;
@@ -191,6 +198,7 @@ export interface SimpleChildOrder_Partner {
     deliveryUserId: number | null;
     updatedAt: Date;
     rating: number | null;
+    lateDelivery: ChildOrder_LateDelivery | null;
 }
 export declare class SimpleChildOrder_PartnerEntity implements SimpleChildOrder_Partner {
     id: number;
@@ -202,7 +210,8 @@ export declare class SimpleChildOrder_PartnerEntity implements SimpleChildOrder_
     deliveryUserId: number | null;
     updatedAt: Date;
     rating: number | null;
-    constructor(id: number, parentOrder: SimpleParentOrderEntity, state: OrderState, price: number, deliveryPrice: number, deliveryUserAccepted: boolean, deliveryUserId: number | null, updatedAt: Date, rating: number | null);
+    lateDelivery: ChildOrder_LateDelivery | null;
+    constructor(id: number, parentOrder: SimpleParentOrderEntity, state: OrderState, price: number, deliveryPrice: number, deliveryUserAccepted: boolean, deliveryUserId: number | null, updatedAt: Date, rating: number | null, lateDelivery: ChildOrder_LateDelivery | null);
 }
 export interface SimpleChildOrder_Admin {
     id: number;
@@ -218,6 +227,7 @@ export interface SimpleChildOrder_Admin {
     hasCustomerSupport: boolean;
     updatedAt: Date;
     rating: number | null;
+    lateDelivery: ChildOrder_LateDelivery | null;
 }
 export declare class SimpleChildOrder_AdminEntity implements SimpleChildOrder_Admin {
     id: number;
@@ -233,7 +243,8 @@ export declare class SimpleChildOrder_AdminEntity implements SimpleChildOrder_Ad
     hasCustomerSupport: boolean;
     updatedAt: Date;
     rating: number | null;
-    constructor(id: number, parentOrder: SimpleParentOrderEntity, user: SimpleUserEntity, state: OrderState, price: number, deliveryPrice: number, deliveryUserId: number | null, deliveryUserAccepted: boolean, evidenceImg: string | null, partnerInformation: SimplePartnerInfoEntity, hasCustomerSupport: boolean, updatedAt: Date, rating: number | null);
+    lateDelivery: ChildOrder_LateDelivery | null;
+    constructor(id: number, parentOrder: SimpleParentOrderEntity, user: SimpleUserEntity, state: OrderState, price: number, deliveryPrice: number, deliveryUserId: number | null, deliveryUserAccepted: boolean, evidenceImg: string | null, partnerInformation: SimplePartnerInfoEntity, hasCustomerSupport: boolean, updatedAt: Date, rating: number | null, lateDelivery: ChildOrder_LateDelivery | null);
 }
 export interface OrderReport {
     partnerId: number;

@@ -33,3 +33,4 @@ export * from './NoTable';
 export * from './ProductRequest';
 export * from './DeliveryWorkingZone';
 export * from './TimeRange';
+export * from './ChildOrder_LateDelivery';

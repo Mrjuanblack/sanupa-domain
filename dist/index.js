@@ -49,3 +49,4 @@ __exportStar(require("./NoTable"), exports);
 __exportStar(require("./ProductRequest"), exports);
 __exportStar(require("./DeliveryWorkingZone"), exports);
 __exportStar(require("./TimeRange"), exports);
+__exportStar(require("./ChildOrder_LateDelivery"), exports);
