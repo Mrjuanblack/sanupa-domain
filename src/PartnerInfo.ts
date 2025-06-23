@@ -3,6 +3,7 @@ import { Zone } from "./Location"
 import { PartnerWorking_City, PartnerWorking_Community, PartnerWorking_Zone } from "./PartnerWorkingZone"
 
 export interface PartnerInfo {
+    partnerId: number
     name: string
     zone: Zone
     address: string
@@ -20,6 +21,7 @@ export interface PartnerInfo {
 
 export class PartnerInfoEntity implements PartnerInfo {
     constructor(
+        public partnerId: number,
         public name: string,
         public zone: Zone,
         public address: string,
@@ -34,6 +36,7 @@ export class PartnerInfoEntity implements PartnerInfo {
 }
 
 export interface SimplePartnerInfo {
+    partnerId: number
     name: string
     address: string
     zone: Zone
@@ -42,6 +45,7 @@ export interface SimplePartnerInfo {
 
 export class SimplePartnerInfoEntity implements SimplePartnerInfo {
     constructor(
+        public partnerId: number,
         public name: string,
         public address: string,
         public zone: Zone,
