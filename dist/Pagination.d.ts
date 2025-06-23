@@ -7,6 +7,9 @@ export interface PaginationRequest {
 export interface PaginationRequest_AdminReviewProducts extends PaginationRequest {
     productState: ProductState;
 }
+export interface PaginationRequest_VerifierReviewProducts extends PaginationRequest {
+    productState: ProductState.PreCreated | ProductState.Created;
+}
 export interface PaginationRequestWithFilter extends PaginationRequest {
     filter: PP_Filter;
 }
