@@ -229,7 +229,7 @@ class UpdateProductWithCodeRequestEntity {
 }
 exports.UpdateProductWithCodeRequestEntity = UpdateProductWithCodeRequestEntity;
 class ProductWithCodeEntity {
-    constructor(id, subcategory, lastUpdated, gtin, name, description, brand, gpc, s_productType, s_productTypeSuggestion, s_brand, s_brandSuggestion, s_subunitType, measurementInfo, complementaryInfo, imgPath, minImgPath, secondImgPath, thirdImgPath, codeImgPath, quantity, measurement, market, productState) {
+    constructor(id, subcategory, lastUpdated, gtin, name, description, brand, gpc, s_productType, s_productTypeSuggestion, s_brand, s_brandSuggestion, s_subunitType, measurementInfo, complementaryInfo, imgPath, minImgPath, secondImgPath, thirdImgPath, codeImgPath, quantity, measurement, market, productState, verifiedOnce) {
         this.id = id;
         this.subcategory = subcategory;
         this.lastUpdated = lastUpdated;
@@ -254,11 +254,12 @@ class ProductWithCodeEntity {
         this.measurement = measurement;
         this.market = market;
         this.productState = productState;
+        this.verifiedOnce = verifiedOnce;
     }
 }
 exports.ProductWithCodeEntity = ProductWithCodeEntity;
 class ProductWithoutCodeEntity {
-    constructor(id, name, subcategory, lastUpdated, imgPath, minImgPath, secondImgPath, thirdImgPath, description, s_productType, s_brand, s_subunitType, measurementInfo, zone, offerType, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage) {
+    constructor(id, name, subcategory, lastUpdated, imgPath, minImgPath, secondImgPath, thirdImgPath, description, s_productType, s_brand, s_subunitType, measurementInfo, zone, offerType, area, condition, stratum, antiquity, bathrooms, rooms, parkingLots, cylinderCapacity, mileage, verifiedOnce) {
         this.id = id;
         this.name = name;
         this.subcategory = subcategory;
@@ -283,6 +284,7 @@ class ProductWithoutCodeEntity {
         this.parkingLots = parkingLots;
         this.cylinderCapacity = cylinderCapacity;
         this.mileage = mileage;
+        this.verifiedOnce = verifiedOnce;
     }
 }
 exports.ProductWithoutCodeEntity = ProductWithoutCodeEntity;

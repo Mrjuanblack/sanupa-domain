@@ -200,6 +200,7 @@ interface BaseProduct {
     thirdImgPath: string | null
 
     lastUpdated: Date
+    verifiedOnce: boolean
 }
 export interface ProductWithCode extends BaseProduct {
     productState: ProductState
@@ -432,7 +433,8 @@ export class ProductWithCodeEntity implements ProductWithCode {
         public quantity: string,
         public measurement: string,
         public market: string,
-        public productState: ProductState
+        public productState: ProductState,
+        public verifiedOnce: boolean
     ) { }
 }
 
@@ -463,6 +465,7 @@ export class ProductWithoutCodeEntity implements ProductWithoutCode {
         public parkingLots: number | null,
         public cylinderCapacity: number | null,
         public mileage: number | null,
+        public verifiedOnce: boolean
     ) { }
 }
 
