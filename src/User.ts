@@ -18,6 +18,11 @@ export enum LoginErrors {
     Blocked = 4
 }
 
+export interface BlockedTimeResult {
+    blockedDate: Date | null,
+    blockedUntil: Date | null
+}
+
 export enum CCType {
     CC = 1,
     NIT = 2,

@@ -6,6 +6,10 @@ export declare enum LoginErrors {
     Inactive = 3,
     Blocked = 4
 }
+export interface BlockedTimeResult {
+    blockedDate: Date | null;
+    blockedUntil: Date | null;
+}
 export declare enum CCType {
     CC = 1,
     NIT = 2,
