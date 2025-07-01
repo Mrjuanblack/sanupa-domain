@@ -1,5 +1,16 @@
 import { PartnerInfoEntity, SimplePartnerInfoEntity } from "./PartnerInfo";
 
+export function calculateBlockedTime(loginTries: number, blockedDate: Date): Date | null {
+    if(loginTries >= 3) {
+        const helper = loginTries - 2;
+        // Add 5 minutes for each try
+        const blockedUntil = new Date(blockedDate);
+        blockedUntil.setMinutes(blockedUntil.getMinutes() + (helper * 5));
+        return blockedUntil;
+    }
+    return null;
+}
+
 export enum LoginErrors {
     InvalidPassword = 1,
     NoVerifiedPhone = 2,
@@ -70,6 +81,9 @@ export interface User {
     active: boolean
 
     partnerInfo: PartnerInfoEntity | null
+    loginTries: number
+    blockedDate: Date | null
+    blockedUntil: Date | null
 }
 
 
@@ -188,7 +202,10 @@ export class UserEntity implements User {
         public role: UserRole,
         public additionalRoles: AdditionalRole[],
         public active: boolean,
-        public partnerInfo: PartnerInfoEntity | null
+        public partnerInfo: PartnerInfoEntity | null,
+        public loginTries: number,
+        public blockedDate: Date | null,
+        public blockedUntil: Date | null
     ) { }
 }
 

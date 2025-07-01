@@ -1,9 +1,20 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UpdateNamesRequestEntity = exports.UpdateEmailRequestEntity = exports.UpdateIdentificationRequestEntity = exports.UpdatePhoneNumberRequestEntity = exports.UpdatePasswordRequestEntity = exports.UserEntity = exports.UpdatePermissionsEntity = exports.UpdateFacturationInfoRequestEntity = exports.SimpleUser_ContactInfoEntity = exports.SimpleUser_WithPartnerInfoEntity = exports.SimpleUserEntity = exports.AdditionalRole = exports.UserRole = exports.CCTypeList = exports.CCType = exports.LoginErrors = void 0;
+exports.calculateBlockedTime = calculateBlockedTime;
 exports.getCCTypeString = getCCTypeString;
 exports.getUserRoleString = getUserRoleString;
 exports.isUserCookie = isUserCookie;
+function calculateBlockedTime(loginTries, blockedDate) {
+    if (loginTries >= 3) {
+        const helper = loginTries - 2;
+        // Add 5 minutes for each try
+        const blockedUntil = new Date(blockedDate);
+        blockedUntil.setMinutes(blockedUntil.getMinutes() + (helper * 5));
+        return blockedUntil;
+    }
+    return null;
+}
 var LoginErrors;
 (function (LoginErrors) {
     LoginErrors[LoginErrors["InvalidPassword"] = 1] = "InvalidPassword";
@@ -105,7 +116,7 @@ class UpdatePermissionsEntity {
 }
 exports.UpdatePermissionsEntity = UpdatePermissionsEntity;
 class UserEntity {
-    constructor(id, name, lastName, email, ccType, cc, phoneNumber, password, role, additionalRoles, active, partnerInfo) {
+    constructor(id, name, lastName, email, ccType, cc, phoneNumber, password, role, additionalRoles, active, partnerInfo, loginTries, blockedDate, blockedUntil) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
@@ -118,6 +129,9 @@ class UserEntity {
         this.additionalRoles = additionalRoles;
         this.active = active;
         this.partnerInfo = partnerInfo;
+        this.loginTries = loginTries;
+        this.blockedDate = blockedDate;
+        this.blockedUntil = blockedUntil;
     }
 }
 exports.UserEntity = UserEntity;

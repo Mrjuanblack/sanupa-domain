@@ -1,4 +1,5 @@
 import { PartnerInfoEntity, SimplePartnerInfoEntity } from "./PartnerInfo";
+export declare function calculateBlockedTime(loginTries: number, blockedDate: Date): Date | null;
 export declare enum LoginErrors {
     InvalidPassword = 1,
     NoVerifiedPhone = 2,
@@ -36,6 +37,9 @@ export interface User {
     additionalRoles: AdditionalRole[];
     active: boolean;
     partnerInfo: PartnerInfoEntity | null;
+    loginTries: number;
+    blockedDate: Date | null;
+    blockedUntil: Date | null;
 }
 export interface UserMetadata {
     id: number;
@@ -122,7 +126,10 @@ export declare class UserEntity implements User {
     additionalRoles: AdditionalRole[];
     active: boolean;
     partnerInfo: PartnerInfoEntity | null;
-    constructor(id: number, name: string, lastName: string | null, email: string | null, ccType: CCType | null, cc: string | null, phoneNumber: string, password: string, role: UserRole, additionalRoles: AdditionalRole[], active: boolean, partnerInfo: PartnerInfoEntity | null);
+    loginTries: number;
+    blockedDate: Date | null;
+    blockedUntil: Date | null;
+    constructor(id: number, name: string, lastName: string | null, email: string | null, ccType: CCType | null, cc: string | null, phoneNumber: string, password: string, role: UserRole, additionalRoles: AdditionalRole[], active: boolean, partnerInfo: PartnerInfoEntity | null, loginTries: number, blockedDate: Date | null, blockedUntil: Date | null);
 }
 export interface UpdatePasswordRequest {
     oldPassword: string;
