@@ -3,7 +3,8 @@ export declare function calculateBlockedTime(loginTries: number, blockedDate: Da
 export declare enum LoginErrors {
     InvalidPassword = 1,
     NoVerifiedPhone = 2,
-    Inactive = 3
+    Inactive = 3,
+    Blocked = 4
 }
 export declare enum CCType {
     CC = 1,

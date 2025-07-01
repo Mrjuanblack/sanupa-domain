@@ -14,7 +14,8 @@ export function calculateBlockedTime(loginTries: number, blockedDate: Date): Dat
 export enum LoginErrors {
     InvalidPassword = 1,
     NoVerifiedPhone = 2,
-    Inactive = 3
+    Inactive = 3,
+    Blocked = 4
 }
 
 export enum CCType {

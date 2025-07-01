@@ -20,6 +20,7 @@ var LoginErrors;
     LoginErrors[LoginErrors["InvalidPassword"] = 1] = "InvalidPassword";
     LoginErrors[LoginErrors["NoVerifiedPhone"] = 2] = "NoVerifiedPhone";
     LoginErrors[LoginErrors["Inactive"] = 3] = "Inactive";
+    LoginErrors[LoginErrors["Blocked"] = 4] = "Blocked";
 })(LoginErrors || (exports.LoginErrors = LoginErrors = {}));
 var CCType;
 (function (CCType) {
