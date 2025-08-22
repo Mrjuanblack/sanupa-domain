@@ -7,6 +7,7 @@ export interface PaginationRequest {
 export interface PaginationRequest_AdminReviewProducts extends PaginationRequest {
     productState: ProductState;
     codeOrName: string | null;
+    subcategoryId: number | null;
 }
 export interface PaginationRequest_VerifierReviewProducts extends PaginationRequest {
     productState: ProductState.PreCreated | ProductState.Created;
