@@ -133,6 +133,9 @@ export interface PP_Filter {
     categoryId: number | null
     subcategoryId: number | null
 
+    // For filtering by partner
+    partnerId: number | null
+
     // shared fields
     description: string | null
     brand: string | null
@@ -154,6 +157,7 @@ export class PP_FilterEntity implements PP_Filter {
         public stock: number | null,
         public categoryId: number | null,
         public subcategoryId: number | null,
+        public partnerId: number | null,
         public description: string | null,
         public brand: string | null,
         public name: string | null,
