@@ -22,6 +22,9 @@
   },
   "homepage": "https://github.com/Mrjuanblack/sanupa-domain#readme",
   "description": "",
+  "dependencies": {
+    "api-loc-domain": "github:Mrjuanblack/vb-api-loc-domain"
+  },
   "devDependencies": {
     "@types/node": "^22.10.2",
     "rimraf": "^6.0.1",

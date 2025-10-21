@@ -1,15 +1,15 @@
 import {
+  PartnerWorking_City,
+  PartnerWorking_Community,
+  PartnerWorking_Region,
+  PartnerWorking_Zone,
+} from "api-loc-domain";
+import {
   DeliveryWorking_Zone,
   DeliveryWorking_City,
   DeliveryWorking_Community,
 } from "./DeliveryWorkingZone";
 import { Zone } from "./Location";
-import {
-  PartnerWorking_Zone,
-  PartnerWorking_City,
-  PartnerWorking_Community,
-  PartnerWorking_Region,
-} from "./PartnerWorkingZone";
 
 export interface PartnerInfo {
   zone: Zone;
