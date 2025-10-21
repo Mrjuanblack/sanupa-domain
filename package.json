@@ -1,6 +1,6 @@
 {
   "name": "sanupa-domain",
-  "version": "1.0.252",
+  "version": "1.0.253",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
