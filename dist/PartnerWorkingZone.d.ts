@@ -1,61 +1,65 @@
-import { City, Community, ZoneEntity } from "./Location";
-export interface PartnerWorking_Zone {
-    zone: ZoneEntity;
-    price: number;
-}
+import { PartnerWorking_City, PartnerWorking_Community, PartnerWorking_Region, PartnerWorking_Zone, PartnerWorkingDay } from "api-loc-domain";
 export declare class PartnerWorking_ZoneEntity implements PartnerWorking_Zone {
-    zone: ZoneEntity;
     price: number;
-    constructor(zone: ZoneEntity, price: number);
-}
-export interface NewPartnerWorking_Zone {
-    partnerId: number;
     zoneId: number;
-    price: number;
-}
-export declare class NewPartnerWorking_ZoneEntity implements NewPartnerWorking_Zone {
+    leadTime: number;
     partnerId: number;
-    zoneId: number;
-    price: number;
-    constructor(partnerId: number, zoneId: number, price: number);
+    days: PartnerWorkingDay[];
+    constructor(price: number, zoneId: number, leadTime: number, partnerId: number, days: PartnerWorkingDay[]);
 }
-export interface PartnerWorking_Community {
-    community: Community;
+export declare class NewPartnerWorking_ZoneEntity implements PartnerWorking_Zone {
     price: number;
+    zoneId: number;
+    leadTime: number;
+    partnerId: number;
+    days: PartnerWorkingDay[];
+    constructor(price: number, zoneId: number, leadTime: number, partnerId: number, days: PartnerWorkingDay[]);
 }
 export declare class PartnerWorking_CommunityEntity implements PartnerWorking_Community {
-    community: Community;
     price: number;
-    constructor(community: Community, price: number);
-}
-export interface NewPartnerWorking_Community {
+    leadTime: number;
     partnerId: number;
     communityId: number;
-    price: number;
+    days: PartnerWorkingDay[];
+    constructor(price: number, leadTime: number, partnerId: number, communityId: number, days: PartnerWorkingDay[]);
 }
-export declare class NewPartnerWorking_CommunityEntity implements NewPartnerWorking_Community {
+export declare class NewPartnerWorking_CommunityEntity implements PartnerWorking_Community {
+    price: number;
+    leadTime: number;
     partnerId: number;
     communityId: number;
-    price: number;
-    constructor(partnerId: number, communityId: number, price: number);
-}
-export interface PartnerWorking_City {
-    city: City;
-    price: number;
+    days: PartnerWorkingDay[];
+    constructor(price: number, leadTime: number, partnerId: number, communityId: number, days: PartnerWorkingDay[]);
 }
 export declare class PartnerWorking_CityEntity implements PartnerWorking_City {
-    city: City;
     price: number;
-    constructor(city: City, price: number);
-}
-export interface NewPartnerWorking_City {
-    partnerId: number;
     cityId: number;
-    price: number;
-}
-export declare class NewPartnerWorking_CityEntity implements NewPartnerWorking_City {
+    leadTime: number;
     partnerId: number;
-    cityId: number;
+    days: PartnerWorkingDay[];
+    constructor(price: number, cityId: number, leadTime: number, partnerId: number, days: PartnerWorkingDay[]);
+}
+export declare class NewPartnerWorking_CityEntity implements PartnerWorking_City {
     price: number;
-    constructor(partnerId: number, cityId: number, price: number);
+    cityId: number;
+    leadTime: number;
+    partnerId: number;
+    days: PartnerWorkingDay[];
+    constructor(price: number, cityId: number, leadTime: number, partnerId: number, days: PartnerWorkingDay[]);
+}
+export declare class PartnerWorking_RegionEntity implements PartnerWorking_Region {
+    price: number;
+    regionId: number;
+    leadTime: number;
+    partnerId: number;
+    days: PartnerWorkingDay[];
+    constructor(price: number, regionId: number, leadTime: number, partnerId: number, days: PartnerWorkingDay[]);
+}
+export declare class NewPartnerWorking_RegionEntity implements PartnerWorking_Region {
+    price: number;
+    regionId: number;
+    leadTime: number;
+    partnerId: number;
+    days: PartnerWorkingDay[];
+    constructor(price: number, regionId: number, leadTime: number, partnerId: number, days: PartnerWorkingDay[]);
 }

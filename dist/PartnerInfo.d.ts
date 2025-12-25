@@ -1,50 +1,52 @@
-import { DeliveryWorking_Zone, DeliveryWorking_Community, DeliveryWorking_City } from "./DeliveryWorkingZone";
+import { PartnerWorking_City, PartnerWorking_Community, PartnerWorking_Region, PartnerWorking_Zone } from "api-loc-domain";
+import { DeliveryWorking_Zone, DeliveryWorking_City, DeliveryWorking_Community } from "./DeliveryWorkingZone";
 import { Zone } from "./Location";
-import { PartnerWorking_City, PartnerWorking_Community, PartnerWorking_Zone } from "./PartnerWorkingZone";
 export interface PartnerInfo {
-    partnerId: number;
-    name: string;
     zone: Zone;
+    name: string;
     address: string;
-    workingArea_Zones: PartnerWorking_Zone[];
-    workingArea_Communities: PartnerWorking_Community[];
-    workingArea_Cities: PartnerWorking_City[];
-    deliveryWorking_Zones: DeliveryWorking_Zone[];
-    deliveryWorking_Communities: DeliveryWorking_Community[];
-    deliveryWorking_Cities: DeliveryWorking_City[];
+    partnerId: number;
     imgPath: string | null;
+    workingArea_Zones: PartnerWorking_Zone[];
+    workingArea_Cities: PartnerWorking_City[];
+    workingArea_Regions: PartnerWorking_Region[];
+    deliveryWorking_Zones: DeliveryWorking_Zone[];
+    deliveryWorking_Cities: DeliveryWorking_City[];
+    workingArea_Communities: PartnerWorking_Community[];
+    deliveryWorking_Communities: DeliveryWorking_Community[];
 }
 export declare class PartnerInfoEntity implements PartnerInfo {
-    partnerId: number;
-    name: string;
     zone: Zone;
+    name: string;
     address: string;
+    partnerId: number;
+    imgPath: string | null;
     workingArea_Zones: PartnerWorking_Zone[];
-    workingArea_Communities: PartnerWorking_Community[];
+    workingArea_Regions: PartnerWorking_Region[];
     workingArea_Cities: PartnerWorking_City[];
     deliveryWorking_Zones: DeliveryWorking_Zone[];
-    deliveryWorking_Communities: DeliveryWorking_Community[];
     deliveryWorking_Cities: DeliveryWorking_City[];
-    imgPath: string | null;
-    constructor(partnerId: number, name: string, zone: Zone, address: string, workingArea_Zones: PartnerWorking_Zone[], workingArea_Communities: PartnerWorking_Community[], workingArea_Cities: PartnerWorking_City[], deliveryWorking_Zones: DeliveryWorking_Zone[], deliveryWorking_Communities: DeliveryWorking_Community[], deliveryWorking_Cities: DeliveryWorking_City[], imgPath: string | null);
+    workingArea_Communities: PartnerWorking_Community[];
+    deliveryWorking_Communities: DeliveryWorking_Community[];
+    constructor(zone: Zone, name: string, address: string, partnerId: number, imgPath: string | null, workingArea_Zones: PartnerWorking_Zone[], workingArea_Regions: PartnerWorking_Region[], workingArea_Cities: PartnerWorking_City[], deliveryWorking_Zones: DeliveryWorking_Zone[], deliveryWorking_Cities: DeliveryWorking_City[], workingArea_Communities: PartnerWorking_Community[], deliveryWorking_Communities: DeliveryWorking_Community[]);
 }
 export interface SimplePartnerInfo {
-    partnerId: number;
+    zone: Zone;
     name: string;
     address: string;
-    zone: Zone;
+    partnerId: number;
     imgPath: string | null;
 }
 export declare class SimplePartnerInfoEntity implements SimplePartnerInfo {
-    partnerId: number;
+    zone: Zone;
     name: string;
     address: string;
-    zone: Zone;
+    partnerId: number;
     imgPath: string | null;
-    constructor(partnerId: number, name: string, address: string, zone: Zone, imgPath: string | null);
+    constructor(zone: Zone, name: string, address: string, partnerId: number, imgPath: string | null);
 }
 export interface NewPartnerInfoRequest {
     name: string;
-    address: string;
     zoneId: number;
+    address: string;
 }
